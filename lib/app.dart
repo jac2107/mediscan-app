@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:medicamentos_app/core/theme/app_theme.dart';
+import 'package:medicamentos_app/presentation/providers/sync_provider.dart';
 import 'package:medicamentos_app/presentation/router/app_router.dart';
 
 class MedicamentosApp extends ConsumerWidget {
@@ -8,6 +9,10 @@ class MedicamentosApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Arranca sync al iniciar la app
+    ref.watch(syncInicialProvider);
+    ref.watch(autoSyncProvider);
+
     final router = ref.watch(appRouterProvider);
     return MaterialApp.router(
       title: 'MediScan',

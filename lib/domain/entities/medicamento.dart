@@ -61,4 +61,40 @@ class Medicamento {
       eliminado: eliminado ?? this.eliminado,
     );
   }
+  Map<String, dynamic> toMap() {
+  return {
+    'id': id,
+    'codigo_barras': codigoBarras,
+    'nombre': nombre,
+    'descripcion': descripcion,
+    'foto_url': fotoUrl,
+    'dosis_adulto': dosisAdulto,
+    'dosis_mayor': dosisMayor,
+    'dosis_nino': dosisNino,
+    'alergias': alergias,
+    'contraindicaciones': contraindicaciones,
+    'enfermedades_incompatibles': enfermedadesIncompatibles,
+    'actualizado_en': actualizadoEn.toIso8601String(),
+    'eliminado': eliminado,
+  };
+}
+
+factory Medicamento.fromMap(Map<String, dynamic> map) {
+  return Medicamento(
+    id: map['id'] as String,
+    codigoBarras: map['codigo_barras'] as String,
+    nombre: map['nombre'] as String,
+    descripcion: map['descripcion'] as String?,
+    fotoUrl: map['foto_url'] as String?,
+    dosisAdulto: map['dosis_adulto'] as String?,
+    dosisMayor: map['dosis_mayor'] as String?,
+    dosisNino: map['dosis_nino'] as String?,
+    alergias: List<String>.from(map['alergias'] ?? []),
+    contraindicaciones: List<String>.from(map['contraindicaciones'] ?? []),
+    enfermedadesIncompatibles:
+        List<String>.from(map['enfermedades_incompatibles'] ?? []),
+    actualizadoEn: DateTime.parse(map['actualizado_en'] as String),
+    eliminado: map['eliminado'] as bool? ?? false,
+  );
+}
 }

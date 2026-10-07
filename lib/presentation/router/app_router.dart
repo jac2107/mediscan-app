@@ -25,6 +25,17 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     },
     routes: [
       GoRoute(
+        path: Routes.formularioMedicamento,
+        builder: (context, state) {
+          final medicamentoId = state.uri.queryParameters['id'];
+          final codigo = state.uri.queryParameters['codigo'];
+          return MedicamentoFormScreen(
+            medicamentoId: medicamentoId,
+            codigoInicial: codigo,
+          );
+        },
+      ),
+      GoRoute(
         path: Routes.buscador,
         builder: (context, state) => const BuscadorScreen(),
       ),
