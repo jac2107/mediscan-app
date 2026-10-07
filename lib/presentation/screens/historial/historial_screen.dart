@@ -1,0 +1,6 @@
+import 'package:flutter/material.dart';
+class HistorialScreen extends StatelessWidget {
+  const HistorialScreen({super.key});
+  @override
+  Widget build(BuildContext context) => const Scaffold(body: Center(child: Text('Historial')));
+}
