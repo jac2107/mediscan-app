@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:medicamentos_app/core/theme/app_theme.dart';
 import 'package:medicamentos_app/presentation/providers/favoritos_provider.dart';
 import 'package:medicamentos_app/presentation/providers/medicamentos_provider.dart';
 import 'package:medicamentos_app/presentation/router/routes.dart';
@@ -14,88 +16,77 @@ class FavoritosScreen extends ConsumerWidget {
     final favoritosAsync = ref.watch(favoritosProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Favoritos')),
+      appBar: AppBar(
+        title: Text('Favoritos',
+            style: GoogleFonts.lora(fontSize: 20, color: AppTheme.ink)),
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(1),
+          child: Divider(height: 1),
+        ),
+      ),
       body: favoritosAsync.when(
         data: (lista) {
           if (lista.isEmpty) {
-            return Center(
+            return Padding(
+              padding: const EdgeInsets.fromLTRB(24, 40, 24, 0),
               child: Column(
-                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(
-                    Icons.star_outline_rounded,
-                    size: 72,
-                    color: theme.colorScheme.onSurfaceVariant.withOpacity(0.4),
-                  ),
-                  const SizedBox(height: 12),
+                  Text('Sin favoritos',
+                      style: GoogleFonts.lora(fontSize: 21, color: AppTheme.ink)),
+                  const SizedBox(height: 6),
                   Text(
-                    'Aún no tienes favoritos',
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      color: theme.colorScheme.onSurfaceVariant,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Marca el ★ en un medicamento\npara tenerlo a la mano',
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      color: theme.colorScheme.onSurfaceVariant,
-                    ),
+                    'Marca el ★ en una ficha para acceder rápido.',
+                    style: theme.textTheme.bodyMedium
+                        ?.copyWith(color: AppTheme.muted),
                   ),
                 ],
               ),
             );
           }
-
           return ListView.separated(
-            padding: const EdgeInsets.all(16),
             itemCount: lista.length,
-            separatorBuilder: (_, __) => const SizedBox(height: 8),
+            separatorBuilder: (_, __) => const Divider(height: 1, indent: 24),
             itemBuilder: (context, index) {
               final med = lista[index];
-              return Card(
-                child: ListTile(
-                  leading: Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: Colors.amber.withOpacity(0.15),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: const Icon(
-                      Icons.star_rounded,
-                      color: Colors.amber,
-                    ),
-                  ),
-                  title: Text(
-                    med.nombre,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                  subtitle: med.descripcion != null
-                      ? Text(
-                          med.descripcion!,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        )
-                      : null,
-                  trailing: IconButton(
-                    icon: const Icon(Icons.star_rounded, color: Colors.amber),
-                    onPressed: () async {
-                      final dao = ref.read(medicamentosDaoProvider);
-                      await dao.toggleFavorito(med.id, false);
-                      ref.invalidate(favoritosProvider);
-                    },
-                    tooltip: 'Quitar de favoritos',
-                  ),
-                  onTap: () => context.push(
-                    Routes.detalleMedicamento.replaceAll(':id', med.id),
+              return ListTile(
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                title: Text(med.nombreComercial),
+                subtitle: med.descripcion != null
+                    ? Text(med.descripcion!,
+                        maxLines: 1, overflow: TextOverflow.ellipsis)
+                    : null,
+                trailing: GestureDetector(
+                  onTap: () async {
+                    await ref
+                        .read(appDatabaseProvider)
+                        .toggleFavorito(med.id, false);
+                    ref.invalidate(favoritosProvider);
+                  },
+                  child: const Padding(
+                    padding: EdgeInsets.all(8),
+                    child: Icon(Icons.star_rounded,
+                        size: 18, color: AppTheme.colorWarn),
                   ),
                 ),
+                onTap: () => context.push(
+                    Routes.detalleMedicamento.replaceAll(':id', med.id)),
               );
             },
           );
         },
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('Error: $e')),
+        loading: () => const Center(
+          child: SizedBox(
+              width: 20,
+              height: 20,
+              child: CircularProgressIndicator(
+                  strokeWidth: 2, color: AppTheme.verde)),
+        ),
+        error: (e, _) => Padding(
+          padding: const EdgeInsets.all(24),
+          child: Text('Error: $e'),
+        ),
       ),
     );
   }

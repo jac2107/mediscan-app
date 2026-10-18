@@ -1,36 +1,30 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:drift/drift.dart' hide Column;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
-import 'package:medicamentos_app/data/local/database/app_database.dart';
-import 'package:medicamentos_app/presentation/providers/medicamentos_provider.dart';
-import 'package:medicamentos_app/presentation/router/routes.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:medicamentos_app/core/constants/app_constants.dart';
-import 'package:medicamentos_app/presentation/providers/favoritos_provider.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../../../core/theme/app_theme.dart';
+import '../../../data/local/database/app_database.dart';
+import '../../providers/medicamentos_provider.dart';
+import '../../widgets/medicamento/medicamento_card.dart';
 
 class MedicamentoDetailScreen extends ConsumerWidget {
   final String medicamentoId;
-
   const MedicamentoDetailScreen({super.key, required this.medicamentoId});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final medAsync = ref.watch(medicamentoPorIdProvider(medicamentoId));
-
     return medAsync.when(
-      data: (med) {
-        if (med == null) {
-          return Scaffold(
-            appBar: AppBar(),
-            body: const Center(child: Text('Medicamento no encontrado')),
-          );
-        }
-        return _DetalleView(med: med);
-      },
+      data: (med) => med == null
+          ? Scaffold(appBar: AppBar(), body: const Center(child: Text('No encontrado')))
+          : _DetalleView(med: med),
       loading: () => const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+        body: Center(
+          child: SizedBox(
+            width: 20,
+            height: 20,
+            child: CircularProgressIndicator(strokeWidth: 2, color: AppTheme.verde),
+          ),
+        ),
       ),
       error: (e, _) => Scaffold(
         body: Center(child: Text('Error: $e')),
@@ -41,7 +35,6 @@ class MedicamentoDetailScreen extends ConsumerWidget {
 
 class _DetalleView extends ConsumerStatefulWidget {
   final MedicamentosTableData med;
-
   const _DetalleView({required this.med});
 
   @override
@@ -50,171 +43,115 @@ class _DetalleView extends ConsumerStatefulWidget {
 
 class _DetalleViewState extends ConsumerState<_DetalleView>
     with SingleTickerProviderStateMixin {
-  late TabController _tabController;
-  late bool _esFavorito;
+  late TabController _tabs;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
-    _esFavorito = widget.med.esFavorito;
+    _tabs = TabController(length: 4, vsync: this);
   }
 
   @override
   void dispose() {
-    _tabController.dispose();
+    _tabs.dispose();
     super.dispose();
   }
 
   Future<void> _toggleFavorito() async {
-    final dao = ref.read(medicamentosDaoProvider);
-    final nuevoValor = !_esFavorito;
-    await dao.toggleFavorito(widget.med.id, nuevoValor);
-    setState(() => _esFavorito = nuevoValor);
-    ref.invalidate(favoritosProvider);
-  }
-
-  Future<void> _eliminar() async {
-    final confirmar = await showDialog<bool>(
-      context: context,
-      builder: (_) => AlertDialog(
-        title: const Text('Eliminar medicamento'),
-        content: Text(
-          '¿Estás seguro de eliminar "${widget.med.nombre}"? Esta acción se registrará en el audit log.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancelar'),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(context, true),
-            style: FilledButton.styleFrom(backgroundColor: Colors.red),
-            child: const Text('Eliminar'),
-          ),
-        ],
-      ),
-    );
-
-    if (confirmar != true || !mounted) return;
-
-    final dao = ref.read(medicamentosDaoProvider);
-    final prefs = await SharedPreferences.getInstance();
-    final usuarioNombre =
-        prefs.getString(AppConstants.keyUsuarioNombre) ?? 'Desconocido';
-
-    await dao.eliminar(widget.med.id);
+    await ref.read(appDatabaseProvider).toggleFavorito(
+          widget.med.id, !widget.med.esFavorito);
     ref.invalidate(todosMedicamentosProvider);
-
-    if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('${widget.med.nombre} eliminado por $usuarioNombre'),
-          backgroundColor: Colors.red,
-        ),
-      );
-      context.pop();
-    }
+    ref.invalidate(favoritosProvider);
+    ref.invalidate(medicamentoPorIdProvider(widget.med.id));
   }
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final med = widget.med;
-    final alergias = AppDatabase.jsonToList(med.alergias);
-    final contraindicaciones = AppDatabase.jsonToList(med.contraindicaciones);
-    final enfermedades =
-        AppDatabase.jsonToList(med.enfermedadesIncompatibles);
+    final theme = Theme.of(context);
+    final principios = AppDatabase.jsonToList(med.principiosActivos);
+    final formas = AppDatabase.jsonToList(med.formasFarmaceuticas);
+    final vias = AppDatabase.jsonToList(med.viasAdministracion);
+    final laboratorios = AppDatabase.jsonToList(med.laboratorios);
+    final concentraciones = AppDatabase.jsonToList(med.concentraciones);
+    final gruposAsync = ref.watch(gruposPorMedicamentoProvider(med.id));
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          med.nombre,
+          med.nombreComercial,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
+          style: GoogleFonts.lora(fontSize: 18, color: AppTheme.ink),
         ),
         actions: [
           IconButton(
             icon: Icon(
-              _esFavorito ? Icons.star_rounded : Icons.star_outline_rounded,
-              color: _esFavorito ? Colors.amber : null,
+              med.esFavorito ? Icons.star_rounded : Icons.star_outline_rounded,
+              size: 20,
+              color: med.esFavorito ? AppTheme.colorWarn : AppTheme.muted,
             ),
             onPressed: _toggleFavorito,
-            tooltip: _esFavorito ? 'Quitar favorito' : 'Agregar a favoritos',
-          ),
-          IconButton(
-            icon: const Icon(Icons.edit_rounded),
-            onPressed: () => context.push(
-              '${Routes.formularioMedicamento}?id=${med.id}',
-            ),
-            tooltip: 'Editar',
-          ),
-          IconButton(
-            icon: const Icon(Icons.delete_outline_rounded),
-            onPressed: _eliminar,
-            tooltip: 'Eliminar',
           ),
         ],
         bottom: TabBar(
-          controller: _tabController,
+          controller: _tabs,
+          isScrollable: true,
+          tabAlignment: TabAlignment.start,
           tabs: const [
+            Tab(text: 'Ficha'),
             Tab(text: 'Dosis'),
-            Tab(text: 'Alergias'),
-            Tab(text: 'Contraind.'),
+            Tab(text: 'Seguridad'),
+            Tab(text: 'Grupos'),
           ],
         ),
       ),
       body: Column(
         children: [
-          // Header con foto o ícono
+          // Encabezado
           Container(
-            width: double.infinity,
-            color: theme.colorScheme.primaryContainer.withOpacity(0.3),
-            padding: const EdgeInsets.all(16),
+            decoration: const BoxDecoration(
+              color: AppTheme.surface,
+              border: Border(bottom: BorderSide(color: AppTheme.border)),
+            ),
+            padding: const EdgeInsets.fromLTRB(24, 16, 24, 16),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Foto o ícono
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: med.fotoUrl != null
-                      ? Image.network(
-                          med.fotoUrl!,
-                          width: 72,
-                          height: 72,
-                          fit: BoxFit.cover,
-                          errorBuilder: (_, __, ___) =>
-                              _IconoMedicamento(size: 72),
-                        )
-                      : _IconoMedicamento(size: 72),
-                ),
+                FotoMedicamento(url: med.fotoUrl, size: 64),
                 const SizedBox(width: 16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        med.nombre,
-                        style: theme.textTheme.titleLarge?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                        med.nombreComercial,
+                        style: GoogleFonts.lora(
+                            fontSize: 18,
+                            color: AppTheme.ink,
+                            height: 1.3),
                       ),
-                      if (med.descripcion != null) ...[
+                      if (med.nombreGenerico != null) ...[
+                        const SizedBox(height: 2),
+                        Text(med.nombreGenerico!,
+                            style: theme.textTheme.bodySmall),
+                      ],
+                      if (med.categoria != null) ...[
                         const SizedBox(height: 4),
-                        Text(
-                          med.descripcion!,
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            color: theme.colorScheme.onSurfaceVariant,
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 6, vertical: 2),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: AppTheme.border),
+                            borderRadius: BorderRadius.circular(2),
+                          ),
+                          child: Text(
+                            med.categoria!,
+                            style: GoogleFonts.inter(
+                                fontSize: 11, color: AppTheme.muted),
                           ),
                         ),
                       ],
-                      const SizedBox(height: 4),
-                      Text(
-                        'Cód: ${med.codigoBarras}',
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
-                          fontFamily: 'monospace',
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -222,28 +159,90 @@ class _DetalleViewState extends ConsumerState<_DetalleView>
             ),
           ),
 
-          // Tabs
           Expanded(
             child: TabBarView(
-              controller: _tabController,
+              controller: _tabs,
               children: [
-                // Tab Dosis
-                _TabDosis(med: med),
-
-                // Tab Alergias
-                _TabLista(
-                  items: alergias,
-                  icono: Icons.warning_amber_rounded,
-                  color: Colors.orange,
-                  emptyText: 'No se registraron alergias',
+                // Tab 1: Ficha
+                ListView(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  children: [
+                    _InfoRow('Código', med.codigoInterno),
+                    if (principios.isNotEmpty)
+                      _InfoRow('Principios activos', principios.join(', ')),
+                    if (concentraciones.isNotEmpty)
+                      _InfoRow('Concentraciones', concentraciones.join(', ')),
+                    if (formas.isNotEmpty)
+                      _InfoRow('Formas farmacéuticas', formas.join(', ')),
+                    if (med.presentacion != null)
+                      _InfoRow('Presentación', med.presentacion!),
+                    if (vias.isNotEmpty)
+                      _InfoRow('Vías de administración', vias.join(', ')),
+                    if (laboratorios.isNotEmpty)
+                      _InfoRow('Laboratorios', laboratorios.join(', ')),
+                    if (med.fechaRevision != null)
+                      _InfoRow('Última revisión', med.fechaRevision!),
+                    if (med.composicionCompleta != null) ...[
+                      const Divider(indent: 24),
+                      _InfoRow('Composición completa', med.composicionCompleta!),
+                    ],
+                    if (med.indicacionesTexto != null) ...[
+                      const Divider(indent: 24),
+                      _InfoBloque('Indicaciones', med.indicacionesTexto!),
+                    ],
+                  ],
                 ),
 
-                // Tab Contraindicaciones
-                _TabLista(
-                  items: [...contraindicaciones, ...enfermedades],
-                  icono: Icons.block_rounded,
-                  color: Colors.red,
-                  emptyText: 'No se registraron contraindicaciones',
+                // Tab 2: Dosis
+                ListView(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  children: [
+                    _FilaDosis('Adultos', med.dosisAdultos),
+                    const Divider(height: 1, indent: 24),
+                    _FilaDosis('Adultos mayores', med.dosisAdultosMayores),
+                    const Divider(height: 1, indent: 24),
+                    _FilaDosis('Niños', med.dosisPediatrica),
+                    const Divider(height: 1, indent: 24),
+                    _FilaDosis('Lactantes', med.dosisLactantes),
+                  ],
+                ),
+
+                // Tab 3: Seguridad
+                ListView(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  children: [
+                    if (med.contraindicaciones != null)
+                      _InfoBloque('Contraindicaciones', med.contraindicaciones!),
+                    if (med.precaucionesAdvertencias != null) ...[
+                      const Divider(height: 1, indent: 24),
+                      _InfoBloque('Precauciones y advertencias',
+                          med.precaucionesAdvertencias!),
+                    ],
+                    if (med.efectosAdversos != null) ...[
+                      const Divider(height: 1, indent: 24),
+                      _InfoBloque('Efectos adversos', med.efectosAdversos!),
+                    ],
+                  ],
+                ),
+
+                // Tab 4: Grupos de paciente
+                gruposAsync.when(
+                  data: (grupos) => ListView(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(24, 8, 24, 12),
+                        child: Text(
+                          'Registra la evaluación expresa. El texto de dosis no determina estos estados.',
+                          style: theme.textTheme.bodySmall,
+                        ),
+                      ),
+                      const Divider(height: 1),
+                      ...grupos.map((g) => _FilaGrupo(g)),
+                    ],
+                  ),
+                  loading: () => const SizedBox.shrink(),
+                  error: (_, __) => const SizedBox.shrink(),
                 ),
               ],
             ),
@@ -254,190 +253,184 @@ class _DetalleViewState extends ConsumerState<_DetalleView>
   }
 }
 
-class _IconoMedicamento extends StatelessWidget {
-  final double size;
+// ── Widgets de sección ────────────────────────────────────────────────────────
 
-  const _IconoMedicamento({required this.size});
+class _InfoRow extends StatelessWidget {
+  final String label;
+  final String valor;
+  const _InfoRow(this.label, this.valor);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        color: theme.colorScheme.primaryContainer,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Icon(
-        Icons.medication_rounded,
-        size: size * 0.6,
-        color: theme.colorScheme.primary,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label,
+              style: theme.textTheme.labelSmall
+                  ?.copyWith(color: AppTheme.muted, letterSpacing: 0.3)),
+          const SizedBox(height: 3),
+          Text(valor, style: theme.textTheme.bodyMedium),
+        ],
       ),
     );
   }
 }
 
-class _TabDosis extends StatelessWidget {
-  final MedicamentosTableData med;
-
-  const _TabDosis({required this.med});
+class _InfoBloque extends StatelessWidget {
+  final String label;
+  final String texto;
+  const _InfoBloque(this.label, this.texto);
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(16),
+    final theme = Theme.of(context);
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(24, 16, 24, 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label,
+              style: GoogleFonts.lora(fontSize: 16, color: AppTheme.ink)),
+          const SizedBox(height: 8),
+          Text(texto,
+              style: theme.textTheme.bodyMedium?.copyWith(height: 1.6)),
+        ],
+      ),
+    );
+  }
+}
+
+class _FilaDosis extends StatelessWidget {
+  final String grupo;
+  final String? dosis;
+  const _FilaDosis(this.grupo, this.dosis);
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(grupo,
+              style: theme.textTheme.labelMedium?.copyWith(color: AppTheme.muted)),
+          const SizedBox(height: 4),
+          Text(
+            dosis ?? 'Sin información registrada',
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: dosis == null ? AppTheme.border : AppTheme.ink,
+              fontStyle: dosis == null ? FontStyle.italic : FontStyle.normal,
+              height: 1.6,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _FilaGrupo extends StatelessWidget {
+  final MedicamentoGruposTableData grupo;
+  const _FilaGrupo(this.grupo);
+
+  static const _labels = {
+    'adulto': 'Adultos',
+    'adulto_mayor': 'Adultos mayores',
+    'nino': 'Niños',
+    'lactante': 'Lactantes',
+  };
+
+  static const _estadoConfig = {
+    'aplicable': (AppTheme.verde, 'Aplicable según la ficha registrada.'),
+    'no_aplicable': (AppTheme.colorError, 'No aplicable a este grupo.'),
+    'no_evaluado': (AppTheme.colorWarn, 'Sin evaluación registrada.'),
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final label = _labels[grupo.grupo] ?? grupo.grupo;
+    final (color, texto) = _estadoConfig[grupo.estado] ??
+        (AppTheme.muted, grupo.estado);
+
+    return Column(
       children: [
-        _DosisCard(
-          titulo: 'Adultos',
-          dosis: med.dosisAdulto,
-          icono: Icons.person_rounded,
-          color: Colors.blue,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 100,
+                child: Text(label,
+                    style: theme.textTheme.labelMedium
+                        ?.copyWith(color: AppTheme.muted)),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(texto,
+                        style: GoogleFonts.inter(
+                            fontSize: 13,
+                            color: color,
+                            fontWeight: FontWeight.w600)),
+                    if (grupo.observacion != null &&
+                        grupo.observacion!.isNotEmpty) ...[
+                      const SizedBox(height: 4),
+                      Text(grupo.observacion!,
+                          style: theme.textTheme.bodySmall),
+                    ],
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
-        const SizedBox(height: 12),
-        _DosisCard(
-          titulo: 'Adultos mayores',
-          dosis: med.dosisMayor,
-          icono: Icons.elderly_rounded,
-          color: Colors.purple,
-        ),
-        const SizedBox(height: 12),
-        _DosisCard(
-          titulo: 'Niños',
-          dosis: med.dosisNino,
-          icono: Icons.child_care_rounded,
-          color: Colors.green,
-        ),
+        const Divider(height: 1, indent: 24),
       ],
     );
   }
 }
 
-class _DosisCard extends StatelessWidget {
-  final String titulo;
-  final String? dosis;
-  final IconData icono;
-  final Color color;
+// ── Foto reutilizable ─────────────────────────────────────────────────────────
 
-  const _DosisCard({
-    required this.titulo,
-    required this.dosis,
-    required this.icono,
-    required this.color,
-  });
+class FotoMedicamento extends StatelessWidget {
+  final String? url;
+  final double size;
+  const FotoMedicamento({super.key, this.url, this.size = 48});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Icon(icono, color: color, size: 24),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    titulo,
-                    style: theme.textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: color,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    dosis ?? 'No especificada',
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      color: dosis == null
-                          ? theme.colorScheme.onSurfaceVariant
-                          : null,
-                      fontStyle:
-                          dosis == null ? FontStyle.italic : FontStyle.normal,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _TabLista extends StatelessWidget {
-  final List<String> items;
-  final IconData icono;
-  final Color color;
-  final String emptyText;
-
-  const _TabLista({
-    required this.items,
-    required this.icono,
-    required this.color,
-    required this.emptyText,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    if (items.isEmpty) {
-      return Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.check_circle_outline_rounded,
-                size: 48, color: Colors.green),
-            const SizedBox(height: 8),
-            Text(
-              emptyText,
-              style: theme.textTheme.bodyLarge?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
-            ),
-          ],
+    if (url != null && url!.isNotEmpty) {
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(2),
+        child: Image.network(
+          url!,
+          width: size,
+          height: size,
+          fit: BoxFit.contain,
+          errorBuilder: (_, __, ___) => _placeholder(),
         ),
       );
     }
-
-    return ListView.separated(
-      padding: const EdgeInsets.all(16),
-      itemCount: items.length,
-      separatorBuilder: (_, __) => const SizedBox(height: 8),
-      itemBuilder: (context, index) {
-        return Container(
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            color: color.withOpacity(0.08),
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: color.withOpacity(0.25)),
-          ),
-          child: Row(
-            children: [
-              Icon(icono, color: color, size: 20),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Text(
-                  items[index],
-                  style: theme.textTheme.bodyMedium,
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
+    return _placeholder();
   }
+
+  Widget _placeholder() => Container(
+        width: size,
+        height: size,
+        decoration: BoxDecoration(
+          color: AppTheme.surface,
+          borderRadius: BorderRadius.circular(2),
+          border: Border.all(color: AppTheme.border),
+        ),
+        child: Icon(Icons.medication_outlined,
+            size: size * 0.4, color: AppTheme.muted),
+      );
 }

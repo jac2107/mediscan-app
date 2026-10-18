@@ -14,52 +14,101 @@ class $MedicamentosTableTable extends MedicamentosTable
   late final GeneratedColumn<String> id = GeneratedColumn<String>(
       'id', aliasedName, false,
       type: DriftSqlType.string, requiredDuringInsert: true);
-  static const VerificationMeta _codigoBarrasMeta =
-      const VerificationMeta('codigoBarras');
+  static const VerificationMeta _codigoInternoMeta =
+      const VerificationMeta('codigoInterno');
   @override
-  late final GeneratedColumn<String> codigoBarras = GeneratedColumn<String>(
-      'codigo_barras', aliasedName, false,
-      type: DriftSqlType.string, requiredDuringInsert: true);
-  static const VerificationMeta _nombreMeta = const VerificationMeta('nombre');
+  late final GeneratedColumn<String> codigoInterno = GeneratedColumn<String>(
+      'codigo_interno', aliasedName, false,
+      type: DriftSqlType.string,
+      requiredDuringInsert: true,
+      defaultConstraints: GeneratedColumn.constraintIsAlways('UNIQUE'));
+  static const VerificationMeta _nombreComercialMeta =
+      const VerificationMeta('nombreComercial');
   @override
-  late final GeneratedColumn<String> nombre = GeneratedColumn<String>(
-      'nombre', aliasedName, false,
+  late final GeneratedColumn<String> nombreComercial = GeneratedColumn<String>(
+      'nombre_comercial', aliasedName, false,
       type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _nombreGenericoMeta =
+      const VerificationMeta('nombreGenerico');
+  @override
+  late final GeneratedColumn<String> nombreGenerico = GeneratedColumn<String>(
+      'nombre_generico', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _categoriaMeta =
+      const VerificationMeta('categoria');
+  @override
+  late final GeneratedColumn<String> categoria = GeneratedColumn<String>(
+      'categoria', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _laboratoriosMeta =
+      const VerificationMeta('laboratorios');
+  @override
+  late final GeneratedColumn<String> laboratorios = GeneratedColumn<String>(
+      'laboratorios', aliasedName, false,
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant('[]'));
   static const VerificationMeta _descripcionMeta =
       const VerificationMeta('descripcion');
   @override
   late final GeneratedColumn<String> descripcion = GeneratedColumn<String>(
       'descripcion', aliasedName, true,
       type: DriftSqlType.string, requiredDuringInsert: false);
-  static const VerificationMeta _fotoUrlMeta =
-      const VerificationMeta('fotoUrl');
+  static const VerificationMeta _principiosActivosMeta =
+      const VerificationMeta('principiosActivos');
   @override
-  late final GeneratedColumn<String> fotoUrl = GeneratedColumn<String>(
-      'foto_url', aliasedName, true,
+  late final GeneratedColumn<String> principiosActivos =
+      GeneratedColumn<String>('principios_activos', aliasedName, false,
+          type: DriftSqlType.string,
+          requiredDuringInsert: false,
+          defaultValue: const Constant('[]'));
+  static const VerificationMeta _composicionCompletaMeta =
+      const VerificationMeta('composicionCompleta');
+  @override
+  late final GeneratedColumn<String> composicionCompleta =
+      GeneratedColumn<String>('composicion_completa', aliasedName, true,
+          type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _concentracionesMeta =
+      const VerificationMeta('concentraciones');
+  @override
+  late final GeneratedColumn<String> concentraciones = GeneratedColumn<String>(
+      'concentraciones', aliasedName, false,
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant('[]'));
+  static const VerificationMeta _formasFarmaceuticasMeta =
+      const VerificationMeta('formasFarmaceuticas');
+  @override
+  late final GeneratedColumn<String> formasFarmaceuticas =
+      GeneratedColumn<String>('formas_farmaceuticas', aliasedName, false,
+          type: DriftSqlType.string,
+          requiredDuringInsert: false,
+          defaultValue: const Constant('[]'));
+  static const VerificationMeta _presentacionMeta =
+      const VerificationMeta('presentacion');
+  @override
+  late final GeneratedColumn<String> presentacion = GeneratedColumn<String>(
+      'presentacion', aliasedName, true,
       type: DriftSqlType.string, requiredDuringInsert: false);
-  static const VerificationMeta _dosisAdultoMeta =
-      const VerificationMeta('dosisAdulto');
+  static const VerificationMeta _viasAdministracionMeta =
+      const VerificationMeta('viasAdministracion');
   @override
-  late final GeneratedColumn<String> dosisAdulto = GeneratedColumn<String>(
-      'dosis_adulto', aliasedName, true,
-      type: DriftSqlType.string, requiredDuringInsert: false);
-  static const VerificationMeta _dosisMayorMeta =
-      const VerificationMeta('dosisMayor');
+  late final GeneratedColumn<String> viasAdministracion =
+      GeneratedColumn<String>('vias_administracion', aliasedName, false,
+          type: DriftSqlType.string,
+          requiredDuringInsert: false,
+          defaultValue: const Constant('[]'));
+  static const VerificationMeta _indicacionesTextoMeta =
+      const VerificationMeta('indicacionesTexto');
   @override
-  late final GeneratedColumn<String> dosisMayor = GeneratedColumn<String>(
-      'dosis_mayor', aliasedName, true,
-      type: DriftSqlType.string, requiredDuringInsert: false);
-  static const VerificationMeta _dosisNinoMeta =
-      const VerificationMeta('dosisNino');
+  late final GeneratedColumn<String> indicacionesTexto =
+      GeneratedColumn<String>('indicaciones_texto', aliasedName, true,
+          type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _indicacionesTagsMeta =
+      const VerificationMeta('indicacionesTags');
   @override
-  late final GeneratedColumn<String> dosisNino = GeneratedColumn<String>(
-      'dosis_nino', aliasedName, true,
-      type: DriftSqlType.string, requiredDuringInsert: false);
-  static const VerificationMeta _alergiasMeta =
-      const VerificationMeta('alergias');
-  @override
-  late final GeneratedColumn<String> alergias = GeneratedColumn<String>(
-      'alergias', aliasedName, false,
+  late final GeneratedColumn<String> indicacionesTags = GeneratedColumn<String>(
+      'indicaciones_tags', aliasedName, false,
       type: DriftSqlType.string,
       requiredDuringInsert: false,
       defaultValue: const Constant('[]'));
@@ -67,34 +116,62 @@ class $MedicamentosTableTable extends MedicamentosTable
       const VerificationMeta('contraindicaciones');
   @override
   late final GeneratedColumn<String> contraindicaciones =
-      GeneratedColumn<String>('contraindicaciones', aliasedName, false,
-          type: DriftSqlType.string,
-          requiredDuringInsert: false,
-          defaultValue: const Constant('[]'));
-  static const VerificationMeta _enfermedadesIncompatiblesMeta =
-      const VerificationMeta('enfermedadesIncompatibles');
+      GeneratedColumn<String>('contraindicaciones', aliasedName, true,
+          type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _precaucionesAdvertenciasMeta =
+      const VerificationMeta('precaucionesAdvertencias');
   @override
-  late final GeneratedColumn<String> enfermedadesIncompatibles =
-      GeneratedColumn<String>('enfermedades_incompatibles', aliasedName, false,
-          type: DriftSqlType.string,
-          requiredDuringInsert: false,
-          defaultValue: const Constant('[]'));
+  late final GeneratedColumn<String> precaucionesAdvertencias =
+      GeneratedColumn<String>('precauciones_advertencias', aliasedName, true,
+          type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _efectosAdversosMeta =
+      const VerificationMeta('efectosAdversos');
+  @override
+  late final GeneratedColumn<String> efectosAdversos = GeneratedColumn<String>(
+      'efectos_adversos', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _dosisAdultosMeta =
+      const VerificationMeta('dosisAdultos');
+  @override
+  late final GeneratedColumn<String> dosisAdultos = GeneratedColumn<String>(
+      'dosis_adultos', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _dosisAdultosMayoresMeta =
+      const VerificationMeta('dosisAdultosMayores');
+  @override
+  late final GeneratedColumn<String> dosisAdultosMayores =
+      GeneratedColumn<String>('dosis_adultos_mayores', aliasedName, true,
+          type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _dosisPediatricaMeta =
+      const VerificationMeta('dosisPediatrica');
+  @override
+  late final GeneratedColumn<String> dosisPediatrica = GeneratedColumn<String>(
+      'dosis_pediatrica', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _dosisLactantesMeta =
+      const VerificationMeta('dosisLactantes');
+  @override
+  late final GeneratedColumn<String> dosisLactantes = GeneratedColumn<String>(
+      'dosis_lactantes', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _fotoUrlMeta =
+      const VerificationMeta('fotoUrl');
+  @override
+  late final GeneratedColumn<String> fotoUrl = GeneratedColumn<String>(
+      'foto_url', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _fechaRevisionMeta =
+      const VerificationMeta('fechaRevision');
+  @override
+  late final GeneratedColumn<String> fechaRevision = GeneratedColumn<String>(
+      'fecha_revision', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
   static const VerificationMeta _actualizadoEnMeta =
       const VerificationMeta('actualizadoEn');
   @override
-  late final GeneratedColumn<DateTime> actualizadoEn =
-      GeneratedColumn<DateTime>('actualizado_en', aliasedName, false,
-          type: DriftSqlType.dateTime, requiredDuringInsert: true);
-  static const VerificationMeta _eliminadoMeta =
-      const VerificationMeta('eliminado');
-  @override
-  late final GeneratedColumn<bool> eliminado = GeneratedColumn<bool>(
-      'eliminado', aliasedName, false,
-      type: DriftSqlType.bool,
-      requiredDuringInsert: false,
-      defaultConstraints:
-          GeneratedColumn.constraintIsAlways('CHECK ("eliminado" IN (0, 1))'),
-      defaultValue: const Constant(false));
+  late final GeneratedColumn<String> actualizadoEn = GeneratedColumn<String>(
+      'actualizado_en', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
   static const VerificationMeta _esFavoritoMeta =
       const VerificationMeta('esFavorito');
   @override
@@ -105,39 +182,40 @@ class $MedicamentosTableTable extends MedicamentosTable
       defaultConstraints:
           GeneratedColumn.constraintIsAlways('CHECK ("es_favorito" IN (0, 1))'),
       defaultValue: const Constant(false));
-  static const VerificationMeta _sincronizadoMeta =
-      const VerificationMeta('sincronizado');
-  @override
-  late final GeneratedColumn<bool> sincronizado = GeneratedColumn<bool>(
-      'sincronizado', aliasedName, false,
-      type: DriftSqlType.bool,
-      requiredDuringInsert: false,
-      defaultConstraints: GeneratedColumn.constraintIsAlways(
-          'CHECK ("sincronizado" IN (0, 1))'),
-      defaultValue: const Constant(false));
   @override
   List<GeneratedColumn> get $columns => [
         id,
-        codigoBarras,
-        nombre,
+        codigoInterno,
+        nombreComercial,
+        nombreGenerico,
+        categoria,
+        laboratorios,
         descripcion,
-        fotoUrl,
-        dosisAdulto,
-        dosisMayor,
-        dosisNino,
-        alergias,
+        principiosActivos,
+        composicionCompleta,
+        concentraciones,
+        formasFarmaceuticas,
+        presentacion,
+        viasAdministracion,
+        indicacionesTexto,
+        indicacionesTags,
         contraindicaciones,
-        enfermedadesIncompatibles,
+        precaucionesAdvertencias,
+        efectosAdversos,
+        dosisAdultos,
+        dosisAdultosMayores,
+        dosisPediatrica,
+        dosisLactantes,
+        fotoUrl,
+        fechaRevision,
         actualizadoEn,
-        eliminado,
-        esFavorito,
-        sincronizado
+        esFavorito
       ];
   @override
   String get aliasedName => _alias ?? actualTableName;
   @override
   String get actualTableName => $name;
-  static const String $name = 'medicamentos_table';
+  static const String $name = 'medicamentos';
   @override
   VerificationContext validateIntegrity(
       Insertable<MedicamentosTableData> instance,
@@ -149,19 +227,37 @@ class $MedicamentosTableTable extends MedicamentosTable
     } else if (isInserting) {
       context.missing(_idMeta);
     }
-    if (data.containsKey('codigo_barras')) {
+    if (data.containsKey('codigo_interno')) {
       context.handle(
-          _codigoBarrasMeta,
-          codigoBarras.isAcceptableOrUnknown(
-              data['codigo_barras']!, _codigoBarrasMeta));
+          _codigoInternoMeta,
+          codigoInterno.isAcceptableOrUnknown(
+              data['codigo_interno']!, _codigoInternoMeta));
     } else if (isInserting) {
-      context.missing(_codigoBarrasMeta);
+      context.missing(_codigoInternoMeta);
     }
-    if (data.containsKey('nombre')) {
-      context.handle(_nombreMeta,
-          nombre.isAcceptableOrUnknown(data['nombre']!, _nombreMeta));
+    if (data.containsKey('nombre_comercial')) {
+      context.handle(
+          _nombreComercialMeta,
+          nombreComercial.isAcceptableOrUnknown(
+              data['nombre_comercial']!, _nombreComercialMeta));
     } else if (isInserting) {
-      context.missing(_nombreMeta);
+      context.missing(_nombreComercialMeta);
+    }
+    if (data.containsKey('nombre_generico')) {
+      context.handle(
+          _nombreGenericoMeta,
+          nombreGenerico.isAcceptableOrUnknown(
+              data['nombre_generico']!, _nombreGenericoMeta));
+    }
+    if (data.containsKey('categoria')) {
+      context.handle(_categoriaMeta,
+          categoria.isAcceptableOrUnknown(data['categoria']!, _categoriaMeta));
+    }
+    if (data.containsKey('laboratorios')) {
+      context.handle(
+          _laboratoriosMeta,
+          laboratorios.isAcceptableOrUnknown(
+              data['laboratorios']!, _laboratoriosMeta));
     }
     if (data.containsKey('descripcion')) {
       context.handle(
@@ -169,29 +265,53 @@ class $MedicamentosTableTable extends MedicamentosTable
           descripcion.isAcceptableOrUnknown(
               data['descripcion']!, _descripcionMeta));
     }
-    if (data.containsKey('foto_url')) {
-      context.handle(_fotoUrlMeta,
-          fotoUrl.isAcceptableOrUnknown(data['foto_url']!, _fotoUrlMeta));
-    }
-    if (data.containsKey('dosis_adulto')) {
+    if (data.containsKey('principios_activos')) {
       context.handle(
-          _dosisAdultoMeta,
-          dosisAdulto.isAcceptableOrUnknown(
-              data['dosis_adulto']!, _dosisAdultoMeta));
+          _principiosActivosMeta,
+          principiosActivos.isAcceptableOrUnknown(
+              data['principios_activos']!, _principiosActivosMeta));
     }
-    if (data.containsKey('dosis_mayor')) {
+    if (data.containsKey('composicion_completa')) {
       context.handle(
-          _dosisMayorMeta,
-          dosisMayor.isAcceptableOrUnknown(
-              data['dosis_mayor']!, _dosisMayorMeta));
+          _composicionCompletaMeta,
+          composicionCompleta.isAcceptableOrUnknown(
+              data['composicion_completa']!, _composicionCompletaMeta));
     }
-    if (data.containsKey('dosis_nino')) {
-      context.handle(_dosisNinoMeta,
-          dosisNino.isAcceptableOrUnknown(data['dosis_nino']!, _dosisNinoMeta));
+    if (data.containsKey('concentraciones')) {
+      context.handle(
+          _concentracionesMeta,
+          concentraciones.isAcceptableOrUnknown(
+              data['concentraciones']!, _concentracionesMeta));
     }
-    if (data.containsKey('alergias')) {
-      context.handle(_alergiasMeta,
-          alergias.isAcceptableOrUnknown(data['alergias']!, _alergiasMeta));
+    if (data.containsKey('formas_farmaceuticas')) {
+      context.handle(
+          _formasFarmaceuticasMeta,
+          formasFarmaceuticas.isAcceptableOrUnknown(
+              data['formas_farmaceuticas']!, _formasFarmaceuticasMeta));
+    }
+    if (data.containsKey('presentacion')) {
+      context.handle(
+          _presentacionMeta,
+          presentacion.isAcceptableOrUnknown(
+              data['presentacion']!, _presentacionMeta));
+    }
+    if (data.containsKey('vias_administracion')) {
+      context.handle(
+          _viasAdministracionMeta,
+          viasAdministracion.isAcceptableOrUnknown(
+              data['vias_administracion']!, _viasAdministracionMeta));
+    }
+    if (data.containsKey('indicaciones_texto')) {
+      context.handle(
+          _indicacionesTextoMeta,
+          indicacionesTexto.isAcceptableOrUnknown(
+              data['indicaciones_texto']!, _indicacionesTextoMeta));
+    }
+    if (data.containsKey('indicaciones_tags')) {
+      context.handle(
+          _indicacionesTagsMeta,
+          indicacionesTags.isAcceptableOrUnknown(
+              data['indicaciones_tags']!, _indicacionesTagsMeta));
     }
     if (data.containsKey('contraindicaciones')) {
       context.handle(
@@ -199,36 +319,64 @@ class $MedicamentosTableTable extends MedicamentosTable
           contraindicaciones.isAcceptableOrUnknown(
               data['contraindicaciones']!, _contraindicacionesMeta));
     }
-    if (data.containsKey('enfermedades_incompatibles')) {
+    if (data.containsKey('precauciones_advertencias')) {
       context.handle(
-          _enfermedadesIncompatiblesMeta,
-          enfermedadesIncompatibles.isAcceptableOrUnknown(
-              data['enfermedades_incompatibles']!,
-              _enfermedadesIncompatiblesMeta));
+          _precaucionesAdvertenciasMeta,
+          precaucionesAdvertencias.isAcceptableOrUnknown(
+              data['precauciones_advertencias']!,
+              _precaucionesAdvertenciasMeta));
+    }
+    if (data.containsKey('efectos_adversos')) {
+      context.handle(
+          _efectosAdversosMeta,
+          efectosAdversos.isAcceptableOrUnknown(
+              data['efectos_adversos']!, _efectosAdversosMeta));
+    }
+    if (data.containsKey('dosis_adultos')) {
+      context.handle(
+          _dosisAdultosMeta,
+          dosisAdultos.isAcceptableOrUnknown(
+              data['dosis_adultos']!, _dosisAdultosMeta));
+    }
+    if (data.containsKey('dosis_adultos_mayores')) {
+      context.handle(
+          _dosisAdultosMayoresMeta,
+          dosisAdultosMayores.isAcceptableOrUnknown(
+              data['dosis_adultos_mayores']!, _dosisAdultosMayoresMeta));
+    }
+    if (data.containsKey('dosis_pediatrica')) {
+      context.handle(
+          _dosisPediatricaMeta,
+          dosisPediatrica.isAcceptableOrUnknown(
+              data['dosis_pediatrica']!, _dosisPediatricaMeta));
+    }
+    if (data.containsKey('dosis_lactantes')) {
+      context.handle(
+          _dosisLactantesMeta,
+          dosisLactantes.isAcceptableOrUnknown(
+              data['dosis_lactantes']!, _dosisLactantesMeta));
+    }
+    if (data.containsKey('foto_url')) {
+      context.handle(_fotoUrlMeta,
+          fotoUrl.isAcceptableOrUnknown(data['foto_url']!, _fotoUrlMeta));
+    }
+    if (data.containsKey('fecha_revision')) {
+      context.handle(
+          _fechaRevisionMeta,
+          fechaRevision.isAcceptableOrUnknown(
+              data['fecha_revision']!, _fechaRevisionMeta));
     }
     if (data.containsKey('actualizado_en')) {
       context.handle(
           _actualizadoEnMeta,
           actualizadoEn.isAcceptableOrUnknown(
               data['actualizado_en']!, _actualizadoEnMeta));
-    } else if (isInserting) {
-      context.missing(_actualizadoEnMeta);
-    }
-    if (data.containsKey('eliminado')) {
-      context.handle(_eliminadoMeta,
-          eliminado.isAcceptableOrUnknown(data['eliminado']!, _eliminadoMeta));
     }
     if (data.containsKey('es_favorito')) {
       context.handle(
           _esFavoritoMeta,
           esFavorito.isAcceptableOrUnknown(
               data['es_favorito']!, _esFavoritoMeta));
-    }
-    if (data.containsKey('sincronizado')) {
-      context.handle(
-          _sincronizadoMeta,
-          sincronizado.isAcceptableOrUnknown(
-              data['sincronizado']!, _sincronizadoMeta));
     }
     return context;
   }
@@ -241,35 +389,57 @@ class $MedicamentosTableTable extends MedicamentosTable
     return MedicamentosTableData(
       id: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
-      codigoBarras: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}codigo_barras'])!,
-      nombre: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}nombre'])!,
+      codigoInterno: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}codigo_interno'])!,
+      nombreComercial: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}nombre_comercial'])!,
+      nombreGenerico: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}nombre_generico']),
+      categoria: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}categoria']),
+      laboratorios: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}laboratorios'])!,
       descripcion: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}descripcion']),
+      principiosActivos: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}principios_activos'])!,
+      composicionCompleta: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}composicion_completa']),
+      concentraciones: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}concentraciones'])!,
+      formasFarmaceuticas: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}formas_farmaceuticas'])!,
+      presentacion: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}presentacion']),
+      viasAdministracion: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}vias_administracion'])!,
+      indicacionesTexto: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}indicaciones_texto']),
+      indicacionesTags: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}indicaciones_tags'])!,
+      contraindicaciones: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}contraindicaciones']),
+      precaucionesAdvertencias: attachedDatabase.typeMapping.read(
+          DriftSqlType.string,
+          data['${effectivePrefix}precauciones_advertencias']),
+      efectosAdversos: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}efectos_adversos']),
+      dosisAdultos: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}dosis_adultos']),
+      dosisAdultosMayores: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}dosis_adultos_mayores']),
+      dosisPediatrica: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}dosis_pediatrica']),
+      dosisLactantes: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}dosis_lactantes']),
       fotoUrl: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}foto_url']),
-      dosisAdulto: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}dosis_adulto']),
-      dosisMayor: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}dosis_mayor']),
-      dosisNino: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}dosis_nino']),
-      alergias: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}alergias'])!,
-      contraindicaciones: attachedDatabase.typeMapping.read(
-          DriftSqlType.string, data['${effectivePrefix}contraindicaciones'])!,
-      enfermedadesIncompatibles: attachedDatabase.typeMapping.read(
-          DriftSqlType.string,
-          data['${effectivePrefix}enfermedades_incompatibles'])!,
-      actualizadoEn: attachedDatabase.typeMapping.read(
-          DriftSqlType.dateTime, data['${effectivePrefix}actualizado_en'])!,
-      eliminado: attachedDatabase.typeMapping
-          .read(DriftSqlType.bool, data['${effectivePrefix}eliminado'])!,
+      fechaRevision: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}fecha_revision']),
+      actualizadoEn: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}actualizado_en']),
       esFavorito: attachedDatabase.typeMapping
           .read(DriftSqlType.bool, data['${effectivePrefix}es_favorito'])!,
-      sincronizado: attachedDatabase.typeMapping
-          .read(DriftSqlType.bool, data['${effectivePrefix}sincronizado'])!,
     );
   }
 
@@ -282,95 +452,183 @@ class $MedicamentosTableTable extends MedicamentosTable
 class MedicamentosTableData extends DataClass
     implements Insertable<MedicamentosTableData> {
   final String id;
-  final String codigoBarras;
-  final String nombre;
+  final String codigoInterno;
+  final String nombreComercial;
+  final String? nombreGenerico;
+  final String? categoria;
+  final String laboratorios;
   final String? descripcion;
+  final String principiosActivos;
+  final String? composicionCompleta;
+  final String concentraciones;
+  final String formasFarmaceuticas;
+  final String? presentacion;
+  final String viasAdministracion;
+  final String? indicacionesTexto;
+  final String indicacionesTags;
+  final String? contraindicaciones;
+  final String? precaucionesAdvertencias;
+  final String? efectosAdversos;
+  final String? dosisAdultos;
+  final String? dosisAdultosMayores;
+  final String? dosisPediatrica;
+  final String? dosisLactantes;
   final String? fotoUrl;
-  final String? dosisAdulto;
-  final String? dosisMayor;
-  final String? dosisNino;
-  final String alergias;
-  final String contraindicaciones;
-  final String enfermedadesIncompatibles;
-  final DateTime actualizadoEn;
-  final bool eliminado;
+  final String? fechaRevision;
+  final String? actualizadoEn;
   final bool esFavorito;
-  final bool sincronizado;
   const MedicamentosTableData(
       {required this.id,
-      required this.codigoBarras,
-      required this.nombre,
+      required this.codigoInterno,
+      required this.nombreComercial,
+      this.nombreGenerico,
+      this.categoria,
+      required this.laboratorios,
       this.descripcion,
+      required this.principiosActivos,
+      this.composicionCompleta,
+      required this.concentraciones,
+      required this.formasFarmaceuticas,
+      this.presentacion,
+      required this.viasAdministracion,
+      this.indicacionesTexto,
+      required this.indicacionesTags,
+      this.contraindicaciones,
+      this.precaucionesAdvertencias,
+      this.efectosAdversos,
+      this.dosisAdultos,
+      this.dosisAdultosMayores,
+      this.dosisPediatrica,
+      this.dosisLactantes,
       this.fotoUrl,
-      this.dosisAdulto,
-      this.dosisMayor,
-      this.dosisNino,
-      required this.alergias,
-      required this.contraindicaciones,
-      required this.enfermedadesIncompatibles,
-      required this.actualizadoEn,
-      required this.eliminado,
-      required this.esFavorito,
-      required this.sincronizado});
+      this.fechaRevision,
+      this.actualizadoEn,
+      required this.esFavorito});
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
     map['id'] = Variable<String>(id);
-    map['codigo_barras'] = Variable<String>(codigoBarras);
-    map['nombre'] = Variable<String>(nombre);
+    map['codigo_interno'] = Variable<String>(codigoInterno);
+    map['nombre_comercial'] = Variable<String>(nombreComercial);
+    if (!nullToAbsent || nombreGenerico != null) {
+      map['nombre_generico'] = Variable<String>(nombreGenerico);
+    }
+    if (!nullToAbsent || categoria != null) {
+      map['categoria'] = Variable<String>(categoria);
+    }
+    map['laboratorios'] = Variable<String>(laboratorios);
     if (!nullToAbsent || descripcion != null) {
       map['descripcion'] = Variable<String>(descripcion);
+    }
+    map['principios_activos'] = Variable<String>(principiosActivos);
+    if (!nullToAbsent || composicionCompleta != null) {
+      map['composicion_completa'] = Variable<String>(composicionCompleta);
+    }
+    map['concentraciones'] = Variable<String>(concentraciones);
+    map['formas_farmaceuticas'] = Variable<String>(formasFarmaceuticas);
+    if (!nullToAbsent || presentacion != null) {
+      map['presentacion'] = Variable<String>(presentacion);
+    }
+    map['vias_administracion'] = Variable<String>(viasAdministracion);
+    if (!nullToAbsent || indicacionesTexto != null) {
+      map['indicaciones_texto'] = Variable<String>(indicacionesTexto);
+    }
+    map['indicaciones_tags'] = Variable<String>(indicacionesTags);
+    if (!nullToAbsent || contraindicaciones != null) {
+      map['contraindicaciones'] = Variable<String>(contraindicaciones);
+    }
+    if (!nullToAbsent || precaucionesAdvertencias != null) {
+      map['precauciones_advertencias'] =
+          Variable<String>(precaucionesAdvertencias);
+    }
+    if (!nullToAbsent || efectosAdversos != null) {
+      map['efectos_adversos'] = Variable<String>(efectosAdversos);
+    }
+    if (!nullToAbsent || dosisAdultos != null) {
+      map['dosis_adultos'] = Variable<String>(dosisAdultos);
+    }
+    if (!nullToAbsent || dosisAdultosMayores != null) {
+      map['dosis_adultos_mayores'] = Variable<String>(dosisAdultosMayores);
+    }
+    if (!nullToAbsent || dosisPediatrica != null) {
+      map['dosis_pediatrica'] = Variable<String>(dosisPediatrica);
+    }
+    if (!nullToAbsent || dosisLactantes != null) {
+      map['dosis_lactantes'] = Variable<String>(dosisLactantes);
     }
     if (!nullToAbsent || fotoUrl != null) {
       map['foto_url'] = Variable<String>(fotoUrl);
     }
-    if (!nullToAbsent || dosisAdulto != null) {
-      map['dosis_adulto'] = Variable<String>(dosisAdulto);
+    if (!nullToAbsent || fechaRevision != null) {
+      map['fecha_revision'] = Variable<String>(fechaRevision);
     }
-    if (!nullToAbsent || dosisMayor != null) {
-      map['dosis_mayor'] = Variable<String>(dosisMayor);
+    if (!nullToAbsent || actualizadoEn != null) {
+      map['actualizado_en'] = Variable<String>(actualizadoEn);
     }
-    if (!nullToAbsent || dosisNino != null) {
-      map['dosis_nino'] = Variable<String>(dosisNino);
-    }
-    map['alergias'] = Variable<String>(alergias);
-    map['contraindicaciones'] = Variable<String>(contraindicaciones);
-    map['enfermedades_incompatibles'] =
-        Variable<String>(enfermedadesIncompatibles);
-    map['actualizado_en'] = Variable<DateTime>(actualizadoEn);
-    map['eliminado'] = Variable<bool>(eliminado);
     map['es_favorito'] = Variable<bool>(esFavorito);
-    map['sincronizado'] = Variable<bool>(sincronizado);
     return map;
   }
 
   MedicamentosTableCompanion toCompanion(bool nullToAbsent) {
     return MedicamentosTableCompanion(
       id: Value(id),
-      codigoBarras: Value(codigoBarras),
-      nombre: Value(nombre),
+      codigoInterno: Value(codigoInterno),
+      nombreComercial: Value(nombreComercial),
+      nombreGenerico: nombreGenerico == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nombreGenerico),
+      categoria: categoria == null && nullToAbsent
+          ? const Value.absent()
+          : Value(categoria),
+      laboratorios: Value(laboratorios),
       descripcion: descripcion == null && nullToAbsent
           ? const Value.absent()
           : Value(descripcion),
+      principiosActivos: Value(principiosActivos),
+      composicionCompleta: composicionCompleta == null && nullToAbsent
+          ? const Value.absent()
+          : Value(composicionCompleta),
+      concentraciones: Value(concentraciones),
+      formasFarmaceuticas: Value(formasFarmaceuticas),
+      presentacion: presentacion == null && nullToAbsent
+          ? const Value.absent()
+          : Value(presentacion),
+      viasAdministracion: Value(viasAdministracion),
+      indicacionesTexto: indicacionesTexto == null && nullToAbsent
+          ? const Value.absent()
+          : Value(indicacionesTexto),
+      indicacionesTags: Value(indicacionesTags),
+      contraindicaciones: contraindicaciones == null && nullToAbsent
+          ? const Value.absent()
+          : Value(contraindicaciones),
+      precaucionesAdvertencias: precaucionesAdvertencias == null && nullToAbsent
+          ? const Value.absent()
+          : Value(precaucionesAdvertencias),
+      efectosAdversos: efectosAdversos == null && nullToAbsent
+          ? const Value.absent()
+          : Value(efectosAdversos),
+      dosisAdultos: dosisAdultos == null && nullToAbsent
+          ? const Value.absent()
+          : Value(dosisAdultos),
+      dosisAdultosMayores: dosisAdultosMayores == null && nullToAbsent
+          ? const Value.absent()
+          : Value(dosisAdultosMayores),
+      dosisPediatrica: dosisPediatrica == null && nullToAbsent
+          ? const Value.absent()
+          : Value(dosisPediatrica),
+      dosisLactantes: dosisLactantes == null && nullToAbsent
+          ? const Value.absent()
+          : Value(dosisLactantes),
       fotoUrl: fotoUrl == null && nullToAbsent
           ? const Value.absent()
           : Value(fotoUrl),
-      dosisAdulto: dosisAdulto == null && nullToAbsent
+      fechaRevision: fechaRevision == null && nullToAbsent
           ? const Value.absent()
-          : Value(dosisAdulto),
-      dosisMayor: dosisMayor == null && nullToAbsent
+          : Value(fechaRevision),
+      actualizadoEn: actualizadoEn == null && nullToAbsent
           ? const Value.absent()
-          : Value(dosisMayor),
-      dosisNino: dosisNino == null && nullToAbsent
-          ? const Value.absent()
-          : Value(dosisNino),
-      alergias: Value(alergias),
-      contraindicaciones: Value(contraindicaciones),
-      enfermedadesIncompatibles: Value(enfermedadesIncompatibles),
-      actualizadoEn: Value(actualizadoEn),
-      eliminado: Value(eliminado),
+          : Value(actualizadoEn),
       esFavorito: Value(esFavorito),
-      sincronizado: Value(sincronizado),
     );
   }
 
@@ -379,22 +637,38 @@ class MedicamentosTableData extends DataClass
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return MedicamentosTableData(
       id: serializer.fromJson<String>(json['id']),
-      codigoBarras: serializer.fromJson<String>(json['codigoBarras']),
-      nombre: serializer.fromJson<String>(json['nombre']),
+      codigoInterno: serializer.fromJson<String>(json['codigoInterno']),
+      nombreComercial: serializer.fromJson<String>(json['nombreComercial']),
+      nombreGenerico: serializer.fromJson<String?>(json['nombreGenerico']),
+      categoria: serializer.fromJson<String?>(json['categoria']),
+      laboratorios: serializer.fromJson<String>(json['laboratorios']),
       descripcion: serializer.fromJson<String?>(json['descripcion']),
-      fotoUrl: serializer.fromJson<String?>(json['fotoUrl']),
-      dosisAdulto: serializer.fromJson<String?>(json['dosisAdulto']),
-      dosisMayor: serializer.fromJson<String?>(json['dosisMayor']),
-      dosisNino: serializer.fromJson<String?>(json['dosisNino']),
-      alergias: serializer.fromJson<String>(json['alergias']),
+      principiosActivos: serializer.fromJson<String>(json['principiosActivos']),
+      composicionCompleta:
+          serializer.fromJson<String?>(json['composicionCompleta']),
+      concentraciones: serializer.fromJson<String>(json['concentraciones']),
+      formasFarmaceuticas:
+          serializer.fromJson<String>(json['formasFarmaceuticas']),
+      presentacion: serializer.fromJson<String?>(json['presentacion']),
+      viasAdministracion:
+          serializer.fromJson<String>(json['viasAdministracion']),
+      indicacionesTexto:
+          serializer.fromJson<String?>(json['indicacionesTexto']),
+      indicacionesTags: serializer.fromJson<String>(json['indicacionesTags']),
       contraindicaciones:
-          serializer.fromJson<String>(json['contraindicaciones']),
-      enfermedadesIncompatibles:
-          serializer.fromJson<String>(json['enfermedadesIncompatibles']),
-      actualizadoEn: serializer.fromJson<DateTime>(json['actualizadoEn']),
-      eliminado: serializer.fromJson<bool>(json['eliminado']),
+          serializer.fromJson<String?>(json['contraindicaciones']),
+      precaucionesAdvertencias:
+          serializer.fromJson<String?>(json['precaucionesAdvertencias']),
+      efectosAdversos: serializer.fromJson<String?>(json['efectosAdversos']),
+      dosisAdultos: serializer.fromJson<String?>(json['dosisAdultos']),
+      dosisAdultosMayores:
+          serializer.fromJson<String?>(json['dosisAdultosMayores']),
+      dosisPediatrica: serializer.fromJson<String?>(json['dosisPediatrica']),
+      dosisLactantes: serializer.fromJson<String?>(json['dosisLactantes']),
+      fotoUrl: serializer.fromJson<String?>(json['fotoUrl']),
+      fechaRevision: serializer.fromJson<String?>(json['fechaRevision']),
+      actualizadoEn: serializer.fromJson<String?>(json['actualizadoEn']),
       esFavorito: serializer.fromJson<bool>(json['esFavorito']),
-      sincronizado: serializer.fromJson<bool>(json['sincronizado']),
     );
   }
   @override
@@ -402,89 +676,182 @@ class MedicamentosTableData extends DataClass
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return <String, dynamic>{
       'id': serializer.toJson<String>(id),
-      'codigoBarras': serializer.toJson<String>(codigoBarras),
-      'nombre': serializer.toJson<String>(nombre),
+      'codigoInterno': serializer.toJson<String>(codigoInterno),
+      'nombreComercial': serializer.toJson<String>(nombreComercial),
+      'nombreGenerico': serializer.toJson<String?>(nombreGenerico),
+      'categoria': serializer.toJson<String?>(categoria),
+      'laboratorios': serializer.toJson<String>(laboratorios),
       'descripcion': serializer.toJson<String?>(descripcion),
+      'principiosActivos': serializer.toJson<String>(principiosActivos),
+      'composicionCompleta': serializer.toJson<String?>(composicionCompleta),
+      'concentraciones': serializer.toJson<String>(concentraciones),
+      'formasFarmaceuticas': serializer.toJson<String>(formasFarmaceuticas),
+      'presentacion': serializer.toJson<String?>(presentacion),
+      'viasAdministracion': serializer.toJson<String>(viasAdministracion),
+      'indicacionesTexto': serializer.toJson<String?>(indicacionesTexto),
+      'indicacionesTags': serializer.toJson<String>(indicacionesTags),
+      'contraindicaciones': serializer.toJson<String?>(contraindicaciones),
+      'precaucionesAdvertencias':
+          serializer.toJson<String?>(precaucionesAdvertencias),
+      'efectosAdversos': serializer.toJson<String?>(efectosAdversos),
+      'dosisAdultos': serializer.toJson<String?>(dosisAdultos),
+      'dosisAdultosMayores': serializer.toJson<String?>(dosisAdultosMayores),
+      'dosisPediatrica': serializer.toJson<String?>(dosisPediatrica),
+      'dosisLactantes': serializer.toJson<String?>(dosisLactantes),
       'fotoUrl': serializer.toJson<String?>(fotoUrl),
-      'dosisAdulto': serializer.toJson<String?>(dosisAdulto),
-      'dosisMayor': serializer.toJson<String?>(dosisMayor),
-      'dosisNino': serializer.toJson<String?>(dosisNino),
-      'alergias': serializer.toJson<String>(alergias),
-      'contraindicaciones': serializer.toJson<String>(contraindicaciones),
-      'enfermedadesIncompatibles':
-          serializer.toJson<String>(enfermedadesIncompatibles),
-      'actualizadoEn': serializer.toJson<DateTime>(actualizadoEn),
-      'eliminado': serializer.toJson<bool>(eliminado),
+      'fechaRevision': serializer.toJson<String?>(fechaRevision),
+      'actualizadoEn': serializer.toJson<String?>(actualizadoEn),
       'esFavorito': serializer.toJson<bool>(esFavorito),
-      'sincronizado': serializer.toJson<bool>(sincronizado),
     };
   }
 
   MedicamentosTableData copyWith(
           {String? id,
-          String? codigoBarras,
-          String? nombre,
+          String? codigoInterno,
+          String? nombreComercial,
+          Value<String?> nombreGenerico = const Value.absent(),
+          Value<String?> categoria = const Value.absent(),
+          String? laboratorios,
           Value<String?> descripcion = const Value.absent(),
+          String? principiosActivos,
+          Value<String?> composicionCompleta = const Value.absent(),
+          String? concentraciones,
+          String? formasFarmaceuticas,
+          Value<String?> presentacion = const Value.absent(),
+          String? viasAdministracion,
+          Value<String?> indicacionesTexto = const Value.absent(),
+          String? indicacionesTags,
+          Value<String?> contraindicaciones = const Value.absent(),
+          Value<String?> precaucionesAdvertencias = const Value.absent(),
+          Value<String?> efectosAdversos = const Value.absent(),
+          Value<String?> dosisAdultos = const Value.absent(),
+          Value<String?> dosisAdultosMayores = const Value.absent(),
+          Value<String?> dosisPediatrica = const Value.absent(),
+          Value<String?> dosisLactantes = const Value.absent(),
           Value<String?> fotoUrl = const Value.absent(),
-          Value<String?> dosisAdulto = const Value.absent(),
-          Value<String?> dosisMayor = const Value.absent(),
-          Value<String?> dosisNino = const Value.absent(),
-          String? alergias,
-          String? contraindicaciones,
-          String? enfermedadesIncompatibles,
-          DateTime? actualizadoEn,
-          bool? eliminado,
-          bool? esFavorito,
-          bool? sincronizado}) =>
+          Value<String?> fechaRevision = const Value.absent(),
+          Value<String?> actualizadoEn = const Value.absent(),
+          bool? esFavorito}) =>
       MedicamentosTableData(
         id: id ?? this.id,
-        codigoBarras: codigoBarras ?? this.codigoBarras,
-        nombre: nombre ?? this.nombre,
+        codigoInterno: codigoInterno ?? this.codigoInterno,
+        nombreComercial: nombreComercial ?? this.nombreComercial,
+        nombreGenerico:
+            nombreGenerico.present ? nombreGenerico.value : this.nombreGenerico,
+        categoria: categoria.present ? categoria.value : this.categoria,
+        laboratorios: laboratorios ?? this.laboratorios,
         descripcion: descripcion.present ? descripcion.value : this.descripcion,
+        principiosActivos: principiosActivos ?? this.principiosActivos,
+        composicionCompleta: composicionCompleta.present
+            ? composicionCompleta.value
+            : this.composicionCompleta,
+        concentraciones: concentraciones ?? this.concentraciones,
+        formasFarmaceuticas: formasFarmaceuticas ?? this.formasFarmaceuticas,
+        presentacion:
+            presentacion.present ? presentacion.value : this.presentacion,
+        viasAdministracion: viasAdministracion ?? this.viasAdministracion,
+        indicacionesTexto: indicacionesTexto.present
+            ? indicacionesTexto.value
+            : this.indicacionesTexto,
+        indicacionesTags: indicacionesTags ?? this.indicacionesTags,
+        contraindicaciones: contraindicaciones.present
+            ? contraindicaciones.value
+            : this.contraindicaciones,
+        precaucionesAdvertencias: precaucionesAdvertencias.present
+            ? precaucionesAdvertencias.value
+            : this.precaucionesAdvertencias,
+        efectosAdversos: efectosAdversos.present
+            ? efectosAdversos.value
+            : this.efectosAdversos,
+        dosisAdultos:
+            dosisAdultos.present ? dosisAdultos.value : this.dosisAdultos,
+        dosisAdultosMayores: dosisAdultosMayores.present
+            ? dosisAdultosMayores.value
+            : this.dosisAdultosMayores,
+        dosisPediatrica: dosisPediatrica.present
+            ? dosisPediatrica.value
+            : this.dosisPediatrica,
+        dosisLactantes:
+            dosisLactantes.present ? dosisLactantes.value : this.dosisLactantes,
         fotoUrl: fotoUrl.present ? fotoUrl.value : this.fotoUrl,
-        dosisAdulto: dosisAdulto.present ? dosisAdulto.value : this.dosisAdulto,
-        dosisMayor: dosisMayor.present ? dosisMayor.value : this.dosisMayor,
-        dosisNino: dosisNino.present ? dosisNino.value : this.dosisNino,
-        alergias: alergias ?? this.alergias,
-        contraindicaciones: contraindicaciones ?? this.contraindicaciones,
-        enfermedadesIncompatibles:
-            enfermedadesIncompatibles ?? this.enfermedadesIncompatibles,
-        actualizadoEn: actualizadoEn ?? this.actualizadoEn,
-        eliminado: eliminado ?? this.eliminado,
+        fechaRevision:
+            fechaRevision.present ? fechaRevision.value : this.fechaRevision,
+        actualizadoEn:
+            actualizadoEn.present ? actualizadoEn.value : this.actualizadoEn,
         esFavorito: esFavorito ?? this.esFavorito,
-        sincronizado: sincronizado ?? this.sincronizado,
       );
   MedicamentosTableData copyWithCompanion(MedicamentosTableCompanion data) {
     return MedicamentosTableData(
       id: data.id.present ? data.id.value : this.id,
-      codigoBarras: data.codigoBarras.present
-          ? data.codigoBarras.value
-          : this.codigoBarras,
-      nombre: data.nombre.present ? data.nombre.value : this.nombre,
+      codigoInterno: data.codigoInterno.present
+          ? data.codigoInterno.value
+          : this.codigoInterno,
+      nombreComercial: data.nombreComercial.present
+          ? data.nombreComercial.value
+          : this.nombreComercial,
+      nombreGenerico: data.nombreGenerico.present
+          ? data.nombreGenerico.value
+          : this.nombreGenerico,
+      categoria: data.categoria.present ? data.categoria.value : this.categoria,
+      laboratorios: data.laboratorios.present
+          ? data.laboratorios.value
+          : this.laboratorios,
       descripcion:
           data.descripcion.present ? data.descripcion.value : this.descripcion,
-      fotoUrl: data.fotoUrl.present ? data.fotoUrl.value : this.fotoUrl,
-      dosisAdulto:
-          data.dosisAdulto.present ? data.dosisAdulto.value : this.dosisAdulto,
-      dosisMayor:
-          data.dosisMayor.present ? data.dosisMayor.value : this.dosisMayor,
-      dosisNino: data.dosisNino.present ? data.dosisNino.value : this.dosisNino,
-      alergias: data.alergias.present ? data.alergias.value : this.alergias,
+      principiosActivos: data.principiosActivos.present
+          ? data.principiosActivos.value
+          : this.principiosActivos,
+      composicionCompleta: data.composicionCompleta.present
+          ? data.composicionCompleta.value
+          : this.composicionCompleta,
+      concentraciones: data.concentraciones.present
+          ? data.concentraciones.value
+          : this.concentraciones,
+      formasFarmaceuticas: data.formasFarmaceuticas.present
+          ? data.formasFarmaceuticas.value
+          : this.formasFarmaceuticas,
+      presentacion: data.presentacion.present
+          ? data.presentacion.value
+          : this.presentacion,
+      viasAdministracion: data.viasAdministracion.present
+          ? data.viasAdministracion.value
+          : this.viasAdministracion,
+      indicacionesTexto: data.indicacionesTexto.present
+          ? data.indicacionesTexto.value
+          : this.indicacionesTexto,
+      indicacionesTags: data.indicacionesTags.present
+          ? data.indicacionesTags.value
+          : this.indicacionesTags,
       contraindicaciones: data.contraindicaciones.present
           ? data.contraindicaciones.value
           : this.contraindicaciones,
-      enfermedadesIncompatibles: data.enfermedadesIncompatibles.present
-          ? data.enfermedadesIncompatibles.value
-          : this.enfermedadesIncompatibles,
+      precaucionesAdvertencias: data.precaucionesAdvertencias.present
+          ? data.precaucionesAdvertencias.value
+          : this.precaucionesAdvertencias,
+      efectosAdversos: data.efectosAdversos.present
+          ? data.efectosAdversos.value
+          : this.efectosAdversos,
+      dosisAdultos: data.dosisAdultos.present
+          ? data.dosisAdultos.value
+          : this.dosisAdultos,
+      dosisAdultosMayores: data.dosisAdultosMayores.present
+          ? data.dosisAdultosMayores.value
+          : this.dosisAdultosMayores,
+      dosisPediatrica: data.dosisPediatrica.present
+          ? data.dosisPediatrica.value
+          : this.dosisPediatrica,
+      dosisLactantes: data.dosisLactantes.present
+          ? data.dosisLactantes.value
+          : this.dosisLactantes,
+      fotoUrl: data.fotoUrl.present ? data.fotoUrl.value : this.fotoUrl,
+      fechaRevision: data.fechaRevision.present
+          ? data.fechaRevision.value
+          : this.fechaRevision,
       actualizadoEn: data.actualizadoEn.present
           ? data.actualizadoEn.value
           : this.actualizadoEn,
-      eliminado: data.eliminado.present ? data.eliminado.value : this.eliminado,
       esFavorito:
           data.esFavorito.present ? data.esFavorito.value : this.esFavorito,
-      sincronizado: data.sincronizado.present
-          ? data.sincronizado.value
-          : this.sincronizado,
     );
   }
 
@@ -492,192 +859,305 @@ class MedicamentosTableData extends DataClass
   String toString() {
     return (StringBuffer('MedicamentosTableData(')
           ..write('id: $id, ')
-          ..write('codigoBarras: $codigoBarras, ')
-          ..write('nombre: $nombre, ')
+          ..write('codigoInterno: $codigoInterno, ')
+          ..write('nombreComercial: $nombreComercial, ')
+          ..write('nombreGenerico: $nombreGenerico, ')
+          ..write('categoria: $categoria, ')
+          ..write('laboratorios: $laboratorios, ')
           ..write('descripcion: $descripcion, ')
-          ..write('fotoUrl: $fotoUrl, ')
-          ..write('dosisAdulto: $dosisAdulto, ')
-          ..write('dosisMayor: $dosisMayor, ')
-          ..write('dosisNino: $dosisNino, ')
-          ..write('alergias: $alergias, ')
+          ..write('principiosActivos: $principiosActivos, ')
+          ..write('composicionCompleta: $composicionCompleta, ')
+          ..write('concentraciones: $concentraciones, ')
+          ..write('formasFarmaceuticas: $formasFarmaceuticas, ')
+          ..write('presentacion: $presentacion, ')
+          ..write('viasAdministracion: $viasAdministracion, ')
+          ..write('indicacionesTexto: $indicacionesTexto, ')
+          ..write('indicacionesTags: $indicacionesTags, ')
           ..write('contraindicaciones: $contraindicaciones, ')
-          ..write('enfermedadesIncompatibles: $enfermedadesIncompatibles, ')
+          ..write('precaucionesAdvertencias: $precaucionesAdvertencias, ')
+          ..write('efectosAdversos: $efectosAdversos, ')
+          ..write('dosisAdultos: $dosisAdultos, ')
+          ..write('dosisAdultosMayores: $dosisAdultosMayores, ')
+          ..write('dosisPediatrica: $dosisPediatrica, ')
+          ..write('dosisLactantes: $dosisLactantes, ')
+          ..write('fotoUrl: $fotoUrl, ')
+          ..write('fechaRevision: $fechaRevision, ')
           ..write('actualizadoEn: $actualizadoEn, ')
-          ..write('eliminado: $eliminado, ')
-          ..write('esFavorito: $esFavorito, ')
-          ..write('sincronizado: $sincronizado')
+          ..write('esFavorito: $esFavorito')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(
-      id,
-      codigoBarras,
-      nombre,
-      descripcion,
-      fotoUrl,
-      dosisAdulto,
-      dosisMayor,
-      dosisNino,
-      alergias,
-      contraindicaciones,
-      enfermedadesIncompatibles,
-      actualizadoEn,
-      eliminado,
-      esFavorito,
-      sincronizado);
+  int get hashCode => Object.hashAll([
+        id,
+        codigoInterno,
+        nombreComercial,
+        nombreGenerico,
+        categoria,
+        laboratorios,
+        descripcion,
+        principiosActivos,
+        composicionCompleta,
+        concentraciones,
+        formasFarmaceuticas,
+        presentacion,
+        viasAdministracion,
+        indicacionesTexto,
+        indicacionesTags,
+        contraindicaciones,
+        precaucionesAdvertencias,
+        efectosAdversos,
+        dosisAdultos,
+        dosisAdultosMayores,
+        dosisPediatrica,
+        dosisLactantes,
+        fotoUrl,
+        fechaRevision,
+        actualizadoEn,
+        esFavorito
+      ]);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       (other is MedicamentosTableData &&
           other.id == this.id &&
-          other.codigoBarras == this.codigoBarras &&
-          other.nombre == this.nombre &&
+          other.codigoInterno == this.codigoInterno &&
+          other.nombreComercial == this.nombreComercial &&
+          other.nombreGenerico == this.nombreGenerico &&
+          other.categoria == this.categoria &&
+          other.laboratorios == this.laboratorios &&
           other.descripcion == this.descripcion &&
-          other.fotoUrl == this.fotoUrl &&
-          other.dosisAdulto == this.dosisAdulto &&
-          other.dosisMayor == this.dosisMayor &&
-          other.dosisNino == this.dosisNino &&
-          other.alergias == this.alergias &&
+          other.principiosActivos == this.principiosActivos &&
+          other.composicionCompleta == this.composicionCompleta &&
+          other.concentraciones == this.concentraciones &&
+          other.formasFarmaceuticas == this.formasFarmaceuticas &&
+          other.presentacion == this.presentacion &&
+          other.viasAdministracion == this.viasAdministracion &&
+          other.indicacionesTexto == this.indicacionesTexto &&
+          other.indicacionesTags == this.indicacionesTags &&
           other.contraindicaciones == this.contraindicaciones &&
-          other.enfermedadesIncompatibles == this.enfermedadesIncompatibles &&
+          other.precaucionesAdvertencias == this.precaucionesAdvertencias &&
+          other.efectosAdversos == this.efectosAdversos &&
+          other.dosisAdultos == this.dosisAdultos &&
+          other.dosisAdultosMayores == this.dosisAdultosMayores &&
+          other.dosisPediatrica == this.dosisPediatrica &&
+          other.dosisLactantes == this.dosisLactantes &&
+          other.fotoUrl == this.fotoUrl &&
+          other.fechaRevision == this.fechaRevision &&
           other.actualizadoEn == this.actualizadoEn &&
-          other.eliminado == this.eliminado &&
-          other.esFavorito == this.esFavorito &&
-          other.sincronizado == this.sincronizado);
+          other.esFavorito == this.esFavorito);
 }
 
 class MedicamentosTableCompanion
     extends UpdateCompanion<MedicamentosTableData> {
   final Value<String> id;
-  final Value<String> codigoBarras;
-  final Value<String> nombre;
+  final Value<String> codigoInterno;
+  final Value<String> nombreComercial;
+  final Value<String?> nombreGenerico;
+  final Value<String?> categoria;
+  final Value<String> laboratorios;
   final Value<String?> descripcion;
+  final Value<String> principiosActivos;
+  final Value<String?> composicionCompleta;
+  final Value<String> concentraciones;
+  final Value<String> formasFarmaceuticas;
+  final Value<String?> presentacion;
+  final Value<String> viasAdministracion;
+  final Value<String?> indicacionesTexto;
+  final Value<String> indicacionesTags;
+  final Value<String?> contraindicaciones;
+  final Value<String?> precaucionesAdvertencias;
+  final Value<String?> efectosAdversos;
+  final Value<String?> dosisAdultos;
+  final Value<String?> dosisAdultosMayores;
+  final Value<String?> dosisPediatrica;
+  final Value<String?> dosisLactantes;
   final Value<String?> fotoUrl;
-  final Value<String?> dosisAdulto;
-  final Value<String?> dosisMayor;
-  final Value<String?> dosisNino;
-  final Value<String> alergias;
-  final Value<String> contraindicaciones;
-  final Value<String> enfermedadesIncompatibles;
-  final Value<DateTime> actualizadoEn;
-  final Value<bool> eliminado;
+  final Value<String?> fechaRevision;
+  final Value<String?> actualizadoEn;
   final Value<bool> esFavorito;
-  final Value<bool> sincronizado;
   final Value<int> rowid;
   const MedicamentosTableCompanion({
     this.id = const Value.absent(),
-    this.codigoBarras = const Value.absent(),
-    this.nombre = const Value.absent(),
+    this.codigoInterno = const Value.absent(),
+    this.nombreComercial = const Value.absent(),
+    this.nombreGenerico = const Value.absent(),
+    this.categoria = const Value.absent(),
+    this.laboratorios = const Value.absent(),
     this.descripcion = const Value.absent(),
-    this.fotoUrl = const Value.absent(),
-    this.dosisAdulto = const Value.absent(),
-    this.dosisMayor = const Value.absent(),
-    this.dosisNino = const Value.absent(),
-    this.alergias = const Value.absent(),
+    this.principiosActivos = const Value.absent(),
+    this.composicionCompleta = const Value.absent(),
+    this.concentraciones = const Value.absent(),
+    this.formasFarmaceuticas = const Value.absent(),
+    this.presentacion = const Value.absent(),
+    this.viasAdministracion = const Value.absent(),
+    this.indicacionesTexto = const Value.absent(),
+    this.indicacionesTags = const Value.absent(),
     this.contraindicaciones = const Value.absent(),
-    this.enfermedadesIncompatibles = const Value.absent(),
+    this.precaucionesAdvertencias = const Value.absent(),
+    this.efectosAdversos = const Value.absent(),
+    this.dosisAdultos = const Value.absent(),
+    this.dosisAdultosMayores = const Value.absent(),
+    this.dosisPediatrica = const Value.absent(),
+    this.dosisLactantes = const Value.absent(),
+    this.fotoUrl = const Value.absent(),
+    this.fechaRevision = const Value.absent(),
     this.actualizadoEn = const Value.absent(),
-    this.eliminado = const Value.absent(),
     this.esFavorito = const Value.absent(),
-    this.sincronizado = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   MedicamentosTableCompanion.insert({
     required String id,
-    required String codigoBarras,
-    required String nombre,
+    required String codigoInterno,
+    required String nombreComercial,
+    this.nombreGenerico = const Value.absent(),
+    this.categoria = const Value.absent(),
+    this.laboratorios = const Value.absent(),
     this.descripcion = const Value.absent(),
-    this.fotoUrl = const Value.absent(),
-    this.dosisAdulto = const Value.absent(),
-    this.dosisMayor = const Value.absent(),
-    this.dosisNino = const Value.absent(),
-    this.alergias = const Value.absent(),
+    this.principiosActivos = const Value.absent(),
+    this.composicionCompleta = const Value.absent(),
+    this.concentraciones = const Value.absent(),
+    this.formasFarmaceuticas = const Value.absent(),
+    this.presentacion = const Value.absent(),
+    this.viasAdministracion = const Value.absent(),
+    this.indicacionesTexto = const Value.absent(),
+    this.indicacionesTags = const Value.absent(),
     this.contraindicaciones = const Value.absent(),
-    this.enfermedadesIncompatibles = const Value.absent(),
-    required DateTime actualizadoEn,
-    this.eliminado = const Value.absent(),
+    this.precaucionesAdvertencias = const Value.absent(),
+    this.efectosAdversos = const Value.absent(),
+    this.dosisAdultos = const Value.absent(),
+    this.dosisAdultosMayores = const Value.absent(),
+    this.dosisPediatrica = const Value.absent(),
+    this.dosisLactantes = const Value.absent(),
+    this.fotoUrl = const Value.absent(),
+    this.fechaRevision = const Value.absent(),
+    this.actualizadoEn = const Value.absent(),
     this.esFavorito = const Value.absent(),
-    this.sincronizado = const Value.absent(),
     this.rowid = const Value.absent(),
   })  : id = Value(id),
-        codigoBarras = Value(codigoBarras),
-        nombre = Value(nombre),
-        actualizadoEn = Value(actualizadoEn);
+        codigoInterno = Value(codigoInterno),
+        nombreComercial = Value(nombreComercial);
   static Insertable<MedicamentosTableData> custom({
     Expression<String>? id,
-    Expression<String>? codigoBarras,
-    Expression<String>? nombre,
+    Expression<String>? codigoInterno,
+    Expression<String>? nombreComercial,
+    Expression<String>? nombreGenerico,
+    Expression<String>? categoria,
+    Expression<String>? laboratorios,
     Expression<String>? descripcion,
-    Expression<String>? fotoUrl,
-    Expression<String>? dosisAdulto,
-    Expression<String>? dosisMayor,
-    Expression<String>? dosisNino,
-    Expression<String>? alergias,
+    Expression<String>? principiosActivos,
+    Expression<String>? composicionCompleta,
+    Expression<String>? concentraciones,
+    Expression<String>? formasFarmaceuticas,
+    Expression<String>? presentacion,
+    Expression<String>? viasAdministracion,
+    Expression<String>? indicacionesTexto,
+    Expression<String>? indicacionesTags,
     Expression<String>? contraindicaciones,
-    Expression<String>? enfermedadesIncompatibles,
-    Expression<DateTime>? actualizadoEn,
-    Expression<bool>? eliminado,
+    Expression<String>? precaucionesAdvertencias,
+    Expression<String>? efectosAdversos,
+    Expression<String>? dosisAdultos,
+    Expression<String>? dosisAdultosMayores,
+    Expression<String>? dosisPediatrica,
+    Expression<String>? dosisLactantes,
+    Expression<String>? fotoUrl,
+    Expression<String>? fechaRevision,
+    Expression<String>? actualizadoEn,
     Expression<bool>? esFavorito,
-    Expression<bool>? sincronizado,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
-      if (codigoBarras != null) 'codigo_barras': codigoBarras,
-      if (nombre != null) 'nombre': nombre,
+      if (codigoInterno != null) 'codigo_interno': codigoInterno,
+      if (nombreComercial != null) 'nombre_comercial': nombreComercial,
+      if (nombreGenerico != null) 'nombre_generico': nombreGenerico,
+      if (categoria != null) 'categoria': categoria,
+      if (laboratorios != null) 'laboratorios': laboratorios,
       if (descripcion != null) 'descripcion': descripcion,
-      if (fotoUrl != null) 'foto_url': fotoUrl,
-      if (dosisAdulto != null) 'dosis_adulto': dosisAdulto,
-      if (dosisMayor != null) 'dosis_mayor': dosisMayor,
-      if (dosisNino != null) 'dosis_nino': dosisNino,
-      if (alergias != null) 'alergias': alergias,
+      if (principiosActivos != null) 'principios_activos': principiosActivos,
+      if (composicionCompleta != null)
+        'composicion_completa': composicionCompleta,
+      if (concentraciones != null) 'concentraciones': concentraciones,
+      if (formasFarmaceuticas != null)
+        'formas_farmaceuticas': formasFarmaceuticas,
+      if (presentacion != null) 'presentacion': presentacion,
+      if (viasAdministracion != null) 'vias_administracion': viasAdministracion,
+      if (indicacionesTexto != null) 'indicaciones_texto': indicacionesTexto,
+      if (indicacionesTags != null) 'indicaciones_tags': indicacionesTags,
       if (contraindicaciones != null) 'contraindicaciones': contraindicaciones,
-      if (enfermedadesIncompatibles != null)
-        'enfermedades_incompatibles': enfermedadesIncompatibles,
+      if (precaucionesAdvertencias != null)
+        'precauciones_advertencias': precaucionesAdvertencias,
+      if (efectosAdversos != null) 'efectos_adversos': efectosAdversos,
+      if (dosisAdultos != null) 'dosis_adultos': dosisAdultos,
+      if (dosisAdultosMayores != null)
+        'dosis_adultos_mayores': dosisAdultosMayores,
+      if (dosisPediatrica != null) 'dosis_pediatrica': dosisPediatrica,
+      if (dosisLactantes != null) 'dosis_lactantes': dosisLactantes,
+      if (fotoUrl != null) 'foto_url': fotoUrl,
+      if (fechaRevision != null) 'fecha_revision': fechaRevision,
       if (actualizadoEn != null) 'actualizado_en': actualizadoEn,
-      if (eliminado != null) 'eliminado': eliminado,
       if (esFavorito != null) 'es_favorito': esFavorito,
-      if (sincronizado != null) 'sincronizado': sincronizado,
       if (rowid != null) 'rowid': rowid,
     });
   }
 
   MedicamentosTableCompanion copyWith(
       {Value<String>? id,
-      Value<String>? codigoBarras,
-      Value<String>? nombre,
+      Value<String>? codigoInterno,
+      Value<String>? nombreComercial,
+      Value<String?>? nombreGenerico,
+      Value<String?>? categoria,
+      Value<String>? laboratorios,
       Value<String?>? descripcion,
+      Value<String>? principiosActivos,
+      Value<String?>? composicionCompleta,
+      Value<String>? concentraciones,
+      Value<String>? formasFarmaceuticas,
+      Value<String?>? presentacion,
+      Value<String>? viasAdministracion,
+      Value<String?>? indicacionesTexto,
+      Value<String>? indicacionesTags,
+      Value<String?>? contraindicaciones,
+      Value<String?>? precaucionesAdvertencias,
+      Value<String?>? efectosAdversos,
+      Value<String?>? dosisAdultos,
+      Value<String?>? dosisAdultosMayores,
+      Value<String?>? dosisPediatrica,
+      Value<String?>? dosisLactantes,
       Value<String?>? fotoUrl,
-      Value<String?>? dosisAdulto,
-      Value<String?>? dosisMayor,
-      Value<String?>? dosisNino,
-      Value<String>? alergias,
-      Value<String>? contraindicaciones,
-      Value<String>? enfermedadesIncompatibles,
-      Value<DateTime>? actualizadoEn,
-      Value<bool>? eliminado,
+      Value<String?>? fechaRevision,
+      Value<String?>? actualizadoEn,
       Value<bool>? esFavorito,
-      Value<bool>? sincronizado,
       Value<int>? rowid}) {
     return MedicamentosTableCompanion(
       id: id ?? this.id,
-      codigoBarras: codigoBarras ?? this.codigoBarras,
-      nombre: nombre ?? this.nombre,
+      codigoInterno: codigoInterno ?? this.codigoInterno,
+      nombreComercial: nombreComercial ?? this.nombreComercial,
+      nombreGenerico: nombreGenerico ?? this.nombreGenerico,
+      categoria: categoria ?? this.categoria,
+      laboratorios: laboratorios ?? this.laboratorios,
       descripcion: descripcion ?? this.descripcion,
-      fotoUrl: fotoUrl ?? this.fotoUrl,
-      dosisAdulto: dosisAdulto ?? this.dosisAdulto,
-      dosisMayor: dosisMayor ?? this.dosisMayor,
-      dosisNino: dosisNino ?? this.dosisNino,
-      alergias: alergias ?? this.alergias,
+      principiosActivos: principiosActivos ?? this.principiosActivos,
+      composicionCompleta: composicionCompleta ?? this.composicionCompleta,
+      concentraciones: concentraciones ?? this.concentraciones,
+      formasFarmaceuticas: formasFarmaceuticas ?? this.formasFarmaceuticas,
+      presentacion: presentacion ?? this.presentacion,
+      viasAdministracion: viasAdministracion ?? this.viasAdministracion,
+      indicacionesTexto: indicacionesTexto ?? this.indicacionesTexto,
+      indicacionesTags: indicacionesTags ?? this.indicacionesTags,
       contraindicaciones: contraindicaciones ?? this.contraindicaciones,
-      enfermedadesIncompatibles:
-          enfermedadesIncompatibles ?? this.enfermedadesIncompatibles,
+      precaucionesAdvertencias:
+          precaucionesAdvertencias ?? this.precaucionesAdvertencias,
+      efectosAdversos: efectosAdversos ?? this.efectosAdversos,
+      dosisAdultos: dosisAdultos ?? this.dosisAdultos,
+      dosisAdultosMayores: dosisAdultosMayores ?? this.dosisAdultosMayores,
+      dosisPediatrica: dosisPediatrica ?? this.dosisPediatrica,
+      dosisLactantes: dosisLactantes ?? this.dosisLactantes,
+      fotoUrl: fotoUrl ?? this.fotoUrl,
+      fechaRevision: fechaRevision ?? this.fechaRevision,
       actualizadoEn: actualizadoEn ?? this.actualizadoEn,
-      eliminado: eliminado ?? this.eliminado,
       esFavorito: esFavorito ?? this.esFavorito,
-      sincronizado: sincronizado ?? this.sincronizado,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -688,48 +1168,82 @@ class MedicamentosTableCompanion
     if (id.present) {
       map['id'] = Variable<String>(id.value);
     }
-    if (codigoBarras.present) {
-      map['codigo_barras'] = Variable<String>(codigoBarras.value);
+    if (codigoInterno.present) {
+      map['codigo_interno'] = Variable<String>(codigoInterno.value);
     }
-    if (nombre.present) {
-      map['nombre'] = Variable<String>(nombre.value);
+    if (nombreComercial.present) {
+      map['nombre_comercial'] = Variable<String>(nombreComercial.value);
+    }
+    if (nombreGenerico.present) {
+      map['nombre_generico'] = Variable<String>(nombreGenerico.value);
+    }
+    if (categoria.present) {
+      map['categoria'] = Variable<String>(categoria.value);
+    }
+    if (laboratorios.present) {
+      map['laboratorios'] = Variable<String>(laboratorios.value);
     }
     if (descripcion.present) {
       map['descripcion'] = Variable<String>(descripcion.value);
     }
-    if (fotoUrl.present) {
-      map['foto_url'] = Variable<String>(fotoUrl.value);
+    if (principiosActivos.present) {
+      map['principios_activos'] = Variable<String>(principiosActivos.value);
     }
-    if (dosisAdulto.present) {
-      map['dosis_adulto'] = Variable<String>(dosisAdulto.value);
+    if (composicionCompleta.present) {
+      map['composicion_completa'] = Variable<String>(composicionCompleta.value);
     }
-    if (dosisMayor.present) {
-      map['dosis_mayor'] = Variable<String>(dosisMayor.value);
+    if (concentraciones.present) {
+      map['concentraciones'] = Variable<String>(concentraciones.value);
     }
-    if (dosisNino.present) {
-      map['dosis_nino'] = Variable<String>(dosisNino.value);
+    if (formasFarmaceuticas.present) {
+      map['formas_farmaceuticas'] = Variable<String>(formasFarmaceuticas.value);
     }
-    if (alergias.present) {
-      map['alergias'] = Variable<String>(alergias.value);
+    if (presentacion.present) {
+      map['presentacion'] = Variable<String>(presentacion.value);
+    }
+    if (viasAdministracion.present) {
+      map['vias_administracion'] = Variable<String>(viasAdministracion.value);
+    }
+    if (indicacionesTexto.present) {
+      map['indicaciones_texto'] = Variable<String>(indicacionesTexto.value);
+    }
+    if (indicacionesTags.present) {
+      map['indicaciones_tags'] = Variable<String>(indicacionesTags.value);
     }
     if (contraindicaciones.present) {
       map['contraindicaciones'] = Variable<String>(contraindicaciones.value);
     }
-    if (enfermedadesIncompatibles.present) {
-      map['enfermedades_incompatibles'] =
-          Variable<String>(enfermedadesIncompatibles.value);
+    if (precaucionesAdvertencias.present) {
+      map['precauciones_advertencias'] =
+          Variable<String>(precaucionesAdvertencias.value);
+    }
+    if (efectosAdversos.present) {
+      map['efectos_adversos'] = Variable<String>(efectosAdversos.value);
+    }
+    if (dosisAdultos.present) {
+      map['dosis_adultos'] = Variable<String>(dosisAdultos.value);
+    }
+    if (dosisAdultosMayores.present) {
+      map['dosis_adultos_mayores'] =
+          Variable<String>(dosisAdultosMayores.value);
+    }
+    if (dosisPediatrica.present) {
+      map['dosis_pediatrica'] = Variable<String>(dosisPediatrica.value);
+    }
+    if (dosisLactantes.present) {
+      map['dosis_lactantes'] = Variable<String>(dosisLactantes.value);
+    }
+    if (fotoUrl.present) {
+      map['foto_url'] = Variable<String>(fotoUrl.value);
+    }
+    if (fechaRevision.present) {
+      map['fecha_revision'] = Variable<String>(fechaRevision.value);
     }
     if (actualizadoEn.present) {
-      map['actualizado_en'] = Variable<DateTime>(actualizadoEn.value);
-    }
-    if (eliminado.present) {
-      map['eliminado'] = Variable<bool>(eliminado.value);
+      map['actualizado_en'] = Variable<String>(actualizadoEn.value);
     }
     if (esFavorito.present) {
       map['es_favorito'] = Variable<bool>(esFavorito.value);
-    }
-    if (sincronizado.present) {
-      map['sincronizado'] = Variable<bool>(sincronizado.value);
     }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
@@ -741,20 +1255,315 @@ class MedicamentosTableCompanion
   String toString() {
     return (StringBuffer('MedicamentosTableCompanion(')
           ..write('id: $id, ')
-          ..write('codigoBarras: $codigoBarras, ')
-          ..write('nombre: $nombre, ')
+          ..write('codigoInterno: $codigoInterno, ')
+          ..write('nombreComercial: $nombreComercial, ')
+          ..write('nombreGenerico: $nombreGenerico, ')
+          ..write('categoria: $categoria, ')
+          ..write('laboratorios: $laboratorios, ')
           ..write('descripcion: $descripcion, ')
-          ..write('fotoUrl: $fotoUrl, ')
-          ..write('dosisAdulto: $dosisAdulto, ')
-          ..write('dosisMayor: $dosisMayor, ')
-          ..write('dosisNino: $dosisNino, ')
-          ..write('alergias: $alergias, ')
+          ..write('principiosActivos: $principiosActivos, ')
+          ..write('composicionCompleta: $composicionCompleta, ')
+          ..write('concentraciones: $concentraciones, ')
+          ..write('formasFarmaceuticas: $formasFarmaceuticas, ')
+          ..write('presentacion: $presentacion, ')
+          ..write('viasAdministracion: $viasAdministracion, ')
+          ..write('indicacionesTexto: $indicacionesTexto, ')
+          ..write('indicacionesTags: $indicacionesTags, ')
           ..write('contraindicaciones: $contraindicaciones, ')
-          ..write('enfermedadesIncompatibles: $enfermedadesIncompatibles, ')
+          ..write('precaucionesAdvertencias: $precaucionesAdvertencias, ')
+          ..write('efectosAdversos: $efectosAdversos, ')
+          ..write('dosisAdultos: $dosisAdultos, ')
+          ..write('dosisAdultosMayores: $dosisAdultosMayores, ')
+          ..write('dosisPediatrica: $dosisPediatrica, ')
+          ..write('dosisLactantes: $dosisLactantes, ')
+          ..write('fotoUrl: $fotoUrl, ')
+          ..write('fechaRevision: $fechaRevision, ')
           ..write('actualizadoEn: $actualizadoEn, ')
-          ..write('eliminado: $eliminado, ')
           ..write('esFavorito: $esFavorito, ')
-          ..write('sincronizado: $sincronizado, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $MedicamentoGruposTableTable extends MedicamentoGruposTable
+    with TableInfo<$MedicamentoGruposTableTable, MedicamentoGruposTableData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $MedicamentoGruposTableTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _medicamentoIdMeta =
+      const VerificationMeta('medicamentoId');
+  @override
+  late final GeneratedColumn<String> medicamentoId = GeneratedColumn<String>(
+      'medicamento_id', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _grupoMeta = const VerificationMeta('grupo');
+  @override
+  late final GeneratedColumn<String> grupo = GeneratedColumn<String>(
+      'grupo', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _estadoMeta = const VerificationMeta('estado');
+  @override
+  late final GeneratedColumn<String> estado = GeneratedColumn<String>(
+      'estado', aliasedName, false,
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant('no_evaluado'));
+  static const VerificationMeta _observacionMeta =
+      const VerificationMeta('observacion');
+  @override
+  late final GeneratedColumn<String> observacion = GeneratedColumn<String>(
+      'observacion', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  @override
+  List<GeneratedColumn> get $columns =>
+      [medicamentoId, grupo, estado, observacion];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'medicamento_grupos';
+  @override
+  VerificationContext validateIntegrity(
+      Insertable<MedicamentoGruposTableData> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('medicamento_id')) {
+      context.handle(
+          _medicamentoIdMeta,
+          medicamentoId.isAcceptableOrUnknown(
+              data['medicamento_id']!, _medicamentoIdMeta));
+    } else if (isInserting) {
+      context.missing(_medicamentoIdMeta);
+    }
+    if (data.containsKey('grupo')) {
+      context.handle(
+          _grupoMeta, grupo.isAcceptableOrUnknown(data['grupo']!, _grupoMeta));
+    } else if (isInserting) {
+      context.missing(_grupoMeta);
+    }
+    if (data.containsKey('estado')) {
+      context.handle(_estadoMeta,
+          estado.isAcceptableOrUnknown(data['estado']!, _estadoMeta));
+    }
+    if (data.containsKey('observacion')) {
+      context.handle(
+          _observacionMeta,
+          observacion.isAcceptableOrUnknown(
+              data['observacion']!, _observacionMeta));
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {medicamentoId, grupo};
+  @override
+  MedicamentoGruposTableData map(Map<String, dynamic> data,
+      {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return MedicamentoGruposTableData(
+      medicamentoId: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}medicamento_id'])!,
+      grupo: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}grupo'])!,
+      estado: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}estado'])!,
+      observacion: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}observacion']),
+    );
+  }
+
+  @override
+  $MedicamentoGruposTableTable createAlias(String alias) {
+    return $MedicamentoGruposTableTable(attachedDatabase, alias);
+  }
+}
+
+class MedicamentoGruposTableData extends DataClass
+    implements Insertable<MedicamentoGruposTableData> {
+  final String medicamentoId;
+  final String grupo;
+  final String estado;
+  final String? observacion;
+  const MedicamentoGruposTableData(
+      {required this.medicamentoId,
+      required this.grupo,
+      required this.estado,
+      this.observacion});
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['medicamento_id'] = Variable<String>(medicamentoId);
+    map['grupo'] = Variable<String>(grupo);
+    map['estado'] = Variable<String>(estado);
+    if (!nullToAbsent || observacion != null) {
+      map['observacion'] = Variable<String>(observacion);
+    }
+    return map;
+  }
+
+  MedicamentoGruposTableCompanion toCompanion(bool nullToAbsent) {
+    return MedicamentoGruposTableCompanion(
+      medicamentoId: Value(medicamentoId),
+      grupo: Value(grupo),
+      estado: Value(estado),
+      observacion: observacion == null && nullToAbsent
+          ? const Value.absent()
+          : Value(observacion),
+    );
+  }
+
+  factory MedicamentoGruposTableData.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return MedicamentoGruposTableData(
+      medicamentoId: serializer.fromJson<String>(json['medicamentoId']),
+      grupo: serializer.fromJson<String>(json['grupo']),
+      estado: serializer.fromJson<String>(json['estado']),
+      observacion: serializer.fromJson<String?>(json['observacion']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'medicamentoId': serializer.toJson<String>(medicamentoId),
+      'grupo': serializer.toJson<String>(grupo),
+      'estado': serializer.toJson<String>(estado),
+      'observacion': serializer.toJson<String?>(observacion),
+    };
+  }
+
+  MedicamentoGruposTableData copyWith(
+          {String? medicamentoId,
+          String? grupo,
+          String? estado,
+          Value<String?> observacion = const Value.absent()}) =>
+      MedicamentoGruposTableData(
+        medicamentoId: medicamentoId ?? this.medicamentoId,
+        grupo: grupo ?? this.grupo,
+        estado: estado ?? this.estado,
+        observacion: observacion.present ? observacion.value : this.observacion,
+      );
+  MedicamentoGruposTableData copyWithCompanion(
+      MedicamentoGruposTableCompanion data) {
+    return MedicamentoGruposTableData(
+      medicamentoId: data.medicamentoId.present
+          ? data.medicamentoId.value
+          : this.medicamentoId,
+      grupo: data.grupo.present ? data.grupo.value : this.grupo,
+      estado: data.estado.present ? data.estado.value : this.estado,
+      observacion:
+          data.observacion.present ? data.observacion.value : this.observacion,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('MedicamentoGruposTableData(')
+          ..write('medicamentoId: $medicamentoId, ')
+          ..write('grupo: $grupo, ')
+          ..write('estado: $estado, ')
+          ..write('observacion: $observacion')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(medicamentoId, grupo, estado, observacion);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is MedicamentoGruposTableData &&
+          other.medicamentoId == this.medicamentoId &&
+          other.grupo == this.grupo &&
+          other.estado == this.estado &&
+          other.observacion == this.observacion);
+}
+
+class MedicamentoGruposTableCompanion
+    extends UpdateCompanion<MedicamentoGruposTableData> {
+  final Value<String> medicamentoId;
+  final Value<String> grupo;
+  final Value<String> estado;
+  final Value<String?> observacion;
+  final Value<int> rowid;
+  const MedicamentoGruposTableCompanion({
+    this.medicamentoId = const Value.absent(),
+    this.grupo = const Value.absent(),
+    this.estado = const Value.absent(),
+    this.observacion = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  MedicamentoGruposTableCompanion.insert({
+    required String medicamentoId,
+    required String grupo,
+    this.estado = const Value.absent(),
+    this.observacion = const Value.absent(),
+    this.rowid = const Value.absent(),
+  })  : medicamentoId = Value(medicamentoId),
+        grupo = Value(grupo);
+  static Insertable<MedicamentoGruposTableData> custom({
+    Expression<String>? medicamentoId,
+    Expression<String>? grupo,
+    Expression<String>? estado,
+    Expression<String>? observacion,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (medicamentoId != null) 'medicamento_id': medicamentoId,
+      if (grupo != null) 'grupo': grupo,
+      if (estado != null) 'estado': estado,
+      if (observacion != null) 'observacion': observacion,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  MedicamentoGruposTableCompanion copyWith(
+      {Value<String>? medicamentoId,
+      Value<String>? grupo,
+      Value<String>? estado,
+      Value<String?>? observacion,
+      Value<int>? rowid}) {
+    return MedicamentoGruposTableCompanion(
+      medicamentoId: medicamentoId ?? this.medicamentoId,
+      grupo: grupo ?? this.grupo,
+      estado: estado ?? this.estado,
+      observacion: observacion ?? this.observacion,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (medicamentoId.present) {
+      map['medicamento_id'] = Variable<String>(medicamentoId.value);
+    }
+    if (grupo.present) {
+      map['grupo'] = Variable<String>(grupo.value);
+    }
+    if (estado.present) {
+      map['estado'] = Variable<String>(estado.value);
+    }
+    if (observacion.present) {
+      map['observacion'] = Variable<String>(observacion.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('MedicamentoGruposTableCompanion(')
+          ..write('medicamentoId: $medicamentoId, ')
+          ..write('grupo: $grupo, ')
+          ..write('estado: $estado, ')
+          ..write('observacion: $observacion, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -778,17 +1587,19 @@ class $HistorialTableTable extends HistorialTable
   late final GeneratedColumn<String> medicamentoId = GeneratedColumn<String>(
       'medicamento_id', aliasedName, false,
       type: DriftSqlType.string, requiredDuringInsert: true);
-  static const VerificationMeta _medicamentoNombreMeta =
-      const VerificationMeta('medicamentoNombre');
+  static const VerificationMeta _nombreSnapshotMeta =
+      const VerificationMeta('nombreSnapshot');
   @override
-  late final GeneratedColumn<String> medicamentoNombre =
-      GeneratedColumn<String>('medicamento_nombre', aliasedName, false,
-          type: DriftSqlType.string, requiredDuringInsert: true);
+  late final GeneratedColumn<String> nombreSnapshot = GeneratedColumn<String>(
+      'nombre_snapshot', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
   static const VerificationMeta _tipoMeta = const VerificationMeta('tipo');
   @override
   late final GeneratedColumn<String> tipo = GeneratedColumn<String>(
       'tipo', aliasedName, false,
-      type: DriftSqlType.string, requiredDuringInsert: true);
+      type: DriftSqlType.string,
+      requiredDuringInsert: false,
+      defaultValue: const Constant('busqueda'));
   static const VerificationMeta _fechaMeta = const VerificationMeta('fecha');
   @override
   late final GeneratedColumn<DateTime> fecha = GeneratedColumn<DateTime>(
@@ -796,12 +1607,12 @@ class $HistorialTableTable extends HistorialTable
       type: DriftSqlType.dateTime, requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns =>
-      [id, medicamentoId, medicamentoNombre, tipo, fecha];
+      [id, medicamentoId, nombreSnapshot, tipo, fecha];
   @override
   String get aliasedName => _alias ?? actualTableName;
   @override
   String get actualTableName => $name;
-  static const String $name = 'historial_table';
+  static const String $name = 'historial';
   @override
   VerificationContext validateIntegrity(Insertable<HistorialTableData> instance,
       {bool isInserting = false}) {
@@ -820,19 +1631,17 @@ class $HistorialTableTable extends HistorialTable
     } else if (isInserting) {
       context.missing(_medicamentoIdMeta);
     }
-    if (data.containsKey('medicamento_nombre')) {
+    if (data.containsKey('nombre_snapshot')) {
       context.handle(
-          _medicamentoNombreMeta,
-          medicamentoNombre.isAcceptableOrUnknown(
-              data['medicamento_nombre']!, _medicamentoNombreMeta));
+          _nombreSnapshotMeta,
+          nombreSnapshot.isAcceptableOrUnknown(
+              data['nombre_snapshot']!, _nombreSnapshotMeta));
     } else if (isInserting) {
-      context.missing(_medicamentoNombreMeta);
+      context.missing(_nombreSnapshotMeta);
     }
     if (data.containsKey('tipo')) {
       context.handle(
           _tipoMeta, tipo.isAcceptableOrUnknown(data['tipo']!, _tipoMeta));
-    } else if (isInserting) {
-      context.missing(_tipoMeta);
     }
     if (data.containsKey('fecha')) {
       context.handle(
@@ -853,8 +1662,8 @@ class $HistorialTableTable extends HistorialTable
           .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
       medicamentoId: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}medicamento_id'])!,
-      medicamentoNombre: attachedDatabase.typeMapping.read(
-          DriftSqlType.string, data['${effectivePrefix}medicamento_nombre'])!,
+      nombreSnapshot: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}nombre_snapshot'])!,
       tipo: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}tipo'])!,
       fecha: attachedDatabase.typeMapping
@@ -872,13 +1681,13 @@ class HistorialTableData extends DataClass
     implements Insertable<HistorialTableData> {
   final String id;
   final String medicamentoId;
-  final String medicamentoNombre;
+  final String nombreSnapshot;
   final String tipo;
   final DateTime fecha;
   const HistorialTableData(
       {required this.id,
       required this.medicamentoId,
-      required this.medicamentoNombre,
+      required this.nombreSnapshot,
       required this.tipo,
       required this.fecha});
   @override
@@ -886,7 +1695,7 @@ class HistorialTableData extends DataClass
     final map = <String, Expression>{};
     map['id'] = Variable<String>(id);
     map['medicamento_id'] = Variable<String>(medicamentoId);
-    map['medicamento_nombre'] = Variable<String>(medicamentoNombre);
+    map['nombre_snapshot'] = Variable<String>(nombreSnapshot);
     map['tipo'] = Variable<String>(tipo);
     map['fecha'] = Variable<DateTime>(fecha);
     return map;
@@ -896,7 +1705,7 @@ class HistorialTableData extends DataClass
     return HistorialTableCompanion(
       id: Value(id),
       medicamentoId: Value(medicamentoId),
-      medicamentoNombre: Value(medicamentoNombre),
+      nombreSnapshot: Value(nombreSnapshot),
       tipo: Value(tipo),
       fecha: Value(fecha),
     );
@@ -908,7 +1717,7 @@ class HistorialTableData extends DataClass
     return HistorialTableData(
       id: serializer.fromJson<String>(json['id']),
       medicamentoId: serializer.fromJson<String>(json['medicamentoId']),
-      medicamentoNombre: serializer.fromJson<String>(json['medicamentoNombre']),
+      nombreSnapshot: serializer.fromJson<String>(json['nombreSnapshot']),
       tipo: serializer.fromJson<String>(json['tipo']),
       fecha: serializer.fromJson<DateTime>(json['fecha']),
     );
@@ -919,7 +1728,7 @@ class HistorialTableData extends DataClass
     return <String, dynamic>{
       'id': serializer.toJson<String>(id),
       'medicamentoId': serializer.toJson<String>(medicamentoId),
-      'medicamentoNombre': serializer.toJson<String>(medicamentoNombre),
+      'nombreSnapshot': serializer.toJson<String>(nombreSnapshot),
       'tipo': serializer.toJson<String>(tipo),
       'fecha': serializer.toJson<DateTime>(fecha),
     };
@@ -928,13 +1737,13 @@ class HistorialTableData extends DataClass
   HistorialTableData copyWith(
           {String? id,
           String? medicamentoId,
-          String? medicamentoNombre,
+          String? nombreSnapshot,
           String? tipo,
           DateTime? fecha}) =>
       HistorialTableData(
         id: id ?? this.id,
         medicamentoId: medicamentoId ?? this.medicamentoId,
-        medicamentoNombre: medicamentoNombre ?? this.medicamentoNombre,
+        nombreSnapshot: nombreSnapshot ?? this.nombreSnapshot,
         tipo: tipo ?? this.tipo,
         fecha: fecha ?? this.fecha,
       );
@@ -944,9 +1753,9 @@ class HistorialTableData extends DataClass
       medicamentoId: data.medicamentoId.present
           ? data.medicamentoId.value
           : this.medicamentoId,
-      medicamentoNombre: data.medicamentoNombre.present
-          ? data.medicamentoNombre.value
-          : this.medicamentoNombre,
+      nombreSnapshot: data.nombreSnapshot.present
+          ? data.nombreSnapshot.value
+          : this.nombreSnapshot,
       tipo: data.tipo.present ? data.tipo.value : this.tipo,
       fecha: data.fecha.present ? data.fecha.value : this.fecha,
     );
@@ -957,7 +1766,7 @@ class HistorialTableData extends DataClass
     return (StringBuffer('HistorialTableData(')
           ..write('id: $id, ')
           ..write('medicamentoId: $medicamentoId, ')
-          ..write('medicamentoNombre: $medicamentoNombre, ')
+          ..write('nombreSnapshot: $nombreSnapshot, ')
           ..write('tipo: $tipo, ')
           ..write('fecha: $fecha')
           ..write(')'))
@@ -966,14 +1775,14 @@ class HistorialTableData extends DataClass
 
   @override
   int get hashCode =>
-      Object.hash(id, medicamentoId, medicamentoNombre, tipo, fecha);
+      Object.hash(id, medicamentoId, nombreSnapshot, tipo, fecha);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       (other is HistorialTableData &&
           other.id == this.id &&
           other.medicamentoId == this.medicamentoId &&
-          other.medicamentoNombre == this.medicamentoNombre &&
+          other.nombreSnapshot == this.nombreSnapshot &&
           other.tipo == this.tipo &&
           other.fecha == this.fecha);
 }
@@ -981,14 +1790,14 @@ class HistorialTableData extends DataClass
 class HistorialTableCompanion extends UpdateCompanion<HistorialTableData> {
   final Value<String> id;
   final Value<String> medicamentoId;
-  final Value<String> medicamentoNombre;
+  final Value<String> nombreSnapshot;
   final Value<String> tipo;
   final Value<DateTime> fecha;
   final Value<int> rowid;
   const HistorialTableCompanion({
     this.id = const Value.absent(),
     this.medicamentoId = const Value.absent(),
-    this.medicamentoNombre = const Value.absent(),
+    this.nombreSnapshot = const Value.absent(),
     this.tipo = const Value.absent(),
     this.fecha = const Value.absent(),
     this.rowid = const Value.absent(),
@@ -996,19 +1805,18 @@ class HistorialTableCompanion extends UpdateCompanion<HistorialTableData> {
   HistorialTableCompanion.insert({
     required String id,
     required String medicamentoId,
-    required String medicamentoNombre,
-    required String tipo,
+    required String nombreSnapshot,
+    this.tipo = const Value.absent(),
     required DateTime fecha,
     this.rowid = const Value.absent(),
   })  : id = Value(id),
         medicamentoId = Value(medicamentoId),
-        medicamentoNombre = Value(medicamentoNombre),
-        tipo = Value(tipo),
+        nombreSnapshot = Value(nombreSnapshot),
         fecha = Value(fecha);
   static Insertable<HistorialTableData> custom({
     Expression<String>? id,
     Expression<String>? medicamentoId,
-    Expression<String>? medicamentoNombre,
+    Expression<String>? nombreSnapshot,
     Expression<String>? tipo,
     Expression<DateTime>? fecha,
     Expression<int>? rowid,
@@ -1016,7 +1824,7 @@ class HistorialTableCompanion extends UpdateCompanion<HistorialTableData> {
     return RawValuesInsertable({
       if (id != null) 'id': id,
       if (medicamentoId != null) 'medicamento_id': medicamentoId,
-      if (medicamentoNombre != null) 'medicamento_nombre': medicamentoNombre,
+      if (nombreSnapshot != null) 'nombre_snapshot': nombreSnapshot,
       if (tipo != null) 'tipo': tipo,
       if (fecha != null) 'fecha': fecha,
       if (rowid != null) 'rowid': rowid,
@@ -1026,14 +1834,14 @@ class HistorialTableCompanion extends UpdateCompanion<HistorialTableData> {
   HistorialTableCompanion copyWith(
       {Value<String>? id,
       Value<String>? medicamentoId,
-      Value<String>? medicamentoNombre,
+      Value<String>? nombreSnapshot,
       Value<String>? tipo,
       Value<DateTime>? fecha,
       Value<int>? rowid}) {
     return HistorialTableCompanion(
       id: id ?? this.id,
       medicamentoId: medicamentoId ?? this.medicamentoId,
-      medicamentoNombre: medicamentoNombre ?? this.medicamentoNombre,
+      nombreSnapshot: nombreSnapshot ?? this.nombreSnapshot,
       tipo: tipo ?? this.tipo,
       fecha: fecha ?? this.fecha,
       rowid: rowid ?? this.rowid,
@@ -1049,8 +1857,8 @@ class HistorialTableCompanion extends UpdateCompanion<HistorialTableData> {
     if (medicamentoId.present) {
       map['medicamento_id'] = Variable<String>(medicamentoId.value);
     }
-    if (medicamentoNombre.present) {
-      map['medicamento_nombre'] = Variable<String>(medicamentoNombre.value);
+    if (nombreSnapshot.present) {
+      map['nombre_snapshot'] = Variable<String>(nombreSnapshot.value);
     }
     if (tipo.present) {
       map['tipo'] = Variable<String>(tipo.value);
@@ -1069,7 +1877,7 @@ class HistorialTableCompanion extends UpdateCompanion<HistorialTableData> {
     return (StringBuffer('HistorialTableCompanion(')
           ..write('id: $id, ')
           ..write('medicamentoId: $medicamentoId, ')
-          ..write('medicamentoNombre: $medicamentoNombre, ')
+          ..write('nombreSnapshot: $nombreSnapshot, ')
           ..write('tipo: $tipo, ')
           ..write('fecha: $fecha, ')
           ..write('rowid: $rowid')
@@ -1078,245 +1886,168 @@ class HistorialTableCompanion extends UpdateCompanion<HistorialTableData> {
   }
 }
 
-class $SyncQueueTableTable extends SyncQueueTable
-    with TableInfo<$SyncQueueTableTable, SyncQueueTableData> {
+class $SyncMetaTableTable extends SyncMetaTable
+    with TableInfo<$SyncMetaTableTable, SyncMetaTableData> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
-  $SyncQueueTableTable(this.attachedDatabase, [this._alias]);
-  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  $SyncMetaTableTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _claveMeta = const VerificationMeta('clave');
   @override
-  late final GeneratedColumn<String> id = GeneratedColumn<String>(
-      'id', aliasedName, false,
+  late final GeneratedColumn<String> clave = GeneratedColumn<String>(
+      'clave', aliasedName, false,
       type: DriftSqlType.string, requiredDuringInsert: true);
-  static const VerificationMeta _operacionMeta =
-      const VerificationMeta('operacion');
+  static const VerificationMeta _valorMeta = const VerificationMeta('valor');
   @override
-  late final GeneratedColumn<String> operacion = GeneratedColumn<String>(
-      'operacion', aliasedName, false,
+  late final GeneratedColumn<String> valor = GeneratedColumn<String>(
+      'valor', aliasedName, false,
       type: DriftSqlType.string, requiredDuringInsert: true);
-  static const VerificationMeta _creadoEnMeta =
-      const VerificationMeta('creadoEn');
   @override
-  late final GeneratedColumn<DateTime> creadoEn = GeneratedColumn<DateTime>(
-      'creado_en', aliasedName, false,
-      type: DriftSqlType.dateTime, requiredDuringInsert: true);
-  static const VerificationMeta _sincronizadoMeta =
-      const VerificationMeta('sincronizado');
-  @override
-  late final GeneratedColumn<bool> sincronizado = GeneratedColumn<bool>(
-      'sincronizado', aliasedName, false,
-      type: DriftSqlType.bool,
-      requiredDuringInsert: false,
-      defaultConstraints: GeneratedColumn.constraintIsAlways(
-          'CHECK ("sincronizado" IN (0, 1))'),
-      defaultValue: const Constant(false));
-  @override
-  List<GeneratedColumn> get $columns => [id, operacion, creadoEn, sincronizado];
+  List<GeneratedColumn> get $columns => [clave, valor];
   @override
   String get aliasedName => _alias ?? actualTableName;
   @override
   String get actualTableName => $name;
-  static const String $name = 'sync_queue_table';
+  static const String $name = 'sync_meta';
   @override
-  VerificationContext validateIntegrity(Insertable<SyncQueueTableData> instance,
+  VerificationContext validateIntegrity(Insertable<SyncMetaTableData> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
-    if (data.containsKey('id')) {
-      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
-    } else if (isInserting) {
-      context.missing(_idMeta);
-    }
-    if (data.containsKey('operacion')) {
-      context.handle(_operacionMeta,
-          operacion.isAcceptableOrUnknown(data['operacion']!, _operacionMeta));
-    } else if (isInserting) {
-      context.missing(_operacionMeta);
-    }
-    if (data.containsKey('creado_en')) {
-      context.handle(_creadoEnMeta,
-          creadoEn.isAcceptableOrUnknown(data['creado_en']!, _creadoEnMeta));
-    } else if (isInserting) {
-      context.missing(_creadoEnMeta);
-    }
-    if (data.containsKey('sincronizado')) {
+    if (data.containsKey('clave')) {
       context.handle(
-          _sincronizadoMeta,
-          sincronizado.isAcceptableOrUnknown(
-              data['sincronizado']!, _sincronizadoMeta));
+          _claveMeta, clave.isAcceptableOrUnknown(data['clave']!, _claveMeta));
+    } else if (isInserting) {
+      context.missing(_claveMeta);
+    }
+    if (data.containsKey('valor')) {
+      context.handle(
+          _valorMeta, valor.isAcceptableOrUnknown(data['valor']!, _valorMeta));
+    } else if (isInserting) {
+      context.missing(_valorMeta);
     }
     return context;
   }
 
   @override
-  Set<GeneratedColumn> get $primaryKey => {id};
+  Set<GeneratedColumn> get $primaryKey => {clave};
   @override
-  SyncQueueTableData map(Map<String, dynamic> data, {String? tablePrefix}) {
+  SyncMetaTableData map(Map<String, dynamic> data, {String? tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
-    return SyncQueueTableData(
-      id: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
-      operacion: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}operacion'])!,
-      creadoEn: attachedDatabase.typeMapping
-          .read(DriftSqlType.dateTime, data['${effectivePrefix}creado_en'])!,
-      sincronizado: attachedDatabase.typeMapping
-          .read(DriftSqlType.bool, data['${effectivePrefix}sincronizado'])!,
+    return SyncMetaTableData(
+      clave: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}clave'])!,
+      valor: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}valor'])!,
     );
   }
 
   @override
-  $SyncQueueTableTable createAlias(String alias) {
-    return $SyncQueueTableTable(attachedDatabase, alias);
+  $SyncMetaTableTable createAlias(String alias) {
+    return $SyncMetaTableTable(attachedDatabase, alias);
   }
 }
 
-class SyncQueueTableData extends DataClass
-    implements Insertable<SyncQueueTableData> {
-  final String id;
-  final String operacion;
-  final DateTime creadoEn;
-  final bool sincronizado;
-  const SyncQueueTableData(
-      {required this.id,
-      required this.operacion,
-      required this.creadoEn,
-      required this.sincronizado});
+class SyncMetaTableData extends DataClass
+    implements Insertable<SyncMetaTableData> {
+  final String clave;
+  final String valor;
+  const SyncMetaTableData({required this.clave, required this.valor});
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
-    map['id'] = Variable<String>(id);
-    map['operacion'] = Variable<String>(operacion);
-    map['creado_en'] = Variable<DateTime>(creadoEn);
-    map['sincronizado'] = Variable<bool>(sincronizado);
+    map['clave'] = Variable<String>(clave);
+    map['valor'] = Variable<String>(valor);
     return map;
   }
 
-  SyncQueueTableCompanion toCompanion(bool nullToAbsent) {
-    return SyncQueueTableCompanion(
-      id: Value(id),
-      operacion: Value(operacion),
-      creadoEn: Value(creadoEn),
-      sincronizado: Value(sincronizado),
+  SyncMetaTableCompanion toCompanion(bool nullToAbsent) {
+    return SyncMetaTableCompanion(
+      clave: Value(clave),
+      valor: Value(valor),
     );
   }
 
-  factory SyncQueueTableData.fromJson(Map<String, dynamic> json,
+  factory SyncMetaTableData.fromJson(Map<String, dynamic> json,
       {ValueSerializer? serializer}) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
-    return SyncQueueTableData(
-      id: serializer.fromJson<String>(json['id']),
-      operacion: serializer.fromJson<String>(json['operacion']),
-      creadoEn: serializer.fromJson<DateTime>(json['creadoEn']),
-      sincronizado: serializer.fromJson<bool>(json['sincronizado']),
+    return SyncMetaTableData(
+      clave: serializer.fromJson<String>(json['clave']),
+      valor: serializer.fromJson<String>(json['valor']),
     );
   }
   @override
   Map<String, dynamic> toJson({ValueSerializer? serializer}) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return <String, dynamic>{
-      'id': serializer.toJson<String>(id),
-      'operacion': serializer.toJson<String>(operacion),
-      'creadoEn': serializer.toJson<DateTime>(creadoEn),
-      'sincronizado': serializer.toJson<bool>(sincronizado),
+      'clave': serializer.toJson<String>(clave),
+      'valor': serializer.toJson<String>(valor),
     };
   }
 
-  SyncQueueTableData copyWith(
-          {String? id,
-          String? operacion,
-          DateTime? creadoEn,
-          bool? sincronizado}) =>
-      SyncQueueTableData(
-        id: id ?? this.id,
-        operacion: operacion ?? this.operacion,
-        creadoEn: creadoEn ?? this.creadoEn,
-        sincronizado: sincronizado ?? this.sincronizado,
+  SyncMetaTableData copyWith({String? clave, String? valor}) =>
+      SyncMetaTableData(
+        clave: clave ?? this.clave,
+        valor: valor ?? this.valor,
       );
-  SyncQueueTableData copyWithCompanion(SyncQueueTableCompanion data) {
-    return SyncQueueTableData(
-      id: data.id.present ? data.id.value : this.id,
-      operacion: data.operacion.present ? data.operacion.value : this.operacion,
-      creadoEn: data.creadoEn.present ? data.creadoEn.value : this.creadoEn,
-      sincronizado: data.sincronizado.present
-          ? data.sincronizado.value
-          : this.sincronizado,
+  SyncMetaTableData copyWithCompanion(SyncMetaTableCompanion data) {
+    return SyncMetaTableData(
+      clave: data.clave.present ? data.clave.value : this.clave,
+      valor: data.valor.present ? data.valor.value : this.valor,
     );
   }
 
   @override
   String toString() {
-    return (StringBuffer('SyncQueueTableData(')
-          ..write('id: $id, ')
-          ..write('operacion: $operacion, ')
-          ..write('creadoEn: $creadoEn, ')
-          ..write('sincronizado: $sincronizado')
+    return (StringBuffer('SyncMetaTableData(')
+          ..write('clave: $clave, ')
+          ..write('valor: $valor')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(id, operacion, creadoEn, sincronizado);
+  int get hashCode => Object.hash(clave, valor);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      (other is SyncQueueTableData &&
-          other.id == this.id &&
-          other.operacion == this.operacion &&
-          other.creadoEn == this.creadoEn &&
-          other.sincronizado == this.sincronizado);
+      (other is SyncMetaTableData &&
+          other.clave == this.clave &&
+          other.valor == this.valor);
 }
 
-class SyncQueueTableCompanion extends UpdateCompanion<SyncQueueTableData> {
-  final Value<String> id;
-  final Value<String> operacion;
-  final Value<DateTime> creadoEn;
-  final Value<bool> sincronizado;
+class SyncMetaTableCompanion extends UpdateCompanion<SyncMetaTableData> {
+  final Value<String> clave;
+  final Value<String> valor;
   final Value<int> rowid;
-  const SyncQueueTableCompanion({
-    this.id = const Value.absent(),
-    this.operacion = const Value.absent(),
-    this.creadoEn = const Value.absent(),
-    this.sincronizado = const Value.absent(),
+  const SyncMetaTableCompanion({
+    this.clave = const Value.absent(),
+    this.valor = const Value.absent(),
     this.rowid = const Value.absent(),
   });
-  SyncQueueTableCompanion.insert({
-    required String id,
-    required String operacion,
-    required DateTime creadoEn,
-    this.sincronizado = const Value.absent(),
+  SyncMetaTableCompanion.insert({
+    required String clave,
+    required String valor,
     this.rowid = const Value.absent(),
-  })  : id = Value(id),
-        operacion = Value(operacion),
-        creadoEn = Value(creadoEn);
-  static Insertable<SyncQueueTableData> custom({
-    Expression<String>? id,
-    Expression<String>? operacion,
-    Expression<DateTime>? creadoEn,
-    Expression<bool>? sincronizado,
+  })  : clave = Value(clave),
+        valor = Value(valor);
+  static Insertable<SyncMetaTableData> custom({
+    Expression<String>? clave,
+    Expression<String>? valor,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
-      if (id != null) 'id': id,
-      if (operacion != null) 'operacion': operacion,
-      if (creadoEn != null) 'creado_en': creadoEn,
-      if (sincronizado != null) 'sincronizado': sincronizado,
+      if (clave != null) 'clave': clave,
+      if (valor != null) 'valor': valor,
       if (rowid != null) 'rowid': rowid,
     });
   }
 
-  SyncQueueTableCompanion copyWith(
-      {Value<String>? id,
-      Value<String>? operacion,
-      Value<DateTime>? creadoEn,
-      Value<bool>? sincronizado,
-      Value<int>? rowid}) {
-    return SyncQueueTableCompanion(
-      id: id ?? this.id,
-      operacion: operacion ?? this.operacion,
-      creadoEn: creadoEn ?? this.creadoEn,
-      sincronizado: sincronizado ?? this.sincronizado,
+  SyncMetaTableCompanion copyWith(
+      {Value<String>? clave, Value<String>? valor, Value<int>? rowid}) {
+    return SyncMetaTableCompanion(
+      clave: clave ?? this.clave,
+      valor: valor ?? this.valor,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -1324,17 +2055,11 @@ class SyncQueueTableCompanion extends UpdateCompanion<SyncQueueTableData> {
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
-    if (id.present) {
-      map['id'] = Variable<String>(id.value);
+    if (clave.present) {
+      map['clave'] = Variable<String>(clave.value);
     }
-    if (operacion.present) {
-      map['operacion'] = Variable<String>(operacion.value);
-    }
-    if (creadoEn.present) {
-      map['creado_en'] = Variable<DateTime>(creadoEn.value);
-    }
-    if (sincronizado.present) {
-      map['sincronizado'] = Variable<bool>(sincronizado.value);
+    if (valor.present) {
+      map['valor'] = Variable<String>(valor.value);
     }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
@@ -1344,11 +2069,9 @@ class SyncQueueTableCompanion extends UpdateCompanion<SyncQueueTableData> {
 
   @override
   String toString() {
-    return (StringBuffer('SyncQueueTableCompanion(')
-          ..write('id: $id, ')
-          ..write('operacion: $operacion, ')
-          ..write('creadoEn: $creadoEn, ')
-          ..write('sincronizado: $sincronizado, ')
+    return (StringBuffer('SyncMetaTableCompanion(')
+          ..write('clave: $clave, ')
+          ..write('valor: $valor, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -1360,56 +2083,80 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
   late final $MedicamentosTableTable medicamentosTable =
       $MedicamentosTableTable(this);
+  late final $MedicamentoGruposTableTable medicamentoGruposTable =
+      $MedicamentoGruposTableTable(this);
   late final $HistorialTableTable historialTable = $HistorialTableTable(this);
-  late final $SyncQueueTableTable syncQueueTable = $SyncQueueTableTable(this);
-  late final MedicamentosDao medicamentosDao =
-      MedicamentosDao(this as AppDatabase);
-  late final HistorialDao historialDao = HistorialDao(this as AppDatabase);
-  late final SyncQueueDao syncQueueDao = SyncQueueDao(this as AppDatabase);
+  late final $SyncMetaTableTable syncMetaTable = $SyncMetaTableTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
   @override
-  List<DatabaseSchemaEntity> get allSchemaEntities =>
-      [medicamentosTable, historialTable, syncQueueTable];
+  List<DatabaseSchemaEntity> get allSchemaEntities => [
+        medicamentosTable,
+        medicamentoGruposTable,
+        historialTable,
+        syncMetaTable
+      ];
 }
 
 typedef $$MedicamentosTableTableCreateCompanionBuilder
     = MedicamentosTableCompanion Function({
   required String id,
-  required String codigoBarras,
-  required String nombre,
+  required String codigoInterno,
+  required String nombreComercial,
+  Value<String?> nombreGenerico,
+  Value<String?> categoria,
+  Value<String> laboratorios,
   Value<String?> descripcion,
+  Value<String> principiosActivos,
+  Value<String?> composicionCompleta,
+  Value<String> concentraciones,
+  Value<String> formasFarmaceuticas,
+  Value<String?> presentacion,
+  Value<String> viasAdministracion,
+  Value<String?> indicacionesTexto,
+  Value<String> indicacionesTags,
+  Value<String?> contraindicaciones,
+  Value<String?> precaucionesAdvertencias,
+  Value<String?> efectosAdversos,
+  Value<String?> dosisAdultos,
+  Value<String?> dosisAdultosMayores,
+  Value<String?> dosisPediatrica,
+  Value<String?> dosisLactantes,
   Value<String?> fotoUrl,
-  Value<String?> dosisAdulto,
-  Value<String?> dosisMayor,
-  Value<String?> dosisNino,
-  Value<String> alergias,
-  Value<String> contraindicaciones,
-  Value<String> enfermedadesIncompatibles,
-  required DateTime actualizadoEn,
-  Value<bool> eliminado,
+  Value<String?> fechaRevision,
+  Value<String?> actualizadoEn,
   Value<bool> esFavorito,
-  Value<bool> sincronizado,
   Value<int> rowid,
 });
 typedef $$MedicamentosTableTableUpdateCompanionBuilder
     = MedicamentosTableCompanion Function({
   Value<String> id,
-  Value<String> codigoBarras,
-  Value<String> nombre,
+  Value<String> codigoInterno,
+  Value<String> nombreComercial,
+  Value<String?> nombreGenerico,
+  Value<String?> categoria,
+  Value<String> laboratorios,
   Value<String?> descripcion,
+  Value<String> principiosActivos,
+  Value<String?> composicionCompleta,
+  Value<String> concentraciones,
+  Value<String> formasFarmaceuticas,
+  Value<String?> presentacion,
+  Value<String> viasAdministracion,
+  Value<String?> indicacionesTexto,
+  Value<String> indicacionesTags,
+  Value<String?> contraindicaciones,
+  Value<String?> precaucionesAdvertencias,
+  Value<String?> efectosAdversos,
+  Value<String?> dosisAdultos,
+  Value<String?> dosisAdultosMayores,
+  Value<String?> dosisPediatrica,
+  Value<String?> dosisLactantes,
   Value<String?> fotoUrl,
-  Value<String?> dosisAdulto,
-  Value<String?> dosisMayor,
-  Value<String?> dosisNino,
-  Value<String> alergias,
-  Value<String> contraindicaciones,
-  Value<String> enfermedadesIncompatibles,
-  Value<DateTime> actualizadoEn,
-  Value<bool> eliminado,
+  Value<String?> fechaRevision,
+  Value<String?> actualizadoEn,
   Value<bool> esFavorito,
-  Value<bool> sincronizado,
   Value<int> rowid,
 });
 
@@ -1425,49 +2172,95 @@ class $$MedicamentosTableTableFilterComposer
   ColumnFilters<String> get id => $composableBuilder(
       column: $table.id, builder: (column) => ColumnFilters(column));
 
-  ColumnFilters<String> get codigoBarras => $composableBuilder(
-      column: $table.codigoBarras, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get codigoInterno => $composableBuilder(
+      column: $table.codigoInterno, builder: (column) => ColumnFilters(column));
 
-  ColumnFilters<String> get nombre => $composableBuilder(
-      column: $table.nombre, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get nombreComercial => $composableBuilder(
+      column: $table.nombreComercial,
+      builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get nombreGenerico => $composableBuilder(
+      column: $table.nombreGenerico,
+      builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get categoria => $composableBuilder(
+      column: $table.categoria, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get laboratorios => $composableBuilder(
+      column: $table.laboratorios, builder: (column) => ColumnFilters(column));
 
   ColumnFilters<String> get descripcion => $composableBuilder(
       column: $table.descripcion, builder: (column) => ColumnFilters(column));
 
-  ColumnFilters<String> get fotoUrl => $composableBuilder(
-      column: $table.fotoUrl, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get principiosActivos => $composableBuilder(
+      column: $table.principiosActivos,
+      builder: (column) => ColumnFilters(column));
 
-  ColumnFilters<String> get dosisAdulto => $composableBuilder(
-      column: $table.dosisAdulto, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get composicionCompleta => $composableBuilder(
+      column: $table.composicionCompleta,
+      builder: (column) => ColumnFilters(column));
 
-  ColumnFilters<String> get dosisMayor => $composableBuilder(
-      column: $table.dosisMayor, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get concentraciones => $composableBuilder(
+      column: $table.concentraciones,
+      builder: (column) => ColumnFilters(column));
 
-  ColumnFilters<String> get dosisNino => $composableBuilder(
-      column: $table.dosisNino, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get formasFarmaceuticas => $composableBuilder(
+      column: $table.formasFarmaceuticas,
+      builder: (column) => ColumnFilters(column));
 
-  ColumnFilters<String> get alergias => $composableBuilder(
-      column: $table.alergias, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get presentacion => $composableBuilder(
+      column: $table.presentacion, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get viasAdministracion => $composableBuilder(
+      column: $table.viasAdministracion,
+      builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get indicacionesTexto => $composableBuilder(
+      column: $table.indicacionesTexto,
+      builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get indicacionesTags => $composableBuilder(
+      column: $table.indicacionesTags,
+      builder: (column) => ColumnFilters(column));
 
   ColumnFilters<String> get contraindicaciones => $composableBuilder(
       column: $table.contraindicaciones,
       builder: (column) => ColumnFilters(column));
 
-  ColumnFilters<String> get enfermedadesIncompatibles => $composableBuilder(
-      column: $table.enfermedadesIncompatibles,
+  ColumnFilters<String> get precaucionesAdvertencias => $composableBuilder(
+      column: $table.precaucionesAdvertencias,
       builder: (column) => ColumnFilters(column));
 
-  ColumnFilters<DateTime> get actualizadoEn => $composableBuilder(
-      column: $table.actualizadoEn, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get efectosAdversos => $composableBuilder(
+      column: $table.efectosAdversos,
+      builder: (column) => ColumnFilters(column));
 
-  ColumnFilters<bool> get eliminado => $composableBuilder(
-      column: $table.eliminado, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get dosisAdultos => $composableBuilder(
+      column: $table.dosisAdultos, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get dosisAdultosMayores => $composableBuilder(
+      column: $table.dosisAdultosMayores,
+      builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get dosisPediatrica => $composableBuilder(
+      column: $table.dosisPediatrica,
+      builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get dosisLactantes => $composableBuilder(
+      column: $table.dosisLactantes,
+      builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get fotoUrl => $composableBuilder(
+      column: $table.fotoUrl, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get fechaRevision => $composableBuilder(
+      column: $table.fechaRevision, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get actualizadoEn => $composableBuilder(
+      column: $table.actualizadoEn, builder: (column) => ColumnFilters(column));
 
   ColumnFilters<bool> get esFavorito => $composableBuilder(
       column: $table.esFavorito, builder: (column) => ColumnFilters(column));
-
-  ColumnFilters<bool> get sincronizado => $composableBuilder(
-      column: $table.sincronizado, builder: (column) => ColumnFilters(column));
 }
 
 class $$MedicamentosTableTableOrderingComposer
@@ -1482,52 +2275,101 @@ class $$MedicamentosTableTableOrderingComposer
   ColumnOrderings<String> get id => $composableBuilder(
       column: $table.id, builder: (column) => ColumnOrderings(column));
 
-  ColumnOrderings<String> get codigoBarras => $composableBuilder(
-      column: $table.codigoBarras,
+  ColumnOrderings<String> get codigoInterno => $composableBuilder(
+      column: $table.codigoInterno,
       builder: (column) => ColumnOrderings(column));
 
-  ColumnOrderings<String> get nombre => $composableBuilder(
-      column: $table.nombre, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get nombreComercial => $composableBuilder(
+      column: $table.nombreComercial,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get nombreGenerico => $composableBuilder(
+      column: $table.nombreGenerico,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get categoria => $composableBuilder(
+      column: $table.categoria, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get laboratorios => $composableBuilder(
+      column: $table.laboratorios,
+      builder: (column) => ColumnOrderings(column));
 
   ColumnOrderings<String> get descripcion => $composableBuilder(
       column: $table.descripcion, builder: (column) => ColumnOrderings(column));
 
-  ColumnOrderings<String> get fotoUrl => $composableBuilder(
-      column: $table.fotoUrl, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get principiosActivos => $composableBuilder(
+      column: $table.principiosActivos,
+      builder: (column) => ColumnOrderings(column));
 
-  ColumnOrderings<String> get dosisAdulto => $composableBuilder(
-      column: $table.dosisAdulto, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get composicionCompleta => $composableBuilder(
+      column: $table.composicionCompleta,
+      builder: (column) => ColumnOrderings(column));
 
-  ColumnOrderings<String> get dosisMayor => $composableBuilder(
-      column: $table.dosisMayor, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get concentraciones => $composableBuilder(
+      column: $table.concentraciones,
+      builder: (column) => ColumnOrderings(column));
 
-  ColumnOrderings<String> get dosisNino => $composableBuilder(
-      column: $table.dosisNino, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get formasFarmaceuticas => $composableBuilder(
+      column: $table.formasFarmaceuticas,
+      builder: (column) => ColumnOrderings(column));
 
-  ColumnOrderings<String> get alergias => $composableBuilder(
-      column: $table.alergias, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get presentacion => $composableBuilder(
+      column: $table.presentacion,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get viasAdministracion => $composableBuilder(
+      column: $table.viasAdministracion,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get indicacionesTexto => $composableBuilder(
+      column: $table.indicacionesTexto,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get indicacionesTags => $composableBuilder(
+      column: $table.indicacionesTags,
+      builder: (column) => ColumnOrderings(column));
 
   ColumnOrderings<String> get contraindicaciones => $composableBuilder(
       column: $table.contraindicaciones,
       builder: (column) => ColumnOrderings(column));
 
-  ColumnOrderings<String> get enfermedadesIncompatibles => $composableBuilder(
-      column: $table.enfermedadesIncompatibles,
+  ColumnOrderings<String> get precaucionesAdvertencias => $composableBuilder(
+      column: $table.precaucionesAdvertencias,
       builder: (column) => ColumnOrderings(column));
 
-  ColumnOrderings<DateTime> get actualizadoEn => $composableBuilder(
+  ColumnOrderings<String> get efectosAdversos => $composableBuilder(
+      column: $table.efectosAdversos,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get dosisAdultos => $composableBuilder(
+      column: $table.dosisAdultos,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get dosisAdultosMayores => $composableBuilder(
+      column: $table.dosisAdultosMayores,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get dosisPediatrica => $composableBuilder(
+      column: $table.dosisPediatrica,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get dosisLactantes => $composableBuilder(
+      column: $table.dosisLactantes,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get fotoUrl => $composableBuilder(
+      column: $table.fotoUrl, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get fechaRevision => $composableBuilder(
+      column: $table.fechaRevision,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get actualizadoEn => $composableBuilder(
       column: $table.actualizadoEn,
       builder: (column) => ColumnOrderings(column));
 
-  ColumnOrderings<bool> get eliminado => $composableBuilder(
-      column: $table.eliminado, builder: (column) => ColumnOrderings(column));
-
   ColumnOrderings<bool> get esFavorito => $composableBuilder(
       column: $table.esFavorito, builder: (column) => ColumnOrderings(column));
-
-  ColumnOrderings<bool> get sincronizado => $composableBuilder(
-      column: $table.sincronizado,
-      builder: (column) => ColumnOrderings(column));
 }
 
 class $$MedicamentosTableTableAnnotationComposer
@@ -1542,47 +2384,80 @@ class $$MedicamentosTableTableAnnotationComposer
   GeneratedColumn<String> get id =>
       $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<String> get codigoBarras => $composableBuilder(
-      column: $table.codigoBarras, builder: (column) => column);
+  GeneratedColumn<String> get codigoInterno => $composableBuilder(
+      column: $table.codigoInterno, builder: (column) => column);
 
-  GeneratedColumn<String> get nombre =>
-      $composableBuilder(column: $table.nombre, builder: (column) => column);
+  GeneratedColumn<String> get nombreComercial => $composableBuilder(
+      column: $table.nombreComercial, builder: (column) => column);
+
+  GeneratedColumn<String> get nombreGenerico => $composableBuilder(
+      column: $table.nombreGenerico, builder: (column) => column);
+
+  GeneratedColumn<String> get categoria =>
+      $composableBuilder(column: $table.categoria, builder: (column) => column);
+
+  GeneratedColumn<String> get laboratorios => $composableBuilder(
+      column: $table.laboratorios, builder: (column) => column);
 
   GeneratedColumn<String> get descripcion => $composableBuilder(
       column: $table.descripcion, builder: (column) => column);
 
-  GeneratedColumn<String> get fotoUrl =>
-      $composableBuilder(column: $table.fotoUrl, builder: (column) => column);
+  GeneratedColumn<String> get principiosActivos => $composableBuilder(
+      column: $table.principiosActivos, builder: (column) => column);
 
-  GeneratedColumn<String> get dosisAdulto => $composableBuilder(
-      column: $table.dosisAdulto, builder: (column) => column);
+  GeneratedColumn<String> get composicionCompleta => $composableBuilder(
+      column: $table.composicionCompleta, builder: (column) => column);
 
-  GeneratedColumn<String> get dosisMayor => $composableBuilder(
-      column: $table.dosisMayor, builder: (column) => column);
+  GeneratedColumn<String> get concentraciones => $composableBuilder(
+      column: $table.concentraciones, builder: (column) => column);
 
-  GeneratedColumn<String> get dosisNino =>
-      $composableBuilder(column: $table.dosisNino, builder: (column) => column);
+  GeneratedColumn<String> get formasFarmaceuticas => $composableBuilder(
+      column: $table.formasFarmaceuticas, builder: (column) => column);
 
-  GeneratedColumn<String> get alergias =>
-      $composableBuilder(column: $table.alergias, builder: (column) => column);
+  GeneratedColumn<String> get presentacion => $composableBuilder(
+      column: $table.presentacion, builder: (column) => column);
+
+  GeneratedColumn<String> get viasAdministracion => $composableBuilder(
+      column: $table.viasAdministracion, builder: (column) => column);
+
+  GeneratedColumn<String> get indicacionesTexto => $composableBuilder(
+      column: $table.indicacionesTexto, builder: (column) => column);
+
+  GeneratedColumn<String> get indicacionesTags => $composableBuilder(
+      column: $table.indicacionesTags, builder: (column) => column);
 
   GeneratedColumn<String> get contraindicaciones => $composableBuilder(
       column: $table.contraindicaciones, builder: (column) => column);
 
-  GeneratedColumn<String> get enfermedadesIncompatibles => $composableBuilder(
-      column: $table.enfermedadesIncompatibles, builder: (column) => column);
+  GeneratedColumn<String> get precaucionesAdvertencias => $composableBuilder(
+      column: $table.precaucionesAdvertencias, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get actualizadoEn => $composableBuilder(
+  GeneratedColumn<String> get efectosAdversos => $composableBuilder(
+      column: $table.efectosAdversos, builder: (column) => column);
+
+  GeneratedColumn<String> get dosisAdultos => $composableBuilder(
+      column: $table.dosisAdultos, builder: (column) => column);
+
+  GeneratedColumn<String> get dosisAdultosMayores => $composableBuilder(
+      column: $table.dosisAdultosMayores, builder: (column) => column);
+
+  GeneratedColumn<String> get dosisPediatrica => $composableBuilder(
+      column: $table.dosisPediatrica, builder: (column) => column);
+
+  GeneratedColumn<String> get dosisLactantes => $composableBuilder(
+      column: $table.dosisLactantes, builder: (column) => column);
+
+  GeneratedColumn<String> get fotoUrl =>
+      $composableBuilder(column: $table.fotoUrl, builder: (column) => column);
+
+  GeneratedColumn<String> get fechaRevision => $composableBuilder(
+      column: $table.fechaRevision, builder: (column) => column);
+
+  GeneratedColumn<String> get actualizadoEn => $composableBuilder(
       column: $table.actualizadoEn, builder: (column) => column);
-
-  GeneratedColumn<bool> get eliminado =>
-      $composableBuilder(column: $table.eliminado, builder: (column) => column);
 
   GeneratedColumn<bool> get esFavorito => $composableBuilder(
       column: $table.esFavorito, builder: (column) => column);
-
-  GeneratedColumn<bool> get sincronizado => $composableBuilder(
-      column: $table.sincronizado, builder: (column) => column);
 }
 
 class $$MedicamentosTableTableTableManager extends RootTableManager<
@@ -1615,74 +2490,118 @@ class $$MedicamentosTableTableTableManager extends RootTableManager<
                   $db: db, $table: table),
           updateCompanionCallback: ({
             Value<String> id = const Value.absent(),
-            Value<String> codigoBarras = const Value.absent(),
-            Value<String> nombre = const Value.absent(),
+            Value<String> codigoInterno = const Value.absent(),
+            Value<String> nombreComercial = const Value.absent(),
+            Value<String?> nombreGenerico = const Value.absent(),
+            Value<String?> categoria = const Value.absent(),
+            Value<String> laboratorios = const Value.absent(),
             Value<String?> descripcion = const Value.absent(),
+            Value<String> principiosActivos = const Value.absent(),
+            Value<String?> composicionCompleta = const Value.absent(),
+            Value<String> concentraciones = const Value.absent(),
+            Value<String> formasFarmaceuticas = const Value.absent(),
+            Value<String?> presentacion = const Value.absent(),
+            Value<String> viasAdministracion = const Value.absent(),
+            Value<String?> indicacionesTexto = const Value.absent(),
+            Value<String> indicacionesTags = const Value.absent(),
+            Value<String?> contraindicaciones = const Value.absent(),
+            Value<String?> precaucionesAdvertencias = const Value.absent(),
+            Value<String?> efectosAdversos = const Value.absent(),
+            Value<String?> dosisAdultos = const Value.absent(),
+            Value<String?> dosisAdultosMayores = const Value.absent(),
+            Value<String?> dosisPediatrica = const Value.absent(),
+            Value<String?> dosisLactantes = const Value.absent(),
             Value<String?> fotoUrl = const Value.absent(),
-            Value<String?> dosisAdulto = const Value.absent(),
-            Value<String?> dosisMayor = const Value.absent(),
-            Value<String?> dosisNino = const Value.absent(),
-            Value<String> alergias = const Value.absent(),
-            Value<String> contraindicaciones = const Value.absent(),
-            Value<String> enfermedadesIncompatibles = const Value.absent(),
-            Value<DateTime> actualizadoEn = const Value.absent(),
-            Value<bool> eliminado = const Value.absent(),
+            Value<String?> fechaRevision = const Value.absent(),
+            Value<String?> actualizadoEn = const Value.absent(),
             Value<bool> esFavorito = const Value.absent(),
-            Value<bool> sincronizado = const Value.absent(),
             Value<int> rowid = const Value.absent(),
           }) =>
               MedicamentosTableCompanion(
             id: id,
-            codigoBarras: codigoBarras,
-            nombre: nombre,
+            codigoInterno: codigoInterno,
+            nombreComercial: nombreComercial,
+            nombreGenerico: nombreGenerico,
+            categoria: categoria,
+            laboratorios: laboratorios,
             descripcion: descripcion,
-            fotoUrl: fotoUrl,
-            dosisAdulto: dosisAdulto,
-            dosisMayor: dosisMayor,
-            dosisNino: dosisNino,
-            alergias: alergias,
+            principiosActivos: principiosActivos,
+            composicionCompleta: composicionCompleta,
+            concentraciones: concentraciones,
+            formasFarmaceuticas: formasFarmaceuticas,
+            presentacion: presentacion,
+            viasAdministracion: viasAdministracion,
+            indicacionesTexto: indicacionesTexto,
+            indicacionesTags: indicacionesTags,
             contraindicaciones: contraindicaciones,
-            enfermedadesIncompatibles: enfermedadesIncompatibles,
+            precaucionesAdvertencias: precaucionesAdvertencias,
+            efectosAdversos: efectosAdversos,
+            dosisAdultos: dosisAdultos,
+            dosisAdultosMayores: dosisAdultosMayores,
+            dosisPediatrica: dosisPediatrica,
+            dosisLactantes: dosisLactantes,
+            fotoUrl: fotoUrl,
+            fechaRevision: fechaRevision,
             actualizadoEn: actualizadoEn,
-            eliminado: eliminado,
             esFavorito: esFavorito,
-            sincronizado: sincronizado,
             rowid: rowid,
           ),
           createCompanionCallback: ({
             required String id,
-            required String codigoBarras,
-            required String nombre,
+            required String codigoInterno,
+            required String nombreComercial,
+            Value<String?> nombreGenerico = const Value.absent(),
+            Value<String?> categoria = const Value.absent(),
+            Value<String> laboratorios = const Value.absent(),
             Value<String?> descripcion = const Value.absent(),
+            Value<String> principiosActivos = const Value.absent(),
+            Value<String?> composicionCompleta = const Value.absent(),
+            Value<String> concentraciones = const Value.absent(),
+            Value<String> formasFarmaceuticas = const Value.absent(),
+            Value<String?> presentacion = const Value.absent(),
+            Value<String> viasAdministracion = const Value.absent(),
+            Value<String?> indicacionesTexto = const Value.absent(),
+            Value<String> indicacionesTags = const Value.absent(),
+            Value<String?> contraindicaciones = const Value.absent(),
+            Value<String?> precaucionesAdvertencias = const Value.absent(),
+            Value<String?> efectosAdversos = const Value.absent(),
+            Value<String?> dosisAdultos = const Value.absent(),
+            Value<String?> dosisAdultosMayores = const Value.absent(),
+            Value<String?> dosisPediatrica = const Value.absent(),
+            Value<String?> dosisLactantes = const Value.absent(),
             Value<String?> fotoUrl = const Value.absent(),
-            Value<String?> dosisAdulto = const Value.absent(),
-            Value<String?> dosisMayor = const Value.absent(),
-            Value<String?> dosisNino = const Value.absent(),
-            Value<String> alergias = const Value.absent(),
-            Value<String> contraindicaciones = const Value.absent(),
-            Value<String> enfermedadesIncompatibles = const Value.absent(),
-            required DateTime actualizadoEn,
-            Value<bool> eliminado = const Value.absent(),
+            Value<String?> fechaRevision = const Value.absent(),
+            Value<String?> actualizadoEn = const Value.absent(),
             Value<bool> esFavorito = const Value.absent(),
-            Value<bool> sincronizado = const Value.absent(),
             Value<int> rowid = const Value.absent(),
           }) =>
               MedicamentosTableCompanion.insert(
             id: id,
-            codigoBarras: codigoBarras,
-            nombre: nombre,
+            codigoInterno: codigoInterno,
+            nombreComercial: nombreComercial,
+            nombreGenerico: nombreGenerico,
+            categoria: categoria,
+            laboratorios: laboratorios,
             descripcion: descripcion,
-            fotoUrl: fotoUrl,
-            dosisAdulto: dosisAdulto,
-            dosisMayor: dosisMayor,
-            dosisNino: dosisNino,
-            alergias: alergias,
+            principiosActivos: principiosActivos,
+            composicionCompleta: composicionCompleta,
+            concentraciones: concentraciones,
+            formasFarmaceuticas: formasFarmaceuticas,
+            presentacion: presentacion,
+            viasAdministracion: viasAdministracion,
+            indicacionesTexto: indicacionesTexto,
+            indicacionesTags: indicacionesTags,
             contraindicaciones: contraindicaciones,
-            enfermedadesIncompatibles: enfermedadesIncompatibles,
+            precaucionesAdvertencias: precaucionesAdvertencias,
+            efectosAdversos: efectosAdversos,
+            dosisAdultos: dosisAdultos,
+            dosisAdultosMayores: dosisAdultosMayores,
+            dosisPediatrica: dosisPediatrica,
+            dosisLactantes: dosisLactantes,
+            fotoUrl: fotoUrl,
+            fechaRevision: fechaRevision,
             actualizadoEn: actualizadoEn,
-            eliminado: eliminado,
             esFavorito: esFavorito,
-            sincronizado: sincronizado,
             rowid: rowid,
           ),
           withReferenceMapper: (p0) => p0
@@ -1708,12 +2627,178 @@ typedef $$MedicamentosTableTableProcessedTableManager = ProcessedTableManager<
     ),
     MedicamentosTableData,
     PrefetchHooks Function()>;
+typedef $$MedicamentoGruposTableTableCreateCompanionBuilder
+    = MedicamentoGruposTableCompanion Function({
+  required String medicamentoId,
+  required String grupo,
+  Value<String> estado,
+  Value<String?> observacion,
+  Value<int> rowid,
+});
+typedef $$MedicamentoGruposTableTableUpdateCompanionBuilder
+    = MedicamentoGruposTableCompanion Function({
+  Value<String> medicamentoId,
+  Value<String> grupo,
+  Value<String> estado,
+  Value<String?> observacion,
+  Value<int> rowid,
+});
+
+class $$MedicamentoGruposTableTableFilterComposer
+    extends Composer<_$AppDatabase, $MedicamentoGruposTableTable> {
+  $$MedicamentoGruposTableTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get medicamentoId => $composableBuilder(
+      column: $table.medicamentoId, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get grupo => $composableBuilder(
+      column: $table.grupo, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get estado => $composableBuilder(
+      column: $table.estado, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get observacion => $composableBuilder(
+      column: $table.observacion, builder: (column) => ColumnFilters(column));
+}
+
+class $$MedicamentoGruposTableTableOrderingComposer
+    extends Composer<_$AppDatabase, $MedicamentoGruposTableTable> {
+  $$MedicamentoGruposTableTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get medicamentoId => $composableBuilder(
+      column: $table.medicamentoId,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get grupo => $composableBuilder(
+      column: $table.grupo, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get estado => $composableBuilder(
+      column: $table.estado, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get observacion => $composableBuilder(
+      column: $table.observacion, builder: (column) => ColumnOrderings(column));
+}
+
+class $$MedicamentoGruposTableTableAnnotationComposer
+    extends Composer<_$AppDatabase, $MedicamentoGruposTableTable> {
+  $$MedicamentoGruposTableTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get medicamentoId => $composableBuilder(
+      column: $table.medicamentoId, builder: (column) => column);
+
+  GeneratedColumn<String> get grupo =>
+      $composableBuilder(column: $table.grupo, builder: (column) => column);
+
+  GeneratedColumn<String> get estado =>
+      $composableBuilder(column: $table.estado, builder: (column) => column);
+
+  GeneratedColumn<String> get observacion => $composableBuilder(
+      column: $table.observacion, builder: (column) => column);
+}
+
+class $$MedicamentoGruposTableTableTableManager extends RootTableManager<
+    _$AppDatabase,
+    $MedicamentoGruposTableTable,
+    MedicamentoGruposTableData,
+    $$MedicamentoGruposTableTableFilterComposer,
+    $$MedicamentoGruposTableTableOrderingComposer,
+    $$MedicamentoGruposTableTableAnnotationComposer,
+    $$MedicamentoGruposTableTableCreateCompanionBuilder,
+    $$MedicamentoGruposTableTableUpdateCompanionBuilder,
+    (
+      MedicamentoGruposTableData,
+      BaseReferences<_$AppDatabase, $MedicamentoGruposTableTable,
+          MedicamentoGruposTableData>
+    ),
+    MedicamentoGruposTableData,
+    PrefetchHooks Function()> {
+  $$MedicamentoGruposTableTableTableManager(
+      _$AppDatabase db, $MedicamentoGruposTableTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$MedicamentoGruposTableTableFilterComposer(
+                  $db: db, $table: table),
+          createOrderingComposer: () =>
+              $$MedicamentoGruposTableTableOrderingComposer(
+                  $db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$MedicamentoGruposTableTableAnnotationComposer(
+                  $db: db, $table: table),
+          updateCompanionCallback: ({
+            Value<String> medicamentoId = const Value.absent(),
+            Value<String> grupo = const Value.absent(),
+            Value<String> estado = const Value.absent(),
+            Value<String?> observacion = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              MedicamentoGruposTableCompanion(
+            medicamentoId: medicamentoId,
+            grupo: grupo,
+            estado: estado,
+            observacion: observacion,
+            rowid: rowid,
+          ),
+          createCompanionCallback: ({
+            required String medicamentoId,
+            required String grupo,
+            Value<String> estado = const Value.absent(),
+            Value<String?> observacion = const Value.absent(),
+            Value<int> rowid = const Value.absent(),
+          }) =>
+              MedicamentoGruposTableCompanion.insert(
+            medicamentoId: medicamentoId,
+            grupo: grupo,
+            estado: estado,
+            observacion: observacion,
+            rowid: rowid,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ));
+}
+
+typedef $$MedicamentoGruposTableTableProcessedTableManager
+    = ProcessedTableManager<
+        _$AppDatabase,
+        $MedicamentoGruposTableTable,
+        MedicamentoGruposTableData,
+        $$MedicamentoGruposTableTableFilterComposer,
+        $$MedicamentoGruposTableTableOrderingComposer,
+        $$MedicamentoGruposTableTableAnnotationComposer,
+        $$MedicamentoGruposTableTableCreateCompanionBuilder,
+        $$MedicamentoGruposTableTableUpdateCompanionBuilder,
+        (
+          MedicamentoGruposTableData,
+          BaseReferences<_$AppDatabase, $MedicamentoGruposTableTable,
+              MedicamentoGruposTableData>
+        ),
+        MedicamentoGruposTableData,
+        PrefetchHooks Function()>;
 typedef $$HistorialTableTableCreateCompanionBuilder = HistorialTableCompanion
     Function({
   required String id,
   required String medicamentoId,
-  required String medicamentoNombre,
-  required String tipo,
+  required String nombreSnapshot,
+  Value<String> tipo,
   required DateTime fecha,
   Value<int> rowid,
 });
@@ -1721,7 +2806,7 @@ typedef $$HistorialTableTableUpdateCompanionBuilder = HistorialTableCompanion
     Function({
   Value<String> id,
   Value<String> medicamentoId,
-  Value<String> medicamentoNombre,
+  Value<String> nombreSnapshot,
   Value<String> tipo,
   Value<DateTime> fecha,
   Value<int> rowid,
@@ -1742,8 +2827,8 @@ class $$HistorialTableTableFilterComposer
   ColumnFilters<String> get medicamentoId => $composableBuilder(
       column: $table.medicamentoId, builder: (column) => ColumnFilters(column));
 
-  ColumnFilters<String> get medicamentoNombre => $composableBuilder(
-      column: $table.medicamentoNombre,
+  ColumnFilters<String> get nombreSnapshot => $composableBuilder(
+      column: $table.nombreSnapshot,
       builder: (column) => ColumnFilters(column));
 
   ColumnFilters<String> get tipo => $composableBuilder(
@@ -1769,8 +2854,8 @@ class $$HistorialTableTableOrderingComposer
       column: $table.medicamentoId,
       builder: (column) => ColumnOrderings(column));
 
-  ColumnOrderings<String> get medicamentoNombre => $composableBuilder(
-      column: $table.medicamentoNombre,
+  ColumnOrderings<String> get nombreSnapshot => $composableBuilder(
+      column: $table.nombreSnapshot,
       builder: (column) => ColumnOrderings(column));
 
   ColumnOrderings<String> get tipo => $composableBuilder(
@@ -1795,8 +2880,8 @@ class $$HistorialTableTableAnnotationComposer
   GeneratedColumn<String> get medicamentoId => $composableBuilder(
       column: $table.medicamentoId, builder: (column) => column);
 
-  GeneratedColumn<String> get medicamentoNombre => $composableBuilder(
-      column: $table.medicamentoNombre, builder: (column) => column);
+  GeneratedColumn<String> get nombreSnapshot => $composableBuilder(
+      column: $table.nombreSnapshot, builder: (column) => column);
 
   GeneratedColumn<String> get tipo =>
       $composableBuilder(column: $table.tipo, builder: (column) => column);
@@ -1834,7 +2919,7 @@ class $$HistorialTableTableTableManager extends RootTableManager<
           updateCompanionCallback: ({
             Value<String> id = const Value.absent(),
             Value<String> medicamentoId = const Value.absent(),
-            Value<String> medicamentoNombre = const Value.absent(),
+            Value<String> nombreSnapshot = const Value.absent(),
             Value<String> tipo = const Value.absent(),
             Value<DateTime> fecha = const Value.absent(),
             Value<int> rowid = const Value.absent(),
@@ -1842,7 +2927,7 @@ class $$HistorialTableTableTableManager extends RootTableManager<
               HistorialTableCompanion(
             id: id,
             medicamentoId: medicamentoId,
-            medicamentoNombre: medicamentoNombre,
+            nombreSnapshot: nombreSnapshot,
             tipo: tipo,
             fecha: fecha,
             rowid: rowid,
@@ -1850,15 +2935,15 @@ class $$HistorialTableTableTableManager extends RootTableManager<
           createCompanionCallback: ({
             required String id,
             required String medicamentoId,
-            required String medicamentoNombre,
-            required String tipo,
+            required String nombreSnapshot,
+            Value<String> tipo = const Value.absent(),
             required DateTime fecha,
             Value<int> rowid = const Value.absent(),
           }) =>
               HistorialTableCompanion.insert(
             id: id,
             medicamentoId: medicamentoId,
-            medicamentoNombre: medicamentoNombre,
+            nombreSnapshot: nombreSnapshot,
             tipo: tipo,
             fecha: fecha,
             rowid: rowid,
@@ -1885,142 +2970,110 @@ typedef $$HistorialTableTableProcessedTableManager = ProcessedTableManager<
     ),
     HistorialTableData,
     PrefetchHooks Function()>;
-typedef $$SyncQueueTableTableCreateCompanionBuilder = SyncQueueTableCompanion
+typedef $$SyncMetaTableTableCreateCompanionBuilder = SyncMetaTableCompanion
     Function({
-  required String id,
-  required String operacion,
-  required DateTime creadoEn,
-  Value<bool> sincronizado,
+  required String clave,
+  required String valor,
   Value<int> rowid,
 });
-typedef $$SyncQueueTableTableUpdateCompanionBuilder = SyncQueueTableCompanion
+typedef $$SyncMetaTableTableUpdateCompanionBuilder = SyncMetaTableCompanion
     Function({
-  Value<String> id,
-  Value<String> operacion,
-  Value<DateTime> creadoEn,
-  Value<bool> sincronizado,
+  Value<String> clave,
+  Value<String> valor,
   Value<int> rowid,
 });
 
-class $$SyncQueueTableTableFilterComposer
-    extends Composer<_$AppDatabase, $SyncQueueTableTable> {
-  $$SyncQueueTableTableFilterComposer({
+class $$SyncMetaTableTableFilterComposer
+    extends Composer<_$AppDatabase, $SyncMetaTableTable> {
+  $$SyncMetaTableTableFilterComposer({
     required super.$db,
     required super.$table,
     super.joinBuilder,
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  ColumnFilters<String> get id => $composableBuilder(
-      column: $table.id, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get clave => $composableBuilder(
+      column: $table.clave, builder: (column) => ColumnFilters(column));
 
-  ColumnFilters<String> get operacion => $composableBuilder(
-      column: $table.operacion, builder: (column) => ColumnFilters(column));
-
-  ColumnFilters<DateTime> get creadoEn => $composableBuilder(
-      column: $table.creadoEn, builder: (column) => ColumnFilters(column));
-
-  ColumnFilters<bool> get sincronizado => $composableBuilder(
-      column: $table.sincronizado, builder: (column) => ColumnFilters(column));
+  ColumnFilters<String> get valor => $composableBuilder(
+      column: $table.valor, builder: (column) => ColumnFilters(column));
 }
 
-class $$SyncQueueTableTableOrderingComposer
-    extends Composer<_$AppDatabase, $SyncQueueTableTable> {
-  $$SyncQueueTableTableOrderingComposer({
+class $$SyncMetaTableTableOrderingComposer
+    extends Composer<_$AppDatabase, $SyncMetaTableTable> {
+  $$SyncMetaTableTableOrderingComposer({
     required super.$db,
     required super.$table,
     super.joinBuilder,
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  ColumnOrderings<String> get id => $composableBuilder(
-      column: $table.id, builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get clave => $composableBuilder(
+      column: $table.clave, builder: (column) => ColumnOrderings(column));
 
-  ColumnOrderings<String> get operacion => $composableBuilder(
-      column: $table.operacion, builder: (column) => ColumnOrderings(column));
-
-  ColumnOrderings<DateTime> get creadoEn => $composableBuilder(
-      column: $table.creadoEn, builder: (column) => ColumnOrderings(column));
-
-  ColumnOrderings<bool> get sincronizado => $composableBuilder(
-      column: $table.sincronizado,
-      builder: (column) => ColumnOrderings(column));
+  ColumnOrderings<String> get valor => $composableBuilder(
+      column: $table.valor, builder: (column) => ColumnOrderings(column));
 }
 
-class $$SyncQueueTableTableAnnotationComposer
-    extends Composer<_$AppDatabase, $SyncQueueTableTable> {
-  $$SyncQueueTableTableAnnotationComposer({
+class $$SyncMetaTableTableAnnotationComposer
+    extends Composer<_$AppDatabase, $SyncMetaTableTable> {
+  $$SyncMetaTableTableAnnotationComposer({
     required super.$db,
     required super.$table,
     super.joinBuilder,
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id =>
-      $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get clave =>
+      $composableBuilder(column: $table.clave, builder: (column) => column);
 
-  GeneratedColumn<String> get operacion =>
-      $composableBuilder(column: $table.operacion, builder: (column) => column);
-
-  GeneratedColumn<DateTime> get creadoEn =>
-      $composableBuilder(column: $table.creadoEn, builder: (column) => column);
-
-  GeneratedColumn<bool> get sincronizado => $composableBuilder(
-      column: $table.sincronizado, builder: (column) => column);
+  GeneratedColumn<String> get valor =>
+      $composableBuilder(column: $table.valor, builder: (column) => column);
 }
 
-class $$SyncQueueTableTableTableManager extends RootTableManager<
+class $$SyncMetaTableTableTableManager extends RootTableManager<
     _$AppDatabase,
-    $SyncQueueTableTable,
-    SyncQueueTableData,
-    $$SyncQueueTableTableFilterComposer,
-    $$SyncQueueTableTableOrderingComposer,
-    $$SyncQueueTableTableAnnotationComposer,
-    $$SyncQueueTableTableCreateCompanionBuilder,
-    $$SyncQueueTableTableUpdateCompanionBuilder,
+    $SyncMetaTableTable,
+    SyncMetaTableData,
+    $$SyncMetaTableTableFilterComposer,
+    $$SyncMetaTableTableOrderingComposer,
+    $$SyncMetaTableTableAnnotationComposer,
+    $$SyncMetaTableTableCreateCompanionBuilder,
+    $$SyncMetaTableTableUpdateCompanionBuilder,
     (
-      SyncQueueTableData,
-      BaseReferences<_$AppDatabase, $SyncQueueTableTable, SyncQueueTableData>
+      SyncMetaTableData,
+      BaseReferences<_$AppDatabase, $SyncMetaTableTable, SyncMetaTableData>
     ),
-    SyncQueueTableData,
+    SyncMetaTableData,
     PrefetchHooks Function()> {
-  $$SyncQueueTableTableTableManager(
-      _$AppDatabase db, $SyncQueueTableTable table)
+  $$SyncMetaTableTableTableManager(_$AppDatabase db, $SyncMetaTableTable table)
       : super(TableManagerState(
           db: db,
           table: table,
           createFilteringComposer: () =>
-              $$SyncQueueTableTableFilterComposer($db: db, $table: table),
+              $$SyncMetaTableTableFilterComposer($db: db, $table: table),
           createOrderingComposer: () =>
-              $$SyncQueueTableTableOrderingComposer($db: db, $table: table),
+              $$SyncMetaTableTableOrderingComposer($db: db, $table: table),
           createComputedFieldComposer: () =>
-              $$SyncQueueTableTableAnnotationComposer($db: db, $table: table),
+              $$SyncMetaTableTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback: ({
-            Value<String> id = const Value.absent(),
-            Value<String> operacion = const Value.absent(),
-            Value<DateTime> creadoEn = const Value.absent(),
-            Value<bool> sincronizado = const Value.absent(),
+            Value<String> clave = const Value.absent(),
+            Value<String> valor = const Value.absent(),
             Value<int> rowid = const Value.absent(),
           }) =>
-              SyncQueueTableCompanion(
-            id: id,
-            operacion: operacion,
-            creadoEn: creadoEn,
-            sincronizado: sincronizado,
+              SyncMetaTableCompanion(
+            clave: clave,
+            valor: valor,
             rowid: rowid,
           ),
           createCompanionCallback: ({
-            required String id,
-            required String operacion,
-            required DateTime creadoEn,
-            Value<bool> sincronizado = const Value.absent(),
+            required String clave,
+            required String valor,
             Value<int> rowid = const Value.absent(),
           }) =>
-              SyncQueueTableCompanion.insert(
-            id: id,
-            operacion: operacion,
-            creadoEn: creadoEn,
-            sincronizado: sincronizado,
+              SyncMetaTableCompanion.insert(
+            clave: clave,
+            valor: valor,
             rowid: rowid,
           ),
           withReferenceMapper: (p0) => p0
@@ -2030,20 +3083,20 @@ class $$SyncQueueTableTableTableManager extends RootTableManager<
         ));
 }
 
-typedef $$SyncQueueTableTableProcessedTableManager = ProcessedTableManager<
+typedef $$SyncMetaTableTableProcessedTableManager = ProcessedTableManager<
     _$AppDatabase,
-    $SyncQueueTableTable,
-    SyncQueueTableData,
-    $$SyncQueueTableTableFilterComposer,
-    $$SyncQueueTableTableOrderingComposer,
-    $$SyncQueueTableTableAnnotationComposer,
-    $$SyncQueueTableTableCreateCompanionBuilder,
-    $$SyncQueueTableTableUpdateCompanionBuilder,
+    $SyncMetaTableTable,
+    SyncMetaTableData,
+    $$SyncMetaTableTableFilterComposer,
+    $$SyncMetaTableTableOrderingComposer,
+    $$SyncMetaTableTableAnnotationComposer,
+    $$SyncMetaTableTableCreateCompanionBuilder,
+    $$SyncMetaTableTableUpdateCompanionBuilder,
     (
-      SyncQueueTableData,
-      BaseReferences<_$AppDatabase, $SyncQueueTableTable, SyncQueueTableData>
+      SyncMetaTableData,
+      BaseReferences<_$AppDatabase, $SyncMetaTableTable, SyncMetaTableData>
     ),
-    SyncQueueTableData,
+    SyncMetaTableData,
     PrefetchHooks Function()>;
 
 class $AppDatabaseManager {
@@ -2051,8 +3104,11 @@ class $AppDatabaseManager {
   $AppDatabaseManager(this._db);
   $$MedicamentosTableTableTableManager get medicamentosTable =>
       $$MedicamentosTableTableTableManager(_db, _db.medicamentosTable);
+  $$MedicamentoGruposTableTableTableManager get medicamentoGruposTable =>
+      $$MedicamentoGruposTableTableTableManager(
+          _db, _db.medicamentoGruposTable);
   $$HistorialTableTableTableManager get historialTable =>
       $$HistorialTableTableTableManager(_db, _db.historialTable);
-  $$SyncQueueTableTableTableManager get syncQueueTable =>
-      $$SyncQueueTableTableTableManager(_db, _db.syncQueueTable);
+  $$SyncMetaTableTableTableManager get syncMetaTable =>
+      $$SyncMetaTableTableTableManager(_db, _db.syncMetaTable);
 }

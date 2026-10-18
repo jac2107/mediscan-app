@@ -2,23 +2,15 @@ import 'package:medicamentos_app/domain/entities/usuario.dart';
 import 'package:medicamentos_app/domain/repositories/usuario_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:medicamentos_app/core/constants/app_constants.dart';
-import 'package:uuid/uuid.dart';
 
 class UsuarioRepositoryImpl implements UsuarioRepository {
-  static const _uuid = Uuid();
-
   @override
   Future<Usuario?> getUsuario() async {
     final prefs = await SharedPreferences.getInstance();
     final nombre = prefs.getString(AppConstants.keyUsuarioNombre);
     final id = prefs.getString(AppConstants.keyUsuarioId);
     if (nombre == null || id == null) return null;
-    return Usuario(
-      id: id,
-      nombre: nombre,
-      dispositivoId: id,
-      creadoEn: DateTime.now(),
-    );
+    return Usuario(id: id, nombre: nombre, dispositivoId: id, creadoEn: DateTime.now());
   }
 
   @override

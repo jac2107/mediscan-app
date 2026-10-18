@@ -1,100 +1,116 @@
 class Medicamento {
   final String id;
-  final String codigoBarras;
-  final String nombre;
+  final String codigoInterno;
+  final String nombreComercial;
+  final String? nombreGenerico;
+  final String? categoria;
+  final List<String> laboratorios;
   final String? descripcion;
+  final List<String> principiosActivos;
+  final String? composicionCompleta;
+  final List<String> concentraciones;
+  final List<String> formasFarmaceuticas;
+  final String? presentacion;
+  final List<String> viasAdministracion;
+  final String? indicacionesTexto;
+  final List<String> indicacionesTags;
+  final String? contraindicaciones;
+  final String? precaucionesAdvertencias;
+  final String? efectosAdversos;
+  final String? dosisAdultos;
+  final String? dosisAdultosMayores;
+  final String? dosisPediatrica;
+  final String? dosisLactantes;
   final String? fotoUrl;
-  final String? dosisAdulto;
-  final String? dosisMayor;
-  final String? dosisNino;
-  final List<String> alergias;
-  final List<String> contraindicaciones;
-  final List<String> enfermedadesIncompatibles;
-  final DateTime actualizadoEn;
-  final bool eliminado;
+  final String? fechaRevision;
+  final String? actualizadoEn;
+  final bool esFavorito;
 
   const Medicamento({
     required this.id,
-    required this.codigoBarras,
-    required this.nombre,
+    required this.codigoInterno,
+    required this.nombreComercial,
+    this.nombreGenerico,
+    this.categoria,
+    this.laboratorios = const [],
     this.descripcion,
+    this.principiosActivos = const [],
+    this.composicionCompleta,
+    this.concentraciones = const [],
+    this.formasFarmaceuticas = const [],
+    this.presentacion,
+    this.viasAdministracion = const [],
+    this.indicacionesTexto,
+    this.indicacionesTags = const [],
+    this.contraindicaciones,
+    this.precaucionesAdvertencias,
+    this.efectosAdversos,
+    this.dosisAdultos,
+    this.dosisAdultosMayores,
+    this.dosisPediatrica,
+    this.dosisLactantes,
     this.fotoUrl,
-    this.dosisAdulto,
-    this.dosisMayor,
-    this.dosisNino,
-    this.alergias = const [],
-    this.contraindicaciones = const [],
-    this.enfermedadesIncompatibles = const [],
-    required this.actualizadoEn,
-    this.eliminado = false,
+    this.fechaRevision,
+    this.actualizadoEn,
+    this.esFavorito = false,
   });
 
   Medicamento copyWith({
     String? id,
-    String? codigoBarras,
-    String? nombre,
+    String? codigoInterno,
+    String? nombreComercial,
+    String? nombreGenerico,
+    String? categoria,
+    List<String>? laboratorios,
     String? descripcion,
+    List<String>? principiosActivos,
+    String? composicionCompleta,
+    List<String>? concentraciones,
+    List<String>? formasFarmaceuticas,
+    String? presentacion,
+    List<String>? viasAdministracion,
+    String? indicacionesTexto,
+    List<String>? indicacionesTags,
+    String? contraindicaciones,
+    String? precaucionesAdvertencias,
+    String? efectosAdversos,
+    String? dosisAdultos,
+    String? dosisAdultosMayores,
+    String? dosisPediatrica,
+    String? dosisLactantes,
     String? fotoUrl,
-    String? dosisAdulto,
-    String? dosisMayor,
-    String? dosisNino,
-    List<String>? alergias,
-    List<String>? contraindicaciones,
-    List<String>? enfermedadesIncompatibles,
-    DateTime? actualizadoEn,
-    bool? eliminado,
+    String? fechaRevision,
+    String? actualizadoEn,
+    bool? esFavorito,
   }) {
     return Medicamento(
       id: id ?? this.id,
-      codigoBarras: codigoBarras ?? this.codigoBarras,
-      nombre: nombre ?? this.nombre,
+      codigoInterno: codigoInterno ?? this.codigoInterno,
+      nombreComercial: nombreComercial ?? this.nombreComercial,
+      nombreGenerico: nombreGenerico ?? this.nombreGenerico,
+      categoria: categoria ?? this.categoria,
+      laboratorios: laboratorios ?? this.laboratorios,
       descripcion: descripcion ?? this.descripcion,
-      fotoUrl: fotoUrl ?? this.fotoUrl,
-      dosisAdulto: dosisAdulto ?? this.dosisAdulto,
-      dosisMayor: dosisMayor ?? this.dosisMayor,
-      dosisNino: dosisNino ?? this.dosisNino,
-      alergias: alergias ?? this.alergias,
+      principiosActivos: principiosActivos ?? this.principiosActivos,
+      composicionCompleta: composicionCompleta ?? this.composicionCompleta,
+      concentraciones: concentraciones ?? this.concentraciones,
+      formasFarmaceuticas: formasFarmaceuticas ?? this.formasFarmaceuticas,
+      presentacion: presentacion ?? this.presentacion,
+      viasAdministracion: viasAdministracion ?? this.viasAdministracion,
+      indicacionesTexto: indicacionesTexto ?? this.indicacionesTexto,
+      indicacionesTags: indicacionesTags ?? this.indicacionesTags,
       contraindicaciones: contraindicaciones ?? this.contraindicaciones,
-      enfermedadesIncompatibles:
-          enfermedadesIncompatibles ?? this.enfermedadesIncompatibles,
+      precaucionesAdvertencias:
+          precaucionesAdvertencias ?? this.precaucionesAdvertencias,
+      efectosAdversos: efectosAdversos ?? this.efectosAdversos,
+      dosisAdultos: dosisAdultos ?? this.dosisAdultos,
+      dosisAdultosMayores: dosisAdultosMayores ?? this.dosisAdultosMayores,
+      dosisPediatrica: dosisPediatrica ?? this.dosisPediatrica,
+      dosisLactantes: dosisLactantes ?? this.dosisLactantes,
+      fotoUrl: fotoUrl ?? this.fotoUrl,
+      fechaRevision: fechaRevision ?? this.fechaRevision,
       actualizadoEn: actualizadoEn ?? this.actualizadoEn,
-      eliminado: eliminado ?? this.eliminado,
+      esFavorito: esFavorito ?? this.esFavorito,
     );
   }
-  Map<String, dynamic> toMap() {
-  return {
-    'id': id,
-    'codigo_barras': codigoBarras,
-    'nombre': nombre,
-    'descripcion': descripcion,
-    'foto_url': fotoUrl,
-    'dosis_adulto': dosisAdulto,
-    'dosis_mayor': dosisMayor,
-    'dosis_nino': dosisNino,
-    'alergias': alergias,
-    'contraindicaciones': contraindicaciones,
-    'enfermedades_incompatibles': enfermedadesIncompatibles,
-    'actualizado_en': actualizadoEn.toIso8601String(),
-    'eliminado': eliminado,
-  };
-}
-
-factory Medicamento.fromMap(Map<String, dynamic> map) {
-  return Medicamento(
-    id: map['id'] as String,
-    codigoBarras: map['codigo_barras'] as String,
-    nombre: map['nombre'] as String,
-    descripcion: map['descripcion'] as String?,
-    fotoUrl: map['foto_url'] as String?,
-    dosisAdulto: map['dosis_adulto'] as String?,
-    dosisMayor: map['dosis_mayor'] as String?,
-    dosisNino: map['dosis_nino'] as String?,
-    alergias: List<String>.from(map['alergias'] ?? []),
-    contraindicaciones: List<String>.from(map['contraindicaciones'] ?? []),
-    enfermedadesIncompatibles:
-        List<String>.from(map['enfermedades_incompatibles'] ?? []),
-    actualizadoEn: DateTime.parse(map['actualizado_en'] as String),
-    eliminado: map['eliminado'] as bool? ?? false,
-  );
-}
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:medicamentos_app/core/theme/app_theme.dart';
 
 class AppErrorWidget extends StatelessWidget {
   final String mensaje;
@@ -12,39 +14,29 @@ class AppErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.all(32),
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(
-              Icons.error_outline_rounded,
-              size: 64,
-              color: theme.colorScheme.error.withOpacity(0.6),
-            ),
-            const SizedBox(height: 16),
+            const Icon(Icons.error_outline_rounded, size: 28, color: AppTheme.colorError),
+            const SizedBox(height: 12),
             Text(
               'Algo salió mal',
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+              style: GoogleFonts.lora(fontSize: 18, color: AppTheme.ink),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 6),
             Text(
               mensaje,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
+              style: GoogleFonts.inter(fontSize: 14, color: AppTheme.muted, height: 1.5),
             ),
             if (onReintentar != null) ...[
               const SizedBox(height: 20),
-              FilledButton.icon(
+              TextButton(
                 onPressed: onReintentar,
-                icon: const Icon(Icons.refresh_rounded),
-                label: const Text('Reintentar'),
+                child: const Text('Reintentar'),
               ),
             ],
           ],
