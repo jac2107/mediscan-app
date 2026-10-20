@@ -14,8 +14,7 @@ class SyncNotifier extends Notifier<EstadoSync> {
 
 @override
 EstadoSync build() {
-  Future.microtask(_sincronizar);
-
+Future.delayed(const Duration(seconds: 3), _sincronizar);
   ref.listen(isConnectedProvider, (prev, next) {
     next.whenData((online) {
       if (online && prev?.value == false) {
@@ -52,11 +51,13 @@ EstadoSync build() {
 }
 
 Future<void> _sincronizar() async {
-  if (state == EstadoSync.sincronizando) return;
+   if (state == EstadoSync.sincronizando) return;
+
+  // Esperar que Supabase esté listo
+  await Future.delayed(const Duration(seconds: 2));
 
   final results = await Connectivity().checkConnectivity();
   final online = results.any((r) => r != ConnectivityResult.none);
-  
   if (!online) {
     state = EstadoSync.offline;
     return;
@@ -124,20 +125,19 @@ Future<void> _sincronizar() async {
   // Sync completo desde la tabla medicamentos (primer arranque)
   Future<void> _syncCompleto(AppDatabase db, SupabaseClient client) async {
     final rows = await client
-        .from('medicamentos')
-        .select('''
-          id, codigo_interno, nombre_comercial, nombre_generico, categoria,
-          laboratorios, descripcion, principios_activos, composicion_completa,
-          concentraciones, formas_farmaceuticas, presentacion,
-          vias_administracion, indicaciones_texto, indicaciones_tags,
-          contraindicaciones, precauciones_advertencias, efectos_adversos,
-          dosis_adultos, dosis_adultos_mayores, dosis_pediatrica, dosis_lactantes,
-          foto_path, fecha_revision, actualizado_en,
-          medicamento_fuentes(imagen_origen_url),
-          medicamento_grupos(grupo, estado, observacion)
-        ''')
-        .eq('estado_publicacion', 'publicado')
-        .eq('eliminado', false);
+    .from('medicamentos')
+    .select('''
+      id, codigo_interno, nombre_comercial, nombre_generico, categoria,
+      laboratorios, descripcion, principios_activos, composicion_completa,
+      concentraciones, formas_farmaceuticas, presentacion,
+      vias_administracion, indicaciones_texto, indicaciones_tags,
+      contraindicaciones, precauciones_advertencias, efectos_adversos,
+      dosis_adultos, dosis_adultos_mayores, dosis_pediatrica, dosis_lactantes,
+      foto_path, fecha_revision, actualizado_en,
+      medicamento_fuentes(imagen_origen_url)
+    ''')
+    .eq('estado_publicacion', 'publicado')
+    .eq('eliminado', false);
 
     for (final row in rows) {
       await _aplicarUpsert(db, row);
