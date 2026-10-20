@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:medicamentos_app/core/theme/app_fonts.dart';
 import 'package:medicamentos_app/core/theme/app_theme.dart';
 
 class AppErrorWidget extends StatelessWidget {
@@ -21,16 +21,18 @@ class AppErrorWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Icon(Icons.error_outline_rounded, size: 28, color: AppTheme.colorError),
+            const Icon(Icons.error_outline_rounded,
+                size: 28, color: AppTheme.colorError),
             const SizedBox(height: 12),
             Text(
               'Algo salió mal',
-              style: GoogleFonts.lora(fontSize: 18, color: AppTheme.ink),
+              style: AppFonts.lora(fontSize: 18, color: AppTheme.ink),
             ),
             const SizedBox(height: 6),
             Text(
               mensaje,
-              style: GoogleFonts.inter(fontSize: 14, color: AppTheme.muted, height: 1.5),
+              style: AppFonts.inter(
+                  fontSize: 14, color: AppTheme.muted, height: 1.5),
             ),
             if (onReintentar != null) ...[
               const SizedBox(height: 20),

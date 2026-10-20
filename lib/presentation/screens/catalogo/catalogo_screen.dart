@@ -1,31 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:uuid/uuid.dart';
+import 'package:drift/drift.dart' hide Column;
 import '../../../core/theme/app_theme.dart';
 import '../../../data/local/database/app_database.dart';
-import '../../../domain/entities/filtros.dart';
 import '../../providers/medicamentos_provider.dart';
-import '../../providers/historial_provider.dart';
 import '../../providers/voz_provider.dart';
 import '../../providers/sync_provider.dart';
+import '../../providers/connectivity_provider.dart';
 import '../../widgets/filtros/filtros_sheet.dart';
 import '../../widgets/medicamento/medicamento_card.dart';
+import '../../widgets/common/brand_mark.dart';
+import '../../widgets/common/editorial_notice.dart';
 import '../../widgets/common/sync_indicator.dart';
-import 'package:drift/drift.dart' hide Column;
 
 class CatalogoScreen extends ConsumerStatefulWidget {
   const CatalogoScreen({super.key});
-
   @override
   ConsumerState<CatalogoScreen> createState() => _CatalogoScreenState();
 }
 
 class _CatalogoScreenState extends ConsumerState<CatalogoScreen> {
-  final _ctrl = TextEditingController();
+  late final TextEditingController _ctrl;
   final _focus = FocusNode();
   static const _uuid = Uuid();
+  @override
+  void initState() {
+    super.initState();
+    _ctrl = TextEditingController(text: ref.read(filtrosProvider).query);
+  }
 
   @override
   void dispose() {
@@ -34,17 +38,13 @@ class _CatalogoScreenState extends ConsumerState<CatalogoScreen> {
     super.dispose();
   }
 
-  void _onQuery(String q) {
-    ref.read(filtrosProvider.notifier).setQuery(q);
-  }
-
+  void _onQuery(String q) => ref.read(filtrosProvider.notifier).setQuery(q);
   void _limpiar() {
     _ctrl.clear();
-    ref.read(filtrosProvider.notifier).setQuery('');
+    _onQuery('');
   }
 
   Future<void> _abrirDetalle(MedicamentosTableData med) async {
-    // Registrar historial
     await ref.read(appDatabaseProvider).insertHistorial(
           HistorialTableCompanion(
             id: Value(_uuid.v4()),
@@ -61,311 +61,341 @@ class _CatalogoScreenState extends ConsumerState<CatalogoScreen> {
   Future<void> _iniciarVoz() async {
     await ref.read(vozProvider.notifier).iniciarEscucha(
       onResultado: (texto) {
-        _ctrl.text = texto;
-        ref.read(filtrosProvider.notifier).setQuery(texto);
+        if (!mounted) return;
+        _ctrl.value = TextEditingValue(
+          text: texto,
+          selection: TextSelection.collapsed(offset: texto.length),
+        );
+        _onQuery(texto);
       },
+    );
+  }
+
+  void _mostrarFiltros() {
+    showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (_) => const FiltrosSheet(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     final filtros = ref.watch(filtrosProvider);
-    final resultadosAsync = ref.watch(resultadosBusquedaProvider);
-    final vozState = ref.watch(vozProvider);
+    final resultados = ref.watch(resultadosBusquedaProvider);
+    final voz = ref.watch(vozProvider);
     final syncState = ref.watch(syncProvider);
+    final sync = ref.watch(isConnectedProvider).valueOrNull == false
+        ? EstadoSync.offline
+        : syncState;
     final theme = Theme.of(context);
+    final escuchando = voz.estado == EstadoVoz.escuchando;
+    final iniciando = voz.estado == EstadoVoz.inicializando;
+    final total = filtros.totalFiltrosActivos;
+    final notifier = ref.read(filtrosProvider.notifier);
+    final chips = <Widget>[];
+    void agregar(Set<String> valores, void Function(String) quitar) {
+      for (final valor in valores) {
+        chips.add(
+          InputChip(
+            label: Text(valor),
+            onDeleted: () => quitar(valor),
+            deleteButtonTooltipMessage: 'Quitar filtro $valor',
+          ),
+        );
+      }
+    }
 
-    final escuchando = vozState.estado == EstadoVoz.escuchando;
-
+    agregar(filtros.categorias, notifier.toggleCategoria);
+    agregar(filtros.principiosActivos, notifier.togglePrincipio);
+    agregar(filtros.formasFarmaceuticas, notifier.toggleForma);
+    agregar(filtros.viasAdministracion, notifier.toggleVia);
+    agregar(filtros.laboratorios, notifier.toggleLaboratorio);
+    const grupos = {
+      'adulto': 'Adultos',
+      'adulto_mayor': 'Adultos mayores',
+      'nino': 'Niños',
+      'lactante': 'Lactantes',
+    };
+    for (final grupo in filtros.gruposPaciente) {
+      chips.add(
+        InputChip(
+          label: Text(grupos[grupo] ?? grupo),
+          deleteButtonTooltipMessage: 'Quitar filtro ${grupos[grupo]}',
+          onDeleted: () => notifier.toggleGrupo(grupo),
+        ),
+      );
+    }
     return Scaffold(
       appBar: AppBar(
-        title: Text('MediScan',
-            style: GoogleFonts.lora(fontSize: 20, color: AppTheme.ink)),
+        toolbarHeight: 72,
+        title: const BrandMark(),
         actions: [
-          const Padding(
-            padding: EdgeInsets.only(right: 16),
-            child: Center(child: SyncIndicator()),
+          const SyncIndicator(),
+          IconButton(
+            tooltip: 'Actualizar catálogo',
+            icon: const Icon(Icons.sync_outlined),
+            onPressed: sync == EstadoSync.sincronizando
+                ? null
+                : () => ref.read(syncProvider.notifier).syncManual(),
           ),
+          const SizedBox(width: 8),
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(57),
-          child: Column(
-            children: [
-              const Divider(height: 1),
-              _BarraBusqueda(
-                ctrl: _ctrl,
-                focus: _focus,
-                escuchando: escuchando,
-                onChanged: _onQuery,
-                onLimpiar: _limpiar,
-                onVoz: escuchando
-                    ? () => ref.read(vozProvider.notifier).detener()
-                    : _iniciarVoz,
-              ),
-            ],
-          ),
-        ),
       ),
-      body: Column(
-        children: [
-          // Estado de voz activo
-          if (escuchando)
-            Container(
-              color: AppTheme.surface,
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-              child: Row(
+      body: CustomScrollView(
+        key: const PageStorageKey('catalogo'),
+        slivers: [
+          SliverPadding(
+            padding: const EdgeInsets.fromLTRB(24, 12, 24, 8),
+            sliver: SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Icon(Icons.mic_rounded, size: 16, color: AppTheme.colorError),
-                  const SizedBox(width: 8),
-                  Expanded(
+                  Semantics(
+                    header: true,
                     child: Text(
-                      vozState.textoReconocido.isEmpty
-                          ? 'Escuchando… di el nombre del medicamento'
-                          : vozState.textoReconocido,
-                      style: theme.textTheme.bodySmall,
+                      'Tu catálogo',
+                      style: theme.textTheme.headlineLarge,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Consulta medicamentos, incluso sin conexión.',
+                    style: theme.textTheme.bodyMedium,
+                  ),
+                  const SizedBox(height: 24),
+                  Text('Buscar medicamento', style: theme.textTheme.labelLarge),
+                  const SizedBox(height: 8),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          controller: _ctrl,
+                          focusNode: _focus,
+                          onChanged: _onQuery,
+                          textInputAction: TextInputAction.search,
+                          onSubmitted: (_) => _focus.unfocus(),
+                          style: theme.textTheme.bodyMedium,
+                          decoration: InputDecoration(
+                            hintText: 'Nombre o principio activo',
+                            prefixIcon: const Icon(Icons.search_outlined),
+                            suffixIcon: filtros.query.isEmpty
+                                ? null
+                                : IconButton(
+                                    tooltip: 'Borrar búsqueda',
+                                    onPressed: _limpiar,
+                                    icon: const Icon(Icons.close_outlined),
+                                  ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      AnimatedContainer(
+                        duration: MediaQuery.of(context).disableAnimations
+                            ? Duration.zero
+                            : const Duration(milliseconds: 180),
+                        decoration: BoxDecoration(
+                          color: escuchando ? AppTheme.verde : AppTheme.surface,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: IconButton(
+                          tooltip: escuchando
+                              ? 'Finalizar dictado'
+                              : 'Dictar nombre del medicamento',
+                          constraints: const BoxConstraints(
+                            minWidth: 52,
+                            minHeight: 56,
+                          ),
+                          onPressed: iniciando
+                              ? null
+                              : escuchando
+                                  ? () =>
+                                      ref.read(vozProvider.notifier).detener()
+                                  : _iniciarVoz,
+                          icon: iniciando
+                              ? const SizedBox(
+                                  width: 20,
+                                  height: 20,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                  ),
+                                )
+                              : Icon(
+                                  escuchando
+                                      ? Icons.stop_circle_outlined
+                                      : Icons.mic_none_outlined,
+                                  color: escuchando
+                                      ? AppTheme.bgMarfil
+                                      : AppTheme.verde,
+                                ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  if (escuchando || iniciando || voz.mensajeError != null) ...[
+                    const SizedBox(height: 12),
+                    EditorialNotice(
+                      icon: escuchando
+                          ? Icons.mic_none_outlined
+                          : Icons.info_outline,
+                      color: voz.estado == EstadoVoz.error
+                          ? AppTheme.colorError
+                          : AppTheme.verde,
+                      busy: iniciando,
+                      message: iniciando
+                          ? 'Preparando el micrófono…'
+                          : escuchando
+                              ? 'Escuchando… Di el nombre del medicamento.${voz.textoReconocido.isEmpty ? '' : '\n${voz.textoReconocido}'}'
+                              : voz.mensajeError!,
+                      action: escuchando
+                          ? TextButton(
+                              onPressed: () =>
+                                  ref.read(vozProvider.notifier).cancelar(),
+                              child: const Text('Cancelar dictado'),
+                            )
+                          : null,
+                    ),
+                  ],
+                  const SizedBox(height: 12),
+                  Wrap(
+                    spacing: 8,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      OutlinedButton.icon(
+                        onPressed: _mostrarFiltros,
+                        icon: const Icon(Icons.tune_outlined, size: 20),
+                        label: Text(
+                          total == 0 ? 'Filtros' : 'Filtros ($total)',
+                        ),
+                      ),
+                      if (total > 0)
+                        TextButton(
+                          onPressed: notifier.limpiarFiltros,
+                          child: const Text('Limpiar filtros'),
+                        ),
+                    ],
+                  ),
+                  if (chips.isNotEmpty)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: Wrap(spacing: 8, runSpacing: 4, children: chips),
+                    ),
+                  if (sync == EstadoSync.offline ||
+                      sync == EstadoSync.error ||
+                      sync == EstadoSync.sincronizando) ...[
+                    const SizedBox(height: 16),
+                    EditorialNotice(
+                      icon: sync == EstadoSync.offline
+                          ? Icons.wifi_off_outlined
+                          : Icons.info_outline,
+                      color: sync == EstadoSync.error
+                          ? AppTheme.colorError
+                          : AppTheme.muted,
+                      busy: sync == EstadoSync.sincronizando,
+                      message: switch (sync) {
+                        EstadoSync.offline =>
+                          'Sin conexión. Tu catálogo sigue disponible.',
+                        EstadoSync.error =>
+                          'No pudimos actualizar. Puedes seguir consultando el catálogo disponible.',
+                        _ =>
+                          'Actualizando catálogo… Puedes seguir consultando.',
+                      },
+                      action: sync == EstadoSync.error
+                          ? TextButton(
+                              onPressed: () =>
+                                  ref.read(syncProvider.notifier).syncManual(),
+                              child: const Text('Reintentar'),
+                            )
+                          : null,
+                    ),
+                  ],
+                  const SizedBox(height: 24),
+                  Semantics(
+                    liveRegion: true,
+                    child: Text(
+                      resultados.when(
+                        data: (items) =>
+                            '${items.length} ${items.length == 1 ? 'resultado' : 'resultados'}',
+                        loading: () => 'Buscando…',
+                        error: (_, __) => 'Consulta no disponible',
+                      ),
+                      style: theme.textTheme.labelMedium,
                     ),
                   ),
                 ],
               ),
             ),
-
-          // Barra de filtros activos + ordenamiento
-          _BarraFiltros(
-            filtros: filtros,
-            onAbrirFiltros: () => _mostrarFiltros(context),
           ),
-
-          const Divider(height: 1),
-
-          // Lista de resultados
-          Expanded(
-            child: resultadosAsync.when(
-              data: (resultados) {
-                if (resultados.isEmpty) {
-                  return _EstadoVacio(query: filtros.query);
-                }
-                return ListView.separated(
-                  itemCount: resultados.length,
-                  separatorBuilder: (_, __) =>
-                      const Divider(height: 1, indent: 24),
-                  itemBuilder: (context, i) {
-                    final med = resultados[i].medicamento;
-                    return MedicamentoCard(
-                      medicamento: med,
-                      onTap: () => _abrirDetalle(med),
-                      onFavoritoToggle: () async {
-                        await ref.read(appDatabaseProvider).toggleFavorito(
-                              med.id, !med.esFavorito);
-                        ref.invalidate(todosMedicamentosProvider);
-                        ref.invalidate(favoritosProvider);
-                      },
-                    );
-                  },
-                );
-              },
-              loading: () => const Center(
-                child: SizedBox(
-                  width: 20,
-                  height: 20,
-                  child: CircularProgressIndicator(
-                      strokeWidth: 2, color: AppTheme.verde),
-                ),
-              ),
-              error: (e, _) => Padding(
-                padding: const EdgeInsets.all(24),
-                child: Text('Error: $e',
-                    style: theme.textTheme.bodyMedium
-                        ?.copyWith(color: AppTheme.colorError)),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _mostrarFiltros(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: AppTheme.bgMarfil,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(4)),
-      ),
-      builder: (_) => const FiltrosSheet(),
-    );
-  }
-}
-
-// ── Barra de búsqueda ─────────────────────────────────────────────────────────
-
-class _BarraBusqueda extends StatelessWidget {
-  final TextEditingController ctrl;
-  final FocusNode focus;
-  final bool escuchando;
-  final ValueChanged<String> onChanged;
-  final VoidCallback onLimpiar;
-  final VoidCallback onVoz;
-
-  const _BarraBusqueda({
-    required this.ctrl,
-    required this.focus,
-    required this.escuchando,
-    required this.onChanged,
-    required this.onLimpiar,
-    required this.onVoz,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-      child: Row(
-        children: [
-          const Icon(Icons.search_rounded, size: 18, color: AppTheme.muted),
-          const SizedBox(width: 8),
-          Expanded(
-            child: TextField(
-              controller: ctrl,
-              focusNode: focus,
-              onChanged: onChanged,
-              style: GoogleFonts.inter(fontSize: 15, color: AppTheme.ink),
-              decoration: InputDecoration(
-                hintText: 'Nombre, principio activo, categoría…',
-                hintStyle:
-                    GoogleFonts.inter(fontSize: 15, color: AppTheme.border),
-                border: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                filled: false,
-                isDense: true,
-                contentPadding: EdgeInsets.zero,
-                suffixIcon: ctrl.text.isNotEmpty
-                    ? GestureDetector(
-                        onTap: onLimpiar,
-                        child: const Icon(Icons.close_rounded,
-                            size: 16, color: AppTheme.muted),
-                      )
-                    : null,
-              ),
-            ),
-          ),
-          const SizedBox(width: 8),
-          GestureDetector(
-            onTap: onVoz,
-            child: Icon(
-              escuchando ? Icons.mic_off_rounded : Icons.mic_none_rounded,
-              size: 20,
-              color: escuchando ? AppTheme.colorError : AppTheme.muted,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// ── Barra de filtros activos ──────────────────────────────────────────────────
-
-class _BarraFiltros extends StatelessWidget {
-  final Filtros filtros;
-  final VoidCallback onAbrirFiltros;
-
-  const _BarraFiltros({required this.filtros, required this.onAbrirFiltros});
-
-  @override
-  Widget build(BuildContext context) {
-    final total = filtros.totalFiltrosActivos;
-    final labelOrden = _labelOrden(filtros.orden);
-
-    return Container(
-      color: AppTheme.bgMarfil,
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-      child: Row(
-        children: [
-          // Botón filtros
-          GestureDetector(
-            onTap: onAbrirFiltros,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  Icons.tune_rounded,
-                  size: 16,
-                  color: total > 0 ? AppTheme.verde : AppTheme.muted,
-                ),
-                const SizedBox(width: 4),
-                Text(
-                  total > 0 ? 'Filtros ($total)' : 'Filtrar',
-                  style: GoogleFonts.inter(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                    color: total > 0 ? AppTheme.verde : AppTheme.muted,
+          resultados.when(
+            data: (items) => items.isEmpty
+                ? SliverToBoxAdapter(
+                    child: Padding(
+                      padding: const EdgeInsets.all(24),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Icon(
+                            Icons.search_off_outlined,
+                            color: AppTheme.muted,
+                            size: 32,
+                          ),
+                          const SizedBox(height: 16),
+                          Text(
+                            'No encontramos coincidencias',
+                            style: theme.textTheme.headlineMedium,
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            'Revisa lo escrito o cambia los filtros.',
+                            style: theme.textTheme.bodyMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                : SliverList(
+                    delegate: SliverChildBuilderDelegate((context, i) {
+                      final med = items[i].medicamento;
+                      return MedicamentoCard(
+                        medicamento: med,
+                        onTap: () => _abrirDetalle(med),
+                        onFavoritoToggle: () async {
+                          await ref
+                              .read(appDatabaseProvider)
+                              .toggleFavorito(med.id, !med.esFavorito);
+                          ref.invalidate(todosMedicamentosProvider);
+                          ref.invalidate(favoritosProvider);
+                        },
+                      );
+                    }, childCount: items.length),
+                  ),
+            loading: () => const SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.all(32),
+                child: Center(
+                  child: SizedBox(
+                    width: 24,
+                    height: 24,
+                    child: CircularProgressIndicator(strokeWidth: 2),
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
-
-          const SizedBox(width: 12),
-          Container(width: 1, height: 14, color: AppTheme.border),
-          const SizedBox(width: 12),
-
-          // Orden actual
-          GestureDetector(
-            onTap: onAbrirFiltros,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Icon(Icons.sort_rounded, size: 16, color: AppTheme.muted),
-                const SizedBox(width: 4),
-                Text(
-                  labelOrden,
-                  style: GoogleFonts.inter(fontSize: 12, color: AppTheme.muted),
+            error: (_, __) => const SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.all(24),
+                child: EditorialNotice(
+                  icon: Icons.error_outline,
+                  message:
+                      'No pudimos consultar el catálogo. Vuelve a intentarlo.',
+                  color: AppTheme.colorError,
                 ),
-              ],
+              ),
             ),
           ),
-        ],
-      ),
-    );
-  }
-
-  String _labelOrden(OrdenTipo orden) => switch (orden) {
-        OrdenTipo.relevancia => 'Relevancia',
-        OrdenTipo.nombreAZ => 'A → Z',
-        OrdenTipo.nombreZA => 'Z → A',
-        OrdenTipo.fechaReciente => 'Más reciente',
-        OrdenTipo.categoria => 'Categoría',
-      };
-}
-
-// ── Estado vacío ──────────────────────────────────────────────────────────────
-
-class _EstadoVacio extends StatelessWidget {
-  final String query;
-  const _EstadoVacio({required this.query});
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 40, 24, 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            query.isEmpty ? 'Sin medicamentos' : 'Sin coincidencias',
-            style: GoogleFonts.lora(fontSize: 21, color: AppTheme.ink),
-          ),
-          const SizedBox(height: 6),
-          Text(
-            query.isEmpty
-                ? 'El catálogo se cargará al conectar con internet.'
-                : 'No encontramos resultados para "$query".\nRevisa la escritura o cambia los filtros.',
-            style:
-                theme.textTheme.bodyMedium?.copyWith(color: AppTheme.muted),
-          ),
+          const SliverToBoxAdapter(child: SizedBox(height: 24)),
         ],
       ),
     );

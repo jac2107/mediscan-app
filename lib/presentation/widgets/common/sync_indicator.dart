@@ -1,65 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../providers/sync_provider.dart';
+import '../../providers/connectivity_provider.dart';
 
 class SyncIndicator extends ConsumerWidget {
   const SyncIndicator({super.key});
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final sync = ref.watch(syncProvider);
-
-    return switch (sync) {
-      EstadoSync.sincronizando => const SizedBox(
-          width: 12,
-          height: 12,
-          child: CircularProgressIndicator(
-              strokeWidth: 1.5, color: AppTheme.muted),
+    final syncState = ref.watch(syncProvider);
+    final sync = ref.watch(isConnectedProvider).valueOrNull == false
+        ? EstadoSync.offline
+        : syncState;
+    final (label, icon, color) = switch (sync) {
+      EstadoSync.sincronizando => (
+          'Actualizando…',
+          Icons.sync_outlined,
+          AppTheme.muted,
         ),
-      EstadoSync.actualizado => Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-                width: 6,
-                height: 6,
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: AppTheme.verde)),
-            const SizedBox(width: 5),
-            Text('Actualizado',
-                style: GoogleFonts.inter(fontSize: 11, color: AppTheme.verde)),
-          ],
+      EstadoSync.actualizado => (
+          'Catálogo actualizado',
+          Icons.check_circle_outline,
+          AppTheme.verde,
         ),
-      EstadoSync.offline => Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-                width: 6,
-                height: 6,
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: AppTheme.colorWarn)),
-            const SizedBox(width: 5),
-            Text('Sin conexión',
-                style:
-                    GoogleFonts.inter(fontSize: 11, color: AppTheme.colorWarn)),
-          ],
+      EstadoSync.offline => (
+          'Sin conexión',
+          Icons.wifi_off_outlined,
+          AppTheme.muted,
         ),
-      EstadoSync.error => Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-                width: 6,
-                height: 6,
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: AppTheme.colorError)),
-            const SizedBox(width: 5),
-            Text('Error de sync',
-                style: GoogleFonts.inter(
-                    fontSize: 11, color: AppTheme.colorError)),
-          ],
+      EstadoSync.error => (
+          'No pudimos actualizar',
+          Icons.error_outline,
+          AppTheme.colorError,
         ),
-      _ => const SizedBox.shrink(),
+      _ => ('Catálogo local', Icons.inventory_2_outlined, AppTheme.muted),
     };
+    return Tooltip(
+      message: label,
+      child: Semantics(
+        label: label,
+        liveRegion: true,
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: sync == EstadoSync.sincronizando
+              ? const SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                    color: AppTheme.muted,
+                  ),
+                )
+              : Icon(icon, size: 22, color: color),
+        ),
+      ),
+    );
   }
 }

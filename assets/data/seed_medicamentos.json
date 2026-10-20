@@ -25,29 +25,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://pharmman.pe/cdn/shop/files/1222-2024-11-28T173028.859.jpg?v=1732833043&width=1946",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://pharmman.pe/cdn/shop/files/1222-2024-11-28T173028.859.jpg?v=1732833043&width=1946"
   },
   {
     "id": "ed833a0b-5b68-4d0b-a643-f6cc7cf235bf",
@@ -75,29 +53,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://melyfarma.pe/wp-content/uploads/2026/03/Ibuprofeno-400mg.-tableta-PORTUGAL.webp",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://melyfarma.pe/wp-content/uploads/2026/03/Ibuprofeno-400mg.-tableta-PORTUGAL.webp"
   },
   {
     "id": "eb6623fd-a069-40e9-8c6a-89c39f6dc748",
@@ -125,29 +81,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dojiw2m9tvv09.cloudfront.net/50562/product/naproxeno0152.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dojiw2m9tvv09.cloudfront.net/50562/product/naproxeno0152.jpg"
   },
   {
     "id": "146c2b71-749a-468e-a916-7ef3087a9301",
@@ -175,29 +109,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJSkEejjlmvAG9HYI8ftyQb1FAs8_PoySDTjX-zvDMMAgzWDVz-6Q1XGM&s=10",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJSkEejjlmvAG9HYI8ftyQb1FAs8_PoySDTjX-zvDMMAgzWDVz-6Q1XGM&s=10"
   },
   {
     "id": "273967c7-b40c-423b-bd33-e310b6383462",
@@ -225,29 +137,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://grupodyph.tiendada.com/api/scrooge/file/FL-4AD269D5?v=-2",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://grupodyph.tiendada.com/api/scrooge/file/FL-4AD269D5?v=-2"
   },
   {
     "id": "b0b4a9a0-fcf6-4bd7-9a03-bd34a508cf7d",
@@ -275,29 +165,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmacenter.com.pe/wp-content/uploads/2024/04/125.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmacenter.com.pe/wp-content/uploads/2024/04/125.jpg"
   },
   {
     "id": "f2a842d0-5253-49f0-8e0a-bd7dd0ddd99c",
@@ -325,29 +193,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://www.vinmec.com/static/uploads/20220418_015340_151153_thuoc_tramadol_max_1800x1800_jpg_db7c310276.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://www.vinmec.com/static/uploads/20220418_015340_151153_thuoc_tramadol_max_1800x1800_jpg_db7c310276.jpg"
   },
   {
     "id": "b5dcd460-d56d-41af-a46c-e8dc45f0e6b5",
@@ -375,29 +221,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/158117/22129_1.jpg?v=638428792911230000",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/158117/22129_1.jpg?v=638428792911230000"
   },
   {
     "id": "008d0af3-1d03-4738-99e3-d930f203ff9b",
@@ -425,29 +249,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://www.aspirina.com.mx/sites/g/files/vrxlpx53376/files/2024-05/Aspirina_tabletas_500_mg_empaque_lateral_izquierdo.png",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://www.aspirina.com.mx/sites/g/files/vrxlpx53376/files/2024-05/Aspirina_tabletas_500_mg_empaque_lateral_izquierdo.png"
   },
   {
     "id": "1e8a3cef-57eb-4385-9629-68b932af37d1",
@@ -475,29 +277,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://production-media.fahorro.com/media/catalog/product/7/5/7506472801327.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=144&width=144&canvas=144:144&format=jpeg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://production-media.fahorro.com/media/catalog/product/7/5/7506472801327.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=144&width=144&canvas=144:144&format=jpeg"
   },
   {
     "id": "93f9f659-43ff-4a11-8942-8a2eef8bfafd",
@@ -525,29 +305,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/159754/22598_1.jpg?v=638591217736430000",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/159754/22598_1.jpg?v=638591217736430000"
   },
   {
     "id": "88e6a6d4-507c-401f-a688-738ec3da7239",
@@ -575,29 +333,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://www.farmaciaslider.pe/my-assets/image/gallery/9425a78376f474512a601721643b8548.png",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://www.farmaciaslider.pe/my-assets/image/gallery/9425a78376f474512a601721643b8548.png"
   },
   {
     "id": "08185f03-0c9f-43b1-9af0-ce87f7f00aa7",
@@ -625,29 +361,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/161637/21212_1.jpg?v=638720843724600000",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/161637/21212_1.jpg?v=638720843724600000"
   },
   {
     "id": "3c664b48-4725-482f-8762-9ea3d3262f27",
@@ -675,29 +389,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/157269-800-auto?v=638417280915800000&width=800&height=auto&aspect=true",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/157269-800-auto?v=638417280915800000&width=800&height=auto&aspect=true"
   },
   {
     "id": "63bc8292-154f-441c-b67b-88a096ba9ff9",
@@ -725,29 +417,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://droxicolprd.vtexassets.com/arquivos/ids/187395/7702605109616.png?v=639063506564100000",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://droxicolprd.vtexassets.com/arquivos/ids/187395/7702605109616.png?v=639063506564100000"
   },
   {
     "id": "6f38bbc8-7656-482b-80b0-a3e80e739746",
@@ -775,29 +445,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/024880L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/024880L.jpg"
   },
   {
     "id": "24c4f863-dedc-4dbb-967c-27f063049c6e",
@@ -825,29 +473,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/070241L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/070241L.jpg"
   },
   {
     "id": "85ffa675-7ffe-4c42-b8fe-d9f797b07bb6",
@@ -875,29 +501,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://droxicolprd.vtexassets.com/arquivos/ids/187240/7705959012939.webp?v=639063283978900000",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://droxicolprd.vtexassets.com/arquivos/ids/187240/7705959012939.webp?v=639063283978900000"
   },
   {
     "id": "724dd37c-7d19-4e41-82b5-692b075e45a7",
@@ -925,29 +529,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://bysprodstorage.blob.core.windows.net/images/35130.png",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://bysprodstorage.blob.core.windows.net/images/35130.png"
   },
   {
     "id": "b74d2cc5-eb3f-411f-ab46-6d14f05dd2ee",
@@ -975,29 +557,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://coopidrogas.vtexassets.com/arquivos/ids/36990994-800-800?v=638919033203830000&width=800&height=800&aspect=true",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://coopidrogas.vtexassets.com/arquivos/ids/36990994-800-800?v=638919033203830000&width=800&height=800&aspect=true"
   },
   {
     "id": "20313c08-426a-4976-8954-af6aec063c61",
@@ -1025,29 +585,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/068533L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/068533L.jpg"
   },
   {
     "id": "a9017d3d-4133-4988-a3b3-46fa11101632",
@@ -1075,29 +613,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciassimilaresmx.vtexassets.com/arquivos/ids/157863/111.png?v=638152098396400000",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciassimilaresmx.vtexassets.com/arquivos/ids/157863/111.png?v=638152098396400000"
   },
   {
     "id": "a5e7c7a8-59f3-447d-acac-f3ff4bb632cf",
@@ -1125,29 +641,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/166346-800-auto?v=639165510221370000&width=800&height=auto&aspect=true",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/166346-800-auto?v=639165510221370000&width=800&height=auto&aspect=true"
   },
   {
     "id": "d55ca178-1f08-423f-a6a4-dd0810e06a52",
@@ -1175,29 +669,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaA3viXCFCTIBD7gsS4nd5-JebfTpBrTyJ5yz_Ums6BqzoSSwCeg7w6W6z&s=10",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaA3viXCFCTIBD7gsS4nd5-JebfTpBrTyJ5yz_Ums6BqzoSSwCeg7w6W6z&s=10"
   },
   {
     "id": "3d1554ef-cc41-4ccc-a47a-91474d522f09",
@@ -1225,29 +697,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/221077L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/221077L.jpg"
   },
   {
     "id": "4a41f17c-c127-4d78-8c61-d51582e38665",
@@ -1275,29 +725,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/134310L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/134310L.jpg"
   },
   {
     "id": "0b6c6e5e-edeb-423c-ae10-5fc075033054",
@@ -1325,29 +753,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjKHtYyfvb5S_Rp12Hq6ya0merSxQLPTTCxerfCA2Hdy7aLCwUriJpc-4&s=10",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjKHtYyfvb5S_Rp12Hq6ya0merSxQLPTTCxerfCA2Hdy7aLCwUriJpc-4&s=10"
   },
   {
     "id": "f70bae96-06a1-41a3-b606-1df5a4791bbc",
@@ -1375,29 +781,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/013075L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/013075L.jpg"
   },
   {
     "id": "078d0265-0d29-4d98-baf3-b41b09c672fd",
@@ -1425,29 +809,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/036284L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/036284L.jpg"
   },
   {
     "id": "6efbbedb-0e15-4086-aea8-fb0a1cec9edd",
@@ -1475,29 +837,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/161655/28087_1.jpg?v=638720843776630000",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/161655/28087_1.jpg?v=638720843776630000"
   },
   {
     "id": "3237c7a3-f071-4490-9fa1-677e1d510a32",
@@ -1525,29 +865,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://coopidrogas.vtexassets.com/arquivos/ids/36990645-800-800?v=638919030697330000&width=800&height=800&aspect=true",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://coopidrogas.vtexassets.com/arquivos/ids/36990645-800-800?v=638919030697330000&width=800&height=800&aspect=true"
   },
   {
     "id": "adae605c-7361-4c6e-b5b5-5c482803bebf",
@@ -1575,29 +893,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://coopidrogas.vtexassets.com/arquivos/ids/36835013/beclometasona-dipro250-mcg-200-dosis-mk.jpg?v=638467342061430000",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://coopidrogas.vtexassets.com/arquivos/ids/36835013/beclometasona-dipro250-mcg-200-dosis-mk.jpg?v=638467342061430000"
   },
   {
     "id": "e6191591-b4fe-4c6c-a179-1907e79caeff",
@@ -1625,29 +921,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://production-media.fahorro.com/media/catalog/product/7/5/7502223702585.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=144&width=144&canvas=144:144",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://production-media.fahorro.com/media/catalog/product/7/5/7502223702585.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=144&width=144&canvas=144:144"
   },
   {
     "id": "3f2a2094-1da1-4f03-b87b-5f6ed23ae878",
@@ -1675,29 +949,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/157006/16588_1.jpg?v=638417274347530000",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/157006/16588_1.jpg?v=638417274347530000"
   },
   {
     "id": "c38b01d7-e5f1-47c3-a942-eee54005d502",
@@ -1725,29 +977,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://www.saval.cl/fv/imagen.php?r=0b1e8be0627d39c4ccba4701383c91482468e815",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://www.saval.cl/fv/imagen.php?r=0b1e8be0627d39c4ccba4701383c91482468e815"
   },
   {
     "id": "550ebc0f-db90-47a4-b938-e58b6c700bae",
@@ -1775,29 +1005,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBZ5YPqIltFDlflDkFxQ3-4_9WUnXNwVyhmG8l-JqWlpH98bmyOeUlkwER&s=10",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBZ5YPqIltFDlflDkFxQ3-4_9WUnXNwVyhmG8l-JqWlpH98bmyOeUlkwER&s=10"
   },
   {
     "id": "93497fad-7049-41f1-b17f-3cf91e4d29b4",
@@ -1825,29 +1033,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/011513L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/011513L.jpg"
   },
   {
     "id": "26ffddd5-c67f-4482-8a4a-3ed17a0393bd",
@@ -1875,29 +1061,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToNBgeP8aVirwRCwdebS4Iz-giVpYvgELaDOT5TBSghnzYuA1YPk0SbfKh&s=10",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToNBgeP8aVirwRCwdebS4Iz-giVpYvgELaDOT5TBSghnzYuA1YPk0SbfKh&s=10"
   },
   {
     "id": "bde6134b-9ecf-420d-9bb6-120b6d417fa5",
@@ -1925,29 +1089,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciaamisalud.com/wp-content/uploads/2025/05/profma_bislakso_suspensionoral_120ml.png",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciaamisalud.com/wp-content/uploads/2025/05/profma_bislakso_suspensionoral_120ml.png"
   },
   {
     "id": "73bd92af-2170-4cab-9ec3-01981ef492fa",
@@ -1975,29 +1117,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/004097L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/004097L.jpg"
   },
   {
     "id": "8b22baac-b353-4d75-97f9-49fb383df27c",
@@ -2025,29 +1145,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://www.boticasperu.pe/on/demandware.static/-/Sites-boticasperu-master-catalog/default/dwc430f17b/images/1927.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://www.boticasperu.pe/on/demandware.static/-/Sites-boticasperu-master-catalog/default/dwc430f17b/images/1927.jpg"
   },
   {
     "id": "5c7f6d18-4271-43ec-ae22-9dccd53da772",
@@ -2075,29 +1173,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://production-media.fahorro.com/media/catalog/product/7/5/7502223706903.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=144&width=144&canvas=144:144",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://production-media.fahorro.com/media/catalog/product/7/5/7502223706903.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=144&width=144&canvas=144:144"
   },
   {
     "id": "5b8e6749-d89e-4a28-9326-5413c4df1407",
@@ -2125,29 +1201,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/033080L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/033080L.jpg"
   },
   {
     "id": "ad79c8c3-2a57-4255-bd40-8adb69977b82",
@@ -2175,29 +1229,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciasanjorge.com/cdn/shop/products/7502241941331_8c2c73f4-4e0f-4424-8dad-8db7d6a097e1_1024x.jpg?v=1701392971",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciasanjorge.com/cdn/shop/products/7502241941331_8c2c73f4-4e0f-4424-8dad-8db7d6a097e1_1024x.jpg?v=1701392971"
   },
   {
     "id": "765fe86b-5ac2-4e5f-a1ca-104af6a8f3d9",
@@ -2225,29 +1257,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/165593/23464_producto.jpg?v=639114538212570000",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/165593/23464_producto.jpg?v=639114538212570000"
   },
   {
     "id": "7ca1fccd-843d-488b-96e9-f91f91146c1e",
@@ -2275,29 +1285,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/158342/02008_1.jpg?v=638428793707430000",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/158342/02008_1.jpg?v=638428793707430000"
   },
   {
     "id": "9860c10a-936e-4988-853a-6a81c2b1bdce",
@@ -2325,29 +1313,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/158317-800-auto?v=638428793615170000&width=800&height=auto&aspect=true",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/158317-800-auto?v=638428793615170000&width=800&height=auto&aspect=true"
   },
   {
     "id": "b50d4461-0e01-47b9-bfe0-54193b839b8d",
@@ -2375,29 +1341,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrTa1U2YVbcBFoBBVN-p5p4zbvp76ZvK0sWBj9oEJmyA&s",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrTa1U2YVbcBFoBBVN-p5p4zbvp76ZvK0sWBj9oEJmyA&s"
   },
   {
     "id": "e66a951e-ba26-43fc-8c8b-814e88870eac",
@@ -2425,29 +1369,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://production-media.fahorro.com/media/catalog/product/7/5/7502276850318_3.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=265&width=265&canvas=265:265",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://production-media.fahorro.com/media/catalog/product/7/5/7502276850318_3.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=265&width=265&canvas=265:265"
   },
   {
     "id": "56f0e8b7-82a2-47b5-8a00-7e5eb6af8c17",
@@ -2475,29 +1397,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/424385L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/424385L.jpg"
   },
   {
     "id": "03370dd7-5cc4-458d-b142-cdbb39864ba8",
@@ -2525,29 +1425,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/034483L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/034483L.jpg"
   },
   {
     "id": "667e0f19-1eeb-42d0-abc2-c19eb72f6029",
@@ -2575,29 +1453,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/019106L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/019106L.jpg"
   },
   {
     "id": "76ba1551-f93a-41ae-af71-50b6886a63c4",
@@ -2625,29 +1481,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://pymstatic.com/43895/conversions/metformina-wide_webp.webp",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://pymstatic.com/43895/conversions/metformina-wide_webp.webp"
   },
   {
     "id": "02a2b410-b71c-47ed-bcd9-c35a11f9e4c8",
@@ -2675,29 +1509,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/306060L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/306060L.jpg"
   },
   {
     "id": "0c2ae2fa-3e19-4eb5-819c-7d5ba14f1c3a",
@@ -2725,29 +1537,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://www.lasanteca.com/userfiles/2018/12/GLIMEPIRIDA-4MG-CAJA-POR-80-TABLETAS-INCLINADO.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://www.lasanteca.com/userfiles/2018/12/GLIMEPIRIDA-4MG-CAJA-POR-80-TABLETAS-INCLINADO.jpg"
   },
   {
     "id": "75dbfd43-ee09-4b20-a950-e1f87136c494",
@@ -2775,29 +1565,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://novafarmawimer.pe/wp-content/uploads/2024/09/14707-scaled.webp",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://novafarmawimer.pe/wp-content/uploads/2024/09/14707-scaled.webp"
   },
   {
     "id": "09185fa9-261f-404e-8d0b-727b41235b94",
@@ -2825,29 +1593,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/426855L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/426855L.jpg"
   },
   {
     "id": "c822628b-46cd-4df0-9ef1-f46aea8a6c22",
@@ -2875,29 +1621,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/073190L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/073190L.jpg"
   },
   {
     "id": "8afe4388-7f94-41bf-9e68-f5829cd17a52",
@@ -2925,29 +1649,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/085299L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/085299L.jpg"
   },
   {
     "id": "1a8a1e09-082c-4f98-8f81-da6238d29f41",
@@ -2975,29 +1677,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/349192L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/349192L.jpg"
   },
   {
     "id": "ebb56076-22e8-4f8a-9c79-12b53ec4e7c0",
@@ -3025,29 +1705,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://bysprodstorage.blob.core.windows.net/images/57398.png",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://bysprodstorage.blob.core.windows.net/images/57398.png"
   },
   {
     "id": "de7fb00c-7246-4d65-99b1-683eb98f09b2",
@@ -3075,29 +1733,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/015831L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/015831L.jpg"
   },
   {
     "id": "8e6ed433-c71f-49fd-affa-bd84be7ed39f",
@@ -3125,29 +1761,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://i0.wp.com/prixz.com/salud/wp-content/uploads/2020/04/amitriptilina.jpg?fit=623%2C433&ssl=1",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://i0.wp.com/prixz.com/salud/wp-content/uploads/2020/04/amitriptilina.jpg?fit=623%2C433&ssl=1"
   },
   {
     "id": "244f5feb-370c-4fc0-a62b-e8cde7459da2",
@@ -3175,29 +1789,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/025813L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/025813L.jpg"
   },
   {
     "id": "c0ffff46-c601-4555-bec8-2861215d9859",
@@ -3225,29 +1817,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/164644-800-auto?v=639011758455170000&width=800&height=auto&aspect=true",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciauniversalpe.vtexassets.com/arquivos/ids/164644-800-auto?v=639011758455170000&width=800&height=auto&aspect=true"
   },
   {
     "id": "1d14a05b-dcff-46a4-b0df-620f752a0d91",
@@ -3275,29 +1845,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE-HHaIcGtYvqt-G9mfWNzM8NyqY6_NDoxw9LbkcrECKfc7j6l8_ufU_9T&s=10",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE-HHaIcGtYvqt-G9mfWNzM8NyqY6_NDoxw9LbkcrECKfc7j6l8_ufU_9T&s=10"
   },
   {
     "id": "3c84ae03-bbb8-4f0a-94f3-099063711fee",
@@ -3325,29 +1873,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/074435L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/074435L.jpg"
   },
   {
     "id": "7db23000-7668-4ac3-bb2f-b22d92d59824",
@@ -3375,29 +1901,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/137094L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/137094L.jpg"
   },
   {
     "id": "7296802a-ed1d-40cf-a815-76b8eaddc63e",
@@ -3425,29 +1929,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/034473L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/034473L.jpg"
   },
   {
     "id": "e129bf04-6a06-437d-ba7d-22eaf16e04df",
@@ -3475,29 +1957,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://lebudit.com/wp-content/uploads/2024/03/vitamina-B12.png",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://lebudit.com/wp-content/uploads/2024/03/vitamina-B12.png"
   },
   {
     "id": "1fd89250-6f32-47a6-82e5-6953877fa639",
@@ -3525,29 +1985,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaGsB5gFo9KaZdSuczNKKpdQKt6KRx1ScQW2tmWQEyP-mimc_6s8QOl2s&s=10",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaGsB5gFo9KaZdSuczNKKpdQKt6KRx1ScQW2tmWQEyP-mimc_6s8QOl2s&s=10"
   },
   {
     "id": "28eee043-af57-4c86-8c99-6b2965dd4afe",
@@ -3575,29 +2013,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://laboratorioion.com/wp-content/uploads/b1-6-12-5000-x10.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://laboratorioion.com/wp-content/uploads/b1-6-12-5000-x10.jpg"
   },
   {
     "id": "11462a3b-b730-49d7-8ef1-bc324aaae326",
@@ -3625,29 +2041,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/025763L.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/025763L.jpg"
   },
   {
     "id": "8bacfc8a-f9d3-4a08-892f-3df3b79aaf1a",
@@ -3675,29 +2069,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://www.normon.com/wp-content/uploads/2025/01/764375.3-Colecalciferol-.webp",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://www.normon.com/wp-content/uploads/2025/01/764375.3-Colecalciferol-.webp"
   },
   {
     "id": "9af074a8-02c1-47f0-9171-f9a116ea1c43",
@@ -3725,29 +2097,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://wecarepharma.mx/cdn/shop/files/product_image__1__f0625afe-8346-45bd-bcb5-0caa02b14ebb_700x700.jpg?v=1744671178",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://wecarepharma.mx/cdn/shop/files/product_image__1__f0625afe-8346-45bd-bcb5-0caa02b14ebb_700x700.jpg?v=1744671178"
   },
   {
     "id": "6c8b9790-6386-4cea-81db-8b41e16fcf4a",
@@ -3775,29 +2125,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/023649M.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/023649M.jpg"
   },
   {
     "id": "4083cad7-c915-4adb-a841-c6c608f9b8fc",
@@ -3825,29 +2153,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/407057M.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/407057M.jpg"
   },
   {
     "id": "36fe0871-b783-4ec0-8fd9-38f106a578c0",
@@ -3875,29 +2181,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://tb-static.uber.com/prod/image-proc/processed_images/352e972c9098fbfd3a40a2a7c62d5cc1/957777de4e8d7439bef56daddbfae227.jpeg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://tb-static.uber.com/prod/image-proc/processed_images/352e972c9098fbfd3a40a2a7c62d5cc1/957777de4e8d7439bef56daddbfae227.jpeg"
   },
   {
     "id": "18055b33-0832-466f-bfb2-5cd430daf173",
@@ -3925,29 +2209,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/012987M.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/012987M.jpg"
   },
   {
     "id": "0023a415-ac16-4b5d-af64-c36d61fcb136",
@@ -3975,29 +2237,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://coaspharma.com.co/wp-content/uploads/2024/08/KETOCONAZOL-200-mg-TAB-3-1024x1024.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://coaspharma.com.co/wp-content/uploads/2024/08/KETOCONAZOL-200-mg-TAB-3-1024x1024.jpg"
   },
   {
     "id": "e90001ee-9900-46d0-936a-a9a1d3a54305",
@@ -4025,29 +2265,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/037169M.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/037169M.jpg"
   },
   {
     "id": "db21dddd-a49b-43f1-a4b5-287cac93cd0a",
@@ -4075,29 +2293,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmaciassimilaresmx.vtexassets.com/arquivos/ids/157558-800-533?v=638139781736230000&width=800&height=533&aspect=true",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmaciassimilaresmx.vtexassets.com/arquivos/ids/157558-800-533?v=638139781736230000&width=800&height=533&aspect=true"
   },
   {
     "id": "5654f9a0-dff5-428b-b74e-55953c0650b2",
@@ -4125,29 +2321,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://img.drogasil.com.br/catalog/product/d/i/diclofenaco-dietilamonio-gel-creme-60g_7896422504256.png?width=450&height=450&quality=85&type=resize",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://img.drogasil.com.br/catalog/product/d/i/diclofenaco-dietilamonio-gel-creme-60g_7896422504256.png?width=450&height=450&quality=85&type=resize"
   },
   {
     "id": "be008057-4131-4bcd-a3e1-4f733d8033cf",
@@ -4175,29 +2349,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/036844M.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/036844M.jpg"
   },
   {
     "id": "c0190a78-1c0a-41fc-8313-4cf38f2fcfb1",
@@ -4225,29 +2377,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/031253M.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/031253M.jpg"
   },
   {
     "id": "60eff826-26ab-464c-8218-78ea8001c21c",
@@ -4275,29 +2405,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://mifarma.mx/3499-large_default/mupirocina-crema.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://mifarma.mx/3499-large_default/mupirocina-crema.jpg"
   },
   {
     "id": "4f14ceb4-0b80-4c88-8b52-b4e44ce5970a",
@@ -4325,29 +2433,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://q2vida.com/wp-content/uploads/2022/12/1884-Permetrina-en-Crema-768x250.jpeg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://q2vida.com/wp-content/uploads/2022/12/1884-Permetrina-en-Crema-768x250.jpeg"
   },
   {
     "id": "03738251-013e-464b-9e8a-0caad307ab41",
@@ -4375,29 +2461,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/130002M.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://dcuk1cxrnzjkh.cloudfront.net/imagesproducto/130002M.jpg"
   },
   {
     "id": "6f9b7be8-dcaa-40de-8082-4112944d611c",
@@ -4425,29 +2489,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://images-cdn.ubuy.co.in/649a86c50c33685ce0183398-pedialyte-fast-hydration-electrolyte.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://images-cdn.ubuy.co.in/649a86c50c33685ce0183398-pedialyte-fast-hydration-electrolyte.jpg"
   },
   {
     "id": "3dcaae43-29b6-4092-a6b5-af2baa441f27",
@@ -4475,29 +2517,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://www.farmaciascurie.cl/cdn/shop/files/Cloruro_20de_20sodio_20Vitafarma.png?v=1768595216&width=493",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://www.farmaciascurie.cl/cdn/shop/files/Cloruro_20de_20sodio_20Vitafarma.png?v=1768595216&width=493"
   },
   {
     "id": "3cc3c9f8-e744-41fc-b4c0-6f3554d08a81",
@@ -4525,29 +2545,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://rofasa.com/_next/image?url=%2Fblog%2Fpitocin-oxitocina%2Fcover.jpeg&w=3840&q=75",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://rofasa.com/_next/image?url=%2Fblog%2Fpitocin-oxitocina%2Fcover.jpeg&w=3840&q=75"
   },
   {
     "id": "366f8753-b22b-4786-98d4-d05b9d51522f",
@@ -4575,29 +2573,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmacorp.com/cdn/shop/files/150051_1200x1200.jpg?v=1714433706",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmacorp.com/cdn/shop/files/150051_1200x1200.jpg?v=1714433706"
   },
   {
     "id": "c46331b0-a9a6-4684-9da4-7a86e6581901",
@@ -4625,29 +2601,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://www.pillsorted.com/wp-content/uploads/2023/06/Levonorgestrel201500mcg.png",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://www.pillsorted.com/wp-content/uploads/2023/06/Levonorgestrel201500mcg.png"
   },
   {
     "id": "8c7424ad-49f4-4774-a31a-0239423879ed",
@@ -4675,29 +2629,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://farmacorp.com/cdn/shop/files/7770108410010_1024x1024.jpg?v=1714440618",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://farmacorp.com/cdn/shop/files/7770108410010_1024x1024.jpg?v=1714440618"
   },
   {
     "id": "0cfb9d40-cb4b-4ee0-94a2-b280bb40b017",
@@ -4725,29 +2657,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://tse3.mm.bing.net/th/id/OIP.5ND2BQ4bo60p5eYA2JmV2wHaHN?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://tse3.mm.bing.net/th/id/OIP.5ND2BQ4bo60p5eYA2JmV2wHaHN?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
   },
   {
     "id": "de54eacc-e755-423c-8a47-8af6157ac2ee",
@@ -4775,29 +2685,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://th.bing.com/th/id/OIP.sYtjqbgEwPyFsFO1N6oZQAHaHa?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://th.bing.com/th/id/OIP.sYtjqbgEwPyFsFO1N6oZQAHaHa?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
   },
   {
     "id": "9ae17cec-8cdc-4d5a-b2f2-192ff8377aae",
@@ -4825,29 +2713,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://difamedichn.com/wp-content/uploads/2024/02/406-scaled.jpg",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://difamedichn.com/wp-content/uploads/2024/02/406-scaled.jpg"
   },
   {
     "id": "21821352-9d32-4e2c-b744-09080906fa31",
@@ -4875,29 +2741,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://tse2.mm.bing.net/th/id/OIP.mwsdnMBKGEI_QJ_od-pe8QHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://tse2.mm.bing.net/th/id/OIP.mwsdnMBKGEI_QJ_od-pe8QHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
   },
   {
     "id": "95c4e491-a68a-4723-95ff-43bb0abad6cc",
@@ -4925,29 +2769,7 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://www.puntofarma.com.py/imagenes/public/images/351.png-68054.webp",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://www.puntofarma.com.py/imagenes/public/images/351.png-68054.webp"
   },
   {
     "id": "1c6ea725-f489-4c8f-864c-eb7f027b4bb6",
@@ -4975,28 +2797,6 @@
     "foto_path": null,
     "fecha_revision": "2026-10-09",
     "actualizado_en": "2026-10-14 23:01:20.598135+00",
-    "foto_url_externa": "https://th.bing.com/th/id/R.baba46356f97d9e19439052eea152cde?rik=chISm7vNCBFKzA&riu=http%3a%2f%2fwww.saval.cl%2ffv%2fimagen.php%3fr%3d7081e04395ee286b517ab2f44855f63073aeb2c6%26w%3d350&ehk=8WzxNvZaKNIrZ%2bwOkELRNeOeeWA%2b%2fgUXyXADdK0r4OE%3d&risl=&pid=ImgRaw&r=0",
-    "grupos": [
-      {
-        "grupo": "adulto",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "adulto_mayor",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "nino",
-        "estado": "no_evaluado",
-        "observacion": null
-      },
-      {
-        "grupo": "lactante",
-        "estado": "no_evaluado",
-        "observacion": null
-      }
-    ]
+    "foto_url_externa": "https://th.bing.com/th/id/R.baba46356f97d9e19439052eea152cde?rik=chISm7vNCBFKzA&riu=http%3a%2f%2fwww.saval.cl%2ffv%2fimagen.php%3fr%3d7081e04395ee286b517ab2f44855f63073aeb2c6%26w%3d350&ehk=8WzxNvZaKNIrZ%2bwOkELRNeOeeWA%2b%2fgUXyXADdK0r4OE%3d&risl=&pid=ImgRaw&r=0"
   }
 ]

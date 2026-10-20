@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:medicamentos_app/core/theme/app_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:medicamentos_app/core/theme/app_theme.dart';
 import 'package:medicamentos_app/presentation/providers/medicamentos_provider.dart';
@@ -18,42 +18,53 @@ class HistorialScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Historial',
-            style: GoogleFonts.lora(fontSize: 20, color: AppTheme.ink)),
+        title: Text(
+          'Historial',
+          style: AppFonts.lora(fontSize: 28, color: AppTheme.ink),
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.delete_sweep_outlined, size: 20),
             tooltip: 'Limpiar historial',
             onPressed: () async {
-            final confirmar = await showDialog<bool>(
-              context: context,
-              useRootNavigator: true,
-              builder: (dialogContext) => AlertDialog(
-              title: Text('Limpiar historial',
-                  style: GoogleFonts.lora(fontSize: 18, color: AppTheme.ink)),
-              content: Text(
-                '¿Eliminar todo el historial de búsquedas?',
-                style: GoogleFonts.inter(fontSize: 14, color: AppTheme.ink),
-              ),
-              actions: [
-                TextButton(
-                    onPressed: () => Navigator.pop(dialogContext, false),
-                    child: const Text('Cancelar')),
-                FilledButton(
-                    onPressed: () => Navigator.pop(dialogContext, true),
-                    child: const Text('Limpiar')),
-              ],
-            ),
-            );
-            if (confirmar == true) {
-              await ref.read(appDatabaseProvider).limpiarHistorial();
-              ref.invalidate(historialProvider);
-            }
-          },
+              final confirmar = await showDialog<bool>(
+                context: context,
+                useRootNavigator: true,
+                builder: (dialogContext) => AlertDialog(
+                  title: Text(
+                    'Limpiar historial',
+                    style: AppFonts.lora(fontSize: 18, color: AppTheme.ink),
+                  ),
+                  content: Text(
+                    '¿Eliminar todo el historial de búsquedas?',
+                    style: AppFonts.inter(
+                      fontSize: 14,
+                      color: AppTheme.ink,
+                    ),
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(dialogContext, false),
+                      child: const Text('Cancelar'),
+                    ),
+                    FilledButton(
+                      onPressed: () => Navigator.pop(dialogContext, true),
+                      child: const Text('Limpiar'),
+                    ),
+                  ],
+                ),
+              );
+              if (confirmar == true) {
+                await ref.read(appDatabaseProvider).limpiarHistorial();
+                ref.invalidate(historialProvider);
+              }
+            },
           ),
         ],
         bottom: const PreferredSize(
-            preferredSize: Size.fromHeight(1), child: Divider(height: 1)),
+          preferredSize: Size.fromHeight(1),
+          child: Divider(height: 1),
+        ),
       ),
       body: historialAsync.when(
         data: (lista) {
@@ -63,12 +74,16 @@ class HistorialScreen extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Sin historial',
-                      style: GoogleFonts.lora(fontSize: 21, color: AppTheme.ink)),
+                  Text(
+                    'Sin historial',
+                    style: AppFonts.lora(fontSize: 21, color: AppTheme.ink),
+                  ),
                   const SizedBox(height: 6),
                   Text(
-                    'Las búsquedas y escaneos aparecerán aquí.',
-                    style: theme.textTheme.bodyMedium?.copyWith(color: AppTheme.muted),
+                    'Los medicamentos consultados aparecerán aquí.',
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: AppTheme.muted,
+                    ),
                   ),
                 ],
               ),
@@ -82,8 +97,10 @@ class HistorialScreen extends ConsumerWidget {
               final item = lista[index];
               final esEscaneo = item.tipo == 'escaneo';
               return ListTile(
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 8,
+                ),
                 leading: Icon(
                   esEscaneo
                       ? Icons.qr_code_scanner_rounded
@@ -91,22 +108,36 @@ class HistorialScreen extends ConsumerWidget {
                   size: 18,
                   color: AppTheme.muted,
                 ),
-                title: Text(item.nombreSnapshot),
+                title: Text(
+                  item.nombreSnapshot,
+                  style: theme.textTheme.titleLarge,
+                ),
                 subtitle: Text(
                   '${esEscaneo ? 'Escaneado' : 'Buscado'} · ${fmt.format(item.fecha)}',
                 ),
-                trailing: const Icon(Icons.chevron_right_rounded,
-                    size: 16, color: AppTheme.border),
+                trailing: const Icon(
+                  Icons.chevron_right_rounded,
+                  size: 24,
+                  color: AppTheme.muted,
+                ),
                 onTap: () async {
                   final db = ref.read(appDatabaseProvider);
                   final med = await db.getMedicamentoById(item.medicamentoId);
                   if (med != null && context.mounted) {
-                    context.push(Routes.detalleMedicamento
-                        .replaceAll(':id', item.medicamentoId));
+                    context.push(
+                      Routes.detalleMedicamento.replaceAll(
+                        ':id',
+                        item.medicamentoId,
+                      ),
+                    );
                   } else if (context.mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                      content: Text('Medicamento ya no existe'),
-                    ));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                          'Este medicamento ya no está disponible en el catálogo.',
+                        ),
+                      ),
+                    );
                   }
                 },
               );
@@ -115,13 +146,20 @@ class HistorialScreen extends ConsumerWidget {
         },
         loading: () => const Center(
           child: SizedBox(
-              width: 20,
-              height: 20,
-              child: CircularProgressIndicator(
-                  strokeWidth: 2, color: AppTheme.verde)),
+            width: 20,
+            height: 20,
+            child: CircularProgressIndicator(
+              strokeWidth: 2,
+              color: AppTheme.verde,
+            ),
+          ),
         ),
         error: (e, _) => Padding(
-            padding: const EdgeInsets.all(24), child: Text('Error: $e')),
+          padding: const EdgeInsets.all(24),
+          child: const Text(
+            'No pudimos cargar el historial. Vuelve a intentarlo.',
+          ),
+        ),
       ),
     );
   }

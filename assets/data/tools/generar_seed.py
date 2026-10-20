@@ -36,16 +36,7 @@ SELECT
   m.foto_path,
   m.fecha_revision,
   m.actualizado_en,
-  COALESCE(mf.imagen_origen_url, '') AS foto_url_externa,
-  (
-    SELECT json_agg(json_build_object(
-      'grupo', g.grupo,
-      'estado', g.estado,
-      'observacion', g.observacion
-    ))
-    FROM medicamento_grupos g
-    WHERE g.medicamento_id = m.id
-  ) AS grupos
+  COALESCE(mf.imagen_origen_url, '') AS foto_url_externa
 FROM medicamentos m
 LEFT JOIN medicamento_fuentes mf ON mf.medicamento_id = m.id
 ORDER BY m.codigo_interno;

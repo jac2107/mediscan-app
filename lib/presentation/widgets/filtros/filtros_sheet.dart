@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:medicamentos_app/core/theme/app_fonts.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../domain/entities/filtros.dart';
 import '../../providers/medicamentos_provider.dart';
@@ -25,9 +25,12 @@ class FiltrosSheet extends ConsumerWidget {
             padding: const EdgeInsets.fromLTRB(24, 12, 16, 0),
             child: Row(
               children: [
-                Text('Filtrar y ordenar',
-                    style: GoogleFonts.lora(fontSize: 18, color: AppTheme.ink)),
-                const Spacer(),
+                Expanded(
+                  child: Text(
+                    'Filtros',
+                    style: AppFonts.lora(fontSize: 28, color: AppTheme.ink),
+                  ),
+                ),
                 if (filtros.totalFiltrosActivos > 0)
                   TextButton(
                     onPressed: () {
@@ -36,7 +39,8 @@ class FiltrosSheet extends ConsumerWidget {
                     child: const Text('Limpiar'),
                   ),
                 IconButton(
-                  icon: const Icon(Icons.close_rounded, size: 18),
+                  tooltip: 'Cerrar filtros',
+                  icon: const Icon(Icons.close_rounded, size: 24),
                   onPressed: () => Navigator.pop(context),
                 ),
               ],
@@ -49,6 +53,17 @@ class FiltrosSheet extends ConsumerWidget {
               controller: ctrl,
               padding: const EdgeInsets.symmetric(horizontal: 24),
               children: [
+                const SizedBox(height: 24),
+                Text(
+                  'Afina tu búsqueda',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Combina los criterios que necesites.',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const SizedBox(height: 24),
                 // ── Ordenamiento ───────────────────────────────────────────
                 _Seccion(titulo: 'Ordenar por'),
                 Wrap(
@@ -60,10 +75,10 @@ class FiltrosSheet extends ConsumerWidget {
                       label: Text(_labelOrden(orden)),
                       selected: selected,
                       onSelected: (_) => notifier.setOrden(orden),
-                      selectedColor: AppTheme.verde,
-                      labelStyle: GoogleFonts.inter(
-                        fontSize: 12,
-                        color: selected ? AppTheme.bgMarfil : AppTheme.ink,
+                      selectedColor: AppTheme.surface,
+                      labelStyle: AppFonts.inter(
+                        fontSize: 13,
+                        color: selected ? AppTheme.verde : AppTheme.ink,
                       ),
                     );
                   }).toList(),
@@ -118,10 +133,16 @@ class FiltrosSheet extends ConsumerWidget {
                   ),
                   loading: () => const Padding(
                     padding: EdgeInsets.symmetric(vertical: 24),
-                    child: Center(child: CircularProgressIndicator(
-                        strokeWidth: 2, color: AppTheme.verde)),
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        color: AppTheme.verde,
+                      ),
+                    ),
                   ),
-                  error: (e, _) => const SizedBox.shrink(),
+                  error: (e, _) => const Text(
+                    'No pudimos cargar los criterios. Cierra y vuelve a abrir los filtros.',
+                  ),
                 ),
 
                 const SizedBox(height: 32),
@@ -132,7 +153,13 @@ class FiltrosSheet extends ConsumerWidget {
           // Botón aplicar
           Padding(
             padding: EdgeInsets.fromLTRB(
-                24, 8, 24, MediaQuery.of(context).viewInsets.bottom + 16),
+              24,
+              8,
+              24,
+              MediaQuery.of(context).viewInsets.bottom +
+                  MediaQuery.of(context).padding.bottom +
+                  16,
+            ),
             child: SizedBox(
               width: double.infinity,
               height: 48,
@@ -164,12 +191,12 @@ class _Seccion extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
         padding: const EdgeInsets.only(bottom: 10),
         child: Text(
-          titulo.toUpperCase(),
-          style: GoogleFonts.inter(
-            fontSize: 11,
+          titulo,
+          style: AppFonts.inter(
+            fontSize: 14,
             fontWeight: FontWeight.w600,
             color: AppTheme.muted,
-            letterSpacing: 0.5,
+            letterSpacing: 0,
           ),
         ),
       );
@@ -177,9 +204,8 @@ class _Seccion extends StatelessWidget {
 
 class _GrupoSelector extends StatelessWidget {
   final Filtros filtros;
-  final dynamic notifier;
+  final FiltrosNotifier notifier;
   const _GrupoSelector({required this.filtros, required this.notifier});
-
   @override
   Widget build(BuildContext context) {
     const grupos = [
@@ -188,57 +214,24 @@ class _GrupoSelector extends StatelessWidget {
       ('nino', 'Niños'),
       ('lactante', 'Lactantes'),
     ];
-    const estados = [
-      ('aplicable', 'Aplicable'),
-      ('no_aplicable', 'No aplicable'),
-      ('no_evaluado', 'Sin evaluación'),
-    ];
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Wrap(
-          spacing: 8,
-          runSpacing: 4,
-          children: grupos.map(((String, String) g) {
-            final selected = filtros.grupoFiltro == g.$1;
-            return FilterChip(
-              label: Text(g.$2),
-              selected: selected,
-              onSelected: (_) =>
-                  notifier.setGrupo(selected ? null : g.$1),
-              selectedColor: AppTheme.verde,
-              labelStyle: GoogleFonts.inter(
-                fontSize: 12,
-                color: selected ? AppTheme.bgMarfil : AppTheme.ink,
-              ),
-            );
-          }).toList(),
+        Text(
+          'Con dosis informada. Puedes seleccionar varios grupos.',
+          style: Theme.of(context).textTheme.bodySmall,
         ),
-        if (filtros.grupoFiltro != null) ...[
-          const SizedBox(height: 8),
-          Text('Estado de aplicabilidad:',
-              style: GoogleFonts.inter(fontSize: 12, color: AppTheme.muted)),
-          const SizedBox(height: 4),
-          Wrap(
-            spacing: 8,
-            runSpacing: 4,
-            children: estados.map(((String, String) e) {
-              final selected = filtros.estadoGrupo == e.$1;
-              return FilterChip(
-                label: Text(e.$2),
-                selected: selected,
-                onSelected: (_) =>
-                    notifier.setEstadoGrupo(selected ? null : e.$1),
-                selectedColor: AppTheme.verde,
-                labelStyle: GoogleFonts.inter(
-                  fontSize: 12,
-                  color: selected ? AppTheme.bgMarfil : AppTheme.ink,
-                ),
-              );
-            }).toList(),
+        const SizedBox(height: 8),
+        ...grupos.map(
+          (g) => CheckboxListTile(
+            contentPadding: EdgeInsets.zero,
+            controlAffinity: ListTileControlAffinity.leading,
+            activeColor: AppTheme.verde,
+            title: Text(g.$2, style: Theme.of(context).textTheme.bodyMedium),
+            value: filtros.gruposPaciente.contains(g.$1),
+            onChanged: (_) => notifier.toggleGrupo(g.$1),
           ),
-        ],
+        ),
       ],
     );
   }
@@ -268,9 +261,8 @@ class _FiltroMultiState extends State<_FiltroMulti> {
   @override
   Widget build(BuildContext context) {
     if (widget.opciones.isEmpty) return const SizedBox.shrink();
-    final visibles = _expandido
-        ? widget.opciones
-        : widget.opciones.take(_inicial).toList();
+    final visibles =
+        _expandido ? widget.opciones : widget.opciones.take(_inicial).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -282,13 +274,13 @@ class _FiltroMultiState extends State<_FiltroMulti> {
           children: visibles.map((op) {
             final selected = widget.seleccionados.contains(op);
             return FilterChip(
-              label: Text(op, overflow: TextOverflow.ellipsis),
+              label: Text(op),
               selected: selected,
               onSelected: (_) => widget.onToggle(op),
-              selectedColor: AppTheme.verde,
-              labelStyle: GoogleFonts.inter(
-                fontSize: 12,
-                color: selected ? AppTheme.bgMarfil : AppTheme.ink,
+              selectedColor: AppTheme.surface,
+              labelStyle: AppFonts.inter(
+                fontSize: 13,
+                color: selected ? AppTheme.verde : AppTheme.ink,
               ),
             );
           }).toList(),
@@ -300,7 +292,7 @@ class _FiltroMultiState extends State<_FiltroMulti> {
               _expandido
                   ? 'Ver menos'
                   : 'Ver todos (${widget.opciones.length})',
-              style: GoogleFonts.inter(fontSize: 12, color: AppTheme.verde),
+              style: AppFonts.inter(fontSize: 13, color: AppTheme.verde),
             ),
           ),
       ],

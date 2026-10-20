@@ -1,7 +1,7 @@
 class AppConstants {
   AppConstants._();
 
-  static const String appName = 'MediScan';
+  static const String appName = 'Farmafolio';
   static const String dbName = 'medicamentos.db';
   static const int dbVersion = 1;
 

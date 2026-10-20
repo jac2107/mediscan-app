@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../core/theme/app_theme.dart';
-import 'common/sync_indicator.dart';
 
 class MainScaffold extends StatelessWidget {
   final Widget child;
@@ -43,20 +41,26 @@ class MainScaffold extends StatelessWidget {
             destinations: [
               NavigationDestination(
                 icon: const Icon(Icons.search_rounded),
-                selectedIcon: const Icon(Icons.search_rounded,
-                    color: AppTheme.verde),
+                selectedIcon: const Icon(
+                  Icons.search_rounded,
+                  color: AppTheme.verde,
+                ),
                 label: 'Catálogo',
               ),
               NavigationDestination(
                 icon: const Icon(Icons.star_outline_rounded),
-                selectedIcon: const Icon(Icons.star_rounded,
-                    color: AppTheme.verde),
+                selectedIcon: const Icon(
+                  Icons.star_rounded,
+                  color: AppTheme.verde,
+                ),
                 label: 'Favoritos',
               ),
               NavigationDestination(
                 icon: const Icon(Icons.history_rounded),
-                selectedIcon: const Icon(Icons.history_rounded,
-                    color: AppTheme.verde),
+                selectedIcon: const Icon(
+                  Icons.history_rounded,
+                  color: AppTheme.verde,
+                ),
                 label: 'Historial',
               ),
             ],

@@ -1,43 +1,119 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:medicamentos_app/core/theme/app_fonts.dart';
 
 class AppTheme {
   AppTheme._();
 
   // ── Tokens de paleta editorial ────────────────────────────────
-  static const Color bgMarfil   = Color(0xFFFBF8EF);
-  static const Color surface    = Color(0xFFECEDE5);
-  static const Color ink        = Color(0xFF262B28);
-  static const Color muted      = Color(0xFF626862);
-  static const Color verde      = Color(0xFF304B40);
-  static const Color border     = Color(0xFFB4BCB2);
+  static const Color bgMarfil = Color(0xFFFBF8EF);
+  static const Color surface = Color(0xFFECEDE5);
+  static const Color ink = Color(0xFF262B28);
+  static const Color muted = Color(0xFF626862);
+  static const Color verde = Color(0xFF304B40);
+  static const Color border = Color(0xFFB4BCB2);
   static const Color colorError = Color(0xFFA52E22);
-  static const Color colorWarn  = Color(0xFF755629);
-  static const Color disabled   = Color(0xFFDCE0D7);
+  static const Color colorWarn = Color(0xFF755629);
+  static const Color disabled = Color(0xFFDCE0D7);
 
   static TextTheme _buildTextTheme() => TextTheme(
         // Lora – titulares y nombres
-        displayLarge:   GoogleFonts.lora(fontSize: 36, fontWeight: FontWeight.w400, color: ink, height: 1.28),
-        displayMedium:  GoogleFonts.lora(fontSize: 28, fontWeight: FontWeight.w400, color: ink, height: 1.36),
-        displaySmall:   GoogleFonts.lora(fontSize: 21, fontWeight: FontWeight.w400, color: ink, height: 1.38),
-        headlineLarge:  GoogleFonts.lora(fontSize: 28, fontWeight: FontWeight.w400, color: ink, height: 1.36),
-        headlineMedium: GoogleFonts.lora(fontSize: 21, fontWeight: FontWeight.w400, color: ink, height: 1.38),
-        headlineSmall:  GoogleFonts.lora(fontSize: 18, fontWeight: FontWeight.w400, color: ink, height: 1.44),
-        titleLarge:     GoogleFonts.lora(fontSize: 20, fontWeight: FontWeight.w400, color: ink, height: 1.40),
+        displayLarge: AppFonts.lora(
+          fontSize: 36,
+          fontWeight: FontWeight.w400,
+          color: ink,
+          height: 1.28,
+        ),
+        displayMedium: AppFonts.lora(
+          fontSize: 28,
+          fontWeight: FontWeight.w400,
+          color: ink,
+          height: 1.36,
+        ),
+        displaySmall: AppFonts.lora(
+          fontSize: 21,
+          fontWeight: FontWeight.w400,
+          color: ink,
+          height: 1.38,
+        ),
+        headlineLarge: AppFonts.lora(
+          fontSize: 28,
+          fontWeight: FontWeight.w400,
+          color: ink,
+          height: 1.36,
+        ),
+        headlineMedium: AppFonts.lora(
+          fontSize: 21,
+          fontWeight: FontWeight.w400,
+          color: ink,
+          height: 1.38,
+        ),
+        headlineSmall: AppFonts.lora(
+          fontSize: 18,
+          fontWeight: FontWeight.w400,
+          color: ink,
+          height: 1.44,
+        ),
+        titleLarge: AppFonts.lora(
+          fontSize: 20,
+          fontWeight: FontWeight.w400,
+          color: ink,
+          height: 1.40,
+        ),
         // Inter – cuerpo, controles y datos
-        titleMedium:    GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w600, color: ink, height: 1.50),
-        titleSmall:     GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: ink, height: 1.50),
-        bodyLarge:      GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w400, color: ink, height: 1.50),
-        bodyMedium:     GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w400, color: ink, height: 1.50),
-        bodySmall:      GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w400, color: muted, height: 1.50),
-        labelLarge:     GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: ink, height: 1.43),
-        labelMedium:    GoogleFonts.inter(fontSize: 13, fontWeight: FontWeight.w500, color: ink, height: 1.43),
-        labelSmall:     GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w500, color: muted, height: 1.50),
+        titleMedium: AppFonts.inter(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+          color: ink,
+          height: 1.50,
+        ),
+        titleSmall: AppFonts.inter(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          color: ink,
+          height: 1.50,
+        ),
+        bodyLarge: AppFonts.inter(
+          fontSize: 16,
+          fontWeight: FontWeight.w400,
+          color: ink,
+          height: 1.50,
+        ),
+        bodyMedium: AppFonts.inter(
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          color: ink,
+          height: 1.50,
+        ),
+        bodySmall: AppFonts.inter(
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+          color: muted,
+          height: 1.50,
+        ),
+        labelLarge: AppFonts.inter(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          color: ink,
+          height: 1.43,
+        ),
+        labelMedium: AppFonts.inter(
+          fontSize: 13,
+          fontWeight: FontWeight.w500,
+          color: ink,
+          height: 1.43,
+        ),
+        labelSmall: AppFonts.inter(
+          fontSize: 12,
+          fontWeight: FontWeight.w500,
+          color: muted,
+          height: 1.50,
+        ),
       );
 
   static ThemeData get light {
     return ThemeData(
       useMaterial3: true,
+      materialTapTargetSize: MaterialTapTargetSize.padded,
       colorScheme: const ColorScheme(
         brightness: Brightness.light,
         primary: verde,
@@ -50,11 +126,11 @@ class AppTheme {
         onSecondaryContainer: ink,
         tertiary: colorWarn,
         onTertiary: bgMarfil,
-        tertiaryContainer: Color(0xFFF5EBE0),
+        tertiaryContainer: surface,
         onTertiaryContainer: colorWarn,
         error: colorError,
         onError: bgMarfil,
-        errorContainer: Color(0xFFFDE8E6),
+        errorContainer: surface,
         onErrorContainer: colorError,
         surface: bgMarfil,
         onSurface: ink,
@@ -68,6 +144,41 @@ class AppTheme {
         inversePrimary: surface,
       ),
       scaffoldBackgroundColor: bgMarfil,
+      fontFamily: 'Inter',
+      hoverColor: verde.withValues(alpha: 0.06),
+      focusColor: verde.withValues(alpha: 0.12),
+      highlightColor: verde.withValues(alpha: 0.10),
+      splashColor: verde.withValues(alpha: 0.10),
+      iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+          minimumSize: const WidgetStatePropertyAll(Size(48, 48)),
+          foregroundColor: const WidgetStatePropertyAll(verde),
+          side: WidgetStateProperty.resolveWith(
+            (states) => BorderSide(
+              color: states.contains(WidgetState.focused)
+                  ? verde
+                  : Colors.transparent,
+              width: 2,
+            ),
+          ),
+          shape: WidgetStatePropertyAll(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          ),
+        ),
+      ),
+      navigationBarTheme: NavigationBarThemeData(
+        backgroundColor: bgMarfil,
+        indicatorColor: surface,
+        labelTextStyle: WidgetStateProperty.resolveWith(
+          (states) => AppFonts.inter(
+            fontSize: 12,
+            color: states.contains(WidgetState.selected) ? verde : muted,
+            fontWeight: states.contains(WidgetState.selected)
+                ? FontWeight.w600
+                : FontWeight.w400,
+          ),
+        ),
+      ),
       textTheme: _buildTextTheme(),
 
       // ── AppBar ──────────────────────────────────────────────
@@ -77,7 +188,7 @@ class AppTheme {
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: false,
-        titleTextStyle: GoogleFonts.lora(
+        titleTextStyle: AppFonts.lora(
           fontSize: 20,
           fontWeight: FontWeight.w400,
           color: ink,
@@ -92,7 +203,7 @@ class AppTheme {
         color: bgMarfil,
         surfaceTintColor: Colors.transparent,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(2),
+          borderRadius: BorderRadius.circular(10),
           side: const BorderSide(color: border, width: 1),
         ),
         margin: EdgeInsets.zero,
@@ -109,17 +220,29 @@ class AppTheme {
       // ── Botón primario (verde / marfil) ──────────────────────
       filledButtonTheme: FilledButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: WidgetStateProperty.resolveWith((s) =>
-              s.contains(WidgetState.disabled) ? disabled : verde),
-          foregroundColor: WidgetStateProperty.resolveWith((s) =>
-              s.contains(WidgetState.disabled) ? muted : bgMarfil),
+          backgroundColor: WidgetStateProperty.resolveWith(
+            (s) => s.contains(WidgetState.disabled) ? disabled : verde,
+          ),
+          foregroundColor: WidgetStateProperty.resolveWith(
+            (s) => s.contains(WidgetState.disabled) ? muted : bgMarfil,
+          ),
           minimumSize: const WidgetStatePropertyAll(Size(64, 48)),
           elevation: const WidgetStatePropertyAll(0),
-          shape: const WidgetStatePropertyAll(RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(2)),
-          )),
+          side: WidgetStateProperty.resolveWith(
+            (states) => BorderSide(
+              color: states.contains(WidgetState.focused)
+                  ? ink
+                  : Colors.transparent,
+              width: 2,
+            ),
+          ),
+          shape: const WidgetStatePropertyAll(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+            ),
+          ),
           textStyle: WidgetStatePropertyAll(
-            GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600),
+            AppFonts.inter(fontSize: 14, fontWeight: FontWeight.w600),
           ),
         ),
       ),
@@ -128,13 +251,20 @@ class AppTheme {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: ButtonStyle(
           foregroundColor: const WidgetStatePropertyAll(verde),
-          side: const WidgetStatePropertyAll(BorderSide(color: verde)),
+          side: WidgetStateProperty.resolveWith(
+            (states) => BorderSide(
+              color: verde,
+              width: states.contains(WidgetState.focused) ? 2 : 1,
+            ),
+          ),
           minimumSize: const WidgetStatePropertyAll(Size(64, 48)),
-          shape: const WidgetStatePropertyAll(RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(2)),
-          )),
+          shape: const WidgetStatePropertyAll(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+            ),
+          ),
           textStyle: WidgetStatePropertyAll(
-            GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600),
+            AppFonts.inter(fontSize: 14, fontWeight: FontWeight.w600),
           ),
         ),
       ),
@@ -142,42 +272,57 @@ class AppTheme {
       // ── TextButton ───────────────────────────────────────────
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
+          minimumSize: const WidgetStatePropertyAll(Size(48, 48)),
+          side: WidgetStateProperty.resolveWith(
+            (states) => BorderSide(
+              color: states.contains(WidgetState.focused)
+                  ? verde
+                  : Colors.transparent,
+              width: 2,
+            ),
+          ),
           foregroundColor: const WidgetStatePropertyAll(verde),
-          shape: const WidgetStatePropertyAll(RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(2)),
-          )),
+          shape: const WidgetStatePropertyAll(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+            ),
+          ),
           textStyle: WidgetStatePropertyAll(
-            GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600),
+            AppFonts.inter(fontSize: 14, fontWeight: FontWeight.w600),
           ),
         ),
       ),
 
       // ── Campos de texto ──────────────────────────────────────
       inputDecorationTheme: InputDecorationTheme(
+        constraints: const BoxConstraints(minHeight: 56),
         filled: true,
         fillColor: bgMarfil,
-        labelStyle: GoogleFonts.inter(fontSize: 14, color: muted),
-        hintStyle: GoogleFonts.inter(fontSize: 14, color: border),
-        errorStyle: GoogleFonts.inter(fontSize: 12, color: colorError),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+        labelStyle: AppFonts.inter(fontSize: 14, color: muted),
+        hintStyle: AppFonts.inter(fontSize: 14, color: muted),
+        errorStyle: AppFonts.inter(fontSize: 12, color: colorError),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 12,
+          vertical: 14,
+        ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(2),
-          borderSide: const BorderSide(color: border),
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: muted),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(2),
-          borderSide: const BorderSide(color: border),
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: muted),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(2),
+          borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: verde, width: 2),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(2),
+          borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: colorError),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(2),
+          borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(color: colorError, width: 2),
         ),
       ),
@@ -186,9 +331,12 @@ class AppTheme {
       listTileTheme: ListTileThemeData(
         tileColor: bgMarfil,
         contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
-        titleTextStyle: GoogleFonts.inter(
-            fontSize: 16, fontWeight: FontWeight.w500, color: ink),
-        subtitleTextStyle: GoogleFonts.inter(fontSize: 13, color: muted),
+        titleTextStyle: AppFonts.inter(
+          fontSize: 16,
+          fontWeight: FontWeight.w500,
+          color: ink,
+        ),
+        subtitleTextStyle: AppFonts.inter(fontSize: 13, color: muted),
         iconColor: muted,
       ),
 
@@ -196,25 +344,27 @@ class AppTheme {
       dialogTheme: DialogThemeData(
         backgroundColor: bgMarfil,
         surfaceTintColor: Colors.transparent,
-        titleTextStyle: GoogleFonts.lora(
-            fontSize: 18, fontWeight: FontWeight.w400, color: ink),
-        contentTextStyle: GoogleFonts.inter(fontSize: 14, color: ink),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+        titleTextStyle: AppFonts.lora(
+          fontSize: 18,
+          fontWeight: FontWeight.w400,
+          color: ink,
+        ),
+        contentTextStyle: AppFonts.inter(fontSize: 14, color: ink),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
 
       // ── SnackBar ─────────────────────────────────────────────
       snackBarTheme: SnackBarThemeData(
-        backgroundColor: ink,
-        contentTextStyle: GoogleFonts.inter(fontSize: 14, color: bgMarfil),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
+        backgroundColor: surface,
+        contentTextStyle: AppFonts.inter(fontSize: 14, color: ink),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         behavior: SnackBarBehavior.floating,
       ),
 
       // ── TabBar ───────────────────────────────────────────────
       tabBarTheme: TabBarThemeData(
-        labelStyle:
-            GoogleFonts.inter(fontSize: 13, fontWeight: FontWeight.w600),
-        unselectedLabelStyle: GoogleFonts.inter(fontSize: 13),
+        labelStyle: AppFonts.inter(fontSize: 13, fontWeight: FontWeight.w600),
+        unselectedLabelStyle: AppFonts.inter(fontSize: 13),
         labelColor: verde,
         unselectedLabelColor: muted,
         indicatorColor: verde,
@@ -227,18 +377,20 @@ class AppTheme {
         backgroundColor: bgMarfil,
         surfaceTintColor: Colors.transparent,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(4)),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
         ),
       ),
 
       // ── Chips ────────────────────────────────────────────────
       chipTheme: ChipThemeData(
         backgroundColor: surface,
-        selectedColor: verde,
-        labelStyle: GoogleFonts.inter(fontSize: 13, color: ink),
-        secondaryLabelStyle: GoogleFonts.inter(fontSize: 13, color: bgMarfil),
+        selectedColor: surface,
+        checkmarkColor: verde,
+        showCheckmark: true,
+        labelStyle: AppFonts.inter(fontSize: 13, color: ink),
+        secondaryLabelStyle: AppFonts.inter(fontSize: 13, color: verde),
         shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(2)),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
           side: BorderSide(color: border),
         ),
       ),

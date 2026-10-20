@@ -1,10 +1,4 @@
-enum OrdenTipo {
-  relevancia,
-  nombreAZ,
-  nombreZA,
-  fechaReciente,
-  categoria,
-}
+enum OrdenTipo { relevancia, nombreAZ, nombreZA, fechaReciente, categoria }
 
 class Filtros {
   final String query;
@@ -13,8 +7,7 @@ class Filtros {
   final Set<String> formasFarmaceuticas;
   final Set<String> viasAdministracion;
   final Set<String> laboratorios;
-  final String? grupoFiltro; // adulto | adulto_mayor | nino | lactante
-  final String? estadoGrupo; // aplicable | no_aplicable | no_evaluado
+  final Set<String> gruposPaciente; // Dosis informada, no evaluación clínica.
   final OrdenTipo orden;
 
   const Filtros({
@@ -24,8 +17,7 @@ class Filtros {
     this.formasFarmaceuticas = const {},
     this.viasAdministracion = const {},
     this.laboratorios = const {},
-    this.grupoFiltro,
-    this.estadoGrupo,
+    this.gruposPaciente = const {},
     this.orden = OrdenTipo.relevancia,
   });
 
@@ -35,7 +27,7 @@ class Filtros {
       formasFarmaceuticas.isNotEmpty ||
       viasAdministracion.isNotEmpty ||
       laboratorios.isNotEmpty ||
-      grupoFiltro != null;
+      gruposPaciente.isNotEmpty;
 
   int get totalFiltrosActivos =>
       categorias.length +
@@ -43,7 +35,7 @@ class Filtros {
       formasFarmaceuticas.length +
       viasAdministracion.length +
       laboratorios.length +
-      (grupoFiltro != null ? 1 : 0);
+      gruposPaciente.length;
 
   Filtros copyWith({
     String? query,
@@ -52,8 +44,7 @@ class Filtros {
     Set<String>? formasFarmaceuticas,
     Set<String>? viasAdministracion,
     Set<String>? laboratorios,
-    Object? grupoFiltro = _sentinel,
-    Object? estadoGrupo = _sentinel,
+    Set<String>? gruposPaciente,
     OrdenTipo? orden,
   }) =>
       Filtros(
@@ -63,17 +54,10 @@ class Filtros {
         formasFarmaceuticas: formasFarmaceuticas ?? this.formasFarmaceuticas,
         viasAdministracion: viasAdministracion ?? this.viasAdministracion,
         laboratorios: laboratorios ?? this.laboratorios,
-        grupoFiltro: identical(grupoFiltro, _sentinel)
-            ? this.grupoFiltro
-            : grupoFiltro as String?,
-        estadoGrupo: identical(estadoGrupo, _sentinel)
-            ? this.estadoGrupo
-            : estadoGrupo as String?,
+        gruposPaciente: gruposPaciente ?? this.gruposPaciente,
         orden: orden ?? this.orden,
       );
 
   Filtros limpiarFiltros() => Filtros(query: query, orden: orden);
   Filtros limpiarTodo() => const Filtros();
 }
-
-const _sentinel = Object();

@@ -13,7 +13,7 @@ class MedicamentosApp extends ConsumerWidget {
     ref.watch(syncProvider); // activa el sync en background
     final router = ref.watch(appRouterProvider);
     return MaterialApp.router(
-      title: 'MediScan',
+      title: 'Farmafolio',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       routerConfig: router,

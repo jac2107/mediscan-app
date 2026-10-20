@@ -17,12 +17,15 @@ class MedicamentosTable extends Table {
   TextColumn get categoria => text().nullable()();
   TextColumn get laboratorios => text().withDefault(const Constant('[]'))();
   TextColumn get descripcion => text().nullable()();
-  TextColumn get principiosActivos => text().withDefault(const Constant('[]'))();
+  TextColumn get principiosActivos =>
+      text().withDefault(const Constant('[]'))();
   TextColumn get composicionCompleta => text().nullable()();
   TextColumn get concentraciones => text().withDefault(const Constant('[]'))();
-  TextColumn get formasFarmaceuticas => text().withDefault(const Constant('[]'))();
+  TextColumn get formasFarmaceuticas =>
+      text().withDefault(const Constant('[]'))();
   TextColumn get presentacion => text().nullable()();
-  TextColumn get viasAdministracion => text().withDefault(const Constant('[]'))();
+  TextColumn get viasAdministracion =>
+      text().withDefault(const Constant('[]'))();
   TextColumn get indicacionesTexto => text().nullable()();
   TextColumn get indicacionesTags => text().withDefault(const Constant('[]'))();
   TextColumn get contraindicaciones => text().nullable()();
@@ -40,19 +43,6 @@ class MedicamentosTable extends Table {
 
   @override
   Set<Column> get primaryKey => {id};
-}
-
-class MedicamentoGruposTable extends Table {
-  @override
-  String get tableName => 'medicamento_grupos';
-
-  TextColumn get medicamentoId => text()();
-  TextColumn get grupo => text()(); // adulto | adulto_mayor | nino | lactante
-  TextColumn get estado => text().withDefault(const Constant('no_evaluado'))();
-  TextColumn get observacion => text().nullable()();
-
-  @override
-  Set<Column> get primaryKey => {medicamentoId, grupo};
 }
 
 class HistorialTable extends Table {
@@ -82,17 +72,13 @@ class SyncMetaTable extends Table {
 
 // ── Database ─────────────────────────────────────────────────────────────────
 
-@DriftDatabase(tables: [
-  MedicamentosTable,
-  MedicamentoGruposTable,
-  HistorialTable,
-  SyncMetaTable,
-])
+@DriftDatabase(tables: [MedicamentosTable, HistorialTable, SyncMetaTable])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openDatabase());
+  AppDatabase.forTesting(QueryExecutor executor) : super(executor);
 
   @override
-  int get schemaVersion => 3;
+  int get schemaVersion => 4;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -106,12 +92,15 @@ class AppDatabase extends _$AppDatabase {
             await customStatement('DROP TABLE IF EXISTS sync_meta');
             await m.createAll();
           }
+          // Remove only the retired table; keep medications, favorites and history.
+          if (from < 4) {
+            await customStatement('DROP TABLE IF EXISTS medicamento_grupos');
+          }
         },
         onCreate: (m) => m.createAll(),
       );
 
-  static QueryExecutor _openDatabase() =>
-      driftDatabase(name: 'mediscan_v3.db');
+  static QueryExecutor _openDatabase() => driftDatabase(name: 'mediscan_v3.db');
 
   // ── Helpers JSON ────────────────────────────────────────────────────────────
 
@@ -135,30 +124,27 @@ class AppDatabase extends _$AppDatabase {
     await into(medicamentosTable).insertOnConflictUpdate(companion);
   }
 
-  Future<void> upsertGrupo(MedicamentoGruposTableCompanion companion) async {
-    await into(medicamentoGruposTable).insertOnConflictUpdate(companion);
-  }
-
   Future<List<MedicamentosTableData>> getAllMedicamentos() =>
       (select(medicamentosTable)
-            ..where((t) => t.esFavorito.equals(false) | t.esFavorito.equals(true))
+            ..where(
+              (t) => t.esFavorito.equals(false) | t.esFavorito.equals(true),
+            )
             ..orderBy([(t) => OrderingTerm.asc(t.nombreComercial)]))
           .get();
 
   Future<MedicamentosTableData?> getMedicamentoById(String id) =>
-      (select(medicamentosTable)..where((t) => t.id.equals(id))).getSingleOrNull();
+      (select(medicamentosTable)..where((t) => t.id.equals(id)))
+          .getSingleOrNull();
 
   Future<MedicamentosTableData?> getMedicamentoPorCodigo(String codigo) =>
       (select(medicamentosTable)..where((t) => t.codigoInterno.equals(codigo)))
           .getSingleOrNull();
 
-  Future<List<MedicamentoGruposTableData>> getGrupos(String medicamentoId) =>
-      (select(medicamentoGruposTable)
-            ..where((t) => t.medicamentoId.equals(medicamentoId)))
-          .get();
-
   Future<void> toggleFavorito(String id, bool valor) async {
-    await (update(medicamentosTable)..where((t) => t.id.equals(id)))
+    await (update(medicamentosTable)
+          ..where(
+            (t) => t.id.equals(id),
+          ))
         .write(MedicamentosTableCompanion(esFavorito: Value(valor)));
   }
 
@@ -188,10 +174,7 @@ class AppDatabase extends _$AppDatabase {
 
   Future<void> setSyncMeta(String clave, String valor) async {
     await into(syncMetaTable).insertOnConflictUpdate(
-      SyncMetaTableCompanion(
-        clave: Value(clave),
-        valor: Value(valor),
-      ),
+      SyncMetaTableCompanion(clave: Value(clave), valor: Value(valor)),
     );
   }
 

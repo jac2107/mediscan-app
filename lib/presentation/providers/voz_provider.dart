@@ -3,7 +3,14 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 
-enum EstadoVoz { idle, inicializando, escuchando, procesando, error, noDisponible }
+enum EstadoVoz {
+  idle,
+  inicializando,
+  escuchando,
+  procesando,
+  error,
+  noDisponible,
+}
 
 class VozState {
   final EstadoVoz estado;
@@ -24,7 +31,7 @@ class VozState {
       VozState(
         estado: estado ?? this.estado,
         textoReconocido: textoReconocido ?? this.textoReconocido,
-        mensajeError: mensajeError ?? this.mensajeError,
+        mensajeError: mensajeError,
       );
 }
 
@@ -38,49 +45,68 @@ class VozNotifier extends Notifier<VozState> {
   Future<void> iniciarEscucha({
     required void Function(String texto) onResultado,
   }) async {
-    state = state.copyWith(estado: EstadoVoz.inicializando, textoReconocido: '');
-
-    final status = await Permission.microphone.request();
-    if (!status.isGranted) {
-      state = state.copyWith(
-        estado: EstadoVoz.noDisponible,
-        mensajeError: 'Permiso de micrófono denegado',
-      );
-      return;
-    }
-
-    if (!_inicializado) {
-      _inicializado = await _stt.initialize(
-        onStatus: _onStatus,
-        onError: (e) {
-          state = state.copyWith(
-            estado: EstadoVoz.error,
-            mensajeError: e.errorMsg,
-          );
-        },
-      );
-    }
-
-    if (!_inicializado) {
-      state = state.copyWith(estado: EstadoVoz.noDisponible);
-      return;
-    }
-
-    state = state.copyWith(estado: EstadoVoz.escuchando);
-
-    await _stt.listen(
-      onResult: (SpeechRecognitionResult result) {
-        final texto = result.recognizedWords;
-        state = state.copyWith(textoReconocido: texto);
-        if (result.finalResult && texto.isNotEmpty) {
-          onResultado(texto);
-        }
-      },
-      localeId: 'es_PE',
-      listenMode: ListenMode.dictation,
-      cancelOnError: false,
-      partialResults: true,
+    state = state.copyWith(
+      estado: EstadoVoz.inicializando,
+      textoReconocido: '',
     );
+
+    try {
+      final status = await Permission.microphone.request();
+      if (!status.isGranted) {
+        state = state.copyWith(
+          estado: EstadoVoz.noDisponible,
+          mensajeError:
+              'No hay acceso al micrófono. Puedes escribir tu búsqueda.',
+        );
+        return;
+      }
+
+      if (!_inicializado) {
+        _inicializado = await _stt.initialize(
+          onStatus: _onStatus,
+          onError: (e) {
+            state = state.copyWith(
+              estado: EstadoVoz.error,
+              mensajeError: e.errorMsg == 'error_no_match' ||
+                      e.errorMsg == 'error_speech_timeout'
+                  ? 'No pudimos reconocer el nombre. Intenta de nuevo o escríbelo.'
+                  : 'El dictado no está disponible ahora. Escribe el nombre para buscar.',
+            );
+          },
+        );
+      }
+
+      if (!_inicializado) {
+        state = state.copyWith(
+          estado: EstadoVoz.noDisponible,
+          mensajeError:
+              'El dictado no está disponible ahora. Escribe el nombre para buscar.',
+        );
+        return;
+      }
+
+      state = state.copyWith(estado: EstadoVoz.escuchando);
+
+      await _stt.listen(
+        onResult: (SpeechRecognitionResult result) {
+          final texto = result.recognizedWords;
+          state = state.copyWith(textoReconocido: texto);
+          if (result.finalResult && texto.isNotEmpty) {
+            onResultado(texto);
+          }
+        },
+        localeId: 'es_PE',
+        listenMode: ListenMode.dictation,
+        cancelOnError: false,
+        partialResults: true,
+      );
+    } catch (_) {
+      state = state.copyWith(
+        estado: EstadoVoz.error,
+        mensajeError:
+            'El dictado no está disponible ahora. Escribe el nombre para buscar.',
+      );
+    }
   }
 
   Future<void> detener() async {
@@ -96,7 +122,9 @@ class VozNotifier extends Notifier<VozState> {
   void _onStatus(String status) {
     if (status == 'listening') {
       state = state.copyWith(estado: EstadoVoz.escuchando);
-    } else if (status == 'notListening' || status == 'done') {
+    } else if ((status == 'notListening' || status == 'done') &&
+        state.estado != EstadoVoz.error &&
+        state.estado != EstadoVoz.noDisponible) {
       state = state.copyWith(estado: EstadoVoz.idle);
     }
   }
