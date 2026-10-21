@@ -1,0 +1,2554 @@
+[
+  {
+    "codigo_interno": "MED-080",
+    "nombre_comercial": "Nizoral, Ketomed, Ketoconazol Genérico",
+    "categoria": "Antiparasitarios y Antimicóticos (Imidazol)",
+    "principios_activos": [
+      "Ketoconazol"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Crema tópica",
+      "Champú"
+    ],
+    "vias_administracion": [
+      "Tópica",
+      "Oral"
+    ],
+    "laboratorios": [
+      "Janssen",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Tópico (crema): Aplicar 1 o 2 veces al día por 2 a 4 semanas. Champú: 2 veces/semana por 2 a 4 semanas.",
+    "dosis_adultos_mayores": "Uso tópico prioritario sin ajuste.",
+    "dosis_pediatrica": "Champú/Crema: Aplicar en zona afectada en > 12 años.",
+    "dosis_lactantes": "No recomendado."
+  },
+  {
+    "codigo_interno": "MED-009",
+    "nombre_comercial": "Aspirina, AAS, Cardiaspirina, Rhonal",
+    "categoria": "Analgésicos, Antiinflamatorios y Antipiréticos / Antiagregante plaquetario",
+    "principios_activos": [
+      "Ácido acetilsalicílico"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Tableta con cubierta entérica",
+      "Tableta efervescente"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Bayer",
+      "Farmindustria",
+      "Portugal"
+    ],
+    "dosis_adultos": "Antiagregante: 81 mg a 100 mg/día. Analgésico/Antipirético: 500 mg cada 4 a 6 horas (máximo 4 g/día).",
+    "dosis_adultos_mayores": "81 mg a 100 mg/día como cardioprotección con vigilancia gastrointestinal.",
+    "dosis_pediatrica": "Contraindicado para el manejo de cuadros febriles o virales (riesgo de Síndrome de Reye).",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-054",
+    "nombre_comercial": "Daonil, Euglucon, Glidiab",
+    "categoria": "Hipoglucemiante / Sulfonilurea de segunda generación",
+    "principios_activos": [
+      "Glibenclamida"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Sanofi",
+      "Medifarma",
+      "Genfar"
+    ],
+    "dosis_adultos": "Inicial: 2.5 mg a 5 mg una vez al día antes del desayuno. Incrementar en escalones de 2.5 mg según el control metabólico (máximo 15 mg/día).",
+    "dosis_adultos_mayores": "Iniciar con 1.25 mg a 2.5 mg una vez al día. Usar con extrema precaución o preferir alternativas de menor riesgo hipoglucémico.",
+    "dosis_pediatrica": "No recomendada en población pediátrica.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-051",
+    "nombre_comercial": "Coumadin, Circuton, Warfarina",
+    "categoria": "Anticoagulante oral / Antagonista de la Vitamina K",
+    "principios_activos": [
+      "Warfarina sódica"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta ranurada"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Bristol-Myers Squibb",
+      "Medifarma",
+      "Teva"
+    ],
+    "dosis_adultos": "Dosis inicial habitual: 2.5 mg a 5 mg/día; ajustar según los valores diarios de INR hasta estabilizar.",
+    "dosis_adultos_mayores": "Iniciar con dosis más bajas (2.5 mg/día) por mayor sensibilidad y riesgo de hemorragia.",
+    "dosis_pediatrica": "0.05 a 0.2 mg/kg/día con estrecho monitoreo de INR (uso especializado).",
+    "dosis_lactantes": "Uso excepcional bajo estricto control especialista."
+  },
+  {
+    "codigo_interno": "MED-088",
+    "nombre_comercial": "Xylocaína, Lambdalina, Lidocan, Cathejell",
+    "categoria": "Anestésico local / Antiarrítmico Clase IB",
+    "principios_activos": [
+      "Lidocaína clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Solución inyectable",
+      "Gel tópico",
+      "Jalea tópica",
+      "Aerosol tópico"
+    ],
+    "vias_administracion": [
+      "Tópica",
+      "Subcutánea",
+      "Bloqueo nervioso",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "AstraZeneca",
+      "Medifarma",
+      "Teva"
+    ],
+    "dosis_adultos": "Tópico/Infiltración: Dosis máxima individual sin epinefrina de 300 mg (aprox. 4.5 mg/kg). Con epinefrina: hasta 500 mg (7 mg/kg).",
+    "dosis_adultos_mayores": "Reducir dosis total acumulada en un 20% a 50%.",
+    "dosis_pediatrica": "Infiltración: Máximo 3 a 4 mg/kg de lidocaína simple.",
+    "dosis_lactantes": "Dosis calculada estrictamente por peso corporal en entorno controlado."
+  },
+  {
+    "codigo_interno": "MED-029",
+    "nombre_comercial": "Decadron, Dexacort, Dexametasona Genérico",
+    "categoria": "Corticoides sintéticos",
+    "principios_activos": [
+      "Dexametasona",
+      "Dexametasona fosfato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intramuscular",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Medifarma",
+      "Organon",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Oral/IV/IM: 0.5 mg a 9 mg/día según la severidad del cuadro.",
+    "dosis_adultos_mayores": "Usar la menor dosis efectiva durante el menor tiempo posible.",
+    "dosis_pediatrica": "Crup: 0.15 a 0.6 mg/kg en dosis única. Antiinflamatorio: 0.02 a 0.3 mg/kg/día divididos en 3-4 tomas.",
+    "dosis_lactantes": "Según cálculo ponderal estricto bajo indicación médica."
+  },
+  {
+    "codigo_interno": "MED-013",
+    "nombre_comercial": "Zitromax, Biston, Azitromicina Genérico",
+    "categoria": "Antibióticos (Macrólidos)",
+    "principios_activos": [
+      "Azitromicina dihidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Polvo para suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Pfizer",
+      "Medifarma",
+      "Portugal",
+      "Farmindustria"
+    ],
+    "dosis_adultos": "500 mg una vez al día durante 3 a 5 días (o 1 g dosis única en uretritis por Chlamydia).",
+    "dosis_adultos_mayores": "500 mg una vez al día sin necesidad de ajuste de dosis salvo insuficiencia renal/cardíaca severa.",
+    "dosis_pediatrica": "10 mg/kg/día en toma única diaria durante 3 días.",
+    "dosis_lactantes": "10 mg/kg/día (en mayores de 6 meses)."
+  },
+  {
+    "codigo_interno": "MED-057",
+    "nombre_comercial": "Lantus, Toujeo, Basaglar, Glaritus",
+    "categoria": "Hipoglucemiante parenteral / Análogo de insulina de acción prolongada (Basal)",
+    "principios_activos": [
+      "Insulina glargina"
+    ],
+    "formas_farmaceuticas": [
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Subcutánea"
+    ],
+    "laboratorios": [
+      "Sanofi",
+      "Eli Lilly",
+      "Biocon"
+    ],
+    "dosis_adultos": "Individualizada. En Diabetes tipo 2 suele iniciarse a 10 UI/día o 0.1 a 0.2 UI/kg/día administrada subcutáneamente una vez al día a la misma hora.",
+    "dosis_adultos_mayores": "Iniciar con dosis conservadoras y monitorizar estrechamente para prevenir hipoglucemia.",
+    "dosis_pediatrica": "Niños ≥2 años: Ajuste individualizado por peso y perfil metabólico en toma única diaria.",
+    "dosis_lactantes": "No recomendada en menores de 2 años por falta de estudios de seguridad suficientes."
+  },
+  {
+    "codigo_interno": "MED-027",
+    "nombre_comercial": "Zyrtec, Aleracet, Cetirizina Genérico",
+    "categoria": "Antihistamínicos (2ª generación)",
+    "principios_activos": [
+      "Cetirizina diclorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Jarabe",
+      "Gotas orales"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "UCB",
+      "Medifarma",
+      "IQFARMA",
+      "Portugal"
+    ],
+    "dosis_adultos": "10 mg una vez al día (cada 24 horas).",
+    "dosis_adultos_mayores": "5 mg a 10 mg una vez al día según función renal.",
+    "dosis_pediatrica": "2 a 6 años: 2.5 mg dos veces al día. 6 a 12 años: 5 mg dos veces al día o 10 mg/día.",
+    "dosis_lactantes": "6 a 23 meses: 2.5 mg una vez al día."
+  },
+  {
+    "codigo_interno": "MED-055",
+    "nombre_comercial": "Amaryl, Glypress, Glimep",
+    "categoria": "Hipoglucemiante / Sulfonilurea de tercera generación",
+    "principios_activos": [
+      "Glimepirida"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Sanofi",
+      "Teva",
+      "Farmaindustria"
+    ],
+    "dosis_adultos": "Inicial: 1 mg a 2 mg una vez al día. Ajustar semanalmente según controles glucémicos en incrementos de 1 mg (máximo 6 a 8 mg/día).",
+    "dosis_adultos_mayores": "Iniciar con 1 mg una vez al día y titular bajo estricta monitorización por riesgo de hipoglucemia.",
+    "dosis_pediatrica": "No recomendada en menores de 18 años.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-095",
+    "nombre_comercial": "Depo-Provera, Depo-Trimestral, Cyclofemina (combinado)",
+    "categoria": "Anticonceptivo hormonal inyectable trimestral (Progestágeno solo)",
+    "principios_activos": [
+      "Acetato de medroxiprogesterona"
+    ],
+    "formas_farmaceuticas": [
+      "Suspensión inyectable"
+    ],
+    "vias_administracion": [
+      "Intramuscular"
+    ],
+    "laboratorios": [
+      "Pfizer",
+      "Medifarma",
+      "Teva"
+    ],
+    "dosis_adultos": "150 mg IM profunda cada 3 meses (13 semanas).",
+    "dosis_adultos_mayores": "No aplicable.",
+    "dosis_pediatrica": "Adolescentes: Misma dosis que en adultas evaluando densidad ósea.",
+    "dosis_lactantes": "Se puede iniciar a las 6 semanas posparto en mujeres lactantes."
+  },
+  {
+    "codigo_interno": "MED-073",
+    "nombre_comercial": "Redoxon, Cevalin, Cegrip, Vitamina C",
+    "categoria": "Vitamina hidrosoluble / Antioxidante",
+    "principios_activos": [
+      "Ácido ascórbico"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta efervescente",
+      "Tableta masticable",
+      "Jarabe",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intravenosa",
+      "Intramuscular"
+    ],
+    "laboratorios": [
+      "Bayer",
+      "Teva",
+      "Portugal"
+    ],
+    "dosis_adultos": "Suplementación/Resfrío: 500 mg a 1000 mg al día. Escorbuto: 1000 mg a 2000 mg diarios divididos.",
+    "dosis_adultos_mayores": "500 mg a 1000 mg al día.",
+    "dosis_pediatrica": "100 mg a 300 mg/día dividido en tomas.",
+    "dosis_lactantes": "30 a 50 mg/día."
+  },
+  {
+    "codigo_interno": "MED-004",
+    "nombre_comercial": "Voltaren, Dioxaflex, Cataflam, Diclofenaco Genérico",
+    "categoria": "Analgésicos, Antiinflamatorios y Antipiréticos",
+    "principios_activos": [
+      "Diclofenaco sódico",
+      "Diclofenaco potásico"
+    ],
+    "formas_farmaceuticas": [
+      "Gragea",
+      "Tableta de liberación prolongada",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intramuscular",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Novartis",
+      "Bagó",
+      "Medifarma",
+      "Portugal"
+    ],
+    "dosis_adultos": "Oral: 50 mg cada 8 a 12 horas. IM: 75 mg cada 12 a 24 horas (máximo 2 días).",
+    "dosis_adultos_mayores": "Ajustar a la dosis mínima útil; monitorear presión arterial y función renal.",
+    "dosis_pediatrica": "0.5 a 2 mg/kg/día divididos en 2 a 3 tomas orales.",
+    "dosis_lactantes": "No recomendado en lactantes."
+  },
+  {
+    "codigo_interno": "MED-079",
+    "nombre_comercial": "Diflucan, Baten, Fluconazol Genérico",
+    "categoria": "Antiparasitarios y Antimicóticos (Triazol)",
+    "principios_activos": [
+      "Fluconazol"
+    ],
+    "formas_farmaceuticas": [
+      "Cápsula dura",
+      "Solución para infusión",
+      "Suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Pfizer",
+      "Bagó",
+      "Medifarma",
+      "Portugal"
+    ],
+    "dosis_adultos": "Candidiasis vaginal: 150 mg dosis única. Dermatomicosis: 150 mg/semana por 4 semanas. Criptococosis: 200-400 mg/día.",
+    "dosis_adultos_mayores": "Ajustar según aclaramiento de creatinina.",
+    "dosis_pediatrica": "Candidiasis mucosal: 3 mg/kg/día. Infecciones sistémicas: 6 a 12 mg/kg/día.",
+    "dosis_lactantes": "3 a 6 mg/kg/día bajo monitoreo."
+  },
+  {
+    "codigo_interno": "MED-060",
+    "nombre_comercial": "Valium, Pacitran, Limbial, Diazepan",
+    "categoria": "Ansiolítico / Anticonvulsivante / Miorrelajante (Benzodiazepina)",
+    "principios_activos": [
+      "Diazepam"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intramuscular",
+      "Intravenosa",
+      "Rectal"
+    ],
+    "laboratorios": [
+      "Roche",
+      "Medifarma",
+      "Teva"
+    ],
+    "dosis_adultos": "Oral: 2 mg a 10 mg 2 a 4 veces al día. IV/IM: 5 mg a 10 mg lento en urgencias (repetir según necesidad).",
+    "dosis_adultos_mayores": "2 mg a 2.5 mg 1 a 2 veces al día para minimizar el riesgo de sedación excesiva y ataxia.",
+    "dosis_pediatrica": "Anticonvulsivante IV/Rectal: 0.2 a 0.5 mg/kg por dosis (máximo 10 mg por episodio).",
+    "dosis_lactantes": "0.1 a 0.3 mg/kg/dosis IV lenta bajo monitoreo en ambiente crítico."
+  },
+  {
+    "codigo_interno": "MED-100",
+    "nombre_comercial": "Doloflam Antigripal, Apronax Antigripal, Nastizol, Panadol Antigripal",
+    "categoria": "Antigripal multisintomático / Analgésico, Antihistamínico y Descongestivo",
+    "principios_activos": [
+      "Paracetamol",
+      "Clorfenamina maleato",
+      "Pseudoefedrina clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Cápsula blanda",
+      "Jarabe"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Bayer",
+      "Bagó",
+      "Medifarma"
+    ],
+    "dosis_adultos": "1 a 2 tabletas cada 6 u 8 horas (máximo 4 a 6 tabletas al día).",
+    "dosis_adultos_mayores": "Utilizar con precaución reduciendo la dosis por el riesgo de hipertensión y efectos anticolinérgicos.",
+    "dosis_pediatrica": "Niños de 6 a 12 años (en jarabe): 5 mL a 10 mL cada 8 horas.",
+    "dosis_lactantes": "Contraindicado en menores de 2 a 6 años."
+  },
+  {
+    "codigo_interno": "MED-066",
+    "nombre_comercial": "Keppra, Kopcept, Levepsy, Matever",
+    "categoria": "Antiepiléptico de segunda generación",
+    "principios_activos": [
+      "Levetiracetam"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Solución oral",
+      "Solución concentrada para infusión"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "UCB",
+      "Farmaindustria",
+      "Teva"
+    ],
+    "dosis_adultos": "Inicial: 500 mg dos veces al día; puede incrementarse hasta 1500 mg dos veces al día (máximo 3000 mg/día).",
+    "dosis_adultos_mayores": "Ajustar dosis en función de la capacidad renal.",
+    "dosis_pediatrica": "Niños ≥4 semanas: Dosis inicial de 10 mg/kg dos veces al día; incrementar hasta 30 mg/kg dos veces al día.",
+    "dosis_lactantes": "10 mg/kg dos veces al día (solución oral) ajustado por kilo de peso."
+  },
+  {
+    "codigo_interno": "MED-010",
+    "nombre_comercial": "Zaldiar, Minidol Plus, Tramadol + Paracetamol Genérico",
+    "categoria": "Analgésicos, Antiinflamatorios y Antipiréticos (Combinados)",
+    "principios_activos": [
+      "Paracetamol",
+      "Tramadol clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Grünenthal",
+      "Medifarma",
+      "Farmindustria",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "1 a 2 tabletas cada 6 a 8 horas según la intensidad del dolor (Máximo: 8 tabletas al día).",
+    "dosis_adultos_mayores": "Aumentar el intervalo entre dosis a 9 o 12 horas en mayores de 75 años.",
+    "dosis_pediatrica": "Contraindicado en menores de 12 años.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-071",
+    "nombre_comercial": "Bedoyecta B12, Cytocon, Redox B12",
+    "categoria": "Vitamina hidrosoluble / Factor antianémico",
+    "principios_activos": [
+      "Cianocobalamina"
+    ],
+    "formas_farmaceuticas": [
+      "Solución inyectable",
+      "Tableta"
+    ],
+    "vias_administracion": [
+      "Intramuscular",
+      "Oral"
+    ],
+    "laboratorios": [
+      "Farmaindustria",
+      "Teva",
+      "Medifarma"
+    ],
+    "dosis_adultos": "Anemia perniciosa/Deficiencia severa: IM de 1000 mcg diarios por 1 a 2 semanas, luego semanal por 1 mes y mantenimiento de 1000 mcg mensual de por vida.",
+    "dosis_adultos_mayores": "Mismo esquema parenteral u oral a dosis altas (1000 a 2000 mcg/día).",
+    "dosis_pediatrica": "30 a 50 mcg/día por vía IM durante 2 o más semanas; mantenimiento de 100 mcg/mes.",
+    "dosis_lactantes": "0.2 a 0.4 mcg/día (suplementación) o según indicación pediátrica."
+  },
+  {
+    "codigo_interno": "MED-021",
+    "nombre_comercial": "Vibramicina, Doxitrex, Doxiciclina Genérico",
+    "categoria": "Antibióticos (Tetraciclinas)",
+    "principios_activos": [
+      "Doxiciclina hiclato"
+    ],
+    "formas_farmaceuticas": [
+      "Cápsula",
+      "Tableta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Pfizer",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "100 mg cada 12 horas el primer día, seguido de 100 mg/día (o 100 mg cada 12 horas en infecciones graves).",
+    "dosis_adultos_mayores": "Mismo esquema (no requiere ajuste renal estricto).",
+    "dosis_pediatrica": "Contraindicado en < 8 años. En > 8 años (> 45 kg): dosis de adulto.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-098",
+    "nombre_comercial": "Buscapina, Espasmo-Canulase, Hioscina, Espasmo-Sedil",
+    "categoria": "Antiespasmódico / Anticolinérgico amonio cuaternario",
+    "principios_activos": [
+      "N-Butilbromuro de Hioscina"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intramuscular",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Boehringer Ingelheim",
+      "Teva",
+      "Medifarma"
+    ],
+    "dosis_adultos": "Oral: 10 a 20 mg 3 a 5 veces al día. IV/IM: 20 mg en inyección lenta (máximo 100 mg/día).",
+    "dosis_adultos_mayores": "Usar con cautela por el riesgo de precipitaciones de retención urinaria o confusión.",
+    "dosis_pediatrica": "Niños de 6 a 12 años: 10 mg 3 veces al día (oral) o 0.3 a 0.6 mg/kg (IM/IV).",
+    "dosis_lactantes": "No recomendado en lactantes."
+  },
+  {
+    "codigo_interno": "MED-064",
+    "nombre_comercial": "Dilantin, Epamin, Fenitron",
+    "categoria": "Anticonvulsivante / Antiepiléptico (Hidantoína)",
+    "principios_activos": [
+      "Fenitoína sódica"
+    ],
+    "formas_farmaceuticas": [
+      "Cápsula dura",
+      "Suspensión oral",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Pfizer",
+      "Medifarma",
+      "Teva"
+    ],
+    "dosis_adultos": "Oral: 300 mg a 400 mg/día en 2 o 3 tomas. IV (Estatus): Carga de 15 a 20 mg/kg a dosis máxima de 50 mg/min.",
+    "dosis_adultos_mayores": "Iniciar con dosis menores por menor unión a albúmina plasmática.",
+    "dosis_pediatrica": "5 a 8 mg/kg/día dividido en 2 o 3 tomas.",
+    "dosis_lactantes": "5 mg/kg/día bajo estricto ajuste por rango terapéutico."
+  },
+  {
+    "codigo_interno": "MED-017",
+    "nombre_comercial": "Keflex, Cefalexina Genérico",
+    "categoria": "Antibióticos (Cefalosporinas de 1ª generación)",
+    "principios_activos": [
+      "Cefalexina monohidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Cápsula",
+      "Tableta",
+      "Polvo para suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Medifarma",
+      "Portugal",
+      "IQFARMA",
+      "Teva"
+    ],
+    "dosis_adultos": "500 mg cada 6 horas (o 1 g cada 12 horas).",
+    "dosis_adultos_mayores": "Ajustar intervalo según función renal.",
+    "dosis_pediatrica": "25 a 50 mg/kg/día divididos en 4 tomas (cada 6 horas).",
+    "dosis_lactantes": "25 a 50 mg/kg/día divididos en 4 tomas."
+  },
+  {
+    "codigo_interno": "MED-038",
+    "nombre_comercial": "Zantac, Ranitidin, Ranitidina Genérico",
+    "categoria": "Antiulcerosos (Antagonista H2)",
+    "principios_activos": [
+      "Ranitidina clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intramuscular",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "GSK",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Oral: 150 mg cada 12 horas o 300 mg al acostarse. IV: 50 mg cada 6 u 8 horas.",
+    "dosis_adultos_mayores": "Ajustar según aclaramiento de creatinina.",
+    "dosis_pediatrica": "Oral: 2 a 4 mg/kg cada 12 horas. IV: 1 a 2 mg/kg cada 8 horas.",
+    "dosis_lactantes": "1 a 2 mg/kg cada 12 horas bajo monitoreo."
+  },
+  {
+    "codigo_interno": "MED-005",
+    "nombre_comercial": "Dolgenal, Ketronol, Ketorolaco Genérico",
+    "categoria": "Analgésicos, Antiinflamatorios y Antipiréticos",
+    "principios_activos": [
+      "Ketorolaco trometamol"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta sublingual",
+      "Tableta recubierta",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Sublingual",
+      "Oral",
+      "Intramuscular",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Farmindustria",
+      "Medifarma",
+      "IQFARMA",
+      "Teva"
+    ],
+    "dosis_adultos": "Sublingual/Oral: 10 mg cada 6 u 8 horas (máximo 40 mg/día). IM/IV: 30 mg cada 6 u 8 horas (máximo 120 mg/día).",
+    "dosis_adultos_mayores": "Dosis reducida a 15 mg IV/IM cada 6 horas o 10 mg orales cada 6 u 8 horas (máximo 60 mg/día parenterales).",
+    "dosis_pediatrica": "Dosis única IV/IM de 0.5 mg/kg (uso hospitalario exclusivamente).",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-072",
+    "nombre_comercial": "Neurobión, Dolo-Neurobión (con AINE), B-Complex, Becoplex",
+    "categoria": "Suplemento Vitamínico neurotropo",
+    "principios_activos": [
+      "Tiamina clorhidrato (B1)",
+      "Piridoxina clorhidrato (B6)",
+      "Cianocobalamina"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Jarabe",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intramuscular"
+    ],
+    "laboratorios": [
+      "Procter & Gamble (P&G)",
+      "Medifarma",
+      "Teva"
+    ],
+    "dosis_adultos": "Oral: 1 a 2 tabletas 2 a 3 veces al día. IM: 1 ampolla profunda cada 24 a 48 horas en la fase aguda.",
+    "dosis_adultos_mayores": "Mismos esquemas con ajuste según tolerancia y función renal.",
+    "dosis_pediatrica": "Ajustar según el déficit específico usando formulaciones pediátricas o jarabes adaptados.",
+    "dosis_lactantes": "No recomendado en ampollas de alta concentración."
+  },
+  {
+    "codigo_interno": "MED-031",
+    "nombre_comercial": "Ventolin, Aerolin, Salbutamol Genérico",
+    "categoria": "Broncodilatadores (Agonista beta-2 de corta acción)",
+    "principios_activos": [
+      "Salbutamol sulfato"
+    ],
+    "formas_farmaceuticas": [
+      "Aerosol para inhalación",
+      "Jarabe",
+      "Solución para nebulizar"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "GSK",
+      "Medifarma",
+      "IQFARMA",
+      "Teva"
+    ],
+    "dosis_adultos": "Inhalado: 100 a 200 mcg (1 a 2 disparos) cada 4 a 6 horas según necesidad. Nebulización: 2.5 a 5 mg cada 6 a 8 horas.",
+    "dosis_adultos_mayores": "Inhalatorio preferente a dosis habituales; monitorizar en cardiopatía isquémica.",
+    "dosis_pediatrica": "Inhalado: 100 a 200 mcg (1 a 2 puffs) con aerocámara. Nebulización: 0.15 mg/kg/dosis.",
+    "dosis_lactantes": "1 a 2 puffs con aerocámara o 0.15 mg/kg nebulizado."
+  },
+  {
+    "codigo_interno": "MED-092",
+    "nombre_comercial": "Cytotec, Cytil, Mysoprost, Isox",
+    "categoria": "Análogo sintético de la Prostaglandina E1 (PGE1) / Uterotónico y Protector gástrico",
+    "principios_activos": [
+      "Misoprostol"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Tableta vaginal"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Sublingual",
+      "Vaginal",
+      "Rectal"
+    ],
+    "laboratorios": [
+      "Pfizer",
+      "Medifarma",
+      "Teva"
+    ],
+    "dosis_adultos": "Aborto retenido/incompleto: 600 a 800 mcg vía vaginal o sublingual. Atonía posparto: 800 mcg vía rectal o sublingual. Profilaxis úlceras: 200 mcg oral 4 veces al día con alimentos.",
+    "dosis_adultos_mayores": "Profilaxis gástrica: 200 mcg 2 a 4 veces al día con las comidas.",
+    "dosis_pediatrica": "No indicado.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-078",
+    "nombre_comercial": "Stromectol, Quanox, Ivergot, Securo",
+    "categoria": "Antiparasitario / Antihelmíntico y Ectoparasiticida (Avermectina)",
+    "principios_activos": [
+      "Ivermectina"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Gotas orales"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Merck Sharp & Dohme",
+      "Medifarma",
+      "Teva"
+    ],
+    "dosis_adultos": "Escabiosis/Estrongiloidiasis: 200 mcg/kg en dosis única (aprox. 1 gota por kg de peso corporal o 1 a 2 tabletas de 6 mg). En escabiosis se puede repetir la dosis a los 7 a 14 días.",
+    "dosis_adultos_mayores": "Mismo esquema por peso corporal.",
+    "dosis_pediatrica": "Niños ≥15 kg: 200 mcg/kg en dosis única.",
+    "dosis_lactantes": "Contraindicado en menores de 15 kg de peso o menores de 2 años."
+  },
+  {
+    "codigo_interno": "MED-014",
+    "nombre_comercial": "Ciproxina, Serviflox, Ciprofloxacino Genérico",
+    "categoria": "Antibióticos (Fluoroquinolonas)",
+    "principios_activos": [
+      "Ciprofloxacino clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Solución para infusión"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Bayer",
+      "Medifarma",
+      "IQFARMA",
+      "Portugal"
+    ],
+    "dosis_adultos": "500 mg cada 12 horas por vía oral (o 200-400 mg IV cada 12 horas).",
+    "dosis_adultos_mayores": "Ajustar según función renal (filtrado glomerular).",
+    "dosis_pediatrica": "Uso restringido a fibrosis quística o ITU complicadas (10-20 mg/kg cada 12 horas) debido a riesgo de artropatía.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-067",
+    "nombre_comercial": "Seroxat, Paxil, Posivyl, Aropax",
+    "categoria": "Antidepresivo / Inhibidor Selectivo de la Recaptación de Serotonina (ISRS potente)",
+    "principios_activos": [
+      "Paroxetina clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Tableta de liberación controlada"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "GSK",
+      "Teva",
+      "Medifarma"
+    ],
+    "dosis_adultos": "Depresión y Ansiedad: 20 mg/día por la mañana; incrementar en escalones de 10 mg (máximo 50-60 mg/día).",
+    "dosis_adultos_mayores": "Iniciar con 10 mg/día (máximo 40 mg/día).",
+    "dosis_pediatrica": "Contraindicado en niños y adolescentes por falta de eficacia demostrada y riesgo de ideación suicida.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-091",
+    "nombre_comercial": "Pitocin, Syntocinon, Oxitocin",
+    "categoria": "Oxitócico / Hormona uterotónica sintética",
+    "principios_activos": [
+      "Oxitocina"
+    ],
+    "formas_farmaceuticas": [
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Intravenosa",
+      "Intramuscular"
+    ],
+    "laboratorios": [
+      "Novartis",
+      "Medifarma",
+      "Teva"
+    ],
+    "dosis_adultos": "Inducción del parto: Infusión IV continua iniciando a 1-2 mUI/minuto, incrementando cada 30 min. Prevención de hemorragia posparto: 10 UI IM o 10-40 UI en 1000 mL de solución salina IV.",
+    "dosis_adultos_mayores": "No aplicable.",
+    "dosis_pediatrica": "No aplicable.",
+    "dosis_lactantes": "No aplicable."
+  },
+  {
+    "codigo_interno": "MED-025",
+    "nombre_comercial": "Bactrim, Cotrimoxazol, Sulfametoxazol + Trimetoprima Genérico",
+    "categoria": "Antibióticos (Sulfonamidas con trimetoprima)",
+    "principios_activos": [
+      "Sulfametoxazol",
+      "Trimetoprima"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Roche",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "800/160 mg cada 12 horas por 7 a 14 días.",
+    "dosis_adultos_mayores": "Ajustar según aclaramiento de creatinina (riesgo elevado de hiperpotasemia).",
+    "dosis_pediatrica": "8/40 mg/kg/día (calculado en trimetoprima) divididos en 2 tomas (cada 12 horas).",
+    "dosis_lactantes": "Contraindicado en < 2 meses."
+  },
+  {
+    "codigo_interno": "MED-090",
+    "nombre_comercial": "Solución Salina 0.9%, Cloruro de Sodio 0.9%, Suero Fisiológico",
+    "categoria": "Solución electrolítica isotónica parenteral / Irrigador",
+    "principios_activos": [
+      "Cloruro de sodio"
+    ],
+    "formas_farmaceuticas": [
+      "Solución inyectable",
+      "Solución para irrigación"
+    ],
+    "vias_administracion": [
+      "Intravenosa",
+      "Irrigación ocular o de heridas",
+      "Inhalatoria",
+      "Nasal"
+    ],
+    "laboratorios": [
+      "Medifarma",
+      "Sanderson",
+      "Braun"
+    ],
+    "dosis_adultos": "Parenteral: Según el estado de hidratación y requerimientos del paciente (usualmente 500 mL a 3000 mL en 24 horas).",
+    "dosis_adultos_mayores": "Infundir a velocidad controlada ajustada a la función cardiorrenal.",
+    "dosis_pediatrica": "Bolo de reanimación: 10 a 20 mL/kg IV. Mantenimiento según regla de Holliday-Segar.",
+    "dosis_lactantes": "Bolos de 10 mL/kg en deshidratación/shock bajo control pediátrico."
+  },
+  {
+    "codigo_interno": "MED-034",
+    "nombre_comercial": "Bisolvon Tos Peca, Benadryl Tos, Dextrometorfano Genérico",
+    "categoria": "Antitusígenos",
+    "principios_activos": [
+      "Dextrometorfano hidrobromuro"
+    ],
+    "formas_farmaceuticas": [
+      "Jarabe"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Boehringer Ingelheim",
+      "Johnson & Johnson",
+      "Portugal",
+      "Medifarma"
+    ],
+    "dosis_adultos": "15 mg a 30 mg cada 6 a 8 horas (máximo 120 mg/día).",
+    "dosis_adultos_mayores": "Mismo esquema.",
+    "dosis_pediatrica": "2 a 6 años: 2.5 a 5 mg cada 4 a 8 horas (máx 30 mg/día). 6 a 12 años: 7.5 a 15 mg cada 4 a 8 horas (máx 60 mg/día).",
+    "dosis_lactantes": "Contraindicado en menores de 2 años."
+  },
+  {
+    "codigo_interno": "MED-077",
+    "nombre_comercial": "Vermox, Sufilex, Pantelmin",
+    "categoria": "Antihelmíntico de amplio espectro (Benzimidazol)",
+    "principios_activos": [
+      "Mebendazol"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta masticable",
+      "Suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Johnson & Johnson",
+      "Genfar",
+      "Teva"
+    ],
+    "dosis_adultos": "Enterobiasis: 100 mg dosis única (repetir a las 2 semanas). Ascariasis/Trichuriasis: 100 mg cada 12 horas durante 3 días consecutivos (o 500 mg dosis única).",
+    "dosis_adultos_mayores": "Mismo esquema que en adultos.",
+    "dosis_pediatrica": "Niños >2 años: Misma dosis que adultos (100 mg dosis única o 100 mg cada 12 h por 3 días).",
+    "dosis_lactantes": "Contraindicado en menores de 1 a 2 años."
+  },
+  {
+    "codigo_interno": "MED-026",
+    "nombre_comercial": "Chlor-Trimeton, Clorfenamina Genérico",
+    "categoria": "Antihistamínicos (1ª generación)",
+    "principios_activos": [
+      "Clorfenamina maleato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Jarabe",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intramuscular",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Medifarma",
+      "Portugal",
+      "IQFARMA",
+      "Farmindustria"
+    ],
+    "dosis_adultos": "Oral: 4 mg cada 6 a 8 horas (máximo 24 mg/día). IM/IV: 10 a 20 mg dosis única.",
+    "dosis_adultos_mayores": "Reducir dosis a 2 mg cada 8-12 horas por riesgo de sedación y caídas.",
+    "dosis_pediatrica": "0.35 mg/kg/día divididos en 3 a 4 tomas (2 a 6 años: 1 mg cada 6 horas; 6 a 12 años: 2 mg cada 6 horas).",
+    "dosis_lactantes": "0.35 mg/kg/día divididos en 3 o 4 tomas bajo indicación médica."
+  },
+  {
+    "codigo_interno": "MED-087",
+    "nombre_comercial": "Scabisan, Sarzo, NIX, Permetrin",
+    "categoria": "Ectoparasiticida / Escabicida y Pediculicida (Piretroide sintético)",
+    "principios_activos": [
+      "Permetrina"
+    ],
+    "formas_farmaceuticas": [
+      "Crema tópica",
+      "Loción capilar",
+      "Champú"
+    ],
+    "vias_administracion": [
+      "Tópica",
+      "Capilar"
+    ],
+    "laboratorios": [
+      "Medifarma",
+      "Teva",
+      "Portugal"
+    ],
+    "dosis_adultos": "Escabiosis (5%): Aplicar crema desde el cuello hasta la planta de los pies, dejar actuar 8 a 14 horas y lavar. Repetir a los 7 días. Pediculosis (1%): Aplicar sobre cabello húmedo, dejar actuar 10 minutos y enjuagar.",
+    "dosis_adultos_mayores": "Misma pauta que en adultos.",
+    "dosis_pediatrica": "Niños ≥2 meses: Misma aplicación corporal para escabiosis, dejando actuar máximo 8 horas antes del baño.",
+    "dosis_lactantes": "No recomendado en menores de 2 meses salvo indicación pediátrica expresa."
+  },
+  {
+    "codigo_interno": "MED-036",
+    "nombre_comercial": "Ulcozol, Losec, Omepral, Omeprazol Genérico",
+    "categoria": "Antiulcerosos (Inhibidor de la Bomba de Protones - IBP)",
+    "principios_activos": [
+      "Omeprazol"
+    ],
+    "formas_farmaceuticas": [
+      "Cápsula de liberación retardada",
+      "Polvo para solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "AstraZeneca",
+      "Siegfried",
+      "Pharmagen",
+      "Medifarma"
+    ],
+    "dosis_adultos": "20 mg a 40 mg una vez al día por la mañana en ayunas (20 a 40 mg IV en profilaxis/hemorragia).",
+    "dosis_adultos_mayores": "20 mg una vez al día (no se requiere ajuste de dosis).",
+    "dosis_pediatrica": "0.7 a 1 mg/kg/día en niños > 1 año o > 10 kg.",
+    "dosis_lactantes": "Uso no recomendado salvo indicación especializada de gastroenterología pediátrica."
+  },
+  {
+    "codigo_interno": "MED-083",
+    "nombre_comercial": "Voltaren Emulgel, Dioxaflex Gel, Diclofenaco Gel Genérico",
+    "categoria": "Tópicos y Otros Comunes",
+    "principios_activos": [
+      "Diclofenaco dietilamonio"
+    ],
+    "formas_farmaceuticas": [
+      "Gel tópico"
+    ],
+    "vias_administracion": [
+      "Tópica"
+    ],
+    "laboratorios": [
+      "GSK",
+      "Bagó",
+      "Medifarma",
+      "Portugal"
+    ],
+    "dosis_adultos": "Aplicar fina capa sobre la zona dolorida 3 a 4 veces al día.",
+    "dosis_adultos_mayores": "Mismo esquema (mínima absorción sistémica).",
+    "dosis_pediatrica": "Niños > 12 años: aplicar 3 a 4 veces al día.",
+    "dosis_lactantes": "No recomendado."
+  },
+  {
+    "codigo_interno": "MED-050",
+    "nombre_comercial": "Lipitor, Atorlip, Stator, Ampliar",
+    "categoria": "Hipolipemiante / Inhibidor de la HMG-CoA reductasa (Estatina de alta potencia)",
+    "principios_activos": [
+      "Atorvastatina cálcica"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Pfizer",
+      "Teva",
+      "Farmaindustria"
+    ],
+    "dosis_adultos": "10 mg a 80 mg una vez al día (a cualquier hora del día, con o sin alimentos).",
+    "dosis_adultos_mayores": "10 mg a 20 mg/día como dosis de inicio recomendada.",
+    "dosis_pediatrica": "10 a 17 años (hipercolesterolemia familiar heterocigota): 10 mg una vez al día (máximo 20 mg/día).",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-043",
+    "nombre_comercial": "Duphalac, Lactulax, Lactulosa Genérico",
+    "categoria": "Laxantes osmóticos",
+    "principios_activos": [
+      "Lactulosa"
+    ],
+    "formas_farmaceuticas": [
+      "Solución oral",
+      "Jarabe"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Rectal"
+    ],
+    "laboratorios": [
+      "Abbott",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Estreñimiento: 15 a 45 mL/día en dosis única matutina. Encefalopatía hepática: 30 a 45 mL cada 6-8 horas.",
+    "dosis_adultos_mayores": "15 a 30 mL/día ajustando según respuesta.",
+    "dosis_pediatrica": "1 a 6 años: 5 a 10 mL/día. 7 a 14 años: 10 a 15 mL/día.",
+    "dosis_lactantes": "2.5 a 5 mL/día divididos en 2 tomas."
+  },
+  {
+    "codigo_interno": "MED-042",
+    "nombre_comercial": "Imodium, Donnagel, Loperamida Genérico",
+    "categoria": "Antidiarreicos (Agonista opioide periférico)",
+    "principios_activos": [
+      "Loperamida clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Cápsula"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Janssen",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Diarrea aguda: 4 mg iniciales, seguidos de 2 mg tras cada deposición líquida (Máximo: 16 mg/día).",
+    "dosis_adultos_mayores": "Mismo esquema reduciendo dosis en caso de fragilidad.",
+    "dosis_pediatrica": "Niños 6 a 12 años: 2 mg iniciales y 1 mg post-deposición (máximo 6 mg/día). Contraindicado en < 6 años sin indicación.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-086",
+    "nombre_comercial": "Bactroban, Mupirax, Mupirop",
+    "categoria": "Antibacteriano tópico",
+    "principios_activos": [
+      "Mupirocina"
+    ],
+    "formas_farmaceuticas": [
+      "Ungüento tópico",
+      "Crema tópica",
+      "Pomada nasal"
+    ],
+    "vias_administracion": [
+      "Tópica",
+      "Nasal"
+    ],
+    "laboratorios": [
+      "GSK",
+      "Glenmark",
+      "Medifarma"
+    ],
+    "dosis_adultos": "Aplicar sobre la zona afectada 2 a 3 veces al día durante un periodo de 5 a 10 días. Se puede cubrir con un vendaje.",
+    "dosis_adultos_mayores": "Mismo esquema que en adultos.",
+    "dosis_pediatrica": "Lactantes y niños ≥3 meses: Misma posología que adultos.",
+    "dosis_lactantes": "En menores de 3 meses, usar bajo estricta indicación médica."
+  },
+  {
+    "codigo_interno": "MED-015",
+    "nombre_comercial": "Tavanic, Novacilina, Levofloxacino Genérico",
+    "categoria": "Antibióticos (Fluoroquinolonas de 3ª generación)",
+    "principios_activos": [
+      "Levofloxacino hemihidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Solución para infusión"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Sanofi",
+      "Medifarma",
+      "IQFARMA",
+      "Farmindustria"
+    ],
+    "dosis_adultos": "500 mg a 750 mg una vez al día (cada 24 horas) por 7 a 14 días.",
+    "dosis_adultos_mayores": "Ajustar dosis según aclaramiento de creatinina.",
+    "dosis_pediatrica": "Uso no recomendado de rutina.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-052",
+    "nombre_comercial": "Plavix, Nefazan, Iscover, Clopigal",
+    "categoria": "Antiagregante plaquetario / Inhibidor irreversible del receptor P2Y12 de ADP",
+    "principios_activos": [
+      "Clopidogrel bisulfato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Sanofi",
+      "Teva",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "75 mg una vez al día. En Síndrome Coronario Agudo: Carga de 300 mg seguida de 75 mg/día.",
+    "dosis_adultos_mayores": "75 mg una vez al día sin necesidad de ajuste específico por edad.",
+    "dosis_pediatrica": "No se ha establecido su seguridad y eficacia en menores de 18 años.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-076",
+    "nombre_comercial": "Zentel, Vermagest, Eskazole, Helminful",
+    "categoria": "Antihelmíntico de amplio espectro / Carbamato de benzimidazol",
+    "principios_activos": [
+      "Albendazol"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta masticable",
+      "Suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "GSK",
+      "Medifarma",
+      "Teva"
+    ],
+    "dosis_adultos": "Parasitosis intestinal usual: 400 mg dosis única (o durante 3 días según la especie). Neurocisticercosis/Hidatidosis: 15 mg/kg/día dividido en 2 tomas por 14 a 28 días.",
+    "dosis_adultos_mayores": "Misma dosis que en adultos; vigilar función hepática.",
+    "dosis_pediatrica": "Niños de 1 a 2 años: 200 mg dosis única. Niños >2 años: 400 mg dosis única (o por 3 días).",
+    "dosis_lactantes": "Contraindicado en menores de 1 año."
+  },
+  {
+    "codigo_interno": "MED-030",
+    "nombre_comercial": "Meticorten, Prednicort, Prednisona Genérico",
+    "categoria": "Corticoides sintéticos",
+    "principios_activos": [
+      "Prednisona"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Jarabe",
+      "Solución oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Schering-Plough",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "5 mg a 60 mg/día en toma única matutina o dividida.",
+    "dosis_adultos_mayores": "Ajustar dosis a la mínima eficaz. Vigilar masa ósea y glicemia.",
+    "dosis_pediatrica": "1 a 2 mg/kg/día en 1 a 2 tomas (en asma agudo por 3 a 5 días).",
+    "dosis_lactantes": "1 a 2 mg/kg/día en tomas divididas."
+  },
+  {
+    "codigo_interno": "MED-016",
+    "nombre_comercial": "Rocephin, Acantex, Ceftriaxona Genérico",
+    "categoria": "Antibióticos (Cefalosporinas de 3ª generación)",
+    "principios_activos": [
+      "Ceftriaxona disódica"
+    ],
+    "formas_farmaceuticas": [
+      "Polvo para solución inyectable"
+    ],
+    "vias_administracion": [
+      "Intramuscular",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Roche",
+      "Medifarma",
+      "IQFARMA",
+      "Portugal"
+    ],
+    "dosis_adultos": "1 g a 2 g cada 24 horas (en meningitis hasta 4 g/día divididos cada 12 horas).",
+    "dosis_adultos_mayores": "1 g a 2 g cada 24 horas (no requiere ajuste por insuficiencia renal si la función hepática está preservada).",
+    "dosis_pediatrica": "50 a 75 mg/kg/día cada 24 horas (Meningitis: 100 mg/kg/día).",
+    "dosis_lactantes": "20 a 50 mg/kg/día en dosis única diaria."
+  },
+  {
+    "codigo_interno": "MED-089",
+    "nombre_comercial": "Electrolight, Frutimed SRO, Pedialyte, Hydrapak",
+    "categoria": "Rehidratante oral / Repositor de electrólitos y fluidos",
+    "principios_activos": [
+      "Cloruro de sodio",
+      "Cloruro de potasio",
+      "Citrato de sodio",
+      "Glucosa anhidra"
+    ],
+    "formas_farmaceuticas": [
+      "Polvo para solución oral en sobre",
+      "Solución oral lista para beber"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Abbott",
+      "Medifarma",
+      "Portugal"
+    ],
+    "dosis_adultos": "Tomar libremente a demanda, a razón de 200 a 400 mL tras cada deposición líquida.",
+    "dosis_adultos_mayores": "Ofrecer a demanda con especial vigilancia de la función renal y cardíaca.",
+    "dosis_pediatrica": "Deshidratación leve-moderada: 50 a 100 mL/kg en 4 horas. Mantenimiento: 10 mL/kg tras cada deposición líquida o vómito.",
+    "dosis_lactantes": "Administrar con cucharita o jeringa a razón de 5 a 10 mL cada 5 a 10 minutos (10 mL/kg por deposición líquida)."
+  },
+  {
+    "codigo_interno": "MED-019",
+    "nombre_comercial": "Flagyl, Metronidazol Genérico",
+    "categoria": "Antibióticos / Antiparasitarios (Nitroimidazoles)",
+    "principios_activos": [
+      "Metronidazol"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Suspensión oral",
+      "Solución para infusión",
+      "Óvulo vaginal"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intravenosa",
+      "Vaginal"
+    ],
+    "laboratorios": [
+      "Sanofi",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Antiparasitario: 500 mg a 750 mg cada 8 horas por 7-10 días. Antibacteriano: 500 mg IV/Oral cada 8 horas.",
+    "dosis_adultos_mayores": "Misma dosis; reducir si existe disfunción hepática grave.",
+    "dosis_pediatrica": "30 a 50 mg/kg/día divididos en 3 tomas por 7 a 10 días.",
+    "dosis_lactantes": "15 a 30 mg/kg/día divididos en 3 tomas."
+  },
+  {
+    "codigo_interno": "MED-069",
+    "nombre_comercial": "Maltofer, Ferranin, Intrafer",
+    "categoria": "Antianémico / Suplemento de Hierro orgánico",
+    "principios_activos": [
+      "Complejo de hidróxido férrico polimaltosado"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta masticable",
+      "Jarabe",
+      "Gotas orales",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intramuscular"
+    ],
+    "laboratorios": [
+      "Vifor Pharma",
+      "Pharmagen",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "100 mg a 200 mg de hierro elemental (1 a 2 tabletas o 5 a 10 mL de jarabe) una vez al día con o después de las comidas.",
+    "dosis_adultos_mayores": "100 mg de hierro elemental al día.",
+    "dosis_pediatrica": "3 a 5 mg/kg/día de hierro elemental dividido en 1 o 2 tomas.",
+    "dosis_lactantes": "25 a 50 mg de hierro elemental al día (10 a 20 gotas)."
+  },
+  {
+    "codigo_interno": "MED-040",
+    "nombre_comercial": "Mylanta, Maalox, Magaldrato, Antiácido Genérico",
+    "categoria": "Antiácidos locales neutralizantes",
+    "principios_activos": [
+      "Hidróxido de aluminio",
+      "Hidróxido de magnesio"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta masticable",
+      "Suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Sanofi",
+      "Johnson & Johnson",
+      "Medifarma",
+      "Portugal"
+    ],
+    "dosis_adultos": "10 a 20 mL de suspensión o 1 a 2 tabletas masticables 1 hora después de las comidas y al acostarse.",
+    "dosis_adultos_mayores": "Utilizar con precaución si existe alteración renal o estreñimiento.",
+    "dosis_pediatrica": "0.5 a 1 mL/kg/dosis 1 a 3 horas después de las comidas.",
+    "dosis_lactantes": "Bajo supervisión pediátrica únicamente."
+  },
+  {
+    "codigo_interno": "MED-056",
+    "nombre_comercial": "Humulin N, Novolin N, Insulex NPH",
+    "categoria": "Hipoglucemiante parenteral / Insulina de acción intermedia",
+    "principios_activos": [
+      "Insulina humana recombinante (Isófana)"
+    ],
+    "formas_farmaceuticas": [
+      "Suspensión inyectable"
+    ],
+    "vias_administracion": [
+      "Subcutánea"
+    ],
+    "laboratorios": [
+      "Eli Lilly",
+      "Novo Nordisk",
+      "Medifarma"
+    ],
+    "dosis_adultos": "Esquema individualizado (usualmente 0.2 a 1.0 UI/kg/día dividido en 1 o 2 dosis subcutáneas, 30 a 45 minutos antes de los alimentos).",
+    "dosis_adultos_mayores": "Titular con cuidado la dosis para evitar episodios de hipoglucemia inadvertida.",
+    "dosis_pediatrica": "Ajuste individualizado por endocrinología pediátrica (frecuentemente 0.5 a 1.0 UI/kg/día en esquemas de múltiples dosis).",
+    "dosis_lactantes": "Dosis calculada por kilo de peso y respuesta glucémica estricta."
+  },
+  {
+    "codigo_interno": "MED-045",
+    "nombre_comercial": "Renitec, Acetensil, Enalapril Genérico",
+    "categoria": "Antihipertensivos (IECA)",
+    "principios_activos": [
+      "Enalapril maleato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Merck Sharp & Dohme",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Hipertensión: 5 mg a 20 mg/día en 1 o 2 tomas (Máximo: 40 mg/día). Insuficiencia cardíaca: 2.5 mg inicial hasta 20 mg/día.",
+    "dosis_adultos_mayores": "Iniciar con 2.5 mg/día y titular según función renal.",
+    "dosis_pediatrica": "0.1 mg/kg una vez al día (hasta máximo 0.5 mg/kg/día).",
+    "dosis_lactantes": "Uso no recomendado."
+  },
+  {
+    "codigo_interno": "MED-053",
+    "nombre_comercial": "Glucophage, Glafornil, Dimefor, Hipoglucin",
+    "categoria": "Antihiperglucemiante / Biguanida",
+    "principios_activos": [
+      "Metformina clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Tableta de liberación prolongada"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Merck",
+      "Farmaindustria",
+      "Teva"
+    ],
+    "dosis_adultos": "Inicial: 500 mg u 850 mg 2 a 3 veces al día con las comidas; titulación progresiva hasta un máximo de 2550 mg/día (o 2000 mg/día en formulaciones XR).",
+    "dosis_adultos_mayores": "Ajustar dosis según la función renal evaluada por la depuración de creatinina (evitar si la filtración glomerular es < 30 mL/min).",
+    "dosis_pediatrica": "Niños ≥10 años: Inicial de 500 mg a 850 mg una vez al día con las comidas (máximo 2000 mg/día en dosis divididas).",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-046",
+    "nombre_comercial": "Capoten, Captopril Genérico",
+    "categoria": "Antihipertensivos (IECA de acción corta)",
+    "principios_activos": [
+      "Captopril"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Sublingual"
+    ],
+    "laboratorios": [
+      "Bristol-Myers Squibb",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "25 mg a 50 mg cada 8 o 12 horas. Crisis hipertensiva: 25 mg sublingual.",
+    "dosis_adultos_mayores": "Iniciar con 6.25 mg a 12.5 mg cada 12 horas.",
+    "dosis_pediatrica": "0.15 a 0.3 mg/kg/dosis cada 8 a 12 horas.",
+    "dosis_lactantes": "0.15 mg/kg/dosis bajo monitoreo hemodinámico."
+  },
+  {
+    "codigo_interno": "MED-068",
+    "nombre_comercial": "Fer-In-Sol, Hematin, Sulferro",
+    "categoria": "Antianémico / Suplemento de Hierro inorgánico (Hierro II)",
+    "principios_activos": [
+      "Sulfato ferroso"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Jarabe",
+      "Gotas orales"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Mead Johnson",
+      "Medifarma",
+      "Teva"
+    ],
+    "dosis_adultos": "Tratamiento: 100 mg a 200 mg de hierro elemental al día repartidos en 2 o 3 tomas. Profilaxis: 60 mg de hierro elemental diario.",
+    "dosis_adultos_mayores": "60 mg a 120 mg de hierro elemental al día con vigilancia del estreñimiento.",
+    "dosis_pediatrica": "3 a 6 mg/kg/día de hierro elemental dividido en 1 a 3 tomas. Profilaxis: 1 a 2 mg/kg/día.",
+    "dosis_lactantes": "2 a 4 mg/kg/día. Lactantes a término (a partir de los 4 meses): 1 a 2 mg/kg/día."
+  },
+  {
+    "codigo_interno": "MED-018",
+    "nombre_comercial": "Dalacin, Clindamicina Genérico",
+    "categoria": "Antibióticos (Lincosamidas)",
+    "principios_activos": [
+      "Clindamicina clorhidrato",
+      "Clindamicina fosfato"
+    ],
+    "formas_farmaceuticas": [
+      "Cápsula dura",
+      "Solución inyectable",
+      "Crema vaginal"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intramuscular",
+      "Intravenosa",
+      "Tópica",
+      "Vaginal"
+    ],
+    "laboratorios": [
+      "Pfizer",
+      "Medifarma",
+      "IQFARMA",
+      "Portugal"
+    ],
+    "dosis_adultos": "Oral: 300 mg a 450 mg cada 6 u 8 horas. IV/IM: 600 mg a 900 mg cada 8 horas.",
+    "dosis_adultos_mayores": "Mismo esquema vigilando frecuencia de evacuaciones intestinales.",
+    "dosis_pediatrica": "Oral: 10 a 25 mg/kg/día divididos en 3-4 tomas. IV: 20 a 40 mg/kg/día divididos en 3-4 dosis.",
+    "dosis_lactantes": "10 a 20 mg/kg/día divididos en 3 o 4 tomas."
+  },
+  {
+    "codigo_interno": "MED-012",
+    "nombre_comercial": "Clavumox, Augmentin, Klavox, Amoxicilina + Ácido Clavulánico Genérico",
+    "categoria": "Antibióticos (Betalactámicos con inhibidor de betalactamasas)",
+    "principios_activos": [
+      "Amoxicilina trihidrato",
+      "Clavulanato de potasio"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Polvo para suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "GSK",
+      "Medifarma",
+      "IQFARMA",
+      "Teva"
+    ],
+    "dosis_adultos": "500/125 mg cada 8 horas o 875/125 mg cada 12 horas.",
+    "dosis_adultos_mayores": "Mismo esquema supervisando función hepática y renal.",
+    "dosis_pediatrica": "30 a 45 mg/kg/día (calculado en base a amoxicilina) divididos en 2 o 3 tomas; en infecciones graves hasta 80-90 mg/kg/día.",
+    "dosis_lactantes": "Según estricto cálculo ponderal en jarabe de concentración menor."
+  },
+  {
+    "codigo_interno": "MED-059",
+    "nombre_comercial": "Rivotril, Clonex, Neuryl, Ravotril",
+    "categoria": "Anticonvulsivante / Ansiolítico (Benzodiazepina de acción prolongada)",
+    "principios_activos": [
+      "Clonazepam"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Gotas orales"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Roche",
+      "Teva",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Epilepsia: 0.5 mg tres veces al día; aumentar progresivamente (máximo 20 mg/día). Pánico: 0.25 mg a 0.5 mg dos veces al día.",
+    "dosis_adultos_mayores": "Iniciar con 0.25 mg/día por la noche para mitigar somnolencia diurna e inestabilidad motora.",
+    "dosis_pediatrica": "Niños ≤10 años (o ≤30 kg): 0.01 a 0.03 mg/kg/día dividido en 2 o 3 tomas.",
+    "dosis_lactantes": "0.01 a 0.03 mg/kg/día bajo estricta indicación de neuropediatría."
+  },
+  {
+    "codigo_interno": "MED-041",
+    "nombre_comercial": "Gazel, Aeroflat, Aero-OM, Simeticona Genérico",
+    "categoria": "Antiflatulentos",
+    "principios_activos": [
+      "Simeticona"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta masticable",
+      "Cápsula blanda",
+      "Gotas orales"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Tecnofarma",
+      "Medifarma",
+      "Portugal",
+      "Farmindustria"
+    ],
+    "dosis_adultos": "40 mg a 120 mg cuatro veces al día, administrados después de las comidas y al acostarse.",
+    "dosis_adultos_mayores": "Misma dosis que el adulto.",
+    "dosis_pediatrica": "Niños < 2 años: 20 mg (5 a 10 gotas) con o después de los biberones. Niños > 2 años: 40 mg cada 8 horas.",
+    "dosis_lactantes": "20 mg (5 a 8 gotas) mezclados antes de amamantar (máximo 240 mg/día)."
+  },
+  {
+    "codigo_interno": "MED-074",
+    "nombre_comercial": "Ostelin, D-Rise, D-Drop, Rayde",
+    "categoria": "Vitamina liposoluble / Regulador del metabolismo fosfocálcico",
+    "principios_activos": [
+      "Colecalciferol"
+    ],
+    "formas_farmaceuticas": [
+      "Cápsula blanda",
+      "Gotas orales"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Sanofi",
+      "Farmaindustria",
+      "Teva"
+    ],
+    "dosis_adultos": "Deficiencia: 50 000 UI una vez por semana durante 8 semanas, o 2000 a 4000 UI al día. Mantenimiento: 800 a 2000 UI diarias.",
+    "dosis_adultos_mayores": "800 a 2000 UI al día de forma continua.",
+    "dosis_pediatrica": "Raquitismo: 2000 a 5000 UI al día por 12 semanas.",
+    "dosis_lactantes": "Profilaxis lactantes: 400 UI al día desde los primeros días de vida."
+  },
+  {
+    "codigo_interno": "MED-094",
+    "nombre_comercial": "Microgynon, Anulit, Lo-Femenal, Nordette",
+    "categoria": "Anticonceptivo hormonal combinado continuo",
+    "principios_activos": [
+      "Etinilestradiol",
+      "Levonorgestrel"
+    ],
+    "formas_farmaceuticas": [
+      "Gragea",
+      "Tableta recubierta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Bayer",
+      "Teva",
+      "Medifarma"
+    ],
+    "dosis_adultos": "1 tableta diaria a la misma hora durante 21 días consecutivos, seguido de un descanso de 7 días (o 7 tabletas placebo) antes de iniciar el siguiente blister.",
+    "dosis_adultos_mayores": "No aplicable.",
+    "dosis_pediatrica": "Adolescentes post-menárquicas: Misma pauta que adultas.",
+    "dosis_lactantes": "Contraindicado durante las primeras 6 semanas postparto lactante por inhibición de la producción láctea."
+  },
+  {
+    "codigo_interno": "MED-063",
+    "nombre_comercial": "Tryptanol, Anapsique, Amyline",
+    "categoria": "Antidepresivo Tricíclico (ATC) / Modulador del dolor neuropático",
+    "principios_activos": [
+      "Amitriptilina clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Medifarma",
+      "Teva",
+      "Portugal"
+    ],
+    "dosis_adultos": "Depresión: 50 mg a 75 mg/día administrados por la noche (máximo 150-200 mg/día). Dolor neuropático/Migraña: 10 mg a 25 mg/día por la noche.",
+    "dosis_adultos_mayores": "10 mg a 25 mg al acostarse (evitar dosis altas por alto riesgo de confusión, arritmias y caídas).",
+    "dosis_pediatrica": "Enuresis (≥6 años): 10 mg a 25 mg al acostarse.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-037",
+    "nombre_comercial": "Nexium, Esogastro, Esomeprazol Genérico",
+    "categoria": "Antiulcerosos (Inhibidor de la Bomba de Protones - S-isómero)",
+    "principios_activos": [
+      "Esomeprazol magnésico",
+      "Esomeprazol sódico"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta de liberación retardada (MUPS)",
+      "Cápsula",
+      "Polvo para solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "AstraZeneca",
+      "Bagó",
+      "Medifarma",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "20 mg a 40 mg una vez al día (según patología) administrado en ayunas.",
+    "dosis_adultos_mayores": "No requiere ajuste de dosis.",
+    "dosis_pediatrica": "1 a 11 años (10-20 kg): 10 mg/día. > 12 años: 20-40 mg/día.",
+    "dosis_lactantes": "No recomendado."
+  },
+  {
+    "codigo_interno": "MED-011",
+    "nombre_comercial": "Velamox, Amoxil, Amoxicilina Genérico",
+    "categoria": "Antibióticos (Betalactámicos / Penicilinas)",
+    "principios_activos": [
+      "Amoxicilina trihidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Cápsula",
+      "Tableta",
+      "Polvo para suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "IQFARMA",
+      "Medifarma",
+      "Portugal",
+      "Farmindustria"
+    ],
+    "dosis_adultos": "500 mg cada 8 horas o 875 mg cada 12 horas.",
+    "dosis_adultos_mayores": "Mismo esquema ajustando según aclaramiento de creatinina si hay insuficiencia renal.",
+    "dosis_pediatrica": "40 a 90 mg/kg/día divididos en 2 o 3 tomas.",
+    "dosis_lactantes": "20 a 40 mg/kg/día en 3 tomas bajo control médico."
+  },
+  {
+    "codigo_interno": "MED-099",
+    "nombre_comercial": "Migra Dorixina (con clonixinato), Cefalmin, Cafergot, Tonopan",
+    "categoria": "Antimigrañoso / Agonista selectivo serotoninérgico (Alcaloide del cornezuelo)",
+    "principios_activos": [
+      "Ergotamina tartrato",
+      "Cafeína"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Novartis",
+      "Medifarma",
+      "Siegfried"
+    ],
+    "dosis_adultos": "Administrar 1 a 2 tabletas al primer signo de crisis. Si no cede, 1 tableta cada 30 minutos (máximo 6 tabletas por ataque y 10 tabletas por semana).",
+    "dosis_adultos_mayores": "Contraindicado por elevado riesgo cardiovascular e isquemia vascular.",
+    "dosis_pediatrica": "Contraindicado en menores de 12 a 18 años.",
+    "dosis_lactantes": "Contraindicado (pasa a la leche materna e inhibe la prolactina)."
+  },
+  {
+    "codigo_interno": "MED-047",
+    "nombre_comercial": "Norvasc, Amlor, Amlodipino Genérico",
+    "categoria": "Antihipertensivos (Bloqueador de canales de calcio)",
+    "principios_activos": [
+      "Amlodipino besilato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Pfizer",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "5 mg a 10 mg una vez al día (cada 24 horas).",
+    "dosis_adultos_mayores": "Iniciar con 2.5 mg a 5 mg una vez al día.",
+    "dosis_pediatrica": "2.5 mg a 5 mg una vez al día en niños de 6 a 17 años.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-097",
+    "nombre_comercial": "Norflex, Muscoril, Orfedal, Mefenesin",
+    "categoria": "Relajante muscular de acción central / Anticolinérgico",
+    "principios_activos": [
+      "Orfenadrina citrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta de liberación prolongada",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intramuscular",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Farmaindustria",
+      "Teva",
+      "Medifarma"
+    ],
+    "dosis_adultos": "100 mg cada 12 horas. IV/IM: 60 mg cada 12 horas.",
+    "dosis_adultos_mayores": "Reducir la dosis a la mitad por mayor susceptibilidad a confusión, caídas y efectos atropínicos.",
+    "dosis_pediatrica": "No recomendado en menores de 12 años.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-075",
+    "nombre_comercial": "Caltrate + D, Calcibon D, Caldeval, Ospur D",
+    "categoria": "Suplemento Mineral y Vitamínico / Remineralizante óseo",
+    "principios_activos": [
+      "Carbonato de calcio",
+      "Citrato de calcio",
+      "Colecalciferol"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Tableta efervescente"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Haleon",
+      "Farmaindustria",
+      "Medifarma"
+    ],
+    "dosis_adultos": "1 a 2 tabletas al día (tomadas con las comidas y abundante agua).",
+    "dosis_adultos_mayores": "1 a 2 tabletas al día (preferir citrato de calcio si hay aclorhidria o uso de IBPs).",
+    "dosis_pediatrica": "Según requerimientos nutricionales diarios bajo supervisión pediátrica.",
+    "dosis_lactantes": "No recomendado en este formato de combinación."
+  },
+  {
+    "codigo_interno": "MED-023",
+    "nombre_comercial": "Amikin, Biklin, Amikacina Genérico",
+    "categoria": "Antibióticos (Aminoglucósidos)",
+    "principios_activos": [
+      "Amikacina sulfato"
+    ],
+    "formas_farmaceuticas": [
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Intramuscular",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Bristol-Myers Squibb",
+      "Medifarma",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "15 mg/kg/día en dosis única diaria IV o dividida en 2 tomas (7.5 mg/kg cada 12 horas).",
+    "dosis_adultos_mayores": "Reducir dosis o ajustar intervalos según función renal.",
+    "dosis_pediatrica": "15 a 20 mg/kg/día en 1 o 2 tomas.",
+    "dosis_lactantes": "15 mg/kg/día en dosis única diaria."
+  },
+  {
+    "codigo_interno": "MED-022",
+    "nombre_comercial": "Garamicina, Gentamicina Genérico",
+    "categoria": "Antibióticos (Aminoglucósidos)",
+    "principios_activos": [
+      "Gentamicina sulfato"
+    ],
+    "formas_farmaceuticas": [
+      "Solución inyectable",
+      "Crema tópica",
+      "Solución oftálmica"
+    ],
+    "vias_administracion": [
+      "Intramuscular",
+      "Intravenosa",
+      "Tópica"
+    ],
+    "laboratorios": [
+      "Schering-Plough",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "3 a 5 mg/kg/día en dosis única diaria o dividida en 3 tomas (cada 8 horas).",
+    "dosis_adultos_mayores": "Requiere estricto ajuste por aclaramiento de creatinina.",
+    "dosis_pediatrica": "6 a 7.5 mg/kg/día divididos en 3 tomas (2 a 2.5 mg/kg cada 8 horas).",
+    "dosis_lactantes": "7.5 mg/kg/día divididos en 3 tomas."
+  },
+  {
+    "codigo_interno": "MED-044",
+    "nombre_comercial": "Cozaar, Converter, Simultan, Losartán Genérico",
+    "categoria": "Antihipertensivos (ARA II)",
+    "principios_activos": [
+      "Losartán potásico"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Merck Sharp & Dohme",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "50 mg a 100 mg una vez al día (cada 24 horas).",
+    "dosis_adultos_mayores": "Iniciar con 25 mg a 50 mg una vez al día en pacientes > 75 años o deplecionados de volumen.",
+    "dosis_pediatrica": "Niños > 6 años: 0.7 mg/kg una vez al día (máximo 50 mg/día).",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-032",
+    "nombre_comercial": "Beclomet, Becotide, Beclometasona Genérico",
+    "categoria": "Corticoides inhalados / Nasales",
+    "principios_activos": [
+      "Beclometasona dipropionato"
+    ],
+    "formas_farmaceuticas": [
+      "Aerosol para inhalación",
+      "Spray nasal"
+    ],
+    "vias_administracion": [
+      "Inhalatoria",
+      "Nasal"
+    ],
+    "laboratorios": [
+      "GSK",
+      "Medifarma",
+      "IQFARMA",
+      "Chiesi"
+    ],
+    "dosis_adultos": "Asma: 200 a 400 mcg dos veces al día. Nasal: 1 a 2 disparos por fosa nasal cada 12 horas.",
+    "dosis_adultos_mayores": "Misma dosis que en adultos.",
+    "dosis_pediatrica": "Asma: 50 a 100 mcg dos veces al día con aerocámara. Nasal: 1 disparo en cada fosa nasal cada 12 horas.",
+    "dosis_lactantes": "No recomendado salvo criterio especialista."
+  },
+  {
+    "codigo_interno": "MED-006",
+    "nombre_comercial": "Antalgina, Dipirona, Repalil, Metamizol Genérico",
+    "categoria": "Analgésicos, Antiinflamatorios y Antipiréticos",
+    "principios_activos": [
+      "Metamizol sódico"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Jarabe",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intramuscular",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Sanofi",
+      "Farmindustria",
+      "Medifarma",
+      "Portugal"
+    ],
+    "dosis_adultos": "Oral: 500 mg a 1000 mg cada 6 u 8 horas. IV/IM: 1 g a 2 g cada 8 a 12 horas en infusión lenta.",
+    "dosis_adultos_mayores": "Disminuir la dosis para evitar hipotensión brusca.",
+    "dosis_pediatrica": "10 a 15 mg/kg/dosis cada 6 u 8 horas.",
+    "dosis_lactantes": "10 mg/kg/dosis cada 8 horas en lactantes > 3 meses o > 5 kg."
+  },
+  {
+    "codigo_interno": "MED-048",
+    "nombre_comercial": "Tenormin, Atenolol Genérico",
+    "categoria": "Antihipertensivos / Antiarrítmicos (Betabloqueador β1)",
+    "principios_activos": [
+      "Atenolol"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "AstraZeneca",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "50 mg a 100 mg una vez al día.",
+    "dosis_adultos_mayores": "Iniciar con 25 mg a 50 mg/día según frecuencia cardíaca.",
+    "dosis_pediatrica": "0.5 a 1 mg/kg/día en 1 o 2 tomas (máximo 2 mg/kg/día).",
+    "dosis_lactantes": "Uso no recomendado."
+  },
+  {
+    "codigo_interno": "MED-008",
+    "nombre_comercial": "Celebrex, Coxalgen, Celecoxib Genérico",
+    "categoria": "Analgésicos, Antiinflamatorios y Antipiréticos (Inhibidor selectivo COX-2)",
+    "principios_activos": [
+      "Celecoxib"
+    ],
+    "formas_farmaceuticas": [
+      "Cápsula dura"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Pfizer",
+      "Bagó",
+      "Medifarma",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "100 mg a 200 mg una o dos veces al día (Máximo: 400 mg/día).",
+    "dosis_adultos_mayores": "Iniciar con 100 mg/día e incrementar gradualmente con precaución.",
+    "dosis_pediatrica": "Artritis idiopática juvenil (> 2 años): 50 mg cada 12 horas (10-25 kg) o 100 mg cada 12 horas (>25 kg).",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-020",
+    "nombre_comercial": "Macrodantina, Furadantina, Nitrofurantoína Genérico",
+    "categoria": "Antibióticos (Nitrofuranos / Antiséptico urinario)",
+    "principios_activos": [
+      "Nitrofurantoína (macrocristales)"
+    ],
+    "formas_farmaceuticas": [
+      "Cápsula",
+      "Suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Boehringer Ingelheim",
+      "Medifarma",
+      "Portugal"
+    ],
+    "dosis_adultos": "100 mg cada 12 horas por 5 a 7 días. Profilaxis: 50-100 mg al acostarse.",
+    "dosis_adultos_mayores": "Contraindicado si la función renal está significativamente deprimida.",
+    "dosis_pediatrica": "5 a 7 mg/kg/día divididos en 4 tomas en > 1 mes de edad.",
+    "dosis_lactantes": "Contraindicado en menores de 1 mes (riesgo de anemia hemolítica)."
+  },
+  {
+    "codigo_interno": "MED-001",
+    "nombre_comercial": "Panadol, Fevaprin, Tylol, Paracetamol Genérico",
+    "categoria": "Analgésicos, Antiinflamatorios y Antipiréticos",
+    "principios_activos": [
+      "Paracetamol"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Jarabe",
+      "Gotas orales",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "GSK",
+      "Farmindustria",
+      "Portugal",
+      "Medifarma"
+    ],
+    "dosis_adultos": "500 mg a 1000 mg cada 6 u 8 horas (Máximo: 4000 mg/día).",
+    "dosis_adultos_mayores": "500 mg cada 8 horas (se recomienda reducir a máximo 2 g a 3 g/día en fragilidad o insuficiencia hepática/renal).",
+    "dosis_pediatrica": "10 a 15 mg/kg/dosis cada 4 a 6 horas (Máximo: 60 mg/kg/día).",
+    "dosis_lactantes": "10 a 15 mg/kg/dosis cada 6 horas bajo supervisión médica."
+  },
+  {
+    "codigo_interno": "MED-039",
+    "nombre_comercial": "Pepto-Bismol, Bismutol, Bismuto Genérico",
+    "categoria": "Antidiarreicos y protectores de la mucosa gástrica",
+    "principios_activos": [
+      "Subsalicilato de bismuto"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta masticable",
+      "Suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Procter & Gamble",
+      "Medifarma",
+      "IQFARMA",
+      "Portugal"
+    ],
+    "dosis_adultos": "524 mg (2 tabletas o 30 mL) cada 30 a 60 minutos según necesidad (Máximo: 8 dosis en 24 horas).",
+    "dosis_adultos_mayores": "Mismo esquema evitando uso prolongado.",
+    "dosis_pediatrica": "6 a 9 años: 87.3 mg (5 mL) cada 30 a 60 minutos. 9 a 12 años: 175 mg (10 mL) cada 30 a 60 minutos.",
+    "dosis_lactantes": "Contraindicado en menores de 6 años."
+  },
+  {
+    "codigo_interno": "MED-084",
+    "nombre_comercial": "Celestoderm, Betnovate, Betametasona Genérico",
+    "categoria": "Tópicos y Otros Comunes (Corticoides potentes)",
+    "principios_activos": [
+      "Betametasona"
+    ],
+    "formas_farmaceuticas": [
+      "Crema tópica",
+      "Ungüento tópico"
+    ],
+    "vias_administracion": [
+      "Tópica"
+    ],
+    "laboratorios": [
+      "Schering-Plough",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Aplicar fina capa 1 a 2 veces al día.",
+    "dosis_adultos_mayores": "Usar con precaución por piel atrófica.",
+    "dosis_pediatrica": "Periodos muy cortos (máximo 5 días) en > 1 año.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-085",
+    "nombre_comercial": "Canesten, Clotrimazol Crema Genérico",
+    "categoria": "Tópicos y Otros Comunes",
+    "principios_activos": [
+      "Clotrimazol"
+    ],
+    "formas_farmaceuticas": [
+      "Crema tópica"
+    ],
+    "vias_administracion": [
+      "Tópica"
+    ],
+    "laboratorios": [
+      "Bayer",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Aplicar en capa fina 2 a 3 veces al día en zona limpia y seca.",
+    "dosis_adultos_mayores": "Mismo esquema.",
+    "dosis_pediatrica": "Aplicar 2 veces al día en > 2 años.",
+    "dosis_lactantes": "Bajo indicación pediátrica."
+  },
+  {
+    "codigo_interno": "MED-065",
+    "nombre_comercial": "Tegretol, Carbapex, Actebral",
+    "categoria": "Antiepiléptico / Estabilizador del ánimo / Analgésico para dolor neuropático",
+    "principios_activos": [
+      "Carbamazepina"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Suspensión"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Novartis",
+      "Teva",
+      "Medifarma"
+    ],
+    "dosis_adultos": "Inicial de 100 mg a 200 mg 1 o 2 veces al día; incrementar semanalmente hasta 800 mg - 1200 mg/día repartidos en 2 a 4 tomas.",
+    "dosis_adultos_mayores": "Inicial de 100 mg 1 a 2 veces al día; titulación cautelosa.",
+    "dosis_pediatrica": "10 a 20 mg/kg/día dividido en 2 a 4 tomas.",
+    "dosis_lactantes": "10 a 20 mg/kg/día administrados en suspensión oral."
+  },
+  {
+    "codigo_interno": "MED-035",
+    "nombre_comercial": "Nastizol, Panadol Antigripal, Gripachek, Nastifrin",
+    "categoria": "Antigripales / Descongestionantes",
+    "principios_activos": [
+      "Clorfenamina maleato",
+      "Paracetamol",
+      "Pseudoefedrina clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Jarabe"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Bagó",
+      "GSK",
+      "Medifarma",
+      "Portugal"
+    ],
+    "dosis_adultos": "1 tableta cada 6 u 8 horas (máximo 4 tabletas al día).",
+    "dosis_adultos_mayores": "Precaución por hipertensión o hipertrofia prostática.",
+    "dosis_pediatrica": "Usar jarabe infantil formulado según peso y edad (no recomendado < 2 años).",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-093",
+    "nombre_comercial": "Postinor, Glanique, Emergen, Pregnon",
+    "categoria": "Anticonceptivo hormonal de emergencia (Progestágeno)",
+    "principios_activos": [
+      "Levonorgestrel"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Gedeon Richter",
+      "Farmaindustria",
+      "Teva"
+    ],
+    "dosis_adultos": "Toma única de 1.5 mg lo antes posible dentro de las 72 horas (o 2 tabletas de 0.75 mg juntas o separadas por 12 horas).",
+    "dosis_adultos_mayores": "No aplicable.",
+    "dosis_pediatrica": "Adolescentes: Misma dosis que en adultas.",
+    "dosis_lactantes": "No recomendado en menores de edad fértil no menárquicas."
+  },
+  {
+    "codigo_interno": "MED-058",
+    "nombre_comercial": "Xanax, Alplax, Tensium, Adco",
+    "categoria": "Ansiolítico / Benzodiazepina de acción corta-intermedia",
+    "principios_activos": [
+      "Alprazolam"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Tableta de liberación prolongada"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Pfizer",
+      "Teva",
+      "Medifarma"
+    ],
+    "dosis_adultos": "Ansiedad: 0.25 mg a 0.5 mg tres veces al día (máximo 4 mg/día). Trastorno de pánico: 0.5 mg tres veces al día.",
+    "dosis_adultos_mayores": "0.125 mg a 0.25 mg dos a tres veces al día (mayor susceptibilidad a caídas y confusión).",
+    "dosis_pediatrica": "No recomendado en menores de 18 años.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-024",
+    "nombre_comercial": "Benzetacil, Penicilina Benzatínica Genérico",
+    "categoria": "Antibióticos (Betalactámicos / Penicilinas de depósito)",
+    "principios_activos": [
+      "Penicilina G benzatínica"
+    ],
+    "formas_farmaceuticas": [
+      "Polvo para suspensión inyectable"
+    ],
+    "vias_administracion": [
+      "Intramuscular"
+    ],
+    "laboratorios": [
+      "Sanofi",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Faringitis/Profilaxis: 1,200,000 UI dosis única (o mensual en profilaxis). Sífilis: 2,400,000 UI IM dosis única.",
+    "dosis_adultos_mayores": "Misma dosis; evaluar tolerancia local.",
+    "dosis_pediatrica": "600,000 UI (< 27 kg) o 1,200,000 UI (> 27 kg) dosis única IM.",
+    "dosis_lactantes": "50,000 UI/kg dosis única IM."
+  },
+  {
+    "codigo_interno": "MED-082",
+    "nombre_comercial": "Mycostatin, Nistatina Genérico",
+    "categoria": "Antiparasitarios y Antimicóticos (Polieno)",
+    "principios_activos": [
+      "Nistatina"
+    ],
+    "formas_farmaceuticas": [
+      "Suspensión oral",
+      "Óvulo vaginal",
+      "Crema tópica"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Vaginal",
+      "Tópica"
+    ],
+    "laboratorios": [
+      "Bristol-Myers Squibb",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Muguet: 400,000 a 600,000 UI (4-6 mL) 4 veces al día. Vaginal: 1 óvulo/noche por 14 días.",
+    "dosis_adultos_mayores": "Mismo esquema.",
+    "dosis_pediatrica": "Muguet: 100,000 a 200,000 UI (1-2 mL) 4 veces al día.",
+    "dosis_lactantes": "100,000 UI (1 mL) 4 veces al día repartidos en la boca."
+  },
+  {
+    "codigo_interno": "MED-096",
+    "nombre_comercial": "Euthyrox, Synthroid, Levothroid, T4",
+    "categoria": "Hormona tiroidea sustitutiva",
+    "principios_activos": [
+      "Levotiroxina sódica"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Merck",
+      "Abbott",
+      "Teva"
+    ],
+    "dosis_adultos": "Hipotiroidismo: Inicial de 25 a 50 mcg/día; titulación paulatina cada 4-6 semanas según niveles de TSH hasta dosis de mantenimiento (promedio 1.6 mcg/kg/día - 100 a 150 mcg/día).",
+    "dosis_adultos_mayores": "Iniciar con 12.5 a 25 mcg/día por riesgo de desencadenar angina o arritmias.",
+    "dosis_pediatrica": "Hipotiroidismo congénito: 10 a 15 mcg/kg/día de forma inmediata.",
+    "dosis_lactantes": "10 a 15 mcg/kg/día administrados triturados con agua."
+  },
+  {
+    "codigo_interno": "MED-062",
+    "nombre_comercial": "Zoloft, Dominium, Serlift, Emergen",
+    "categoria": "Antidepresivo / Inhibidor Selectivo de la Recaptación de Serotonina (ISRS)",
+    "principios_activos": [
+      "Sertralina clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Pfizer",
+      "Genfar",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Depresión y TOC: 50 mg una vez al día. Pánico y TEPT: Inicial de 25 mg/día, aumentando a 50 mg/día tras una semana (máximo 200 mg/día).",
+    "dosis_adultos_mayores": "Iniciar con 25 mg/día e incrementar lentamente.",
+    "dosis_pediatrica": "TOC (6 a 12 años): Inicial de 25 mg/día. TOC (13 a 17 años): Inicial de 50 mg/día.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-070",
+    "nombre_comercial": "Folivit, Folidex, Suplemento AFO, Anemiol",
+    "categoria": "Factor vitamínico antianémico / Suplemento nutricional",
+    "principios_activos": [
+      "Ácido fólico"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Medifarma",
+      "Teva",
+      "Genfar"
+    ],
+    "dosis_adultos": "Deficiencia/Anemia megaloblástica: 5 mg al día. Profilaxis preconcepcional y gestacional: 0.4 mg a 0.8 mg al día (hasta 4 a 5 mg/día en mujeres con antecedentes de DTN).",
+    "dosis_adultos_mayores": "1 mg a 5 mg al día según causa de la deficiencia.",
+    "dosis_pediatrica": "Niños: 1 mg al día en anemias por deficiencia de folato.",
+    "dosis_lactantes": "0.1 mg (100 mcg) al día."
+  },
+  {
+    "codigo_interno": "MED-033",
+    "nombre_comercial": "Mucosolvan, Ambroxol Genérico",
+    "categoria": "Mucolíticos y expectorantes",
+    "principios_activos": [
+      "Ambroxol clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Jarabe",
+      "Gotas orales",
+      "Solución para nebulizar"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Inhalatoria"
+    ],
+    "laboratorios": [
+      "Boehringer Ingelheim",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "30 mg (5 mL de jarabe adulto) cada 8 horas.",
+    "dosis_adultos_mayores": "Mismo esquema.",
+    "dosis_pediatrica": "2 a 5 años: 7.5 mg (2.5 mL jarabe ped) cada 8 horas. 5 a 12 años: 15 mg (5 mL jarabe ped) cada 8 horas.",
+    "dosis_lactantes": "1.25 mg/kg/dosis divididos cada 12 horas (Gotas: 1 mL cada 12 horas)."
+  },
+  {
+    "codigo_interno": "MED-049",
+    "nombre_comercial": "Lasix, Furosemida Genérico",
+    "categoria": "Diuréticos de asa",
+    "principios_activos": [
+      "Furosemida"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Intramuscular",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Sanofi",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Oral: 20 mg a 80 mg en toma única matutina. IV: 20 mg a 40 mg IV lento (edema pulmonar: 40-80 mg IV).",
+    "dosis_adultos_mayores": "Iniciar con 20 mg/día con titulación prudente por riesgo de caída tensional.",
+    "dosis_pediatrica": "Oral: 1 a 2 mg/kg/dosis. IV: 1 mg/kg/dosis lenta.",
+    "dosis_lactantes": "1 mg/kg/dosis cada 12 a 24 horas."
+  },
+  {
+    "codigo_interno": "MED-081",
+    "nombre_comercial": "Canesten, Canesmed, Clotrimazol Genérico",
+    "categoria": "Antiparasitarios y Antimicóticos (Imidazol)",
+    "principios_activos": [
+      "Clotrimazol"
+    ],
+    "formas_farmaceuticas": [
+      "Crema tópica",
+      "Crema vaginal",
+      "Óvulo vaginal"
+    ],
+    "vias_administracion": [
+      "Tópica",
+      "Vaginal"
+    ],
+    "laboratorios": [
+      "Bayer",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "Tópico: Aplicar 2 a 3 veces al día. Vaginal: 1 óvulo de 100 mg/noche por 6 días o 500 mg dosis única.",
+    "dosis_adultos_mayores": "Mismo esquema.",
+    "dosis_pediatrica": "Aplicar 2 veces al día en > 2 años.",
+    "dosis_lactantes": "Tópico bajo indicación en dermatitis de pañal por Candida."
+  },
+  {
+    "codigo_interno": "MED-003",
+    "nombre_comercial": "Apronax, Naprosyn, Aleve, Naproxeno Genérico",
+    "categoria": "Analgésicos, Antiinflamatorios y Antipiréticos",
+    "principios_activos": [
+      "Naproxeno sódico"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Bayer",
+      "Farmindustria",
+      "IQFARMA",
+      "Portugal"
+    ],
+    "dosis_adultos": "275 mg a 550 mg cada 12 horas (Dosis inicial de ataque: 550 mg seguida de 275 mg cada 6 a 8 horas si es necesario).",
+    "dosis_adultos_mayores": "Reducir dosis al mínimo eficaz (275 mg cada 12 horas).",
+    "dosis_pediatrica": "10 mg/kg/día divididos en 2 tomas (cada 12 horas).",
+    "dosis_lactantes": "No recomendado en lactantes menores de 2 años."
+  },
+  {
+    "codigo_interno": "MED-061",
+    "nombre_comercial": "Prozac, Dominium, Molipax, Neupax",
+    "categoria": "Antidepresivo / Inhibidor Selectivo de la Recaptación de Serotonina (ISRS)",
+    "principios_activos": [
+      "Fluoxetina clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Cápsula dura",
+      "Tableta dispersable"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Eli Lilly",
+      "Teva",
+      "Medifarma"
+    ],
+    "dosis_adultos": "Depresión/TOC: 20 mg/día por la mañana; puede incrementarse hasta 60 mg/día. Bulimia: 60 mg/día.",
+    "dosis_adultos_mayores": "Iniciar con 10 mg a 20 mg/día; no sobrepasar los 40 mg/día.",
+    "dosis_pediatrica": "Niños ≥8 años (depresión/TOC): 10 mg a 20 mg/día.",
+    "dosis_lactantes": "Contraindicado."
+  },
+  {
+    "codigo_interno": "MED-002",
+    "nombre_comercial": "Doloral, Bifen, Ibuprofeno Genérico",
+    "categoria": "Analgésicos, Antiinflamatorios y Antipiréticos",
+    "principios_activos": [
+      "Ibuprofeno"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta recubierta",
+      "Cápsula blanda",
+      "Suspensión oral"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Medifarma",
+      "Portugal",
+      "IQFARMA",
+      "Farmindustria"
+    ],
+    "dosis_adultos": "400 mg a 600 mg cada 6 u 8 horas (Máximo: 2400 mg/día).",
+    "dosis_adultos_mayores": "Iniciar con la dosis más baja eficaz (200 mg a 400 mg cada 8 horas) vigilando función renal y gastrointestinal.",
+    "dosis_pediatrica": "5 a 10 mg/kg/dosis cada 6 u 8 horas (Máximo: 40 mg/kg/día).",
+    "dosis_lactantes": "5 mg/kg/dosis cada 8 horas en lactantes > 6 meses. Contraindicado en < 6 meses sin indicación precisa."
+  },
+  {
+    "codigo_interno": "MED-007",
+    "nombre_comercial": "Tramal, Zaldiar (combinado), Tramadol Genérico",
+    "categoria": "Analgésicos, Antiinflamatorios y Antipiréticos (Analgésico Opiáceo)",
+    "principios_activos": [
+      "Tramadol clorhidrato"
+    ],
+    "formas_farmaceuticas": [
+      "Cápsula",
+      "Gotas orales",
+      "Solución inyectable"
+    ],
+    "vias_administracion": [
+      "Oral",
+      "Subcutánea",
+      "Intramuscular",
+      "Intravenosa"
+    ],
+    "laboratorios": [
+      "Grünenthal",
+      "Farmindustria",
+      "Medifarma",
+      "Teva"
+    ],
+    "dosis_adultos": "50 mg a 100 mg cada 6 u 8 horas (Máximo: 400 mg/día).",
+    "dosis_adultos_mayores": "Extender intervalo de dosificación a cada 9 o 12 horas en > 75 años (Máximo: 300 mg/día).",
+    "dosis_pediatrica": "1 a 2 mg/kg/dosis cada 6 u 8 horas en niños > 12 años.",
+    "dosis_lactantes": "Contraindicado en menores de 12 años."
+  },
+  {
+    "codigo_interno": "MED-028",
+    "nombre_comercial": "Claritin, Loratadina Genérico",
+    "categoria": "Antihistamínicos (2ª generación)",
+    "principios_activos": [
+      "Loratadina"
+    ],
+    "formas_farmaceuticas": [
+      "Tableta",
+      "Jarabe"
+    ],
+    "vias_administracion": [
+      "Oral"
+    ],
+    "laboratorios": [
+      "Schering-Plough",
+      "Medifarma",
+      "Portugal",
+      "IQFARMA"
+    ],
+    "dosis_adultos": "10 mg una vez al día.",
+    "dosis_adultos_mayores": "10 mg una vez al día (o cada 48 horas en insuficiencia hepática).",
+    "dosis_pediatrica": "Niños 2 a 12 años (> 30 kg): 10 mg/día. Niños 2 a 12 años (< 30 kg): 5 mg/día.",
+    "dosis_lactantes": "No recomendado en menores de 2 años."
+  }
+]

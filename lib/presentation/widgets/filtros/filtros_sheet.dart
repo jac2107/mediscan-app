@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:medicamentos_app/core/theme/app_fonts.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../core/search/filter_values.dart';
 import '../../../domain/entities/filtros.dart';
 import '../../providers/medicamentos_provider.dart';
 
@@ -97,6 +98,7 @@ class FiltrosSheet extends ConsumerWidget {
                     children: [
                       _FiltroMulti(
                         titulo: 'Categoría',
+                        campo: CampoFiltro.categoria,
                         opciones: opts['categorias'] ?? [],
                         seleccionados: filtros.categorias,
                         onToggle: notifier.toggleCategoria,
@@ -104,6 +106,7 @@ class FiltrosSheet extends ConsumerWidget {
                       const SizedBox(height: 20),
                       _FiltroMulti(
                         titulo: 'Principio activo',
+                        campo: CampoFiltro.principio,
                         opciones: opts['principios'] ?? [],
                         seleccionados: filtros.principiosActivos,
                         onToggle: notifier.togglePrincipio,
@@ -111,6 +114,7 @@ class FiltrosSheet extends ConsumerWidget {
                       const SizedBox(height: 20),
                       _FiltroMulti(
                         titulo: 'Forma farmacéutica',
+                        campo: CampoFiltro.forma,
                         opciones: opts['formas'] ?? [],
                         seleccionados: filtros.formasFarmaceuticas,
                         onToggle: notifier.toggleForma,
@@ -118,6 +122,7 @@ class FiltrosSheet extends ConsumerWidget {
                       const SizedBox(height: 20),
                       _FiltroMulti(
                         titulo: 'Vía de administración',
+                        campo: CampoFiltro.via,
                         opciones: opts['vias'] ?? [],
                         seleccionados: filtros.viasAdministracion,
                         onToggle: notifier.toggleVia,
@@ -125,6 +130,7 @@ class FiltrosSheet extends ConsumerWidget {
                       const SizedBox(height: 20),
                       _FiltroMulti(
                         titulo: 'Laboratorio',
+                        campo: CampoFiltro.laboratorio,
                         opciones: opts['laboratorios'] ?? [],
                         seleccionados: filtros.laboratorios,
                         onToggle: notifier.toggleLaboratorio,
@@ -175,12 +181,12 @@ class FiltrosSheet extends ConsumerWidget {
   }
 
   String _labelOrden(OrdenTipo orden) => switch (orden) {
-        OrdenTipo.relevancia => 'Relevancia',
-        OrdenTipo.nombreAZ => 'A → Z',
-        OrdenTipo.nombreZA => 'Z → A',
-        OrdenTipo.fechaReciente => 'Más reciente',
-        OrdenTipo.categoria => 'Categoría',
-      };
+    OrdenTipo.relevancia => 'Relevancia',
+    OrdenTipo.nombreAZ => 'A → Z',
+    OrdenTipo.nombreZA => 'Z → A',
+    OrdenTipo.fechaReciente => 'Más reciente',
+    OrdenTipo.categoria => 'Categoría',
+  };
 }
 
 class _Seccion extends StatelessWidget {
@@ -189,17 +195,17 @@ class _Seccion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: Text(
-          titulo,
-          style: AppFonts.inter(
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
-            color: AppTheme.muted,
-            letterSpacing: 0,
-          ),
-        ),
-      );
+    padding: const EdgeInsets.only(bottom: 10),
+    child: Text(
+      titulo,
+      style: AppFonts.inter(
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+        color: AppTheme.muted,
+        letterSpacing: 0,
+      ),
+    ),
+  );
 }
 
 class _GrupoSelector extends StatelessWidget {
@@ -218,7 +224,7 @@ class _GrupoSelector extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Con dosis informada. Puedes seleccionar varios grupos.',
+          'Con dosis o pauta registrada. Revisa las edades y restricciones en cada ficha. Puedes seleccionar varios grupos.',
           style: Theme.of(context).textTheme.bodySmall,
         ),
         const SizedBox(height: 8),
@@ -239,12 +245,14 @@ class _GrupoSelector extends StatelessWidget {
 
 class _FiltroMulti extends StatefulWidget {
   final String titulo;
+  final CampoFiltro campo;
   final List<String> opciones;
   final Set<String> seleccionados;
   final void Function(String) onToggle;
 
   const _FiltroMulti({
     required this.titulo,
+    required this.campo,
     required this.opciones,
     required this.seleccionados,
     required this.onToggle,
@@ -261,8 +269,9 @@ class _FiltroMultiState extends State<_FiltroMulti> {
   @override
   Widget build(BuildContext context) {
     if (widget.opciones.isEmpty) return const SizedBox.shrink();
-    final visibles =
-        _expandido ? widget.opciones : widget.opciones.take(_inicial).toList();
+    final visibles = _expandido
+        ? widget.opciones
+        : widget.opciones.take(_inicial).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -272,7 +281,10 @@ class _FiltroMultiState extends State<_FiltroMulti> {
           spacing: 8,
           runSpacing: 4,
           children: visibles.map((op) {
-            final selected = widget.seleccionados.contains(op);
+            final selected = widget.seleccionados.any(
+              (v) =>
+                  claveFiltro(v, widget.campo) == claveFiltro(op, widget.campo),
+            );
             return FilterChip(
               label: Text(op),
               selected: selected,

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import '../../../core/search/filter_values.dart';
 import 'package:drift/drift.dart';
 import 'package:drift_flutter/drift_flutter.dart';
 
@@ -183,11 +184,7 @@ class AppDatabase extends _$AppDatabase {
     final rows = await (select(medicamentosTable)
           ..where((t) => t.categoria.isNotNull()))
         .get();
-    final set = <String>{};
-    for (final r in rows) {
-      if (r.categoria != null) set.add(r.categoria!);
-    }
-    return set.toList()..sort();
+    return opcionesUnicas(rows.map((r) => r.categoria), CampoFiltro.categoria);
   }
 
   Future<List<String>> getPrincipiosActivos() async {

@@ -58,8 +58,8 @@ void main() {
     ]) {
       expect(tieneDosisInformada(value), false, reason: '$value');
     }
-    expect(tieneDosisInformada('Según criterio del profesional'), true);
-    expect(tieneDosisInformada('Texto de dosis de prueba'), true);
+    expect(tieneDosisInformada('Según criterio del profesional'), false);
+    expect(tieneDosisInformada('10 mg cada 8 horas'), true);
   });
   test('Precarga 100 fichas sin tabla retirada y mantiene dosis', () async {
     final db = AppDatabase.forTesting(NativeDatabase.memory());
@@ -121,9 +121,9 @@ void main() {
       await db.close();
     });
     for (final (id, adult, child, category) in [
-      ('a', 'Dato', 'No aplica', 'A'),
-      ('b', 'No corresponde', 'Dato', 'A'),
-      ('c', 'Dato', 'Dato', 'B'),
+      ('a', '10 mg cada 8 horas', 'No aplica', 'A'),
+      ('b', 'No corresponde', '10 mg cada 8 horas', 'A'),
+      ('c', '10 mg cada 8 horas', '10 mg cada 8 horas', 'B'),
       ('d', 'Sin información', '', 'A')
     ]) {
       await db.upsertMedicamento(MedicamentosTableCompanion(

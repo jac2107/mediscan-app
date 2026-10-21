@@ -1,4 +1,5 @@
 import '../../data/local/database/app_database.dart';
+import 'filter_values.dart';
 
 class FuzzySearch {
   // ── Normalización ───────────────────────────────────────────────────────────
@@ -41,7 +42,8 @@ class FuzzySearch {
 
   // ── Score de un campo vs query ──────────────────────────────────────────────
 
-  static double _scoreField(String? field, String normQuery, List<String> queryWords) {
+  static double _scoreField(
+      String? field, String normQuery, List<String> queryWords) {
     if (field == null || field.isEmpty || normQuery.isEmpty) return 0;
     final nf = normalize(field);
 
@@ -66,7 +68,8 @@ class FuzzySearch {
           s = 50;
         } else if (qw.length >= 4) {
           final dist = levenshtein(qw, fw);
-          if (dist == 1) s = 45;
+          if (dist == 1)
+            s = 45;
           else if (dist == 2 && qw.length >= 6) s = 30;
         }
         if (s > best) best = s;
@@ -93,28 +96,40 @@ class FuzzySearch {
     // principios_activos (peso 2.5 por elemento)
     for (final p in AppDatabase.jsonToList(med.principiosActivos)) {
       final s = _scoreField(p, q, words);
-      if (s > 0) { total += s * 2.5; break; } // primer match basta
+      if (s > 0) {
+        total += s * 2.5;
+        break;
+      } // primer match basta
     }
 
     // categoria (peso 1.5)
-    total += _scoreField(med.categoria, q, words) * 1.5;
+    total += _scoreField(textoCategorias(med.categoria), q, words) * 1.5;
 
     // indicaciones_tags (peso 1.0)
     for (final t in AppDatabase.jsonToList(med.indicacionesTags)) {
       final s = _scoreField(t, q, words);
-      if (s > 40) { total += s * 1.0; break; }
+      if (s > 40) {
+        total += s * 1.0;
+        break;
+      }
     }
 
     // laboratorios (peso 0.8)
     for (final l in AppDatabase.jsonToList(med.laboratorios)) {
       final s = _scoreField(l, q, words);
-      if (s > 50) { total += s * 0.8; break; }
+      if (s > 50) {
+        total += s * 0.8;
+        break;
+      }
     }
 
     // formas farmacéuticas (peso 0.5)
     for (final f in AppDatabase.jsonToList(med.formasFarmaceuticas)) {
       final s = _scoreField(f, q, words);
-      if (s > 60) { total += s * 0.5; break; }
+      if (s > 60) {
+        total += s * 0.5;
+        break;
+      }
     }
 
     return total;

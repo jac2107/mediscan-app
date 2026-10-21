@@ -1,2 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources><color name="launcher_background">#304B40</color></resources>
+<resources><color name="launcher_background">#304B40</color> <color name="farmafolio_launch_background">#FBF8EF</color>
+</resources>

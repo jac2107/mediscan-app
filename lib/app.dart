@@ -6,11 +6,14 @@ import 'presentation/providers/sync_provider.dart';
 import 'presentation/router/app_router.dart';
 
 class MedicamentosApp extends ConsumerWidget {
-  const MedicamentosApp({super.key});
+  final bool sincronizar;
+  const MedicamentosApp({super.key, this.sincronizar = true});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.watch(syncProvider); // activa el sync en background
+    if (sincronizar) {
+      ref.watch(syncProvider);
+    }
     final router = ref.watch(appRouterProvider);
     return MaterialApp.router(
       title: 'Farmafolio',

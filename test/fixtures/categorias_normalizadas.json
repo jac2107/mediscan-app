@@ -1,0 +1,763 @@
+[
+  {
+    "codigo_interno": "MED-080",
+    "antes": "Antiparasitarios y Antimicóticos (Imidazol)",
+    "despues": [
+      "Antiparasitarios",
+      "Antimicóticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-009",
+    "antes": "Analgésicos, Antiinflamatorios y Antipiréticos / Antiagregante plaquetario",
+    "despues": [
+      "Analgésicos",
+      "Antiinflamatorios",
+      "Antipiréticos",
+      "Antiagregantes plaquetarios"
+    ]
+  },
+  {
+    "codigo_interno": "MED-054",
+    "antes": "Hipoglucemiante / Sulfonilurea de segunda generación",
+    "despues": [
+      "Hipoglucemiantes"
+    ]
+  },
+  {
+    "codigo_interno": "MED-051",
+    "antes": "Anticoagulante oral / Antagonista de la Vitamina K",
+    "despues": [
+      "Anticoagulantes"
+    ]
+  },
+  {
+    "codigo_interno": "MED-088",
+    "antes": "Anestésico local / Antiarrítmico Clase IB",
+    "despues": [
+      "Anestésicos locales",
+      "Antiarrítmicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-029",
+    "antes": "Corticoides sintéticos",
+    "despues": [
+      "Corticoides"
+    ]
+  },
+  {
+    "codigo_interno": "MED-013",
+    "antes": "Antibióticos (Macrólidos)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-057",
+    "antes": "Hipoglucemiante parenteral / Análogo de insulina de acción prolongada (Basal)",
+    "despues": [
+      "Hipoglucemiantes"
+    ]
+  },
+  {
+    "codigo_interno": "MED-027",
+    "antes": "Antihistamínicos (2ª generación)",
+    "despues": [
+      "Antihistamínicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-055",
+    "antes": "Hipoglucemiante / Sulfonilurea de tercera generación",
+    "despues": [
+      "Hipoglucemiantes"
+    ]
+  },
+  {
+    "codigo_interno": "MED-095",
+    "antes": "Anticonceptivo hormonal inyectable trimestral (Progestágeno solo)",
+    "despues": [
+      "Anticonceptivos hormonales"
+    ]
+  },
+  {
+    "codigo_interno": "MED-073",
+    "antes": "Vitamina hidrosoluble / Antioxidante",
+    "despues": [
+      "Vitaminas",
+      "Antioxidantes"
+    ]
+  },
+  {
+    "codigo_interno": "MED-004",
+    "antes": "Analgésicos, Antiinflamatorios y Antipiréticos",
+    "despues": [
+      "Analgésicos",
+      "Antiinflamatorios",
+      "Antipiréticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-079",
+    "antes": "Antiparasitarios y Antimicóticos (Triazol)",
+    "despues": [
+      "Antiparasitarios",
+      "Antimicóticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-060",
+    "antes": "Ansiolítico / Anticonvulsivante / Miorrelajante (Benzodiazepina)",
+    "despues": [
+      "Ansiolíticos",
+      "Anticonvulsivantes",
+      "Relajantes musculares"
+    ]
+  },
+  {
+    "codigo_interno": "MED-100",
+    "antes": "Antigripal multisintomático / Analgésico, Antihistamínico y Descongestivo",
+    "despues": [
+      "Antigripales",
+      "Analgésicos",
+      "Antihistamínicos",
+      "Descongestionantes"
+    ]
+  },
+  {
+    "codigo_interno": "MED-066",
+    "antes": "Antiepiléptico de segunda generación",
+    "despues": [
+      "Antiepilépticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-010",
+    "antes": "Analgésicos, Antiinflamatorios y Antipiréticos (Combinados)",
+    "despues": [
+      "Analgésicos",
+      "Antiinflamatorios",
+      "Antipiréticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-071",
+    "antes": "Vitamina hidrosoluble / Factor antianémico",
+    "despues": [
+      "Vitaminas",
+      "Antianémicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-021",
+    "antes": "Antibióticos (Tetraciclinas)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-098",
+    "antes": "Antiespasmódico / Anticolinérgico amonio cuaternario",
+    "despues": [
+      "Antiespasmódicos",
+      "Anticolinérgicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-064",
+    "antes": "Anticonvulsivante / Antiepiléptico (Hidantoína)",
+    "despues": [
+      "Anticonvulsivantes",
+      "Antiepilépticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-017",
+    "antes": "Antibióticos (Cefalosporinas de 1ª generación)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-038",
+    "antes": "Antiulcerosos (Antagonista H2)",
+    "despues": [
+      "Antiulcerosos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-005",
+    "antes": "Analgésicos, Antiinflamatorios y Antipiréticos",
+    "despues": [
+      "Analgésicos",
+      "Antiinflamatorios",
+      "Antipiréticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-072",
+    "antes": "Suplemento Vitamínico neurotropo",
+    "despues": [
+      "Suplementos vitamínicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-031",
+    "antes": "Broncodilatadores (Agonista beta-2 de corta acción)",
+    "despues": [
+      "Broncodilatadores"
+    ]
+  },
+  {
+    "codigo_interno": "MED-092",
+    "antes": "Análogo sintético de la Prostaglandina E1 (PGE1) / Uterotónico y Protector gástrico",
+    "despues": [
+      "Uterotónicos",
+      "Protectores gástricos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-078",
+    "antes": "Antiparasitario / Antihelmíntico y Ectoparasiticida (Avermectina)",
+    "despues": [
+      "Antiparasitarios",
+      "Antihelmínticos",
+      "Ectoparasiticidas"
+    ]
+  },
+  {
+    "codigo_interno": "MED-014",
+    "antes": "Antibióticos (Fluoroquinolonas)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-067",
+    "antes": "Antidepresivo / Inhibidor Selectivo de la Recaptación de Serotonina (ISRS potente)",
+    "despues": [
+      "Antidepresivos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-091",
+    "antes": "Oxitócico / Hormona uterotónica sintética",
+    "despues": [
+      "Oxitócicos",
+      "Uterotónicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-025",
+    "antes": "Antibióticos (Sulfonamidas con trimetoprima)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-090",
+    "antes": "Solución electrolítica isotónica parenteral / Irrigador",
+    "despues": [
+      "Soluciones electrolíticas",
+      "Irrigadores"
+    ]
+  },
+  {
+    "codigo_interno": "MED-034",
+    "antes": "Antitusígenos",
+    "despues": [
+      "Antitusígenos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-077",
+    "antes": "Antihelmíntico de amplio espectro (Benzimidazol)",
+    "despues": [
+      "Antihelmínticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-026",
+    "antes": "Antihistamínicos (1ª generación)",
+    "despues": [
+      "Antihistamínicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-087",
+    "antes": "Ectoparasiticida / Escabicida y Pediculicida (Piretroide sintético)",
+    "despues": [
+      "Ectoparasiticidas",
+      "Escabicidas",
+      "Pediculicidas"
+    ]
+  },
+  {
+    "codigo_interno": "MED-036",
+    "antes": "Antiulcerosos (Inhibidor de la Bomba de Protones - IBP)",
+    "despues": [
+      "Antiulcerosos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-083",
+    "antes": "Tópicos y Otros Comunes",
+    "despues": [
+      "Tópicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-050",
+    "antes": "Hipolipemiante / Inhibidor de la HMG-CoA reductasa (Estatina de alta potencia)",
+    "despues": [
+      "Hipolipemiantes"
+    ]
+  },
+  {
+    "codigo_interno": "MED-043",
+    "antes": "Laxantes osmóticos",
+    "despues": [
+      "Laxantes"
+    ]
+  },
+  {
+    "codigo_interno": "MED-042",
+    "antes": "Antidiarreicos (Agonista opioide periférico)",
+    "despues": [
+      "Antidiarreicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-086",
+    "antes": "Antibacteriano tópico",
+    "despues": [
+      "Antibacterianos tópicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-015",
+    "antes": "Antibióticos (Fluoroquinolonas de 3ª generación)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-052",
+    "antes": "Antiagregante plaquetario / Inhibidor irreversible del receptor P2Y12 de ADP",
+    "despues": [
+      "Antiagregantes plaquetarios"
+    ]
+  },
+  {
+    "codigo_interno": "MED-076",
+    "antes": "Antihelmíntico de amplio espectro / Carbamato de benzimidazol",
+    "despues": [
+      "Antihelmínticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-030",
+    "antes": "Corticoides sintéticos",
+    "despues": [
+      "Corticoides"
+    ]
+  },
+  {
+    "codigo_interno": "MED-016",
+    "antes": "Antibióticos (Cefalosporinas de 3ª generación)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-089",
+    "antes": "Rehidratante oral / Repositor de electrólitos y fluidos",
+    "despues": [
+      "Rehidratantes",
+      "Reposición de electrólitos y fluidos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-019",
+    "antes": "Antibióticos / Antiparasitarios (Nitroimidazoles)",
+    "despues": [
+      "Antibióticos",
+      "Antiparasitarios"
+    ]
+  },
+  {
+    "codigo_interno": "MED-069",
+    "antes": "Antianémico / Suplemento de Hierro orgánico",
+    "despues": [
+      "Antianémicos",
+      "Suplementos de hierro"
+    ]
+  },
+  {
+    "codigo_interno": "MED-040",
+    "antes": "Antiácidos locales neutralizantes",
+    "despues": [
+      "Antiácidos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-056",
+    "antes": "Hipoglucemiante parenteral / Insulina de acción intermedia",
+    "despues": [
+      "Hipoglucemiantes"
+    ]
+  },
+  {
+    "codigo_interno": "MED-045",
+    "antes": "Antihipertensivos (IECA)",
+    "despues": [
+      "Antihipertensivos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-053",
+    "antes": "Antihiperglucemiante / Biguanida",
+    "despues": [
+      "Antihiperglucemiantes"
+    ]
+  },
+  {
+    "codigo_interno": "MED-046",
+    "antes": "Antihipertensivos (IECA de acción corta)",
+    "despues": [
+      "Antihipertensivos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-068",
+    "antes": "Antianémico / Suplemento de Hierro inorgánico (Hierro II)",
+    "despues": [
+      "Antianémicos",
+      "Suplementos de hierro"
+    ]
+  },
+  {
+    "codigo_interno": "MED-018",
+    "antes": "Antibióticos (Lincosamidas)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-012",
+    "antes": "Antibióticos (Betalactámicos con inhibidor de betalactamasas)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-059",
+    "antes": "Anticonvulsivante / Ansiolítico (Benzodiazepina de acción prolongada)",
+    "despues": [
+      "Anticonvulsivantes",
+      "Ansiolíticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-041",
+    "antes": "Antiflatulentos",
+    "despues": [
+      "Antiflatulentos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-074",
+    "antes": "Vitamina liposoluble / Regulador del metabolismo fosfocálcico",
+    "despues": [
+      "Vitaminas",
+      "Reguladores del metabolismo fosfocálcico"
+    ]
+  },
+  {
+    "codigo_interno": "MED-094",
+    "antes": "Anticonceptivo hormonal combinado continuo",
+    "despues": [
+      "Anticonceptivos hormonales"
+    ]
+  },
+  {
+    "codigo_interno": "MED-063",
+    "antes": "Antidepresivo Tricíclico (ATC) / Modulador del dolor neuropático",
+    "despues": [
+      "Antidepresivos",
+      "Moduladores del dolor neuropático"
+    ]
+  },
+  {
+    "codigo_interno": "MED-037",
+    "antes": "Antiulcerosos (Inhibidor de la Bomba de Protones - S-isómero)",
+    "despues": [
+      "Antiulcerosos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-011",
+    "antes": "Antibióticos (Betalactámicos / Penicilinas)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-099",
+    "antes": "Antimigrañoso / Agonista selectivo serotoninérgico (Alcaloide del cornezuelo)",
+    "despues": [
+      "Antimigrañosos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-047",
+    "antes": "Antihipertensivos (Bloqueador de canales de calcio)",
+    "despues": [
+      "Antihipertensivos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-097",
+    "antes": "Relajante muscular de acción central / Anticolinérgico",
+    "despues": [
+      "Relajantes musculares",
+      "Anticolinérgicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-075",
+    "antes": "Suplemento Mineral y Vitamínico / Remineralizante óseo",
+    "despues": [
+      "Suplementos minerales",
+      "Suplementos vitamínicos",
+      "Remineralizantes óseos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-023",
+    "antes": "Antibióticos (Aminoglucósidos)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-022",
+    "antes": "Antibióticos (Aminoglucósidos)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-044",
+    "antes": "Antihipertensivos (ARA II)",
+    "despues": [
+      "Antihipertensivos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-032",
+    "antes": "Corticoides inhalados / Nasales",
+    "despues": [
+      "Corticoides"
+    ]
+  },
+  {
+    "codigo_interno": "MED-006",
+    "antes": "Analgésicos, Antiinflamatorios y Antipiréticos",
+    "despues": [
+      "Analgésicos",
+      "Antiinflamatorios",
+      "Antipiréticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-048",
+    "antes": "Antihipertensivos / Antiarrítmicos (Betabloqueador β1)",
+    "despues": [
+      "Antihipertensivos",
+      "Antiarrítmicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-008",
+    "antes": "Analgésicos, Antiinflamatorios y Antipiréticos (Inhibidor selectivo COX-2)",
+    "despues": [
+      "Analgésicos",
+      "Antiinflamatorios",
+      "Antipiréticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-020",
+    "antes": "Antibióticos (Nitrofuranos / Antiséptico urinario)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-001",
+    "antes": "Analgésicos, Antiinflamatorios y Antipiréticos",
+    "despues": [
+      "Analgésicos",
+      "Antiinflamatorios",
+      "Antipiréticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-039",
+    "antes": "Antidiarreicos y protectores de la mucosa gástrica",
+    "despues": [
+      "Antidiarreicos",
+      "Protectores gástricos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-084",
+    "antes": "Tópicos y Otros Comunes (Corticoides potentes)",
+    "despues": [
+      "Tópicos",
+      "Corticoides"
+    ]
+  },
+  {
+    "codigo_interno": "MED-085",
+    "antes": "Tópicos y Otros Comunes",
+    "despues": [
+      "Tópicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-065",
+    "antes": "Antiepiléptico / Estabilizador del ánimo / Analgésico para dolor neuropático",
+    "despues": [
+      "Antiepilépticos",
+      "Estabilizadores del ánimo",
+      "Analgésicos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-035",
+    "antes": "Antigripales / Descongestionantes",
+    "despues": [
+      "Antigripales",
+      "Descongestionantes"
+    ]
+  },
+  {
+    "codigo_interno": "MED-093",
+    "antes": "Anticonceptivo hormonal de emergencia (Progestágeno)",
+    "despues": [
+      "Anticonceptivos hormonales"
+    ]
+  },
+  {
+    "codigo_interno": "MED-058",
+    "antes": "Ansiolítico / Benzodiazepina de acción corta-intermedia",
+    "despues": [
+      "Ansiolíticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-024",
+    "antes": "Antibióticos (Betalactámicos / Penicilinas de depósito)",
+    "despues": [
+      "Antibióticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-082",
+    "antes": "Antiparasitarios y Antimicóticos (Polieno)",
+    "despues": [
+      "Antiparasitarios",
+      "Antimicóticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-096",
+    "antes": "Hormona tiroidea sustitutiva",
+    "despues": [
+      "Hormonas tiroideas"
+    ]
+  },
+  {
+    "codigo_interno": "MED-062",
+    "antes": "Antidepresivo / Inhibidor Selectivo de la Recaptación de Serotonina (ISRS)",
+    "despues": [
+      "Antidepresivos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-070",
+    "antes": "Factor vitamínico antianémico / Suplemento nutricional",
+    "despues": [
+      "Vitaminas",
+      "Antianémicos",
+      "Suplementos nutricionales"
+    ]
+  },
+  {
+    "codigo_interno": "MED-033",
+    "antes": "Mucolíticos y expectorantes",
+    "despues": [
+      "Mucolíticos",
+      "Expectorantes"
+    ]
+  },
+  {
+    "codigo_interno": "MED-049",
+    "antes": "Diuréticos de asa",
+    "despues": [
+      "Diuréticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-081",
+    "antes": "Antiparasitarios y Antimicóticos (Imidazol)",
+    "despues": [
+      "Antiparasitarios",
+      "Antimicóticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-003",
+    "antes": "Analgésicos, Antiinflamatorios y Antipiréticos",
+    "despues": [
+      "Analgésicos",
+      "Antiinflamatorios",
+      "Antipiréticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-061",
+    "antes": "Antidepresivo / Inhibidor Selectivo de la Recaptación de Serotonina (ISRS)",
+    "despues": [
+      "Antidepresivos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-002",
+    "antes": "Analgésicos, Antiinflamatorios y Antipiréticos",
+    "despues": [
+      "Analgésicos",
+      "Antiinflamatorios",
+      "Antipiréticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-007",
+    "antes": "Analgésicos, Antiinflamatorios y Antipiréticos (Analgésico Opiáceo)",
+    "despues": [
+      "Analgésicos",
+      "Antiinflamatorios",
+      "Antipiréticos"
+    ]
+  },
+  {
+    "codigo_interno": "MED-028",
+    "antes": "Antihistamínicos (2ª generación)",
+    "despues": [
+      "Antihistamínicos"
+    ]
+  }
+]

@@ -1,3 +1,4 @@
+import '../../../core/search/filter_values.dart';
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../data/local/database/app_database.dart';
@@ -70,12 +71,14 @@ class MedicamentoCard extends StatelessWidget {
                           med.presentacion!,
                           style: theme.textTheme.bodyMedium,
                         ),
-                      if (med.categoria != null || vias.isNotEmpty)
+                      if (textoCategorias(med.categoria).isNotEmpty ||
+                          vias.isNotEmpty)
                         Padding(
                           padding: const EdgeInsets.only(top: 8),
                           child: Text(
                             [
-                              if (med.categoria != null) med.categoria!,
+                              if (textoCategorias(med.categoria).isNotEmpty)
+                                textoCategorias(med.categoria),
                               ...vias,
                             ].join(' · '),
                             style: theme.textTheme.bodySmall,

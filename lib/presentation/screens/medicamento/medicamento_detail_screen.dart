@@ -1,9 +1,12 @@
+import '../../../core/search/filter_values.dart';
+import 'dart:ui' show lerpDouble;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:medicamentos_app/core/theme/app_fonts.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../data/local/database/app_database.dart';
 import '../../providers/medicamentos_provider.dart';
+import '../../widgets/medicamento/image_viewer.dart';
 
 class MedicamentoDetailScreen extends ConsumerWidget {
   final String medicamentoId;
@@ -77,7 +80,6 @@ class _DetalleViewState extends ConsumerState<_DetalleView>
   @override
   Widget build(BuildContext context) {
     final med = widget.med;
-    final theme = Theme.of(context);
     final principios = AppDatabase.jsonToList(med.principiosActivos);
     final formas = AppDatabase.jsonToList(med.formasFarmaceuticas);
     final vias = AppDatabase.jsonToList(med.viasAdministracion);
@@ -112,63 +114,12 @@ class _DetalleViewState extends ConsumerState<_DetalleView>
       ),
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
-          SliverToBoxAdapter(
-            child: // Encabezado
-                Container(
-              decoration: const BoxDecoration(
-                color: AppTheme.bgMarfil,
-                border: Border(bottom: BorderSide(color: AppTheme.border)),
-              ),
-              padding: const EdgeInsets.fromLTRB(24, 16, 24, 16),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  FotoMedicamento(url: med.fotoUrl, size: 64),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          med.nombreComercial,
-                          style: AppFonts.lora(
-                            fontSize: 28,
-                            color: AppTheme.ink,
-                            height: 1.3,
-                          ),
-                        ),
-                        if (med.nombreGenerico != null) ...[
-                          const SizedBox(height: 2),
-                          Text(
-                            med.nombreGenerico!,
-                            style: theme.textTheme.bodySmall,
-                          ),
-                        ],
-                        if (med.categoria != null) ...[
-                          const SizedBox(height: 4),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 6,
-                              vertical: 2,
-                            ),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: AppTheme.border),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Text(
-                              med.categoria!,
-                              style: AppFonts.inter(
-                                fontSize: 13,
-                                color: AppTheme.muted,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+          SliverPersistentHeader(
+            pinned: false,
+            delegate: _ImagenEncabezado(
+              med: med,
+              textScaler: MediaQuery.textScalerOf(context),
+              width: MediaQuery.sizeOf(context).width,
             ),
           ),
         ],
@@ -351,6 +302,15 @@ class FotoMedicamento extends StatelessWidget {
             width: size,
             height: size,
             fit: BoxFit.contain,
+            loadingBuilder: (_, child, progress) => progress == null
+                ? child
+                : SizedBox(
+                    width: size,
+                    height: size,
+                    child: const Center(
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    ),
+                  ),
             errorBuilder: (_, __, ___) => _placeholder(),
           ),
         ),
@@ -379,4 +339,154 @@ class FotoMedicamento extends StatelessWidget {
           ),
         ),
       );
+}
+
+class _ImagenEncabezado extends SliverPersistentHeaderDelegate {
+  final MedicamentosTableData med;
+  final TextScaler textScaler;
+  final double width;
+  _ImagenEncabezado({
+    required this.med,
+    required this.textScaler,
+    required this.width,
+  });
+  double _textHeight(String text, TextStyle style, double maxWidth) {
+    final painter = TextPainter(
+      text: TextSpan(text: text, style: style),
+      textDirection: TextDirection.ltr,
+      textScaler: textScaler,
+    )..layout(maxWidth: maxWidth);
+    return painter.height;
+  }
+
+  @override
+  double get minExtent {
+    final available = (width - 128).clamp(80.0, double.infinity);
+    final title = _textHeight(
+      med.nombreComercial,
+      AppFonts.lora(fontSize: 28, height: 1.3),
+      available,
+    );
+    final generic = med.nombreGenerico == null
+        ? 0.0
+        : _textHeight(
+              med.nombreGenerico!,
+              AppFonts.inter(fontSize: 13, height: 1.4),
+              available,
+            ) +
+            4;
+    final category = textoCategorias(med.categoria).isEmpty
+        ? 0.0
+        : _textHeight(
+              textoCategorias(med.categoria),
+              AppFonts.inter(fontSize: 13, height: 1.4),
+              available - 16,
+            ) +
+            16;
+    return (title + generic + category).clamp(64.0, double.infinity) + 32;
+  }
+
+  @override
+  double get maxExtent => minExtent + 200;
+  @override
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
+    final t = (shrinkOffset / (maxExtent - minExtent)).clamp(0.0, 1.0);
+    final size = lerpDouble(180, 64, t)!;
+    return Material(
+      color: AppTheme.bgMarfil,
+      child: Container(
+        decoration: const BoxDecoration(
+          border: Border(bottom: BorderSide(color: AppTheme.border)),
+        ),
+        child: Stack(
+          clipBehavior: Clip.hardEdge,
+          children: [
+            Positioned(
+              left: lerpDouble((width - 180) / 2, 24, t),
+              top: 16,
+              width: size,
+              height: size,
+              child: med.fotoUrl == null || med.fotoUrl!.trim().isEmpty
+                  ? FotoMedicamento(size: size)
+                  : Tooltip(
+                      message: 'Ampliar imagen',
+                      child: Semantics(
+                        button: true,
+                        label: 'Ampliar imagen de ${med.nombreComercial}',
+                        child: InkWell(
+                          key: const Key('ampliar-imagen'),
+                          borderRadius: BorderRadius.circular(12),
+                          onTap: () => abrirImagenMedicamento(
+                            context,
+                            med.fotoUrl!,
+                            med.nombreComercial,
+                          ),
+                          child: FotoMedicamento(url: med.fotoUrl, size: size),
+                        ),
+                      ),
+                    ),
+            ),
+            Positioned(
+              left: lerpDouble(24, 104, t),
+              right: 24,
+              top: lerpDouble(212, 16, t),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    med.nombreComercial,
+                    style: AppFonts.lora(
+                      fontSize: 28,
+                      height: 1.3,
+                      color: AppTheme.ink,
+                    ),
+                  ),
+                  if (med.nombreGenerico != null) ...[
+                    const SizedBox(height: 4),
+                    Text(
+                      med.nombreGenerico!,
+                      style: AppFonts.inter(
+                        fontSize: 13,
+                        height: 1.4,
+                        color: AppTheme.muted,
+                      ),
+                    ),
+                  ],
+                  if (textoCategorias(med.categoria).isNotEmpty) ...[
+                    const SizedBox(height: 8),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 2,
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: AppTheme.border),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        textoCategorias(med.categoria),
+                        style: AppFonts.inter(
+                          fontSize: 13,
+                          height: 1.4,
+                          color: AppTheme.muted,
+                        ),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  bool shouldRebuild(covariant _ImagenEncabezado old) =>
+      old.med != med || old.width != width || old.textScaler != textScaler;
 }

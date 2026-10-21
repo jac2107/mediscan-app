@@ -3,6 +3,7 @@ import '../../core/search/fuzzy_search.dart';
 import '../../data/local/database/app_database.dart';
 import '../../domain/entities/filtros.dart';
 import '../../core/search/dosis_filter.dart';
+import '../../core/search/filter_values.dart';
 
 // ── Base de datos ─────────────────────────────────────────────────────────────
 
@@ -33,31 +34,69 @@ class FiltrosNotifier extends Notifier<Filtros> {
 
   void toggleCategoria(String cat) {
     final nuevo = Set<String>.from(state.categorias);
-    nuevo.contains(cat) ? nuevo.remove(cat) : nuevo.add(cat);
+    final key = claveFiltro(cat, CampoFiltro.categoria);
+    final existing = nuevo
+        .where((v) => claveFiltro(v, CampoFiltro.categoria) == key)
+        .toList();
+    if (existing.isEmpty) {
+      nuevo.add(cat);
+    } else {
+      nuevo.removeAll(existing);
+    }
     state = state.copyWith(categorias: nuevo);
   }
 
   void togglePrincipio(String p) {
     final nuevo = Set<String>.from(state.principiosActivos);
-    nuevo.contains(p) ? nuevo.remove(p) : nuevo.add(p);
+    final key = claveFiltro(p, CampoFiltro.principio);
+    final existing = nuevo
+        .where((v) => claveFiltro(v, CampoFiltro.principio) == key)
+        .toList();
+    if (existing.isEmpty) {
+      nuevo.add(p);
+    } else {
+      nuevo.removeAll(existing);
+    }
     state = state.copyWith(principiosActivos: nuevo);
   }
 
   void toggleForma(String f) {
     final nuevo = Set<String>.from(state.formasFarmaceuticas);
-    nuevo.contains(f) ? nuevo.remove(f) : nuevo.add(f);
+    final key = claveFiltro(f, CampoFiltro.forma);
+    final existing =
+        nuevo.where((v) => claveFiltro(v, CampoFiltro.forma) == key).toList();
+    if (existing.isEmpty) {
+      nuevo.add(f);
+    } else {
+      nuevo.removeAll(existing);
+    }
     state = state.copyWith(formasFarmaceuticas: nuevo);
   }
 
   void toggleVia(String v) {
     final nuevo = Set<String>.from(state.viasAdministracion);
-    nuevo.contains(v) ? nuevo.remove(v) : nuevo.add(v);
+    final key = claveFiltro(v, CampoFiltro.via);
+    final existing =
+        nuevo.where((v) => claveFiltro(v, CampoFiltro.via) == key).toList();
+    if (existing.isEmpty) {
+      nuevo.add(v);
+    } else {
+      nuevo.removeAll(existing);
+    }
     state = state.copyWith(viasAdministracion: nuevo);
   }
 
   void toggleLaboratorio(String l) {
     final nuevo = Set<String>.from(state.laboratorios);
-    nuevo.contains(l) ? nuevo.remove(l) : nuevo.add(l);
+    final key = claveFiltro(l, CampoFiltro.laboratorio);
+    final existing = nuevo
+        .where((v) => claveFiltro(v, CampoFiltro.laboratorio) == key)
+        .toList();
+    if (existing.isEmpty) {
+      nuevo.add(l);
+    } else {
+      nuevo.removeAll(existing);
+    }
     state = state.copyWith(laboratorios: nuevo);
   }
 
@@ -91,55 +130,51 @@ final resultadosBusquedaProvider = FutureProvider<List<MedicamentoConScore>>((
   // 1. Aplicar filtros duros
   List<MedicamentosTableData> filtrados = todos;
 
-  if (filtros.categorias.isNotEmpty) {
-    filtrados = filtrados
-        .where(
-          (m) =>
-              m.categoria != null && filtros.categorias.contains(m.categoria),
-        )
-        .toList();
-  }
+  filtrados = filtrados
+      .where(
+        (m) =>
+            coincideFiltro(
+              m.categoria,
+              filtros.categorias,
+              CampoFiltro.categoria,
+            ) &&
+            coincideFiltro(
+              m.principiosActivos,
+              filtros.principiosActivos,
+              CampoFiltro.principio,
+            ) &&
+            coincideFiltro(
+              m.formasFarmaceuticas,
+              filtros.formasFarmaceuticas,
+              CampoFiltro.forma,
+            ) &&
+            coincideFiltro(
+              m.viasAdministracion,
+              filtros.viasAdministracion,
+              CampoFiltro.via,
+            ) &&
+            coincideFiltro(
+              m.laboratorios,
+              filtros.laboratorios,
+              CampoFiltro.laboratorio,
+            ),
+      )
+      .toList();
 
-  if (filtros.principiosActivos.isNotEmpty) {
-    filtrados = filtrados.where((m) {
-      final lista = AppDatabase.jsonToList(m.principiosActivos);
-      return lista.any((p) => filtros.principiosActivos.contains(p));
-    }).toList();
-  }
-
-  if (filtros.formasFarmaceuticas.isNotEmpty) {
-    filtrados = filtrados.where((m) {
-      final lista = AppDatabase.jsonToList(m.formasFarmaceuticas);
-      return lista.any((f) => filtros.formasFarmaceuticas.contains(f));
-    }).toList();
-  }
-
-  if (filtros.viasAdministracion.isNotEmpty) {
-    filtrados = filtrados.where((m) {
-      final lista = AppDatabase.jsonToList(m.viasAdministracion);
-      return lista.any((v) => filtros.viasAdministracion.contains(v));
-    }).toList();
-  }
-
-  if (filtros.laboratorios.isNotEmpty) {
-    filtrados = filtrados.where((m) {
-      final lista = AppDatabase.jsonToList(m.laboratorios);
-      return lista.any((l) => filtros.laboratorios.contains(l));
-    }).toList();
-  }
-
-  // OR entre grupos: solo comprueba si la columna de dosis contiene datos.
+  // OR entre grupos con dosis o pauta documentada.
   if (filtros.gruposPaciente.isNotEmpty) {
     filtrados = filtrados
         .where(
           (m) => filtros.gruposPaciente.any(
-            (grupo) => tieneDosisInformada(switch (grupo) {
-              'adulto' => m.dosisAdultos,
-              'adulto_mayor' => m.dosisAdultosMayores,
-              'nino' => m.dosisPediatrica,
-              'lactante' => m.dosisLactantes,
-              _ => null,
-            }),
+            (grupo) => tieneDosisInformada(
+                switch (grupo) {
+                  'adulto' => m.dosisAdultos,
+                  'adulto_mayor' => m.dosisAdultosMayores,
+                  'nino' => m.dosisPediatrica,
+                  'lactante' => m.dosisLactantes,
+                  _ => null,
+                },
+                grupo: grupo),
           ),
         )
         .toList();
@@ -148,9 +183,7 @@ final resultadosBusquedaProvider = FutureProvider<List<MedicamentoConScore>>((
   // 2. Score fuzzy
   final umbral = filtros.query.trim().isEmpty ? 0.0 : 10.0;
   final conScore = filtrados
-      .map(
-        (m) => MedicamentoConScore(m, FuzzySearch.score(m, filtros.query)),
-      )
+      .map((m) => MedicamentoConScore(m, FuzzySearch.score(m, filtros.query)))
       .where((m) => m.score > umbral)
       .toList();
 
@@ -186,9 +219,9 @@ final resultadosBusquedaProvider = FutureProvider<List<MedicamentoConScore>>((
       );
     case OrdenTipo.categoria:
       conScore.sort(
-        (a, b) => (a.medicamento.categoria ?? '').compareTo(
-          b.medicamento.categoria ?? '',
-        ),
+        (a, b) => normalizarFiltro(textoCategorias(a.medicamento.categoria))
+            .compareTo(
+                normalizarFiltro(textoCategorias(b.medicamento.categoria))),
       );
   }
 
@@ -224,19 +257,27 @@ final medicamentoPorIdProvider =
 final opcionesFiltrosProvider = FutureProvider<Map<String, List<String>>>((
   ref,
 ) async {
-  final db = ref.watch(appDatabaseProvider);
-  final results = await Future.wait([
-    db.getCategorias(),
-    db.getPrincipiosActivos(),
-    db.getFormasFarmaceuticas(),
-    db.getViasAdministracion(),
-    db.getLaboratorios(),
-  ]);
+  final rows = await ref.watch(todosMedicamentosProvider.future);
   return {
-    'categorias': results[0],
-    'principios': results[1],
-    'formas': results[2],
-    'vias': results[3],
-    'laboratorios': results[4],
+    'categorias': opcionesUnicas(
+      rows.map((m) => m.categoria),
+      CampoFiltro.categoria,
+    ),
+    'principios': opcionesUnicas(
+      rows.map((m) => m.principiosActivos),
+      CampoFiltro.principio,
+    ),
+    'formas': opcionesUnicas(
+      rows.map((m) => m.formasFarmaceuticas),
+      CampoFiltro.forma,
+    ),
+    'vias': opcionesUnicas(
+      rows.map((m) => m.viasAdministracion),
+      CampoFiltro.via,
+    ),
+    'laboratorios': opcionesUnicas(
+      rows.map((m) => m.laboratorios),
+      CampoFiltro.laboratorio,
+    ),
   };
 });

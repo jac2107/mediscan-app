@@ -89,6 +89,9 @@ class SyncNotifier extends Notifier<EstadoSync> {
         // Sin cambios en catalog_changes → hacer sync completo inicial si primer arranque
         if (cursor == 0) {
           await _syncCompleto(db, client);
+          ref.invalidate(todosMedicamentosProvider);
+          ref.invalidate(favoritosProvider);
+          ref.invalidate(medicamentoPorIdProvider);
         }
         state = EstadoSync.actualizado;
         return;
@@ -118,6 +121,7 @@ class SyncNotifier extends Notifier<EstadoSync> {
 
       ref.invalidate(todosMedicamentosProvider);
       ref.invalidate(favoritosProvider);
+      ref.invalidate(medicamentoPorIdProvider);
       state = EstadoSync.actualizado;
     } catch (e, st) {
       print('SYNC ERROR: $e');
