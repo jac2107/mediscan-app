@@ -157,20 +157,26 @@ class SyncNotifier extends Notifier<EstadoSync> {
   Future<void> _aplicarUpsert(AppDatabase db, Map<String, dynamic> p) async {
     // Determinar URL de imagen
     String? fotoUrl;
-    if (p['foto_path'] != null && (p['foto_path'] as String).isNotEmpty) {
-      fotoUrl = Supabase.instance.client.storage
-          .from('medicamentos-publicos')
-          .getPublicUrl(p['foto_path'] as String);
-    } else if (p['medicamento_fuentes'] != null) {
-      final fuentes = p['medicamento_fuentes'];
-      if (fuentes is Map) {
-        fotoUrl = fuentes['imagen_origen_url'] as String?;
-      } else if (fuentes is List && fuentes.isNotEmpty) {
-        fotoUrl = fuentes.first['imagen_origen_url'] as String?;
-      }
-    } else if (p['foto_url_externa'] != null) {
-      fotoUrl = p['foto_url_externa'] as String?;
-    }
+final rawFoto = p['foto_path'] as String?;
+
+if (rawFoto != null && rawFoto.isNotEmpty) {
+  // Si ya es una URL completa, usarla directo
+  if (rawFoto.startsWith('http')) {
+    fotoUrl = rawFoto;
+  } else {
+    // Es un path de Storage, construir URL pública
+    fotoUrl = Supabase.instance.client.storage
+        .from('medicamentos-publicos')
+        .getPublicUrl(rawFoto);
+  }
+} else if (p['medicamento_fuentes'] != null) {
+  final fuentes = p['medicamento_fuentes'];
+  if (fuentes is Map) {
+    fotoUrl = fuentes['imagen_origen_url'] as String?;
+  } else if (fuentes is List && fuentes.isNotEmpty) {
+    fotoUrl = fuentes.first['imagen_origen_url'] as String?;
+  }
+}
 
     final _toJson = (dynamic v) {
       if (v == null) return '[]';
