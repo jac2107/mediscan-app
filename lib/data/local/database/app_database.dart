@@ -125,6 +125,27 @@ class AppDatabase extends _$AppDatabase {
     await into(medicamentosTable).insertOnConflictUpdate(companion);
   }
 
+  /// La lista proviene de una instantánea remota completada y validada.
+  /// Si falla una escritura, también se revierten las bajas locales.
+  Future<void> aplicarCatalogoPublico(List<MedicamentosTableCompanion> rows) =>
+      transaction(() async {
+        final ids = rows.map((row) => row.id.value).toSet();
+        if (ids.length != rows.length) {
+          throw const FormatException('El catálogo contiene IDs duplicados.');
+        }
+        for (final row in rows) {
+          await upsertMedicamento(row);
+        }
+        // Evita límites de parámetros SQLite para catálogos grandes.
+        final existing = await select(medicamentosTable).get();
+        for (final row in existing) {
+          if (!ids.contains(row.id)) {
+            await (delete(medicamentosTable)..where((t) => t.id.equals(row.id))).go();
+          }
+        }
+        await setSyncMeta('ultima_sync', DateTime.now().toIso8601String());
+      });
+
   Future<List<MedicamentosTableData>> getAllMedicamentos() =>
       (select(medicamentosTable)
             ..where(

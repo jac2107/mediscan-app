@@ -1,4 +1,4 @@
-import 'package:drift/drift.dart';
+import '../models/medicamento_model.dart';
 import 'package:medicamentos_app/data/local/database/app_database.dart';
 import 'package:medicamentos_app/data/remote/supabase/medicamentos_remote.dart';
 import 'package:medicamentos_app/domain/entities/medicamento.dart';
@@ -67,69 +67,11 @@ class MedicamentoRepositoryImpl implements MedicamentoRepository {
 
   @override
   Future<void> sincronizar() async {
-    try {
-      final remotos = await _remote.getAll();
-      for (final m in remotos) {
-        await _db.upsertMedicamento(_toCompanion(m));
-      }
-    } catch (_) {
-      // Sin internet — usa datos locales
-    }
-  }
-
-  MedicamentosTableCompanion _toCompanion(Map<String, dynamic> m) {
-    return MedicamentosTableCompanion(
-      id: Value(m['id'] as String),
-      codigoInterno: Value(m['codigo_interno'] as String),
-      nombreComercial: Value(m['nombre_comercial'] as String),
-      nombreGenerico: Value(m['nombre_generico'] as String?),
-      categoria: Value(m['categoria'] as String?),
-      laboratorios: Value(
-          AppDatabase.listToJson(_pgArrayToList(m['laboratorios']))),
-      descripcion: Value(m['descripcion'] as String?),
-      principiosActivos: Value(
-          AppDatabase.listToJson(_pgArrayToList(m['principios_activos']))),
-      composicionCompleta: Value(m['composicion_completa'] as String?),
-      concentraciones: Value(
-          AppDatabase.listToJson(_pgArrayToList(m['concentraciones']))),
-      formasFarmaceuticas: Value(
-          AppDatabase.listToJson(_pgArrayToList(m['formas_farmaceuticas']))),
-      presentacion: Value(m['presentacion'] as String?),
-      viasAdministracion: Value(
-          AppDatabase.listToJson(_pgArrayToList(m['vias_administracion']))),
-      indicacionesTexto: Value(m['indicaciones_texto'] as String?),
-      indicacionesTags: Value(
-          AppDatabase.listToJson(_pgArrayToList(m['indicaciones_tags']))),
-      contraindicaciones: Value(m['contraindicaciones'] as String?),
-      precaucionesAdvertencias: Value(m['precauciones_advertencias'] as String?),
-      efectosAdversos: Value(m['efectos_adversos'] as String?),
-      dosisAdultos: Value(m['dosis_adultos'] as String?),
-      dosisAdultosMayores: Value(m['dosis_adultos_mayores'] as String?),
-      dosisPediatrica: Value(m['dosis_pediatrica'] as String?),
-      dosisLactantes: Value(m['dosis_lactantes'] as String?),
-      fotoUrl: Value(m['foto_url_externa'] as String?),
-      fechaRevision: Value(m['fecha_revision'] as String?),
-      actualizadoEn: Value(m['actualizado_en'] as String?),
-      esFavorito: const Value(false),
-    );
-  }
-
-  // El JSON viene como "{val1,val2}" desde Supabase (formato PostgreSQL array)
-  static List<String> _pgArrayToList(dynamic value) {
-    if (value == null) return [];
-    if (value is List) return value.map((e) => e.toString()).toList();
-    final s = value.toString().trim();
-    if (s.startsWith('{') && s.endsWith('}')) {
-      final inner = s.substring(1, s.length - 1);
-      if (inner.isEmpty) return [];
-      // Maneja elementos con comillas: {"val con coma","otro"}
-      final result = <String>[];
-      final regex = RegExp(r'"([^"]*)"|((?:[^,])+)');
-      for (final m in regex.allMatches(inner)) {
-        result.add((m.group(1) ?? m.group(2) ?? '').trim());
-      }
-      return result;
-    }
-    return [s];
+    // Un error no sustituye la caché por una lista vacía.
+    final rows = await _remote.getAll();
+    final companions = rows.map((row) => MedicamentoModel.toCompanion(
+      row, publicImageUrl: _remote.publicImageUrl,
+    )).toList();
+    await _db.aplicarCatalogoPublico(companions);
   }
 }
