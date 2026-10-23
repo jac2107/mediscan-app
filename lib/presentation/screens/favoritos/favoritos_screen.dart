@@ -51,7 +51,7 @@ class FavoritosScreen extends ConsumerWidget {
           }
           return ListView.separated(
             itemCount: lista.length,
-            separatorBuilder: (_, __) => const Divider(height: 1, indent: 24),
+            separatorBuilder: (_, __) => const SizedBox.shrink(),
             itemBuilder: (context, index) {
               final med = lista[index];
               return MedicamentoCard(

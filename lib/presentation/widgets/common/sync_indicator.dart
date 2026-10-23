@@ -14,25 +14,25 @@ class SyncIndicator extends ConsumerWidget {
         : syncState;
     final (label, icon, color) = switch (sync) {
       EstadoSync.sincronizando => (
-          'Actualizando…',
-          Icons.sync_outlined,
-          AppTheme.muted,
-        ),
+        'Actualizando…',
+        Icons.sync_outlined,
+        AppTheme.muted,
+      ),
       EstadoSync.actualizado => (
-          'Catálogo actualizado',
-          Icons.check_circle_outline,
-          AppTheme.verde,
-        ),
+        'Catálogo actualizado',
+        Icons.check_circle_outline,
+        AppTheme.verde,
+      ),
       EstadoSync.offline => (
-          'Sin conexión',
-          Icons.wifi_off_outlined,
-          AppTheme.muted,
-        ),
+        'Sin conexión',
+        Icons.wifi_off_outlined,
+        AppTheme.muted,
+      ),
       EstadoSync.error => (
-          'No pudimos actualizar',
-          Icons.error_outline,
-          AppTheme.colorError,
-        ),
+        'No pudimos actualizar',
+        Icons.error_outline,
+        AppTheme.colorError,
+      ),
       _ => ('Catálogo local', Icons.inventory_2_outlined, AppTheme.muted),
     };
     return Tooltip(

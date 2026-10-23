@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../providers/voz_provider.dart';
 import '../../core/theme/app_theme.dart';
 
-class MainScaffold extends StatelessWidget {
+class MainScaffold extends ConsumerWidget {
   final Widget child;
   const MainScaffold({super.key, required this.child});
 
@@ -14,58 +16,69 @@ class MainScaffold extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final idx = _indexActual(context);
 
     return Scaffold(
       body: child,
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Divider(height: 1),
-          NavigationBar(
-            backgroundColor: AppTheme.bgMarfil,
-            surfaceTintColor: Colors.transparent,
-            elevation: 0,
-            selectedIndex: idx,
-            onDestinationSelected: (i) {
-              switch (i) {
-                case 0:
-                  context.go('/');
-                case 1:
-                  context.go('/favoritos');
-                case 2:
-                  context.go('/historial');
-              }
-            },
-            destinations: [
-              NavigationDestination(
-                icon: const Icon(Icons.search_rounded),
-                selectedIcon: const Icon(
-                  Icons.search_rounded,
-                  color: AppTheme.verde,
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(28),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                NavigationBar(
+                  backgroundColor: AppTheme.surface,
+                  surfaceTintColor: Colors.transparent,
+                  elevation: 0,
+                  selectedIndex: idx,
+                  onDestinationSelected: (i) {
+                    if (i != 0) {
+                      ref.read(vozProvider.notifier).cancelar();
+                    }
+                    switch (i) {
+                      case 0:
+                        context.go('/');
+                      case 1:
+                        context.go('/favoritos');
+                      case 2:
+                        context.go('/historial');
+                    }
+                  },
+                  destinations: [
+                    NavigationDestination(
+                      icon: const Icon(Icons.search_rounded),
+                      selectedIcon: const Icon(
+                        Icons.search_rounded,
+                        color: AppTheme.verde,
+                      ),
+                      label: 'Catálogo',
+                    ),
+                    NavigationDestination(
+                      icon: const Icon(Icons.star_outline_rounded),
+                      selectedIcon: const Icon(
+                        Icons.star_rounded,
+                        color: AppTheme.verde,
+                      ),
+                      label: 'Favoritos',
+                    ),
+                    NavigationDestination(
+                      icon: const Icon(Icons.history_rounded),
+                      selectedIcon: const Icon(
+                        Icons.history_rounded,
+                        color: AppTheme.verde,
+                      ),
+                      label: 'Historial',
+                    ),
+                  ],
                 ),
-                label: 'Catálogo',
-              ),
-              NavigationDestination(
-                icon: const Icon(Icons.star_outline_rounded),
-                selectedIcon: const Icon(
-                  Icons.star_rounded,
-                  color: AppTheme.verde,
-                ),
-                label: 'Favoritos',
-              ),
-              NavigationDestination(
-                icon: const Icon(Icons.history_rounded),
-                selectedIcon: const Icon(
-                  Icons.history_rounded,
-                  color: AppTheme.verde,
-                ),
-                label: 'Historial',
-              ),
-            ],
+              ],
+            ),
           ),
-        ],
+        ),
       ),
     );
   }

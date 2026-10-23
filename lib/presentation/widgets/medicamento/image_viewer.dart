@@ -26,63 +26,83 @@ Future<void> abrirImagenMedicamento(
       child: Dialog.fullscreen(
         backgroundColor: AppTheme.bgMarfil,
         child: SafeArea(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(24, 8, 8, 8),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Tooltip(
-                        message: nombre,
-                        child: Text(
-                          nombre,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: Theme.of(context).textTheme.titleLarge,
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Container(
+              key: const Key('visor-borde-verde'),
+              decoration: BoxDecoration(
+                color: AppTheme.card,
+                border: Border.all(color: AppTheme.verde, width: 2),
+                borderRadius: BorderRadius.circular(28),
+              ),
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(24, 8, 8, 8),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Tooltip(
+                            message: nombre,
+                            child: Text(
+                              nombre,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context).textTheme.titleLarge,
+                            ),
+                          ),
+                        ),
+                        IconButton(
+                          autofocus: true,
+                          style: IconButton.styleFrom(
+                            backgroundColor: AppTheme.surface,
+                            foregroundColor: AppTheme.verde,
+                            side: const BorderSide(color: AppTheme.verde),
+                          ),
+                          tooltip: 'Cerrar imagen',
+                          onPressed: () => Navigator.of(context).pop(),
+                          icon: const Icon(Icons.close_rounded),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Divider(height: 1),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(24),
+                      child: Center(
+                        child: Image.network(
+                          url,
+                          fit: BoxFit.contain,
+                          semanticLabel: 'Imagen ampliada de $nombre',
+                          loadingBuilder: (_, child, progress) =>
+                              progress == null
+                              ? child
+                              : const Center(
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                  ),
+                                ),
+                          errorBuilder: (_, __, ___) => const Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.broken_image_outlined,
+                                size: 48,
+                                color: AppTheme.muted,
+                              ),
+                              SizedBox(height: 16),
+                              Text('No pudimos cargar la imagen.'),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                    IconButton(
-                      autofocus: true,
-                      tooltip: 'Cerrar imagen',
-                      onPressed: () => Navigator.of(context).pop(),
-                      icon: const Icon(Icons.close_rounded),
-                    ),
-                  ],
-                ),
-              ),
-              const Divider(height: 1),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: Center(
-                    child: Image.network(
-                      url,
-                      fit: BoxFit.contain,
-                      semanticLabel: 'Imagen ampliada de $nombre',
-                      loadingBuilder: (_, child, progress) => progress == null
-                          ? child
-                          : const Center(
-                              child: CircularProgressIndicator(strokeWidth: 2),
-                            ),
-                      errorBuilder: (_, __, ___) => const Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            Icons.broken_image_outlined,
-                            size: 48,
-                            color: AppTheme.muted,
-                          ),
-                          SizedBox(height: 16),
-                          Text('No pudimos cargar la imagen.'),
-                        ],
-                      ),
-                    ),
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

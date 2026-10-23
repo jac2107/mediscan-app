@@ -21,7 +21,9 @@ import 'package:medicamentos_app/presentation/widgets/filtros/filtros_sheet.dart
 class VozEscuchando extends VozNotifier {
   @override
   VozState build() => const VozState(
-      estado: EstadoVoz.escuchando, textoReconocido: 'Nombre dictado');
+        estado: EstadoVoz.escuchando,
+        textoReconocido: 'Nombre dictado',
+      );
 }
 
 class OfflineSync extends SyncNotifier {
@@ -54,7 +56,7 @@ void main() {
       'NO CORRESPONDE.',
       'Sin información',
       'Sin informacion registrada',
-      'No aplicable.'
+      'No aplicable.',
     ]) {
       expect(tieneDosisInformada(value), false, reason: '$value');
     }
@@ -66,56 +68,74 @@ void main() {
     addTearDown(db.close);
     await SeedLoader(db).cargarSiVacio();
     expect(await db.getAllMedicamentos(), hasLength(100));
-    expect((await db.getAllMedicamentos()).any((m) => m.dosisAdultos != null),
-        true);
+    expect(
+      (await db.getAllMedicamentos()).any((m) => m.dosisAdultos != null),
+      true,
+    );
     final tables = await db
         .customSelect("SELECT name FROM sqlite_master WHERE type = 'table'")
         .get();
-    expect(tables.map((r) => r.read<String>('name')),
-        isNot(contains('medicamento_grupos')));
+    expect(
+      tables.map((r) => r.read<String>('name')),
+      isNot(contains('medicamento_grupos')),
+    );
     await SeedLoader(db).cargarSiVacio();
     expect(await db.getAllMedicamentos(), hasLength(100));
   });
-  test('Migración v3 a v4 conserva dosis, favoritos, historial y cursor',
-      () async {
-    final dir = await Directory.systemTemp.createTemp('farmafolio_migration');
-    addTearDown(() => dir.delete(recursive: true));
-    final file = File('${dir.path}/db.sqlite');
-    final old = AppDatabase.forTesting(NativeDatabase(file));
-    await old.upsertMedicamento(const MedicamentosTableCompanion(
-        id: Value('test'),
-        codigoInterno: Value('TEST'),
-        nombreComercial: Value('Ficha de prueba'),
-        dosisAdultos: Value('Dosis original'),
-        esFavorito: Value(true)));
-    await old.insertHistorial(HistorialTableCompanion(
-        id: const Value('h'),
-        medicamentoId: const Value('test'),
-        nombreSnapshot: const Value('Ficha de prueba'),
-        fecha: Value(DateTime(2026))));
-    await old.setSyncMeta('max_cursor', '15');
-    await old.customStatement(
-        'CREATE TABLE medicamento_grupos (medicamento_id TEXT, grupo TEXT, estado TEXT)');
-    await old.customStatement('PRAGMA user_version = 3');
-    await old.close();
-    final db = AppDatabase.forTesting(NativeDatabase(file));
-    addTearDown(db.close);
-    expect(
-        (await db.getMedicamentoById('test'))!.dosisAdultos, 'Dosis original');
-    expect(await db.getFavoritos(), hasLength(1));
-    expect(await db.getHistorial(), hasLength(1));
-    expect(await db.getSyncMeta('max_cursor'), '15');
-    expect(
+  test(
+    'Migración v3 a v4 conserva dosis, favoritos, historial y cursor',
+    () async {
+      final dir = await Directory.systemTemp.createTemp('farmafolio_migration');
+      addTearDown(() => dir.delete(recursive: true));
+      final file = File('${dir.path}/db.sqlite');
+      final old = AppDatabase.forTesting(NativeDatabase(file));
+      await old.upsertMedicamento(
+        const MedicamentosTableCompanion(
+          id: Value('test'),
+          codigoInterno: Value('TEST'),
+          nombreComercial: Value('Ficha de prueba'),
+          dosisAdultos: Value('Dosis original'),
+          esFavorito: Value(true),
+        ),
+      );
+      await old.insertHistorial(
+        HistorialTableCompanion(
+          id: const Value('h'),
+          medicamentoId: const Value('test'),
+          nombreSnapshot: const Value('Ficha de prueba'),
+          fecha: Value(DateTime(2026)),
+        ),
+      );
+      await old.setSyncMeta('max_cursor', '15');
+      await old.customStatement(
+        'CREATE TABLE medicamento_grupos (medicamento_id TEXT, grupo TEXT, estado TEXT)',
+      );
+      await old.customStatement('PRAGMA user_version = 3');
+      await old.close();
+      final db = AppDatabase.forTesting(NativeDatabase(file));
+      addTearDown(db.close);
+      expect(
+        (await db.getMedicamentoById('test'))!.dosisAdultos,
+        'Dosis original',
+      );
+      expect(await db.getFavoritos(), hasLength(1));
+      expect(await db.getHistorial(), hasLength(1));
+      expect(await db.getSyncMeta('max_cursor'), '15');
+      expect(
         await db
             .customSelect(
-                "SELECT name FROM sqlite_master WHERE name = 'medicamento_grupos'")
+              "SELECT name FROM sqlite_master WHERE name = 'medicamento_grupos'",
+            )
             .get(),
-        isEmpty);
-  });
+        isEmpty,
+      );
+    },
+  );
   test('Filtros por dosis combinan OR y respetan categoría con AND', () async {
     final db = AppDatabase.forTesting(NativeDatabase.memory());
     final container = ProviderContainer(
-        overrides: [appDatabaseProvider.overrideWithValue(db)]);
+      overrides: [appDatabaseProvider.overrideWithValue(db)],
+    );
     addTearDown(() async {
       container.dispose();
       await db.close();
@@ -124,146 +144,197 @@ void main() {
       ('a', '10 mg cada 8 horas', 'No aplica', 'A'),
       ('b', 'No corresponde', '10 mg cada 8 horas', 'A'),
       ('c', '10 mg cada 8 horas', '10 mg cada 8 horas', 'B'),
-      ('d', 'Sin información', '', 'A')
+      ('d', 'Sin información', '', 'A'),
     ]) {
-      await db.upsertMedicamento(MedicamentosTableCompanion(
+      await db.upsertMedicamento(
+        MedicamentosTableCompanion(
           id: Value(id),
           codigoInterno: Value(id),
           nombreComercial: Value(id),
           categoria: Value(category),
           dosisAdultos: Value(adult),
-          dosisPediatrica: Value(child)));
+          dosisPediatrica: Value(child),
+        ),
+      );
     }
     container.read(filtrosProvider.notifier).toggleGrupo('adulto');
     container.read(filtrosProvider.notifier).toggleGrupo('nino');
     container.read(filtrosProvider.notifier).toggleCategoria('A');
     expect(
-        (await container.read(resultadosBusquedaProvider.future))
-            .map((r) => r.medicamento.id),
-        ['a', 'b']);
+      (await container.read(
+        resultadosBusquedaProvider.future,
+      ))
+          .map((r) => r.medicamento.id),
+      ['a', 'b'],
+    );
   });
   final med = MedicamentosTableData(
-      id: 'test',
-      codigoInterno: 'TEST',
-      nombreComercial: 'Medicamento de prueba',
-      nombreGenerico: 'Nombre genérico',
-      categoria: 'Categoría de prueba',
-      laboratorios: '[]',
-      principiosActivos: '["Principio de prueba"]',
-      concentraciones: '["Presentación de prueba"]',
-      formasFarmaceuticas: '["Tabletas"]',
-      viasAdministracion: '["Oral"]',
-      indicacionesTags: '[]',
-      esFavorito: false,
-      dosisAdultos: 'Texto de dosis conservado.',
-      dosisPediatrica: 'Sin información');
+    id: 'test',
+    codigoInterno: 'TEST',
+    nombreComercial: 'Medicamento de prueba',
+    nombreGenerico: 'Nombre genérico',
+    categoria: 'Categoría de prueba',
+    laboratorios: '[]',
+    principiosActivos: '["Principio de prueba"]',
+    concentraciones: '["Presentación de prueba"]',
+    formasFarmaceuticas: '["Tabletas"]',
+    viasAdministracion: '["Oral"]',
+    indicacionesTags: '[]',
+    esFavorito: false,
+    dosisAdultos: 'Texto de dosis conservado.',
+    dosisPediatrica: 'Sin información',
+  );
 
   testWidgets(
-      'Catálogo: marca, búsqueda, vacío y filtros sin estados retirados',
-      (tester) async {
-    tester.view.physicalSize = const Size(390, 844);
-    tester.view.devicePixelRatio = 1;
-    addTearDown(tester.view.resetPhysicalSize);
-    addTearDown(tester.view.resetDevicePixelRatio);
-    await tester.pumpWidget(ProviderScope(overrides: [
-      syncProvider.overrideWith(OfflineSync.new),
-      isConnectedProvider.overrideWith((ref) => Stream.value(false)),
-      todosMedicamentosProvider.overrideWith((ref) async => [med]),
-      opcionesFiltrosProvider.overrideWith((ref) async => {
-            'categorias': ['Categoría de prueba']
-          }),
-      favoritosProvider.overrideWith((ref) async => [med]),
-      historialProvider.overrideWith((ref) async => []),
-    ], child: const MedicamentosApp()));
-    await tester.pumpAndSettle();
-    await tester.runAsync(() => precacheImage(
-        const AssetImage('assets/brand/farmafolio-logo.png'),
-        tester.element(find.byType(Scaffold).first)));
-    await tester.pumpAndSettle();
-    expect(find.bySemanticsLabel('Farmafolio'), findsOneWidget);
-    expect(find.text('Tu catálogo'), findsOneWidget);
-    expect(tester.takeException(), isNull);
-    await expectLater(
-        find.byType(MaterialApp), matchesGoldenFile('goldens/catalogo.png'));
-    await tester.enterText(find.byType(TextField), 'zzzzzzzz');
-    await tester.pumpAndSettle();
-    expect(find.text('No encontramos coincidencias'), findsOneWidget);
-    await tester.tap(find.byTooltip('Borrar búsqueda'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Filtros'));
-    await tester.pumpAndSettle();
-    expect(find.byType(FiltrosSheet), findsOneWidget);
-    expect(find.text('Estado de aplicabilidad:'), findsNothing);
-    await expectLater(
-        find.byType(MaterialApp), matchesGoldenFile('goldens/filtros.png'));
-    await tester.tap(find.byTooltip('Cerrar filtros'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Favoritos'));
-    await tester.pumpAndSettle();
-    await expectLater(
-        find.byType(MaterialApp), matchesGoldenFile('goldens/favoritos.png'));
-    await tester.tap(find.text('Historial'));
-    await tester.pumpAndSettle();
-    await expectLater(
-        find.byType(MaterialApp), matchesGoldenFile('goldens/historial.png'));
-    expect(tester.takeException(), isNull);
-  });
+    'Catálogo: marca, búsqueda, vacío y filtros sin estados retirados',
+    (tester) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            syncProvider.overrideWith(OfflineSync.new),
+            isConnectedProvider.overrideWith((ref) => Stream.value(false)),
+            todosMedicamentosProvider.overrideWith((ref) async => [med]),
+            opcionesFiltrosProvider.overrideWith(
+              (ref) async => {
+                'categorias': ['Categoría de prueba'],
+              },
+            ),
+            favoritosProvider.overrideWith((ref) async => [med]),
+            historialProvider.overrideWith((ref) async => []),
+          ],
+          child: const MedicamentosApp(),
+        ),
+      );
+      await tester.pumpAndSettle();
+      await tester.runAsync(
+        () => precacheImage(
+          const AssetImage('assets/brand/farmafolio-logo.png'),
+          tester.element(find.byType(Scaffold).first),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(find.bySemanticsLabel('Farmafolio'), findsOneWidget);
+      expect(find.text('Tu catálogo'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      await expectLater(
+        find.byType(MaterialApp),
+        matchesGoldenFile('goldens/catalogo.png'),
+      );
+      await tester.enterText(find.byType(TextField), 'zzzzzzzz');
+      await tester.pumpAndSettle();
+      expect(find.text('No encontramos coincidencias'), findsOneWidget);
+      await tester.tap(find.byTooltip('Borrar búsqueda'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Filtros'));
+      await tester.pumpAndSettle();
+      expect(find.byType(FiltrosSheet), findsOneWidget);
+      expect(find.text('Estado de aplicabilidad:'), findsNothing);
+      await expectLater(
+        find.byType(MaterialApp),
+        matchesGoldenFile('goldens/filtros.png'),
+      );
+      await tester.tap(find.byTooltip('Cerrar filtros'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Favoritos'));
+      await tester.pumpAndSettle();
+      await expectLater(
+        find.byType(MaterialApp),
+        matchesGoldenFile('goldens/favoritos.png'),
+      );
+      await tester.tap(find.text('Historial'));
+      await tester.pumpAndSettle();
+      await expectLater(
+        find.byType(MaterialApp),
+        matchesGoldenFile('goldens/historial.png'),
+      );
+      expect(tester.takeException(), isNull);
+    },
+  );
   testWidgets(
-      'Micrófono activo mantiene buscador y muestra controles de escucha',
-      (tester) async {
-    tester.view.physicalSize = const Size(390, 844);
-    tester.view.devicePixelRatio = 1;
-    addTearDown(tester.view.resetPhysicalSize);
-    addTearDown(tester.view.resetDevicePixelRatio);
-    await tester.pumpWidget(ProviderScope(
-        overrides: [
-          syncProvider.overrideWith(OfflineSync.new),
-          isConnectedProvider.overrideWith((ref) => Stream.value(false)),
-          vozProvider.overrideWith(VozEscuchando.new),
-          todosMedicamentosProvider.overrideWith((ref) async => [med]),
-        ],
-        child: MaterialApp(
+    'Micrófono activo mantiene buscador y muestra controles de escucha',
+    (tester) async {
+      tester.binding.platformDispatcher.accessibilityFeaturesTestValue =
+          const FakeAccessibilityFeatures(disableAnimations: true);
+      addTearDown(
+        tester.binding.platformDispatcher.clearAccessibilityFeaturesTestValue,
+      );
+
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            syncProvider.overrideWith(OfflineSync.new),
+            isConnectedProvider.overrideWith((ref) => Stream.value(false)),
+            vozProvider.overrideWith(VozEscuchando.new),
+            todosMedicamentosProvider.overrideWith((ref) async => [med]),
+          ],
+          child: MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: AppTheme.light,
-            home: const CatalogoScreen())));
-    await tester.pumpAndSettle();
-    await tester.runAsync(() => precacheImage(
-        const AssetImage('assets/brand/farmafolio-logo.png'),
-        tester.element(find.byType(Scaffold).first)));
-    await tester.pumpAndSettle();
-    expect(find.byTooltip('Finalizar dictado'), findsOneWidget);
-    expect(find.text('Cancelar dictado'), findsOneWidget);
-    await expectLater(
-        find.byType(MaterialApp), matchesGoldenFile('goldens/microfono.png'));
-    expect(tester.takeException(), isNull);
-  });
+            home: const CatalogoScreen(),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      await tester.runAsync(
+        () => precacheImage(
+          const AssetImage('assets/brand/farmafolio-logo.png'),
+          tester.element(find.byType(Scaffold).first),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(find.byTooltip('Finalizar dictado'), findsOneWidget);
+      expect(find.text('Cancelar dictado'), findsOneWidget);
+      await expectLater(
+        find.byType(MaterialApp),
+        matchesGoldenFile('goldens/microfono.png'),
+      );
+      expect(tester.takeException(), isNull);
+    },
+  );
   testWidgets(
-      'Ficha conserva tres pestañas y dosis; texto ampliado sin overflow',
-      (tester) async {
-    tester.view.physicalSize = const Size(390, 844);
-    tester.view.devicePixelRatio = 1;
-    addTearDown(tester.view.resetPhysicalSize);
-    addTearDown(tester.view.resetDevicePixelRatio);
-    await tester.pumpWidget(ProviderScope(
-        overrides: [
-          medicamentoPorIdProvider('test').overrideWith((ref) async => med),
-        ],
-        child: MaterialApp(
+    'Ficha conserva tres pestañas y dosis; texto ampliado sin overflow',
+    (tester) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            medicamentoPorIdProvider('test').overrideWith((ref) async => med),
+          ],
+          child: MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: AppTheme.light,
-            home: const MedicamentoDetailScreen(medicamentoId: 'test'))));
-    await tester.pumpAndSettle();
-    expect(find.text('Grupos'), findsNothing);
-    expect(find.text('Ficha'), findsOneWidget);
-    await expectLater(
-        find.byType(MaterialApp), matchesGoldenFile('goldens/ficha.png'));
-    await tester.tap(find.text('Dosis'));
-    await tester.pumpAndSettle();
-    expect(find.text('Texto de dosis conservado.'), findsOneWidget);
-    expect(tester.takeException(), isNull);
-    tester.platformDispatcher.textScaleFactorTestValue = 1.8;
-    addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
-    await tester.pumpAndSettle();
-    expect(tester.takeException(), isNull);
-  });
+            home: const MedicamentoDetailScreen(medicamentoId: 'test'),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(find.text('Grupos'), findsNothing);
+      expect(find.text('Ficha'), findsOneWidget);
+      await expectLater(
+        find.byType(MaterialApp),
+        matchesGoldenFile('goldens/ficha.png'),
+      );
+      await tester.tap(find.text('Dosis'));
+      await tester.pumpAndSettle();
+      expect(find.text('Texto de dosis conservado.'), findsOneWidget);
+      await expectLater(
+          find.byType(MaterialApp), matchesGoldenFile('goldens/dosis.png'));
+      expect(tester.takeException(), isNull);
+      tester.platformDispatcher.textScaleFactorTestValue = 1.8;
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+    },
+  );
 }

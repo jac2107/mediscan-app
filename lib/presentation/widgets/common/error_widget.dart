@@ -6,11 +6,7 @@ class AppErrorWidget extends StatelessWidget {
   final String mensaje;
   final VoidCallback? onReintentar;
 
-  const AppErrorWidget({
-    super.key,
-    required this.mensaje,
-    this.onReintentar,
-  });
+  const AppErrorWidget({super.key, required this.mensaje, this.onReintentar});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +17,11 @@ class AppErrorWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Icon(Icons.error_outline_rounded,
-                size: 28, color: AppTheme.colorError),
+            const Icon(
+              Icons.error_outline_rounded,
+              size: 28,
+              color: AppTheme.colorError,
+            ),
             const SizedBox(height: 12),
             Text(
               'Algo salió mal',
@@ -32,7 +31,10 @@ class AppErrorWidget extends StatelessWidget {
             Text(
               mensaje,
               style: AppFonts.inter(
-                  fontSize: 14, color: AppTheme.muted, height: 1.5),
+                fontSize: 14,
+                color: AppTheme.muted,
+                height: 1.5,
+              ),
             ),
             if (onReintentar != null) ...[
               const SizedBox(height: 20),

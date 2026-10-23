@@ -21,10 +21,7 @@ class LoadingWidget extends StatelessWidget {
           ),
           if (mensaje != null) ...[
             const SizedBox(height: 16),
-            Text(
-              mensaje!,
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
+            Text(mensaje!, style: Theme.of(context).textTheme.bodySmall),
           ],
         ],
       ),

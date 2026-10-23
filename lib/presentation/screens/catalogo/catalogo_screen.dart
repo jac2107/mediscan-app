@@ -12,6 +12,7 @@ import '../../providers/connectivity_provider.dart';
 import '../../widgets/filtros/filtros_sheet.dart';
 import '../../widgets/medicamento/medicamento_card.dart';
 import '../../widgets/common/brand_mark.dart';
+import '../../widgets/common/voice_panel.dart';
 import '../../widgets/common/editorial_notice.dart';
 import '../../widgets/common/sync_indicator.dart';
 
@@ -45,7 +46,9 @@ class _CatalogoScreenState extends ConsumerState<CatalogoScreen> {
   }
 
   Future<void> _abrirDetalle(MedicamentosTableData med) async {
-    await ref.read(appDatabaseProvider).insertHistorial(
+    await ref
+        .read(appDatabaseProvider)
+        .insertHistorial(
           HistorialTableCompanion(
             id: Value(_uuid.v4()),
             medicamentoId: Value(med.id),
@@ -55,20 +58,24 @@ class _CatalogoScreenState extends ConsumerState<CatalogoScreen> {
           ),
         );
     ref.invalidate(historialProvider);
+    if (!mounted) return;
+    await ref.read(vozProvider.notifier).cancelar();
     if (mounted) context.push('/medicamento/${med.id}');
   }
 
   Future<void> _iniciarVoz() async {
-    await ref.read(vozProvider.notifier).iniciarEscucha(
-      onResultado: (texto) {
-        if (!mounted) return;
-        _ctrl.value = TextEditingValue(
-          text: texto,
-          selection: TextSelection.collapsed(offset: texto.length),
+    await ref
+        .read(vozProvider.notifier)
+        .iniciarEscucha(
+          onResultado: (texto) {
+            if (!mounted) return;
+            _ctrl.value = TextEditingValue(
+              text: texto,
+              selection: TextSelection.collapsed(offset: texto.length),
+            );
+            _onQuery(texto);
+          },
         );
-        _onQuery(texto);
-      },
-    );
   }
 
   void _mostrarFiltros() {
@@ -92,6 +99,7 @@ class _CatalogoScreenState extends ConsumerState<CatalogoScreen> {
     final theme = Theme.of(context);
     final escuchando = voz.estado == EstadoVoz.escuchando;
     final iniciando = voz.estado == EstadoVoz.inicializando;
+    final procesando = voz.estado == EstadoVoz.procesando;
     final total = filtros.totalFiltrosActivos;
     final notifier = ref.read(filtrosProvider.notifier);
     final chips = <Widget>[];
@@ -168,7 +176,7 @@ class _CatalogoScreenState extends ConsumerState<CatalogoScreen> {
                   Text('Buscar medicamento', style: theme.textTheme.labelLarge),
                   const SizedBox(height: 8),
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Expanded(
                         child: TextField(
@@ -192,72 +200,60 @@ class _CatalogoScreenState extends ConsumerState<CatalogoScreen> {
                         ),
                       ),
                       const SizedBox(width: 8),
-                      AnimatedContainer(
-                        duration: MediaQuery.of(context).disableAnimations
-                            ? Duration.zero
-                            : const Duration(milliseconds: 180),
-                        decoration: BoxDecoration(
-                          color: escuchando ? AppTheme.verde : AppTheme.surface,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: IconButton(
-                          tooltip: escuchando
-                              ? 'Finalizar dictado'
-                              : 'Dictar nombre del medicamento',
-                          constraints: const BoxConstraints(
-                            minWidth: 52,
-                            minHeight: 56,
-                          ),
-                          onPressed: iniciando
-                              ? null
-                              : escuchando
-                                  ? () =>
-                                      ref.read(vozProvider.notifier).detener()
-                                  : _iniciarVoz,
-                          icon: iniciando
-                              ? const SizedBox(
-                                  width: 20,
-                                  height: 20,
-                                  child: CircularProgressIndicator(
-                                    strokeWidth: 2,
-                                  ),
-                                )
-                              : Icon(
-                                  escuchando
-                                      ? Icons.stop_circle_outlined
-                                      : Icons.mic_none_outlined,
-                                  color: escuchando
-                                      ? AppTheme.bgMarfil
-                                      : AppTheme.verde,
-                                ),
-                        ),
+                      VoiceButton(
+                        listening: escuchando,
+                        busy: iniciando || procesando,
+                        onPressed: escuchando
+                            ? () => ref.read(vozProvider.notifier).detener()
+                            : _iniciarVoz,
                       ),
                     ],
                   ),
-                  if (escuchando || iniciando || voz.mensajeError != null) ...[
-                    const SizedBox(height: 12),
-                    EditorialNotice(
-                      icon: escuchando
-                          ? Icons.mic_none_outlined
-                          : Icons.info_outline,
-                      color: voz.estado == EstadoVoz.error
-                          ? AppTheme.colorError
-                          : AppTheme.verde,
-                      busy: iniciando,
-                      message: iniciando
-                          ? 'Preparando el micrófono…'
-                          : escuchando
-                              ? 'Escuchando… Di el nombre del medicamento.${voz.textoReconocido.isEmpty ? '' : '\n${voz.textoReconocido}'}'
-                              : voz.mensajeError!,
-                      action: escuchando
-                          ? TextButton(
-                              onPressed: () =>
-                                  ref.read(vozProvider.notifier).cancelar(),
-                              child: const Text('Cancelar dictado'),
-                            )
-                          : null,
+                  AnimatedSize(
+                    duration: MediaQuery.disableAnimationsOf(context)
+                        ? Duration.zero
+                        : const Duration(milliseconds: 200),
+                    alignment: Alignment.topCenter,
+                    child: Column(
+                      children: [
+                        if (escuchando) ...[
+                          const SizedBox(height: 12),
+                          VoicePanel(
+                            transcript: voz.textoReconocido,
+                            level: voz.nivelSonido,
+                            onCancel: () =>
+                                ref.read(vozProvider.notifier).cancelar(),
+                          ),
+                        ] else if (iniciando ||
+                            procesando ||
+                            voz.mensajeError != null) ...[
+                          const SizedBox(height: 12),
+                          EditorialNotice(
+                            icon: procesando
+                                ? Icons.search_outlined
+                                : Icons.mic_none_outlined,
+                            color: voz.mensajeError != null
+                                ? AppTheme.colorError
+                                : AppTheme.verde,
+                            busy: iniciando || procesando,
+                            message: iniciando
+                                ? 'Preparando el micrófono…'
+                                : procesando
+                                ? 'Procesando dictado…'
+                                : voz.mensajeError!,
+                            action: iniciando || procesando
+                                ? TextButton(
+                                    onPressed: () => ref
+                                        .read(vozProvider.notifier)
+                                        .cancelar(),
+                                    child: const Text('Cancelar dictado'),
+                                  )
+                                : null,
+                          ),
+                        ],
+                      ],
                     ),
-                  ],
+                  ),
                   const SizedBox(height: 12),
                   Wrap(
                     spacing: 8,

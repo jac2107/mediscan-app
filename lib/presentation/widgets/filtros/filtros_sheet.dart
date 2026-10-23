@@ -76,10 +76,10 @@ class FiltrosSheet extends ConsumerWidget {
                       label: Text(_labelOrden(orden)),
                       selected: selected,
                       onSelected: (_) => notifier.setOrden(orden),
-                      selectedColor: AppTheme.surface,
+                      selectedColor: AppTheme.verde,
                       labelStyle: AppFonts.inter(
                         fontSize: 13,
-                        color: selected ? AppTheme.verde : AppTheme.ink,
+                        color: selected ? AppTheme.bgMarfil : AppTheme.ink,
                       ),
                     );
                   }).toList(),
@@ -289,10 +289,10 @@ class _FiltroMultiState extends State<_FiltroMulti> {
               label: Text(op),
               selected: selected,
               onSelected: (_) => widget.onToggle(op),
-              selectedColor: AppTheme.surface,
+              selectedColor: AppTheme.verde,
               labelStyle: AppFonts.inter(
                 fontSize: 13,
-                color: selected ? AppTheme.verde : AppTheme.ink,
+                color: selected ? AppTheme.bgMarfil : AppTheme.ink,
               ),
             );
           }).toList(),

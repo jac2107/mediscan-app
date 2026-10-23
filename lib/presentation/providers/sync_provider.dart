@@ -20,21 +20,36 @@ class SyncNotifier extends Notifier<EstadoSync> with WidgetsBindingObserver {
   @override
   EstadoSync build() {
     _disposed = false;
-    _initial = Timer(const Duration(seconds: 3), () => unawaited(_sincronizar()));
+    _initial = Timer(
+      const Duration(seconds: 3),
+      () => unawaited(_sincronizar()),
+    );
     ref.listen(isConnectedProvider, (prev, next) {
       next.whenData((online) {
         if (online && prev?.value == false) unawaited(_sincronizar());
       });
     });
-    _timer = Timer.periodic(const Duration(minutes: 1), (_) => unawaited(_sincronizar()));
+    _timer = Timer.periodic(
+      const Duration(minutes: 1),
+      (_) => unawaited(_sincronizar()),
+    );
     WidgetsBinding.instance.addObserver(this);
     final client = Supabase.instance.client;
-    final channel = client.channel('medicamentos_changes')
-      .onPostgresChanges(event: PostgresChangeEvent.all, schema: 'public',
-        table: 'medicamentos', callback: (_) => unawaited(_sincronizar()))
-      .onPostgresChanges(event: PostgresChangeEvent.all, schema: 'public',
-        table: 'catalog_changes', callback: (_) => unawaited(_sincronizar()))
-      .subscribe();
+    final channel = client
+        .channel('medicamentos_changes')
+        .onPostgresChanges(
+          event: PostgresChangeEvent.all,
+          schema: 'public',
+          table: 'medicamentos',
+          callback: (_) => unawaited(_sincronizar()),
+        )
+        .onPostgresChanges(
+          event: PostgresChangeEvent.all,
+          schema: 'public',
+          table: 'catalog_changes',
+          callback: (_) => unawaited(_sincronizar()),
+        )
+        .subscribe();
     ref.onDispose(() {
       _disposed = true;
       _initial?.cancel();
@@ -52,7 +67,10 @@ class SyncNotifier extends Notifier<EstadoSync> with WidgetsBindingObserver {
 
   Future<void> _sincronizar() async {
     if (_disposed) return;
-    if (_running) { _pending = true; return; }
+    if (_running) {
+      _pending = true;
+      return;
+    }
     _running = true;
     try {
       do {
@@ -74,12 +92,17 @@ class SyncNotifier extends Notifier<EstadoSync> with WidgetsBindingObserver {
       debugPrint('No se pudo sincronizar el catálogo: $error\n$stack');
       if (!_disposed) {
         state = ref.read(isConnectedProvider).value == false
-            ? EstadoSync.offline : EstadoSync.error;
+            ? EstadoSync.offline
+            : EstadoSync.error;
       }
-    } finally { _running = false; }
+    } finally {
+      _running = false;
+    }
   }
 
   void syncManual() => unawaited(_sincronizar());
 }
 
-final syncProvider = NotifierProvider<SyncNotifier, EstadoSync>(SyncNotifier.new);
+final syncProvider = NotifierProvider<SyncNotifier, EstadoSync>(
+  SyncNotifier.new,
+);

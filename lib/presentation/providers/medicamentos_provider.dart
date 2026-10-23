@@ -63,8 +63,9 @@ class FiltrosNotifier extends Notifier<Filtros> {
   void toggleForma(String f) {
     final nuevo = Set<String>.from(state.formasFarmaceuticas);
     final key = claveFiltro(f, CampoFiltro.forma);
-    final existing =
-        nuevo.where((v) => claveFiltro(v, CampoFiltro.forma) == key).toList();
+    final existing = nuevo
+        .where((v) => claveFiltro(v, CampoFiltro.forma) == key)
+        .toList();
     if (existing.isEmpty) {
       nuevo.add(f);
     } else {
@@ -76,8 +77,9 @@ class FiltrosNotifier extends Notifier<Filtros> {
   void toggleVia(String v) {
     final nuevo = Set<String>.from(state.viasAdministracion);
     final key = claveFiltro(v, CampoFiltro.via);
-    final existing =
-        nuevo.where((v) => claveFiltro(v, CampoFiltro.via) == key).toList();
+    final existing = nuevo
+        .where((v) => claveFiltro(v, CampoFiltro.via) == key)
+        .toList();
     if (existing.isEmpty) {
       nuevo.add(v);
     } else {
@@ -166,15 +168,13 @@ final resultadosBusquedaProvider = FutureProvider<List<MedicamentoConScore>>((
     filtrados = filtrados
         .where(
           (m) => filtros.gruposPaciente.any(
-            (grupo) => tieneDosisInformada(
-                switch (grupo) {
-                  'adulto' => m.dosisAdultos,
-                  'adulto_mayor' => m.dosisAdultosMayores,
-                  'nino' => m.dosisPediatrica,
-                  'lactante' => m.dosisLactantes,
-                  _ => null,
-                },
-                grupo: grupo),
+            (grupo) => tieneDosisInformada(switch (grupo) {
+              'adulto' => m.dosisAdultos,
+              'adulto_mayor' => m.dosisAdultosMayores,
+              'nino' => m.dosisPediatrica,
+              'lactante' => m.dosisLactantes,
+              _ => null,
+            }, grupo: grupo),
           ),
         )
         .toList();
@@ -219,9 +219,9 @@ final resultadosBusquedaProvider = FutureProvider<List<MedicamentoConScore>>((
       );
     case OrdenTipo.categoria:
       conScore.sort(
-        (a, b) => normalizarFiltro(textoCategorias(a.medicamento.categoria))
-            .compareTo(
-                normalizarFiltro(textoCategorias(b.medicamento.categoria))),
+        (a, b) => normalizarFiltro(
+          textoCategorias(a.medicamento.categoria),
+        ).compareTo(normalizarFiltro(textoCategorias(b.medicamento.categoria))),
       );
   }
 
@@ -248,9 +248,9 @@ final historialProvider = FutureProvider<List<HistorialTableData>>((ref) async {
 
 final medicamentoPorIdProvider =
     FutureProvider.family<MedicamentosTableData?, String>((ref, id) async {
-  final db = ref.watch(appDatabaseProvider);
-  return db.getMedicamentoById(id);
-});
+      final db = ref.watch(appDatabaseProvider);
+      return db.getMedicamentoById(id);
+    });
 
 // ── Opciones para filtros ─────────────────────────────────────────────────────
 

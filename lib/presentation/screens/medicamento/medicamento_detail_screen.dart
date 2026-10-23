@@ -7,6 +7,8 @@ import '../../../core/theme/app_theme.dart';
 import '../../../data/local/database/app_database.dart';
 import '../../providers/medicamentos_provider.dart';
 import '../../widgets/medicamento/image_viewer.dart';
+import '../../widgets/medicamento/dosis_tab.dart';
+import '../../widgets/common/favorite_button.dart';
 
 class MedicamentoDetailScreen extends ConsumerWidget {
   final String medicamentoId;
@@ -90,16 +92,8 @@ class _DetalleViewState extends ConsumerState<_DetalleView>
       appBar: AppBar(
         title: const Text('Ficha del medicamento'),
         actions: [
-          IconButton(
-            tooltip:
-                med.esFavorito ? 'Quitar de favoritos' : 'Guardar en favoritos',
-            icon: Icon(
-              med.esFavorito ? Icons.star_rounded : Icons.star_outline_rounded,
-              size: 20,
-              color: med.esFavorito ? AppTheme.verde : AppTheme.muted,
-            ),
-            onPressed: _toggleFavorito,
-          ),
+          FavoriteButton(selected: med.esFavorito, onPressed: _toggleFavorito),
+          const SizedBox(width: 8),
         ],
         bottom: TabBar(
           controller: _tabs,
@@ -156,18 +150,12 @@ class _DetalleViewState extends ConsumerState<_DetalleView>
               ],
             ),
 
-            // Tab 2: Dosis
-            ListView(
-              padding: const EdgeInsets.symmetric(vertical: 8),
-              children: [
-                _FilaDosis('Adultos', med.dosisAdultos),
-                const Divider(height: 1, indent: 24),
-                _FilaDosis('Adultos mayores', med.dosisAdultosMayores),
-                const Divider(height: 1, indent: 24),
-                _FilaDosis('Niños', med.dosisPediatrica),
-                const Divider(height: 1, indent: 24),
-                _FilaDosis('Lactantes', med.dosisLactantes),
-              ],
+            // Tab 2: Dosis — tarjetas compartidas, texto íntegro sin reinterpretarlo.
+            DosisTab(
+              adultos: med.dosisAdultos,
+              mayores: med.dosisAdultosMayores,
+              pediatrica: med.dosisPediatrica,
+              lactantes: med.dosisLactantes,
             ),
 
             // Tab 3: Seguridad
@@ -248,40 +236,6 @@ class _InfoBloque extends StatelessWidget {
   }
 }
 
-class _FilaDosis extends StatelessWidget {
-  final String grupo;
-  final String? dosis;
-  const _FilaDosis(this.grupo, this.dosis);
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            grupo,
-            style: theme.textTheme.labelMedium?.copyWith(color: AppTheme.muted),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            dosis == null || dosis!.trim().isEmpty
-                ? 'Sin información registrada'
-                : dosis!,
-            style: theme.textTheme.bodyLarge?.copyWith(
-              color: dosis == null ? AppTheme.muted : AppTheme.ink,
-              fontStyle: FontStyle.normal,
-              height: 1.6,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 // ── Foto reutilizable ─────────────────────────────────────────────────────────
 
 class FotoMedicamento extends StatelessWidget {
@@ -296,7 +250,7 @@ class FotoMedicamento extends StatelessWidget {
         label: 'Fotografía del medicamento',
         image: true,
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(20),
           child: Image.network(
             url!,
             width: size,
@@ -320,25 +274,25 @@ class FotoMedicamento extends StatelessWidget {
   }
 
   Widget _placeholder() => Tooltip(
-        message: 'Fotografía no disponible',
-        child: Semantics(
-          label: 'Fotografía no disponible',
-          child: Container(
-            width: size,
-            height: size,
-            decoration: BoxDecoration(
-              color: AppTheme.surface,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: AppTheme.border),
-            ),
-            child: Icon(
-              Icons.medication_outlined,
-              size: size * 0.4,
-              color: AppTheme.muted,
-            ),
-          ),
+    message: 'Fotografía no disponible',
+    child: Semantics(
+      label: 'Fotografía no disponible',
+      child: Container(
+        width: size,
+        height: size,
+        decoration: BoxDecoration(
+          color: AppTheme.surface,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: AppTheme.border),
         ),
-      );
+        child: Icon(
+          Icons.medication_outlined,
+          size: size * 0.4,
+          color: AppTheme.muted,
+        ),
+      ),
+    ),
+  );
 }
 
 class _ImagenEncabezado extends SliverPersistentHeaderDelegate {
@@ -370,19 +324,19 @@ class _ImagenEncabezado extends SliverPersistentHeaderDelegate {
     final generic = med.nombreGenerico == null
         ? 0.0
         : _textHeight(
-              med.nombreGenerico!,
-              AppFonts.inter(fontSize: 13, height: 1.4),
-              available,
-            ) +
-            4;
+                med.nombreGenerico!,
+                AppFonts.inter(fontSize: 13, height: 1.4),
+                available,
+              ) +
+              4;
     final category = textoCategorias(med.categoria).isEmpty
         ? 0.0
         : _textHeight(
-              textoCategorias(med.categoria),
-              AppFonts.inter(fontSize: 13, height: 1.4),
-              available - 16,
-            ) +
-            16;
+                textoCategorias(med.categoria),
+                AppFonts.inter(fontSize: 13, height: 1.4),
+                available - 16,
+              ) +
+              16;
     return (title + generic + category).clamp(64.0, double.infinity) + 32;
   }
 
@@ -419,7 +373,7 @@ class _ImagenEncabezado extends SliverPersistentHeaderDelegate {
                         label: 'Ampliar imagen de ${med.nombreComercial}',
                         child: InkWell(
                           key: const Key('ampliar-imagen'),
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(20),
                           onTap: () => abrirImagenMedicamento(
                             context,
                             med.fotoUrl!,
@@ -465,7 +419,7 @@ class _ImagenEncabezado extends SliverPersistentHeaderDelegate {
                       ),
                       decoration: BoxDecoration(
                         border: Border.all(color: AppTheme.border),
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(
                         textoCategorias(med.categoria),

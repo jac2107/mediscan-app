@@ -37,10 +37,7 @@ class HistorialScreen extends ConsumerWidget {
                   ),
                   content: Text(
                     '¿Eliminar todo el historial de búsquedas?',
-                    style: AppFonts.inter(
-                      fontSize: 14,
-                      color: AppTheme.ink,
-                    ),
+                    style: AppFonts.inter(fontSize: 14, color: AppTheme.ink),
                   ),
                   actions: [
                     TextButton(
@@ -92,54 +89,57 @@ class HistorialScreen extends ConsumerWidget {
 
           return ListView.separated(
             itemCount: lista.length,
-            separatorBuilder: (_, __) => const Divider(height: 1, indent: 24),
+            separatorBuilder: (_, __) => const SizedBox.shrink(),
             itemBuilder: (context, index) {
               final item = lista[index];
               final esEscaneo = item.tipo == 'escaneo';
-              return ListTile(
-                contentPadding: const EdgeInsets.symmetric(
-                  horizontal: 24,
-                  vertical: 8,
-                ),
-                leading: Icon(
-                  esEscaneo
-                      ? Icons.qr_code_scanner_rounded
-                      : Icons.search_rounded,
-                  size: 18,
-                  color: AppTheme.muted,
-                ),
-                title: Text(
-                  item.nombreSnapshot,
-                  style: theme.textTheme.titleLarge,
-                ),
-                subtitle: Text(
-                  '${esEscaneo ? 'Escaneado' : 'Buscado'} · ${fmt.format(item.fecha)}',
-                ),
-                trailing: const Icon(
-                  Icons.chevron_right_rounded,
-                  size: 24,
-                  color: AppTheme.muted,
-                ),
-                onTap: () async {
-                  final db = ref.read(appDatabaseProvider);
-                  final med = await db.getMedicamentoById(item.medicamentoId);
-                  if (med != null && context.mounted) {
-                    context.push(
-                      Routes.detalleMedicamento.replaceAll(
-                        ':id',
-                        item.medicamentoId,
-                      ),
-                    );
-                  } else if (context.mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text(
-                          'Este medicamento ya no está disponible en el catálogo.',
+              return Card(
+                margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 7),
+                child: ListTile(
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 8,
+                  ),
+                  leading: Icon(
+                    esEscaneo
+                        ? Icons.qr_code_scanner_rounded
+                        : Icons.search_rounded,
+                    size: 18,
+                    color: AppTheme.muted,
+                  ),
+                  title: Text(
+                    item.nombreSnapshot,
+                    style: theme.textTheme.titleLarge,
+                  ),
+                  subtitle: Text(
+                    '${esEscaneo ? 'Escaneado' : 'Buscado'} · ${fmt.format(item.fecha)}',
+                  ),
+                  trailing: const Icon(
+                    Icons.chevron_right_rounded,
+                    size: 24,
+                    color: AppTheme.muted,
+                  ),
+                  onTap: () async {
+                    final db = ref.read(appDatabaseProvider);
+                    final med = await db.getMedicamentoById(item.medicamentoId);
+                    if (med != null && context.mounted) {
+                      context.push(
+                        Routes.detalleMedicamento.replaceAll(
+                          ':id',
+                          item.medicamentoId,
                         ),
-                      ),
-                    );
-                  }
-                },
+                      );
+                    } else if (context.mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            'Este medicamento ya no está disponible en el catálogo.',
+                          ),
+                        ),
+                      );
+                    }
+                  },
+                ),
               );
             },
           );

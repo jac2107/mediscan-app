@@ -17,46 +17,46 @@ class EditorialNotice extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) => Semantics(
-        liveRegion: true,
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: AppTheme.surface,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Column(
+    liveRegion: true,
+    child: Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppTheme.surface,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (busy)
-                    const SizedBox(
-                      width: 20,
-                      height: 20,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 2,
-                        color: AppTheme.verde,
-                      ),
-                    )
-                  else
-                    Icon(icon, color: color, size: 20),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Text(
-                      message,
-                      style: Theme.of(
-                        context,
-                      ).textTheme.bodyMedium?.copyWith(color: color),
-                    ),
+              if (busy)
+                const SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                    color: AppTheme.verde,
                   ),
-                ],
+                )
+              else
+                Icon(icon, color: color, size: 20),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  message,
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: color),
+                ),
               ),
-              if (action != null)
-                Padding(padding: const EdgeInsets.only(top: 4), child: action!),
             ],
           ),
-        ),
-      );
+          if (action != null)
+            Padding(padding: const EdgeInsets.only(top: 4), child: action!),
+        ],
+      ),
+    ),
+  );
 }
